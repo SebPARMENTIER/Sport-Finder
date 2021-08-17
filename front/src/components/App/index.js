@@ -1,15 +1,15 @@
 // == Import npm
 import React from 'react';
-import Menu from 'src/components/Menu';
+import Home from 'src/components/Home';
 
 // == Import
-import './App.scss';
+import './app.scss';
 
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Menu />
+    <Home />
   </div>
 );
 
