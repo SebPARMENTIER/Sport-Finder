@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchForm from 'src/components/SearchForm';
+
 // import PropTypes from 'prop-types';
 
 import './styles.scss';

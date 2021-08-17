@@ -3,7 +3,7 @@ import React from 'react';
 import Menu from 'src/components/Menu';
 
 // == Import
-import './styles.css';
+import './styles.scss';
 
 
 // == Composant

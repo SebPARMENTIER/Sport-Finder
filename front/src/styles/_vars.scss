@@ -1,8 +1,9 @@
 @use 'sass:math';
 
-$primary-color: #4797A1;
+$primary-color: rgba(71, 151, 161, 0.9);
 $secondary-color: #263548;
 $text-color: #EFF173;
 $star-color: #DABC51;
+$picture: url(src/assets/pictureMenu.jpg);
 
 $gutter: 1rem;
