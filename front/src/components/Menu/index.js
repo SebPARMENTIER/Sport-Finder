@@ -3,7 +3,7 @@ import SearchForm from 'src/components/SearchForm';
 
 // import PropTypes from 'prop-types';
 
-import './styles.scss';
+import './Menu.scss';
 
 export default function Menu() {
   return (

@@ -1,21 +1,23 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-import './styles.scss';
+import './SearchForm.scss';
 
 export default function SearchForm() {
   return (
     <form className='SearchForm'>
-      <input
-        type="text"
-        className="SearchForm__input"
-        placeholder="Votre adresse..."
-      />
-      <input
-        type="text"
-        className="SearchForm__input"
-        placeholder="Chercher un sport..."
-      />
+      <div className="SearchForm__inputs">
+        <input
+          type="text"
+          className="SearchForm__inputs__field"
+          placeholder="Votre adresse..."
+        />
+        <input
+          type="text"
+          className="SearchForm__inputs__field"
+          placeholder="Chercher un sport..."
+        />
+      </div>
       <button
         type="submit"
         className="SearchForm__button"
