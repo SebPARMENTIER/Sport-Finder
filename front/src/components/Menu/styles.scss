@@ -11,7 +11,7 @@
   &__picture{
     background-image: v.$picture;
     width: 90%;
-    height: 50%;
+    height: 60%;
     background-size: cover;
     background-position: center;
     margin-top: v.$gutter*5;
@@ -25,6 +25,12 @@
       font-size: 10em;
       color: v.$text-color;
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
-    }
+    } 
+  }
+
+  &__slogan{
+    font-size: 2em;
+    font-weight: bold;
+    margin: v.$gutter*2 0;
   }
 }
