@@ -1,0 +1,56 @@
+@use 'src/styles/vars';
+
+.contact {
+  text-align: center;  
+
+  &__title {
+    font-size: 2rem;
+    color: vars.$text-color;
+    font-weight: bold;
+    padding: 2rem;
+  }
+
+  &__text {
+    color: vars.$secondary-color;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  &__form {
+    color: vars.$secondary-color;
+    display: flex;
+    font-size: 1.2rem;
+
+    &__select__label, &__select__civility {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__lastname__label, &__lastname__input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__firstname__label, &__firstname__input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__email__label, &__email__input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__subject__label, &__subject__input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__content, &__button {
+      display: flex;
+      flex-direction: column;
+    }
+
+   
+  }
+}

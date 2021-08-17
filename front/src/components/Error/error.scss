@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.error {
+  text-align: center;
+  display: flex;  
+  flex-direction: column;  
+
+  &__text,  &__home {
+    font-size: 2rem;
+    color: vars.$text-color;
+    font-weight: bold;
+    padding: 2rem;
+  }
+
+}

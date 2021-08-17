@@ -1,0 +1,23 @@
+@use 'src/styles/vars';
+
+.about {  
+  text-align: center;  
+
+  &__title {
+    font-size: 2rem;
+    color: vars.$text-color;
+    font-weight: bold;
+    padding: 2rem;
+  }
+
+  &__role {
+    color: vars.$secondary-color;
+    padding: 1rem;
+
+    &__name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding-bottom: 0.8rem;
+    }
+  }
+}
