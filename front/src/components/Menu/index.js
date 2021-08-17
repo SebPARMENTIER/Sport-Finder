@@ -9,7 +9,7 @@ export default function Menu() {
       <div className='Menu__picture'>
         <h1 className='Menu__picture__title'>sport finder</h1>
       </div>
-      <p className='Menu__slogan'></p>
+      <p className='Menu__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
     </main>
   );
 }
