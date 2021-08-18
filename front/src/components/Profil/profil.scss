@@ -1,0 +1,49 @@
+@use 'src/styles/vars' as v;
+
+.profil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  &__title{
+    font-family: 'Anton';
+      font-size: 5em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0;
+  }
+  &__name{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: v.$gutter;
+  }
+  &__button{
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: v.$gutter 0;
+
+    &__edit{
+      font-size: 2em;
+      padding: v.$gutter;
+      border: none;
+      border-radius: 5px;
+      background-color: v.$secondary-color;
+      color: v.$text-color
+    }
+  }
+
+  &__logOut{
+    width: 20%;
+    font-size: 2em;
+    border: none;
+    border-radius: 5px;
+    padding: v.$gutter;
+    background-color: v.$secondary-color;
+    color: v.$text-color;
+    margin-top: v.$gutter*3;
+  }
+}

@@ -1,0 +1,17 @@
+@use 'src/styles/vars' as v;
+
+.modalEditProfil{
+  background-color: v.$secondary-color;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 20%;
+  border-radius: 10px;
+  &__title{
+    font-family: 'Anton';
+      font-size: 3em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0;
+  }
+}
