@@ -8,22 +8,16 @@ export default function ModalSignin() {
     <container className='modalSignIn'>
       <h1 className='modalSignIn__title'>Connexion</h1>
       <form className='modalSignIn__form'>
-        <div className='modalSignIn__form__edit'>
-          <p className='modalSignIn__form__edit__text'>Ancien mot de passe</p>
-          <input
-            className="modalSignIn__form__edit__input"
-            type="text"
-            placeholder="Mot de passe..."
-          />
-        </div>
-        <div className='modalSignIn__form__edit'>
-          <p className='modalSignIn__form__edit__text'>Ancien mot de passe</p>
-          <input
-            className="modalSignIn__form__edit__input"
-            type="text"
-            placeholder="Mot de passe..."
-          />
-        </div>
+        <input
+          className="modalSignIn__form__input"
+          type="text"
+          placeholder="Email..."
+        />
+        <input
+          className="modalSignIn__form__input"
+          type="text"
+          placeholder="Mot de passe..."
+        />
         <button
           type="submit"
           className="modalSignIn__form__button"
