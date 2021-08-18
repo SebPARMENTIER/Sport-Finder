@@ -1,6 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import ModalEditProfil from 'src/components/ModalEditProfil';
+// import ModalEditProfil from 'src/components/ModalEditProfil';
+import ModalEditPassword from 'src/components/ModalEditPassword';
 
 import './profil.scss';
 
@@ -15,7 +16,8 @@ export default function Profil() {
         <input className='profil__button__edit' type="button" value="vie privée et données" />
       </div>
       <input className='profil__logOut' type="button" value="Déconnexion" />
-      <ModalEditProfil />
+      {/* <ModalEditProfil /> */}
+      <ModalEditPassword />
 
     </main>
   );

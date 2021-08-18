@@ -22,7 +22,7 @@ ModalEditProfil() {
           <input
             className="modalEditProfil__form__edit__input"
             type="text"
-            placeholder="Nouveau mail..."
+            placeholder="Nouveau pseudo..."
           />
         </div>
         <div className='modalEditProfil__form__edit'>
@@ -30,7 +30,7 @@ ModalEditProfil() {
           <input
             className="modalEditProfil__form__edit__input"
             type="text"
-            placeholder="Nouveau mail..."
+            placeholder="Mot de passe..."
           />
         </div>
         <button
