@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .error {
   text-align: center;
@@ -6,10 +6,9 @@
   flex-direction: column;  
 
   &__text,  &__home {
-    font-size: 2rem;
-    color: vars.$text-color;
+    font-size: v.$gutter*2;
+    color: v.$text-color;
     font-weight: bold;
-    padding: 2rem;
+    padding: v.$gutter*2;
   }
-
 }

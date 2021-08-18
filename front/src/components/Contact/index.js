@@ -12,61 +12,55 @@ const Contact = () => {
       <h1 className="contact__title">Nous contacter</h1>
       <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
       <form className="contact__form">
-        <label htmlFor="" className="contact__form__select__label">
-          Civilité :
-          <select className="contact__form__select__civility">
-          <option value=""></option>
+        <div className="contact__form__block__first">
+          <select className="contact__form__block__first__civility">
             <option value="mister">M.</option>
-            <option value="miss">Mme</option>
+            <option value="miss" selected>Mme</option>
           </select>
-        </label>
-        <label htmlFor="" className="contact__form__lastname__label">
-          Nom de fammile :
-          <input
+          <input              
             type="text"
-            className="contact__form__lastname__input"
+            className="contact__form__block__first__lastname"
             placeholder="Nom de famille"
-            value=""
-            onChange=""
+            // value=""
+            // onChange=""
           />
-        </label>
-        <label htmlFor="" className="contact__form__firstname__label">
-          Prénom :
           <input
             type="text"
-            className="contact__form__firstname__input"
+            className="contact__form__block__first__firstname"
             placeholder="Prénom"
-            value=""
-            onChange=""
+            // value=""
+            // onChange=""
           />
-        </label>
-        <label htmlFor="" className="contact__form__email__label">
-          Email :
+        </div>
+        <div className="contact__form__block__second">          
           <input
             type="text"
-            className="contact__form__email__input"
+            className="contact__form__block__second__email"
             placeholder="Email"
-            value=""
-            onChange=""
+            // value=""
+            // onChange=""
           />
-        </label>
-        <label htmlFor="" className="contact__form__subject__label">
-          Sujet :
           <input
             type="text"
-            className="contact__form__subject__input"
+            className="contact__form__block__second__subject"
             placeholder="Sujet"
-            value=""
-            onChange=""
+            // value=""
+            // onChange=""
           />
-        </label>      
-        <label htmlFor="" className="contact__form__content">
-          Veuillez saisir votre message :
-          <textarea name="" id="" cols="30" rows="10" maxLength="255"></textarea>
-        </label>
-        <button className="contact__form__button" type="submit">
-          Envoyer
-        </button>
+        </div>
+        <div className="contact__form__block__third">
+            <textarea
+              className="contact__form__block__third__content"
+              placeholder="Veuillez saisir votre message"
+              cols="30"
+              rows="10"
+              maxLength="255"
+            >
+            </textarea>
+          <button className="contact__form__block__third__button" type="submit">
+            Envoyer
+          </button>
+        </div>        
       </form>
     </div>
   )

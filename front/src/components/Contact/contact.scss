@@ -1,56 +1,119 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .contact {
   text-align: center;  
 
   &__title {
-    font-size: 2rem;
-    color: vars.$text-color;
+    font-size: v.$gutter*2;
+    color: v.$text-color;
     font-weight: bold;
-    padding: 2rem;
+    padding: v.$gutter*2;
   }
 
   &__text {
-    color: vars.$secondary-color;
+    color: v.$secondary-color;
     font-size: 1.2rem;
-    padding: 1rem;
+    padding: v.$gutter;
+    margin-bottom: v.$gutter*2;
   }
 
   &__form {
-    color: vars.$secondary-color;
+    color: v.$secondary-color;
     display: flex;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
 
-    &__select__label, &__select__civility {
+    &__block__first {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__civility {
+        width: 10%;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 v.$gutter*2 v.$gutter*2 0;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__lastname {
+        width: 45%;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 v.$gutter*2;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__firstname {
+        width: 45%;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 0 v.$gutter*2 v.$gutter*2;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
     }
 
-    &__lastname__label, &__lastname__input {
+    &__block__second {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__email {
+        width: 50%;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 v.$gutter*2 v.$gutter*2 0;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__subject {
+        width: 50%;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 0 v.$gutter*2 v.$gutter*2;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
     }
 
-    &__firstname__label, &__firstname__input {
+    &__block__third {
       display: flex;
       flex-direction: column;
+
+      &__content {
+        width: 100%;
+        height: 300px;
+        padding: v.$gutter*1.5;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__button {
+        min-width: 20%;
+        padding: v.$gutter*0.7;
+        margin: v.$gutter*2 auto 0 auto;
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        
+      }
     }
 
-    &__email__label, &__email__input {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__subject__label, &__subject__input {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__content, &__button {
-      display: flex;
-      flex-direction: column;
-    }
-
-   
+    
   }
 }
