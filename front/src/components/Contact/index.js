@@ -13,14 +13,20 @@ const Contact = () => {
       <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
       <form className="contact__form">
         <div className="contact__form__block__first">
-          <select className="contact__form__block__first__civility">
+          <select
+            title="Civilité"
+            className="contact__form__block__first__civility"
+            //value=""
+            //onChange=""
+          >
+            <option defaultValue="" hidden>Civilité</option>
             <option value="mister">M.</option>
-            <option value="miss" selected>Mme</option>
+            <option value="miss">Mme</option>
           </select>
           <input              
             type="text"
             className="contact__form__block__first__lastname"
-            placeholder="Nom de famille"
+            placeholder="Nom"
             // value=""
             // onChange=""
           />

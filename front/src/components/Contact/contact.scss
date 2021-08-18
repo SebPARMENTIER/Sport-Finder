@@ -19,7 +19,6 @@
 
   &__form {
     color: v.$secondary-color;
-    display: flex;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
@@ -31,14 +30,15 @@
       flex-direction: row;
       justify-content: space-between;
 
-      &__civility {
+      &__civility {        
         width: 10%;
-        height: 20px;
-        padding: v.$gutter*1.5;
+        height: 48px;
+        padding-left: v.$gutter*1.5;
         margin: 0 v.$gutter*2 v.$gutter*2 0;
         font-size: 1.2em;
         border-radius: 5px;
         border: none;
+        background-color: white;
       }
 
       &__lastname {
@@ -110,10 +110,7 @@
         border: none;
         border-radius: 5px;
         font-size: 1.2em;
-        
       }
-    }
-
-    
+    }    
   }
 }
