@@ -2,13 +2,13 @@
 import React from 'react';
 
 // == Import
-import Results from 'src/components/Results';
+import Banner from 'src/components/Banner';
 import './app.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Results />
+    <Banner />
    
   </div>
 );
