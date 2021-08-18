@@ -47,6 +47,16 @@
   &-signup{
     margin-right: 0.8rem;
   }
+  @media (max-width: 430px){
+    .header-signin{
+      width: auto;
+      margin-right: 0;
+    }
+    .header-signup{
+      width: 0;
+      font-size: 0;
+    }
+  }
 }
 .hover-underline-animation {
   display: inline-block;
