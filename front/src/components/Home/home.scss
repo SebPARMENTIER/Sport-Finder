@@ -11,7 +11,7 @@
   &__picture{
     background-image: v.$picture;
     width: 90%;
-    height: 60%;
+    height: 40%;
     background-size: cover;
     background-position: center;
     margin-top: v.$gutter*5;
@@ -36,6 +36,7 @@
   @media (max-width: 1024px) {
     .home__picture{
       margin-top: v.$gutter*3;
+      height: 50%;
     }
     .home__picture__title{
       font-size: 5em;

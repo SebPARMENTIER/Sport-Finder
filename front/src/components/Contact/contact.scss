@@ -1,0 +1,167 @@
+@use 'src/styles/vars' as v;
+
+.contact {
+  text-align: center;  
+
+  &__title {
+    font-size: v.$gutter*2;
+    color: v.$text-color;
+    font-weight: bold;
+    padding: v.$gutter;
+  }
+
+  &__text {
+    color: v.$secondary-color;
+    font-size: 1.2rem;
+    padding: 0 v.$gutter;
+    margin-bottom: v.$gutter;
+  }
+
+  &__form {
+    color: v.$secondary-color;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+
+    &__block__first {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &__civility {        
+        width: 90%;
+        height: 1.8em;
+        padding-left: v.$gutter;
+        margin-bottom: v.$gutter ;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        background-color: white;
+        color: gray;
+      }
+
+      &__lastname {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__firstname {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+
+    &__block__second {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &__email {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__subject {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+
+    &__block__third {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &__content {
+        width: 90%;
+        height: 10%;
+        padding: v.$gutter*1.5;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__button {
+        min-width: 20%;
+        padding: v.$gutter*0.7;
+        margin: v.$gutter*2 auto 0 auto;
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+      }
+    }    
+  }
+  @media (min-width: 760px){
+    .contact{
+      &__title{
+        font-size: 3em;
+        margin: v.$gutter*1.5 0;
+      }
+      &__text{
+        font-size: 1.5em;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: v.$gutter*2;
+      }
+      &__form{
+        &__block__first{
+          flex-direction: row;
+          &__civility{
+            width: 15%;
+          }
+          &__lastname{
+            width: 40%;
+            padding: v.$gutter*1.1 ;
+          }
+          &__firstname{
+            width: 40%;
+            padding: v.$gutter*1.1 ;
+          }
+        }
+        &__block__second{
+          flex-direction: row;
+          &__email{
+            width: 32%;
+            padding: v.$gutter*1.1 ;
+          }
+          &__subject{
+            width: 65%;
+            padding: v.$gutter*1.1 ;
+          }
+        }
+        &__block__third{
+          &__content{
+            width: 100%;
+          }
+        }
+      }
+    }
+    
+  }
+}

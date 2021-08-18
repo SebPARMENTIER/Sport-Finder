@@ -21,7 +21,7 @@ export default function Profil() {
       {/* <ModalEditProfil /> */}
       {/* <ModalEditPassword /> */}
       {/* <ModalPrivacyData /> */}
-      <ModalSignin />
+      {/* <ModalSignin /> */}
     </main>
   );
 }
