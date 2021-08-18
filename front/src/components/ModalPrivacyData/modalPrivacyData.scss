@@ -23,7 +23,18 @@
     overflow-y: auto;
     color: white;
     text-align: left;
-    
+    &::-webkit-scrollbar {
+      width: 1em;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: v.$scrollbar-color;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: v.$text-color;
+      outline: 1px solid black;
+      border-radius: 5px;
+    }
     &__h2{
       text-align: center;
       font-size: 1.5em;
@@ -33,6 +44,7 @@
     &__text{
       margin-bottom: v.$gutter*0.5;
       line-height: 1.5;
+      margin-right: v.$gutter;
       &__a{
         text-decoration: underline;
         color: v.$text-color;
