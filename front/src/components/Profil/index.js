@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import ModalEditProfil from 'src/components/ModalEditProfil';
-// import ModalEditPassword from 'src/components/ModalEditPassword';
+import ModalEditProfil from 'src/components/ModalEditProfil';
+import ModalEditPassword from 'src/components/ModalEditPassword';
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
 
 import './profil.scss';
@@ -19,7 +19,7 @@ export default function Profil() {
       <input className='profil__logOut' type="button" value="Déconnexion" />
       {/* <ModalEditProfil /> */}
       {/* <ModalEditPassword /> */}
-      <ModalPrivacyData />
+      {/* <ModalPrivacyData /> */}
 
     </main>
   );

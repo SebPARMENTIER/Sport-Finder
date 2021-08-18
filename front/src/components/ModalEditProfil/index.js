@@ -26,7 +26,7 @@ ModalEditProfil() {
           />
         </div>
         <div className='modalEditProfil__form__edit'>
-          <p className='modalEditProfil__form__edit__text'>Mot de passe</p>
+          <p className='modalEditProfil__form__edit__text'>Validation avec mot de passe</p>
           <input
             className="modalEditProfil__form__edit__input"
             type="text"
