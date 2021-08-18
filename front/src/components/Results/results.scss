@@ -1,0 +1,50 @@
+@use 'src/styles/vars' as v;
+
+.results {
+    
+  &__searchform {
+    padding-top: 5em;
+  }
+
+  &__all {
+    margin: v.$gutter*3 v.$gutter*2 v.$gutter*3 v.$gutter*2;
+    display: flex;
+    justify-content: center;
+    
+        
+  }
+
+  &__list {
+    margin-right: v.$gutter*2;
+
+    &__single {
+      background-color: white;
+      width: 100%;
+      border-radius: 5px;
+      padding: v.$gutter;
+      margin-bottom: v.$gutter;      
+
+      &__name {
+        font-size: v.$gutter*1.5;
+        padding-bottom: v.$gutter*0.2;
+      }
+
+      &__adress {
+        font-size: v.$gutter*0.8;
+      }
+
+      &__rating {
+        font-size: v.$gutter*2;
+        color: v.$star-color;
+      }
+    }
+  }
+
+  &__map {
+    background-color: white;
+    width: 75%;
+    font-size: 5em;
+    border-radius: 5px;
+    margin-left: v.$gutter*2;
+  }
+}

@@ -14,12 +14,11 @@ const Contact = () => {
       <form className="contact__form">
         <div className="contact__form__block__first">
           <select
-            title="Civilité"
             className="contact__form__block__first__civility"
             //value=""
             //onChange=""
           >
-            <option defaultValue="" hidden>Civilité</option>
+            <option select defaultValue="" hidden>Civilité</option>
             <option value="mister">M.</option>
             <option value="miss">Mme</option>
           </select>

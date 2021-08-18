@@ -2,13 +2,13 @@
 import React from 'react';
 
 // == Import
-import Contact from 'src/components/Contact';
+import Results from 'src/components/Results';
 import './app.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Contact />
+    <Results />
    
   </div>
 );
