@@ -1,0 +1,121 @@
+@use 'src/styles/vars' as v;
+
+.modalSignIn{
+  background-color: v.$secondary-color;
+  width: 90%;
+  height: 60%;
+  position: absolute;
+  top: 25%;
+  border-radius: 10px;
+  &__title{
+    font-family: 'Anton';
+      font-size: 3em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0;
+  }
+  &__form{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-bottom: v.$gutter*2;
+    border-bottom: 2px solid v.$text-color;
+    margin-bottom: v.$gutter*2;
+    &__edit{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: v.$gutter;
+
+      &__text{
+        color: v.$text-color;
+        font-size: 1.5em;
+      }
+
+      &__input{
+        font-size: 1.5em;
+        padding: v.$gutter*0.5;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+    &__button{
+      font-size: 1.5em;
+      padding: v.$gutter*0.5;
+      color: v.$secondary-color;
+      background-color: v.$text-color;
+      border: none;
+      border-radius: 5px;
+      width: auto;
+    }
+  }
+  &__button{
+    font-size: 1.5em;
+    padding: v.$gutter*0.5;
+    color: v.$secondary-color;
+    background-color: v.$text-color;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+  }
+  @media (max-width: 321px){
+    
+    .modalSignIn{
+      ;
+      &__title{
+        font-size: 3em;
+      }
+      &__form{
+        &__edit{
+          width: 85%;
+          &__text{
+            font-size: 1em;
+          }
+          &__input{
+            font-size: 1em;
+          }
+          
+        }
+        &__button{
+          font-size: 1em;
+        }
+      }
+      &__button{
+        font-size: 1em;
+      }
+    }
+    
+  }
+
+  @media (min-width: 770px){
+    .modalSignIn{
+      &__title{
+        font-size: 4em;
+      }
+      &__form{
+        &__edit{
+          flex-direction: row;
+          width: 85%;
+          &__text{
+            font-size: 1.8em;
+          }
+          &__input{
+            font-size: 1.8em;
+          }
+          
+        }
+        &__button{
+          font-size: 2em;
+        }
+      }
+      &__button{
+        font-size: 2em;
+      }
+    }
+  }
+}

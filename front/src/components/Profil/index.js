@@ -3,6 +3,7 @@ import React from 'react';
 import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalEditPassword from 'src/components/ModalEditPassword';
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
+import ModalSignin from 'src/components/ModalSignIn';
 
 import './profil.scss';
 
@@ -20,6 +21,7 @@ export default function Profil() {
       {/* <ModalEditProfil /> */}
       {/* <ModalEditPassword /> */}
       {/* <ModalPrivacyData /> */}
+      <ModalSignin />
 
     </main>
   );

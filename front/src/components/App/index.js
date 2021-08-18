@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-// import Home from 'src/components/Home';
+import Home from 'src/components/Home';
 import Profil from 'src/components/Profil';
 
 // == Import
