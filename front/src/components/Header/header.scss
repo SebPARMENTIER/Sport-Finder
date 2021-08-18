@@ -16,6 +16,7 @@
   }
   &-ol{
     display: flex;
+    justify-content: space-between;
     text-align: center;
   }
   &-leftside{
@@ -37,7 +38,11 @@
     position: absolute;
     right: 40%;
     left: 40%;
-    padding-top: 0.5rem;
+    top: 0;
+    
+    &__img{
+      width: 2.5em;
+    }
     
     
   }

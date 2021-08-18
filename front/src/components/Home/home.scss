@@ -6,12 +6,12 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   
   &__picture{
     background-image: v.$picture;
     width: 90%;
-    height: 40%;
+    height: 400px;
     background-size: cover;
     background-position: center;
     margin-top: v.$gutter*5;
@@ -36,7 +36,6 @@
   @media (max-width: 1024px) {
     .home__picture{
       margin-top: v.$gutter*3;
-      height: 50%;
     }
     .home__picture__title{
       font-size: 5em;

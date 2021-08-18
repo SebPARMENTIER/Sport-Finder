@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import logo from 'src/assets/logo.png'
 import './header.scss';
 
 
@@ -9,11 +10,14 @@ const Header = ({}) => (
       <ol className='header-ol'>
       <div className='header-leftside'>
         <li className='header-accueil hover-underline-animation'>
-          <a href="/">Accueil</a>
-          </li>
+          <Link to="/">Accueil</Link>
+        </li>
       </div>
       <li className='header-logo'>
-      <a href="/">Logo</a>
+        <Link to="/">
+          <img className='header-logo__img' src={logo} alt="sport finder logo" />
+        </Link>
+        
       </li>
         <div className='header-rightside'>
         <li className='header-signin hover-underline-animation'>Sign in</li>
