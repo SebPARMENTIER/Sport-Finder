@@ -14,16 +14,22 @@
     align-items: center;
     width: 100%;
     height: 100px;
-
-    &__field{
-      width: 30%;
-      height: 20px;
-      padding: v.$gutter*1.5;
-      margin: 0 v.$gutter*2;
-      font-size: 1.5em;
-      border-radius: 5px;
-      border: none;
+    &__div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__field{
+        width: auto;
+        height: 20px;
+        padding: v.$gutter*1.5;
+        margin: 0 v.$gutter*2;
+        font-size: 1.5em;
+        border-radius: 5px;
+        border: none;
+      }
     }
+
+    
   }
 
   &__button{
@@ -41,10 +47,13 @@
     .searchForm{
       margin-top: v.$gutter;
     }
-    .searchForm__inputs__field{
+    .searchForm__div{
+      flex-direction: column;
+    }
+    .searchForm__inputs__div__field{
       font-size: 1em;
       margin: 0 v.$gutter ;
-      width: 40%;
+      width: 100%;
       padding: v.$gutter*1.2;
     }
     .searchForm__button{
@@ -57,10 +66,10 @@
     .searchForm{
       margin-top: v.$gutter;
     }
-    .searchForm__inputs__field{
+    .searchForm__inputs__div__field{
       font-size: 1em;
       margin: 0 v.$gutter ;
-      width: 40%;
+      width: 90%;
       padding: v.$gutter*1.2;
     }
     .searchForm__button{
@@ -74,16 +83,23 @@
     .searchForm{
       margin-top: v.$gutter/2;
     }
-    .searchForm__inputs__field{
+    .searchForm__inputs{
+      flex-direction: column;
+      &__div{
+        margin-bottom: v.$gutter;
+      }
+    }
+    .searchForm__inputs__div__field{
       font-size: 1em;
       margin: 0 v.$gutter/2 ;
-      width: 40%;
+      width: 90%;
       padding: v.$gutter*1.2;
     }
     .searchForm__button{
       font-size: 1em;
       width: 50%;
       margin-top: v.$gutter;
+      margin-bottom: v.$gutter;
     }
   }
 }

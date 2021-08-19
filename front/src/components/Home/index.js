@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchForm from 'src/components/SearchForm';
+import SearchForm from 'src/containers/SearchForm';
 import ModalEditPassword from 'src/components/ModalEditPassword';
 import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalSignIn from 'src/components/ModalSignIn';
@@ -21,7 +21,7 @@ export default function Home() {
       {/* <ModalEditPassword /> */}
       {/* <ModalEditProfil /> */}
       {/* <ModalSignIn /> */}
-      <ModalSignUp />
+      {/* <ModalSignUp /> */}
       
     </main>
   );

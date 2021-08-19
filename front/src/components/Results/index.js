@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Import : local
-import SearchForm from 'src/components/SearchForm';
+import SearchForm from 'src/containers/SearchForm';
 import Banner from 'src/components/Banner';
 import './results.scss';
 

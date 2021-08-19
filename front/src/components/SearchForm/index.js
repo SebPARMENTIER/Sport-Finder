@@ -1,21 +1,37 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
+import Field from 'src/components/Field';
 import './searchForm.scss';
 
-export default function SearchForm() {
+const SearchForm = ({
+  city,
+  sport,
+  changeField,
+  handleSearch,  
+}) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleSearch();
+  }; 
   return (
-    <form className='searchForm'>
+    <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
-        <input
+        <Field
+          name="city"
           type="text"
           className="searchForm__inputs__field"
           placeholder="Votre ville..."
+          value={city}
+          onChange={changeField}
         />
-        <input
+        <Field
+          name="sport"
           type="text"
           className="searchForm__inputs__field"
           placeholder="Chercher un sport..."
+          value={sport}
+          onChange={changeField}
         />
       </div>
       <button
@@ -28,6 +44,11 @@ export default function SearchForm() {
   );
 }
 
-// SearchForm.propTypes = {
+SearchForm.propTypes = {
+  city: PropTypes.string.isRequired,
+  sport: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,  
+};
 
-// };
+export default SearchForm;
