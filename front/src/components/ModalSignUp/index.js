@@ -40,7 +40,7 @@ export default function ModalSignUp() {
             Valider
           </button>
         </form>
-        <input className='modalSignUp__container__button' type="button" value="Inscription" />
+        
       </div>
     </container>
   );

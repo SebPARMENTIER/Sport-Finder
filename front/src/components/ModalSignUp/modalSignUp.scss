@@ -30,7 +30,6 @@
       align-items: center;
       width: 90%;
       padding-bottom: v.$gutter*2;
-      border-bottom: 2px solid v.$text-color;
       margin-bottom: v.$gutter*2;
 
       &__text{
@@ -76,17 +75,6 @@
         width: auto;
       }
     }
-    &__button{
-      font-size: 1.5em;
-      padding: v.$gutter*0.5;
-      color: v.$secondary-color;
-      background-color: v.$text-color;
-      border: none;
-      border-radius: 5px;
-      width: auto;
-      margin: 0 auto;
-      margin-bottom: v.$gutter*2;
-    }
   }
   
   
@@ -120,9 +108,6 @@
         &__button{
           font-size: 1em;
         }
-      }
-      &__container__button{
-        font-size: 1em;
       }
     }
     
@@ -162,9 +147,6 @@
         &__button{
           font-size: 2em;
         }
-      }
-      &__container__button{
-        font-size: 2em;
       }
     }
   }
