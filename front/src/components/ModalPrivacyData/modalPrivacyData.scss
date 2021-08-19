@@ -65,4 +65,15 @@
       color: v.$text-color;
     }
   }
+  @media (max-width: 321px){
+    
+    .modalPrivacyData{
+      
+      &__title{
+        font-size: 2em;
+      }
+      
+    }
+    
+  }
 }

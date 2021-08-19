@@ -25,6 +25,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin: v.$gutter 0;
+    
 
     &__edit{
       font-size: 1em;
@@ -32,7 +33,8 @@
       border: none;
       border-radius: 5px;
       background-color: v.$secondary-color;
-      color: v.$text-color
+      color: v.$text-color;
+      margin-bottom: v.$gutter;
     }
   }
 

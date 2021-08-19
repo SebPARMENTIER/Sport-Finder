@@ -18,7 +18,7 @@ export default function Profil() {
         <input className='profil__button__edit' type="button" value="vie privée et données" />
       </div>
       <input className='profil__logOut' type="button" value="Déconnexion" />
-      {/* <ModalEditProfil /> */}
+      <ModalEditProfil />
       {/* <ModalEditPassword /> */}
       {/* <ModalPrivacyData /> */}
       {/* <ModalSignin /> */}

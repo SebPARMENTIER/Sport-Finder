@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.modalSignIn{
+.modalSignUp{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +37,33 @@
         color: v.$text-color;
         font-size: 1.5em;
       }
-
-      &__input{
-        font-size: 1.5em;
-        padding: v.$gutter*0.5;
-        border-radius: 5px;
-        border: none;
-        margin-bottom: v.$gutter;
+      &__first{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__input{
+          font-size: 1.5em;
+          padding: v.$gutter*0.5;
+          border-radius: 5px;
+          border: none;
+          margin-bottom: v.$gutter;
+        }  
+      }
+      &__second{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__input{
+          font-size: 1.5em;
+          padding: v.$gutter*0.5;
+          border-radius: 5px;
+          border: none;
+          margin-bottom: v.$gutter;
+        }  
       }
       
       &__button{
@@ -72,7 +92,7 @@
   
   @media (max-width: 321px){
     
-    .modalSignIn{
+    .modalSignUp{
       
       &__container__title{
         font-size: 3em;
@@ -82,10 +102,19 @@
         &__text{
           font-size: 1em;
         }
-        &__input{
-          font-size: 1em;
-          margin-bottom: v.$gutter*2;
-          width: 90%;
+        &__first{
+          &__input{
+            font-size: 1em;
+            margin-bottom: v.$gutter*2;
+            width: 90%;
+          }
+        }
+        &__second{
+          &__input{
+            font-size: 1em;
+            margin-bottom: v.$gutter*2;
+            width: 90%;
+          }
         }
           
         &__button{
@@ -100,20 +129,34 @@
   }
 
   @media (min-width: 770px){
-    .modalSignIn{
+    .modalSignUp{
       &__container__title{
         font-size: 4em;
       }
       &__container__form{
-        flex-direction: row;
-        align-items: center;
         &__text{
           font-size: 1.8em;
         }
-        &__input{
-          font-size: 1.8em;
-          margin-bottom: 0;
-          margin-right: v.$gutter;
+        &__first{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: v.$gutter;
+          &__input{
+            font-size: 1.8em;
+            margin-bottom: 0;
+            margin: v.$gutter;
+          }
+        }
+        &__second{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin-bottom: v.$gutter;
+          &__input{
+            font-size: 1.8em;
+            margin-bottom: 0;
+            margin: v.$gutter;
+          }
         }
           
         &__button{
