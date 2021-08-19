@@ -1,14 +1,41 @@
 @use 'src/styles/vars' as v;
 
 .error {
+  width: 50%;
   text-align: center;
   display: flex;  
-  flex-direction: column;  
+  flex-direction: column;
+  justify-content: center;  
 
   &__text,  &__home {
     font-size: v.$gutter*2;
     color: v.$text-color;
     font-weight: bold;
-    padding: v.$gutter*2;
+    margin: v.$gutter*2;
+  }
+
+  &__picture {
+    &__img {
+      max-width: 80%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .error {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__picture {
+      max-width: 100%;
+      height: auto;
+      
+    }
+    
+    &__text, &__home {
+      font-size: v.$gutter;
+    }
   }
 }

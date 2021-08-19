@@ -3,6 +3,7 @@ import React from 'react';
 
 // == Import : local
 import SearchForm from 'src/components/SearchForm';
+import Banner from 'src/components/Banner';
 import './results.scss';
 
 // == Component
@@ -10,6 +11,8 @@ const Results = () => {
 
   return (
     <div className="results">
+      <Banner />
+      <p className='results__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
       <div className="results__searchform">
         <SearchForm />
       </div>

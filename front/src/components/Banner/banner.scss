@@ -10,10 +10,10 @@
   &__picture {
     background-image: v.$picture;
     width: 90%;
-    height: 20%;
+    height: v.$gutter*10;
     background-size: cover;
     background-position: center;
-    margin-top: v.$gutter*5;
+    margin-top: v.$gutter*2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
 
     &__title{
       font-family: 'Anton';
-      font-size: 10em;
+      font-size: 7rem;
       color: v.$text-color;
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
     } 

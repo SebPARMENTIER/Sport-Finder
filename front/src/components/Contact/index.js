@@ -2,6 +2,7 @@
 import React from 'react';
 
 // == Import : local
+import Banner from 'src/components/Banner';
 import './contact.scss';
 
 // == Component
@@ -9,6 +10,7 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <Banner />
       <h1 className="contact__title">Nous contacter</h1>
       <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
       <form className="contact__form">

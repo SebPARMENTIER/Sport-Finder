@@ -1,17 +1,22 @@
 @use 'src/styles/vars' as v;
 
 .results {
+  &__slogan{
+    font-size: 2em;
+    font-weight: bold;
+    margin: v.$gutter 0;
+    text-align: center;
+    color: v.$text-color;
+  }
     
   &__searchform {
-    padding-top: 5em;
+    padding-top: v.$gutter;
   }
 
   &__all {
     margin: v.$gutter*3 v.$gutter*2 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
-    
-        
   }
 
   &__list {
