@@ -20,7 +20,6 @@ const SearchForm = ({
         <Field
           name="city"
           type="text"
-          className="searchForm__inputs__field"
           placeholder="Votre ville..."
           value={city}
           onChange={changeField}
@@ -28,7 +27,6 @@ const SearchForm = ({
         <Field
           name="sport"
           type="text"
-          className="searchForm__inputs__field"
           placeholder="Chercher un sport..."
           value={sport}
           onChange={changeField}

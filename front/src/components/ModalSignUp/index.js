@@ -1,38 +1,58 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
+import Field from 'src/components/Field';
 import './modalSignUp.scss';
 
-export default function ModalSignUp() {
+const ModalSignUp = ({
+  pseudo,
+  email,
+  password,
+  passwordConfirm,
+  changeField,
+  handleCreateUser,
+}) => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    handleCreateUser();
+  };
   return (
-    <container className='modalSignUp'>
+    <div className='modalSignUp'>
       <div className='modalSignUp__container'>
         <IoIosCloseCircleOutline className="modalSignUp__container__close"/>
         <h1 className='modalSignUp__container__title'>Inscription</h1>
-        <form className='modalSignUp__container__form'>
+        <form className='modalSignUp__container__form' onSubmit={handleSubmit}>
           <div className="modalSignUp__container__form__first">
-            <input
-              className="modalSignUp__container__form__first__input"
+            <Field
+              name="email"
               type="text"
               placeholder="Email..."
+              onChange={changeField}
+              value={email}
             />
-            <input
-              className="modalSignUp__container__form__first__input"
+            <Field
+              name="pseudo"
               type="text"
               placeholder="Pseudo..."
+              onChange={changeField}
+              value={pseudo}
             />
           </div>
           <div className="modalSignUp__container__form__second">
-            <input
-              className="modalSignUp__container__form__second__input"
-              type="text"
+            <Field
+              name="password"
+              type="password"
               placeholder="Mot de passe..."
+              onChange={changeField}
+              value={password}
             />
-            <input
-              className="modalSignUp__container__form__second__input"
-              type="text"
+            <Field
+              name="passwordConfirm"
+              type="password"
               placeholder="Vérification mot de passe..."
+              onChange={changeField}
+              value={passwordConfirm}
             />
           </div>
           <button
@@ -44,10 +64,17 @@ export default function ModalSignUp() {
         </form>
         
       </div>
-    </container>
+    </div>
   );
 }
 
-// ModalSignUp.propTypes = {
+ModalSignUp.propTypes = {
+  pseudo: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,  
+  passwordConfirm: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+  handleCreateUser: PropTypes.func.isRequired,
+};
 
-// };
+export default ModalSignUp;

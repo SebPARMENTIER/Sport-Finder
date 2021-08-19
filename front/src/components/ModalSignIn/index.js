@@ -2,21 +2,24 @@ import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
 // import PropTypes from 'prop-types';
 
+import Field from 'src/components/Field';
 import './modalSignIn.scss';
 
 export default function ModalSignin() {
   return (
-    <container className='modalSignIn'>
+    <div className='modalSignIn'>
       <div className='modalSignIn__container'>
         <IoIosCloseCircleOutline className="modalSignIn__container__close"/>
         <h1 className='modalSignIn__container__title'>Connexion</h1>
         <form className='modalSignIn__container__form'>
-          <input
+          <Field
+            name="email"
             className="modalSignIn__container__form__input"
             type="text"
             placeholder="Email..."
           />
-          <input
+          <Field
+            name="password"
             className="modalSignIn__container__form__input"
             type="text"
             placeholder="Mot de passe..."
@@ -31,7 +34,7 @@ export default function ModalSignin() {
         <input className='modalSignIn__container__button' type="button" value="Inscription" />
       </div>
       
-    </container>
+    </div>
   );
 }
 

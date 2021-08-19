@@ -1,0 +1,27 @@
+@use 'src/styles/vars' as v;
+
+.inputs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__field{
+    width: auto;
+    height: 20px;
+    padding: v.$gutter*1.5;
+    margin: 0 v.$gutter*2;
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: none;
+  }
+  @media (max-width: 768px) {
+    .inputs{
+      &__field{
+        font-size: 1em;
+        margin: 0 v.$gutter/2 ;
+        width: 100%;
+        padding: v.$gutter*1.2;
+        margin-bottom: v.$gutter;
+      }
+    }
+  }
+}

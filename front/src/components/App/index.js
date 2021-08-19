@@ -9,6 +9,7 @@ import Contact from 'src/components/Contact';
 import About from 'src/components/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
+import ModalSignUp from 'src/containers/ModalSignUp';
 
 
 // == Import
@@ -28,6 +29,7 @@ const App = () => (
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
       </Switch>
     <Footer />
+    {/* <ModalSignUp /> */}
   </div>
 );
 

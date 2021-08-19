@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './field.scss';
+
 // == Composant
 const Field = ({
   value,
@@ -17,9 +19,9 @@ const Field = ({
   const inputId = `field-${name}`;
 
   return (
-    <div className="searchForm__inputs__div">
+    <div className="inputs">
       <input
-        className="searchForm__inputs__div__field"
+        className="inputs__field"
         // React - state
         value={value}
         onChange={handleChange}

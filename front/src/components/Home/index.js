@@ -3,7 +3,7 @@ import SearchForm from 'src/containers/SearchForm';
 import ModalEditPassword from 'src/components/ModalEditPassword';
 import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalSignIn from 'src/components/ModalSignIn';
-import ModalSignUp from 'src/components/ModalSignUp';
+import ModalSignUp from 'src/containers/ModalSignUp';
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
 
 
@@ -21,8 +21,8 @@ export default function Home() {
       <SearchForm />
       {/* <ModalEditPassword /> */}
       {/* <ModalEditProfil /> */}
-      {/* <ModalSignIn /> */}
-      <ModalSignUp />
+      <ModalSignIn />
+      {/* <ModalSignUp /> */}
       {/* <ModalPrivacyData /> */}
       
     </main>
