@@ -13,4 +13,8 @@ const Banner = () => (
 </div>
 );
 
+<<<<<<< HEAD
 export default Banner;
+=======
+export default Banner;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5

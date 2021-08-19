@@ -2,19 +2,33 @@
 
 .contact {
   text-align: center;  
+<<<<<<< HEAD
+=======
+  height: auto;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
 
   &__title {
     font-size: v.$gutter*2;
     color: v.$text-color;
     font-weight: bold;
+<<<<<<< HEAD
     padding-top: v.$gutter*1.5;
+=======
+    padding: v.$gutter;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
   }
 
   &__text {
     color: v.$secondary-color;
+<<<<<<< HEAD
     font-size: 1.2rem;
     padding: v.$gutter;
     margin-bottom: v.$gutter*2;
+=======
+    font-size: 1rem;
+    padding: 0 v.$gutter;
+    margin-bottom: v.$gutter;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
   }
 
   &__form {
@@ -27,6 +41,7 @@
 
     &__block__first {
       display: flex;
+<<<<<<< HEAD
       flex-direction: row;
       justify-content: space-between;
 
@@ -47,16 +62,48 @@
         padding: v.$gutter*1.5;
         margin: 0 v.$gutter*2;
         font-size: 1.2em;
+=======
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &__civility {        
+        width: 90%;
+        height: 1.8em;
+        padding-left: v.$gutter;
+        margin-bottom: v.$gutter ;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        background-color: white;
+        color: gray;
+      }
+
+      &__lastname {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
         border-radius: 5px;
         border: none;
       }
 
       &__firstname {
+<<<<<<< HEAD
         width: 45%;
         height: 20px;
         padding: v.$gutter*1.5;
         margin: 0 0 v.$gutter*2 v.$gutter*2;
         font-size: 1.2em;
+=======
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
         border-radius: 5px;
         border: none;
       }
@@ -64,6 +111,7 @@
 
     &__block__second {
       display: flex;
+<<<<<<< HEAD
       flex-direction: row;
       justify-content: space-between;
 
@@ -73,16 +121,36 @@
         padding: v.$gutter*1.5;
         margin: 0 v.$gutter*2 v.$gutter*2 0;
         font-size: 1.2em;
+=======
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &__email {
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
         border-radius: 5px;
         border: none;
       }
 
       &__subject {
+<<<<<<< HEAD
         width: 50%;
         height: 20px;
         padding: v.$gutter*1.5;
         margin: 0 0 v.$gutter*2 v.$gutter*2;
         font-size: 1.2em;
+=======
+        width: 90%;
+        height: 20px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
         border-radius: 5px;
         border: none;
       }
@@ -90,11 +158,20 @@
 
     &__block__third {
       display: flex;
+<<<<<<< HEAD
       flex-direction: column;
 
       &__content {
         width: 100%;
         height: 200px;
+=======
+      align-items: center;
+      flex-direction: column;
+
+      &__content {
+        width: 90%;
+        height: 10%;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
         padding: v.$gutter*1.5;
         font-size: 1.2em;
         border-radius: 5px;
@@ -113,4 +190,57 @@
       }
     }    
   }
+<<<<<<< HEAD
 }
+=======
+  @media (min-width: 760px){
+    .contact{
+      height: auto;
+      &__title{
+        font-size: 3em;
+        margin: 0 0;
+      }
+      &__text{
+        font-size: 1.2em;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: v.$gutter;
+      }
+      &__form{
+        &__block__first{
+          flex-direction: row;
+          &__civility{
+            width: 15%;
+          }
+          &__lastname{
+            width: 40%;
+            padding: v.$gutter*1.1 ;
+          }
+          &__firstname{
+            width: 40%;
+            padding: v.$gutter*1.1 ;
+          }
+        }
+        &__block__second{
+          flex-direction: row;
+          &__email{
+            width: 32%;
+            padding: v.$gutter*1.1 ;
+          }
+          &__subject{
+            width: 65%;
+            padding: v.$gutter*1.1 ;
+          }
+        }
+        &__block__third{
+          &__content{
+            width: 100%;
+            height: 180px;
+          }
+        }
+      }
+    }
+    
+  }
+}
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5

@@ -1,0 +1,72 @@
+@use 'src/styles/vars' as v;
+
+
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  
+  &__picture{
+    background-image: v.$picture;
+    width: 90%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    margin-top: v.$gutter*5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title{
+      font-family: 'Anton';
+      font-size: 10em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+    } 
+  }
+
+  &__slogan{
+    font-size: 2em;
+    font-weight: bold;
+    margin: v.$gutter*2 0;
+  }
+  @media (max-width: 1024px) {
+    .home__picture{
+      margin-top: v.$gutter*3;
+    }
+    .home__picture__title{
+      font-size: 5em;
+    }
+    .home__slogan{
+      font-size: 1.5em;
+      margin: v.$gutter;
+    }
+  }
+  @media (max-width: 768px) {
+    .home__picture{
+      margin-top: v.$gutter;
+    }
+    .home__picture__title{
+      font-size: 4em;
+    }
+    .home__slogan{
+      font-size: 1.5em;
+      margin: v.$gutter;
+    }
+  }
+  @media (max-width: 400px) {
+    .home__picture{
+      margin-top: v.$gutter;
+    }
+    .home__picture__title{
+      font-size: 3em;
+    }
+    .home__slogan{
+      font-size: 1em;
+      margin: v.$gutter/2;
+    }
+  }
+}

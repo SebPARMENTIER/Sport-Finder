@@ -13,7 +13,11 @@
     height: v.$gutter*10;
     background-size: cover;
     background-position: center;
+<<<<<<< HEAD
     margin-top: v.$gutter*2;
+=======
+    margin-top: v.$gutter;
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,4 +30,16 @@
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
     } 
   }
+<<<<<<< HEAD
 }
+=======
+  @media (max-width: 760px){
+    .banner__picture{
+      height: v.$gutter*5;
+    }
+    .banner__picture__title{
+      font-size: 3em;
+    }
+  }
+}
+>>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5

@@ -1,0 +1,89 @@
+@use 'src/styles/vars';
+
+.header{
+  padding: vars.$gutter*1.6 vars.$gutter;
+  background: linear-gradient(vars.$secondary-color,75%, #59a1aa);
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: -20px;
+  color: vars.$text-color;
+  font-size: 1.5em;
+  align-items: center;
+
+  &-nav{
+
+  }
+  &-ol{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &-leftside{
+    padding-top: 0.5rem;
+    display: flex;
+    margin: 0 vars.$gutter;
+  }
+  &-rightside{
+    padding-top: 0.5rem;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    margin: 0 vars.$gutter;
+  }
+  &-accueil{
+   
+  }
+  &-logo{
+    position: absolute;
+    right: 40%;
+    left: 40%;
+    top: 0;
+    
+    &__img{
+      width: 2.5em;
+    }
+    
+    
+  }
+  &-signin{
+    margin-right: 1.2rem;
+  }
+  &-signup{
+    margin-right: 0.8rem;
+  }
+  @media (max-width: 430px){
+    .header-signin{
+      width: auto;
+      margin-right: 0;
+    }
+    .header-signup{
+      width: 0;
+      font-size: 0;
+      visibility: hidden;
+    }
+  }
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: vars.$text-color;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: vars.$text-color;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
