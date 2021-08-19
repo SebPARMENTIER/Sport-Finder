@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="283" height="195" view_box="0 0 283 195"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Wed, 18 Aug 2021 05:38:27</desc>
+
+<rect id="frame" x="0" y="0" width="283" height="195" fill="#ffffbf" stroke="none" stroke-width="0"/>
+
+<!-- Association écrit -->
+<line x1="157" y1="152" x2="240" y2="152" stroke="#66c2a5" stroke-width="2"/>
+<text x="192" y="169.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,1</text>
+<line x1="240" y1="51" x2="240" y2="152" stroke="#66c2a5" stroke-width="2"/>
+<text x="245.0" y="110" fill="#d53e4f" font-family="Verdana" font-size="12">0,N</text>
+<g id="association-écrit">
+	<path d="M 247 127 a 14 14 90 0 1 14 14 V 152 h -42 V 141 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 261 152.0 v 11 a 14 14 90 0 1 -14 14 H 233 a 14 14 90 0 1 -14 -14 V 152.0 H 42" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="219" y="127" width="42" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="219" y1="152" x2="261" y2="152" stroke="#66c2a5" stroke-width="1"/>
+	<text x="226" y="144.7" fill="#000000" font-family="Verdana" font-size="12">écrit</text>
+</g>
+
+<!-- Association possède -->
+<line x1="63" y1="51" x2="63" y2="152" stroke="#66c2a5" stroke-width="2"/>
+<text x="68.0" y="102" fill="#d53e4f" font-family="Verdana" font-size="12">0,N</text>
+<line x1="157" y1="152" x2="63" y2="152" stroke="#66c2a5" stroke-width="2"/>
+<text x="101" y="169.0" fill="#d53e4f" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-possède">
+	<path d="M 81 127 a 14 14 90 0 1 14 14 V 152 h -64 V 141 a 14 14 90 0 1 14 -14" fill="#abdda4" stroke="#abdda4" stroke-width="0"/>
+	<path d="M 95 152.0 v 11 a 14 14 90 0 1 -14 14 H 45 a 14 14 90 0 1 -14 -14 V 152.0 H 64" fill="#e6f598" stroke="#e6f598" stroke-width="0"/>
+	<rect x="31" y="127" width="64" height="50" fill="none" rx="14" stroke="#66c2a5" stroke-width="2"/>
+	<line x1="31" y1="152" x2="95" y2="152" stroke="#66c2a5" stroke-width="1"/>
+	<text x="38" y="144.7" fill="#000000" font-family="Verdana" font-size="12">possède</text>
+</g>
+
+<!-- Entity REVIEW -->
+<g id="entity-REVIEW">
+	<g id="frame-REVIEW">
+		<rect x="127" y="118" width="60" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="127" y="143.0" width="60" height="43" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="127" y="118" width="60" height="68" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="127" y1="143" x2="187" y2="143" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="132" y="135.7" fill="#000000" font-family="Verdana" font-size="12">REVIEW</text>
+	<text x="132" y="160.8" fill="#000000" font-family="Verdana" font-size="12">star</text>
+	<text x="132" y="177.8" fill="#000000" font-family="Verdana" font-size="12">content</text>
+</g>
+
+<!-- Entity USER -->
+<g id="entity-USER">
+	<g id="frame-USER">
+		<rect x="206" y="9" width="68" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="206" y="34.0" width="68" height="59" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="206" y="9" width="68" height="84" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="206" y1="34" x2="274" y2="34" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="223" y="26.7" fill="#000000" font-family="Verdana" font-size="12">USER</text>
+	<text x="211" y="51.8" fill="#000000" font-family="Verdana" font-size="12">pseudo</text>
+	<line x1="211" y1="54" x2="255" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="211" y="68.8" fill="#000000" font-family="Verdana" font-size="12">email</text>
+	<text x="211" y="85.8" fill="#000000" font-family="Verdana" font-size="12">password</text>
+</g>
+
+<!-- Entity ASSOCIATION -->
+<g id="entity-ASSOCIATION">
+	<g id="frame-ASSOCIATION">
+		<rect x="9" y="17" width="108" height="25" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+		<rect x="9" y="42.0" width="108" height="43" fill="#fee08b" stroke="#fee08b" stroke-width="0"/>
+		<rect x="9" y="17" width="108" height="68" fill="none" stroke="#f46d43" stroke-width="2"/>
+		<line x1="9" y1="42" x2="117" y2="42" stroke="#f46d43" stroke-width="1"/>
+	</g>
+	<text x="19" y="34.7" fill="#000000" font-family="Verdana" font-size="12">ASSOCIATION</text>
+	<text x="14" y="59.8" fill="#000000" font-family="Verdana" font-size="12">key_association</text>
+	<line x1="14" y1="62" x2="111" y2="62" stroke="#000000" stroke-width="1"/>
+	<text x="14" y="76.8" fill="#000000" font-family="Verdana" font-size="12">name</text>
+</g>
+</svg>
