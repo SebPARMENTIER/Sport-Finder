@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchForm from 'src/components/SearchForm';
+import ModalEditPassword from 'src/components/ModalEditPassword';
 
 // import PropTypes from 'prop-types';
 
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
       <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
       <SearchForm />
+      <ModalEditPassword />
     </main>
   );
 }

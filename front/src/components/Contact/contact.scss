@@ -3,6 +3,7 @@
 .contact {
   text-align: center;  
   height: auto;
+  padding: v.$gutter*2 0 v.$gutter*5 0;
 
   &__title {
     font-size: v.$gutter*2;
@@ -129,11 +130,12 @@
         font-size: 1.2em;
         width: 90%;
         margin: 0 auto;
-        margin-bottom: v.$gutter;
+        margin-bottom: v.$gutter*2;
       }
       &__form{
         &__block__first{
           flex-direction: row;
+          margin-bottom: v.$gutter;
           &__civility{
             width: 15%;
           }
@@ -148,6 +150,7 @@
         }
         &__block__second{
           flex-direction: row;
+          margin-bottom: v.$gutter;
           &__email{
             width: 32%;
             padding: v.$gutter*1.1 ;
@@ -158,10 +161,12 @@
           }
         }
         &__block__third{
+          margin-bottom: v.$gutter;
           &__content{
             width: 100%;
             height: 180px;
           }
+          
         }
       }
     }

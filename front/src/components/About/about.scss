@@ -1,23 +1,36 @@
-@use 'src/styles/vars';
+@use 'src/styles/vars' as v;
 
 .about {  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   text-align: center;  
+  height: auto;
+  padding: v.$gutter*2 0 v.$gutter*5 0; 
 
   &__title {
-    font-size: 2rem;
-    color: vars.$text-color;
+    font-size: 3em;
+    color: v.$text-color;
     font-weight: bold;
     padding: 2rem;
+    height: auto;
   }
 
   &__role {
-    color: vars.$secondary-color;
-    padding: 1rem;
+    color: v.$secondary-color;
+    padding: 1.5rem;
+    height: 20%;
 
     &__name {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: bold;
       padding-bottom: 0.8rem;
     }
+    &__desc{
+      font-size: 1.2em;
+    }
+  }
+  .last {
+    margin-bottom: v.$gutter;
   }
 }

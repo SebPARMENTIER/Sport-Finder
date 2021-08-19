@@ -22,7 +22,7 @@ const About = () => (
       <div className="about__role__name">Giovanni</div>
       <div className="about__role__desc">Git Master - Référent technique API RNA</div>
     </div>
-    <div className="about__role">
+    <div className="about__role last">
       <div className="about__role__name">Sébastien</div>
       <div className="about__role__desc">Product Owner - Scrum Master</div>
     </div>

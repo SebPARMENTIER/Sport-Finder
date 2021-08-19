@@ -2,8 +2,7 @@
 
 .searchForm{
   width: 100%;
-  height: 100px;
-  margin-top: v.$gutter;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +11,7 @@
   &__inputs{
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100px;
 
@@ -29,12 +29,13 @@
   &__button{
     width: 20%;
     padding: v.$gutter*0.7;
-    margin-top: v.$gutter*2;
+    margin-top: v.$gutter*1;
     color: v.$text-color;
     background-color: v.$secondary-color;
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
+    margin-bottom: v.$gutter;
   }
   @media (max-width: 1024px) {
     .searchForm{
