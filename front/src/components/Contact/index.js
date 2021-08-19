@@ -1,5 +1,6 @@
 // == Import : npm
 import React from 'react';
+import Banner from 'src/components/Banner';
 
 // == Import : local
 import './contact.scss';
@@ -9,6 +10,7 @@ const Contact = () => {
 
   return (
     <div className="contact">
+      <Banner />
       <h1 className="contact__title">Nous contacter</h1>
       <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
       <form className="contact__form">
@@ -59,7 +61,7 @@ const Contact = () => {
               className="contact__form__block__third__content"
               placeholder="Veuillez saisir votre message"
               cols="30"
-              rows="5"
+              rows="3"
               maxLength="255"
             >
             </textarea>

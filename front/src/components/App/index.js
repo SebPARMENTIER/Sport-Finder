@@ -10,6 +10,7 @@ import About from 'src/components/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
 
+
 // == Import
 import './app.scss';
 

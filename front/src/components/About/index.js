@@ -1,5 +1,6 @@
 // == Import : npm
 import React from 'react';
+import Banner from 'src/components/Banner';
 
 // == Import : local
 import './about.scss';
@@ -7,6 +8,7 @@ import './about.scss';
 // == Component
 const About = () => (
   <div className="about">
+    <Banner />
     <h1 className="about__title">Présentation de l'équipe</h1>
     <div className="about__role">
       <div className="about__role__name">Anthony</div>

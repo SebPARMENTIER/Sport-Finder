@@ -14,7 +14,7 @@ const Footer = () => {
       <p className="footer__aboutus hover-underline-animation">
       <Link to="/about">About us</Link>
       </p>
-      <p className="footer__copyright">Sport finder, l'outil qu'il te faut !  - {year} ©</p>
+      <p className="footer__copyright">Sport finder - {year} ©</p>
     </footer>
   );
 };
