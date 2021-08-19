@@ -4,6 +4,7 @@ import ModalEditPassword from 'src/components/ModalEditPassword';
 import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalSignIn from 'src/components/ModalSignIn';
 import ModalSignUp from 'src/components/ModalSignUp';
+import ModalPrivacyData from 'src/components/ModalPrivacyData';
 
 
 // import PropTypes from 'prop-types';
@@ -21,7 +22,8 @@ export default function Home() {
       {/* <ModalEditPassword /> */}
       {/* <ModalEditProfil /> */}
       {/* <ModalSignIn /> */}
-      {/* <ModalSignUp /> */}
+      <ModalSignUp />
+      {/* <ModalPrivacyData /> */}
       
     </main>
   );

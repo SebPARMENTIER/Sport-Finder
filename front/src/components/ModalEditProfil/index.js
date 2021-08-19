@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 // import PropTypes from 'prop-types';
 
 import './modalEditProfil.scss';
@@ -8,6 +9,7 @@ ModalEditProfil() {
   return (
     <container className='modalEditProfil'>
       <div className='modalEditProfil__container'>
+        <IoIosCloseCircleOutline className="modalEditProfil__container__close"/>
         <h1 className='modalEditProfil__container__title'>Modifier votre profil</h1>
         <form className='modalEditProfil__container__form'>
           <div className='modalEditProfil__container__form__edit'>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 // import PropTypes from 'prop-types';
 
 import './modalSignUp.scss';
@@ -7,6 +8,7 @@ export default function ModalSignUp() {
   return (
     <container className='modalSignUp'>
       <div className='modalSignUp__container'>
+        <IoIosCloseCircleOutline className="modalSignUp__container__close"/>
         <h1 className='modalSignUp__container__title'>Inscription</h1>
         <form className='modalSignUp__container__form'>
           <div className="modalSignUp__container__form__first">

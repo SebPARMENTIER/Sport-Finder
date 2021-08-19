@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosCloseCircleOutline } from "react-icons/io";
 // import PropTypes from 'prop-types';
 
 import './modalPrivacyData.scss';
@@ -6,11 +7,13 @@ import './modalPrivacyData.scss';
 export default function ModalPrivacyData() {
   return (
     <container className='modalPrivacyData'>
-      <h1 className='modalPrivacyData__title'>Privacy & Data</h1>
+      <IoIosCloseCircleOutline className="modalPrivacyData__close"/>
+      <h1 className='modalPrivacyData__title'>Privacy & Data</h1>      
       <div className='modalPrivacyData__container'>
         <h2 className='modalPrivacyData__container__h2'>
           Privacy Policy
         </h2>
+        
         <p className='modalPrivacyData__container__text'>
           Your privacy is important to us. It is Sport Finder's policy to respect your privacy and comply 
           with any applicable law and regulation regarding any personal information we may collect about you, 
