@@ -1,0 +1,42 @@
+@use 'src/styles/vars' as v;
+
+.settings{
+  background-color: v.$secondary-color;
+  width: 230px;
+  height: 120px;
+  position: fixed;
+  right: -30px;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 0 15px;
+  padding-right: 30px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.56,-0.69, 0.42, 1.73);
+  &--open{
+    transform: translateX(0);
+    transition: transform 1s cubic-bezier(0.56,-0.69, 0.42, 1.73);
+  }
+
+  &__profil{
+    font-size: 1em;
+    border: none;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    padding-bottom: v.$gutter;
+    border-bottom: 3px solid v.$text-color;
+    width: 80%;
+    
+  }
+  &__logOut{
+    font-size: 1em;
+    border: none;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    margin-top: v.$gutter;
+    width: 80%;
+    
+  }
+}

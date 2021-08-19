@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Header from 'src/components/Header'
+import Header from 'src/containers/Header'
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Profil from 'src/components/Profil';
