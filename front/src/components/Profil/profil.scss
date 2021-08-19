@@ -1,0 +1,100 @@
+@use 'src/styles/vars' as v;
+
+.profil{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  &__title{
+    font-family: 'Anton';
+    font-size: 2.5em;
+    color: v.$text-color;
+    text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+    margin: v.$gutter*3 0 v.$gutter*5 0;
+  }
+  &__name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: v.$gutter*2;
+  }
+  &__button{
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: v.$gutter 0;
+
+    &__edit{
+      font-size: 1em;
+      padding: v.$gutter;
+      border: none;
+      border-radius: 5px;
+      background-color: v.$secondary-color;
+      color: v.$text-color
+    }
+  }
+
+  &__logOut{
+    width: 50%;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    padding: v.$gutter;
+    background-color: v.$secondary-color;
+    color: v.$text-color;
+    margin-top: v.$gutter*3;
+  }
+  @media (max-width: 321px){
+    .profil__title{
+      font-size: 2em;
+      margin: v.$gutter*5 0;
+    }
+  }
+  @media (min-width: 430px){
+    .profil__title{
+      font-size: 5em;
+      margin: v.$gutter*3 0;
+    }
+    .profil__name{
+      font-size: 2.5em;
+    }
+    .profil__button{
+      width: 50%;
+      height: 40%;
+      &__edit{
+        font-size: 2.5em;
+      }
+    }
+
+    .profil__logOut{
+      font-size: 2.5em;
+      width: 30%;
+    }
+    
+  }
+  @media (min-width: 760px){
+    .profil__title{
+      font-size: 4em;
+      margin: v.$gutter*3 0;
+    }
+    .profil__name{
+      font-size: 2em;
+    }
+    .profil__button{
+      width: 60%;
+      height: 30%;
+      &__edit{
+        font-size: 2em;
+      }
+    }
+
+    .profil__logOut{
+      font-size: 2em;
+      width: 30%;
+    }
+    
+  }
+
+}
