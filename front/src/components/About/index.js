@@ -1,14 +1,8 @@
 // == Import : npm
 import React from 'react';
-<<<<<<< HEAD
-
-// == Import : local
-import Banner from 'src/components/Banner';
-=======
 import Banner from 'src/components/Banner';
 
 // == Import : local
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
 import './about.scss';
 
 // == Component
@@ -35,8 +29,4 @@ const About = () => (
   </div>
 )
 
-<<<<<<< HEAD
 export default About;
-=======
-export default About;
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5

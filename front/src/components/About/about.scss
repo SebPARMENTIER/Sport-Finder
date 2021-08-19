@@ -1,24 +1,9 @@
-<<<<<<< HEAD
-@use 'src/styles/vars' as v;
-=======
 @use 'src/styles/vars';
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
 
 .about {  
   text-align: center;  
 
   &__title {
-<<<<<<< HEAD
-    font-size: v.$gutter*2;
-    color: v.$text-color;
-    font-weight: bold;
-    padding: v.$gutter*2;
-  }
-
-  &__role {
-    color: v.$secondary-color;
-    padding: v.$gutter;
-=======
     font-size: 2rem;
     color: vars.$text-color;
     font-weight: bold;
@@ -28,7 +13,6 @@
   &__role {
     color: vars.$secondary-color;
     padding: 1rem;
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
 
     &__name {
       font-size: 1.2rem;
@@ -36,8 +20,4 @@
       padding-bottom: 0.8rem;
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5

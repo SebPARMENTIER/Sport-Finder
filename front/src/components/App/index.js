@@ -12,21 +12,12 @@ import ModalEditProfil from '../ModalEditProfil';
 
 
 // == Import
-<<<<<<< HEAD
-import Error from 'src/components/Error';
-import './app.scss';
-=======
 import './app.scss';
 
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
 
 // == Composant
 const App = () => (
   <div className="app">
-<<<<<<< HEAD
-    <Error />
-   
-=======
     <Header />
     <Switch>
       <Route exact path='/' component={Home}></Route>
@@ -37,7 +28,6 @@ const App = () => (
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
       </Switch>
     <Footer />
->>>>>>> bd55bd1cf012b6eb5ec069beec06542f29e01ba5
   </div>
 );
 
