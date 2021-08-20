@@ -21,6 +21,7 @@ export const initialState = {
   openLogUp: false,
   isCreateUserError: false,
   isError: false,
+  desable: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -44,11 +45,13 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
+          desable: !state.desable
         };
       }
       return{
         ...state, 
         openLogIn: !state.openLogIn,
+        desable: !state.desable
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
@@ -58,11 +61,13 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
+          desable: !state.desable
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
+        desable: !state.desable
       }
     };
     case CREATE_USER_ERROR:

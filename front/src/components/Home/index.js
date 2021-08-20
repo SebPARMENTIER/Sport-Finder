@@ -14,24 +14,28 @@ import './home.scss';
 const Home = ({
   openLogIn,
   openLogUp,
-}) => (
-  <main className='home'>
-    <div className='home__picture'>
-      <h1 className='home__picture__title'>SPORT FINDER</h1>
-    </div>
-    <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
-    <SearchForm />
-    { openLogIn && <ModalSignIn />}
-    { openLogUp && <ModalSignUp />}
+}) => {
+  
+  return (
+    <main className='home'>
+      <div className='home__picture'>
+        <h1 className='home__picture__title'>SPORT FINDER</h1>
+      </div>
+      <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
+      <SearchForm />
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
 
-    {/* <ModalEditPassword /> */}
-    {/* <ModalEditProfil /> */}
-    {/* <ModalSignIn /> */}
-    {/* <ModalSignUp /> */}
-    {/* <ModalPrivacyData /> */}
-    
-  </main>
-);
+      {/* <ModalEditPassword /> */}
+      {/* <ModalEditProfil /> */}
+      {/* <ModalSignIn /> */}
+      {/* <ModalSignUp /> */}
+      {/* <ModalPrivacyData /> */}
+      
+    </main>
+  )
+  
+};
 
 
 Home.propTypes = {

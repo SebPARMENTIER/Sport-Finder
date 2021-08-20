@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from 'src/containers/Header'
-import Footer from 'src/components/Footer';
+import Footer from 'src/containers/Footer';
 import Home from 'src/containers/Home';
 import Profil from 'src/components/Profil';
 import Contact from 'src/containers/Contact';
@@ -17,7 +17,7 @@ import './app.scss';
 
 
 // == Composant
-const App = () => (
+const App = ({ }) => (
   <div className="app">
     <Header />
     <Switch>
@@ -27,11 +27,13 @@ const App = () => (
       <Route exact path='/profil' component={Profil}></Route>
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
-      </Switch>
+    </Switch>
+    
     <Footer />
     {/* <ModalSignUp /> */}
   </div>
 );
+
 
 // == Export
 export default App;

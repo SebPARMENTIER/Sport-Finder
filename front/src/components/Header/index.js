@@ -12,6 +12,7 @@ const Header = ({
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
+  desable,
 }) => {
   const handleOnClickArrow = () => {
     console.log('click');
@@ -29,21 +30,41 @@ const Header = ({
     <div className='header'>
     <nav className='header-nav'>
       <div className='header-ol'>
-      <div className='header-leftside'>
-        <div className='header-accueil hover-underline-animation'>
-          <Link to="/">Accueil</Link>
+      
+      { !desable && (
+        <div className='header-leftside'>
+          <div className='header-accueil hover-underline-animation'>
+            <Link to="/">Accueil</Link>
+          </div>
         </div>
-      </div>
+      )}
+      { desable && (
+        <div className='header-leftside'>
+          <div className='header-accueil hover-underline-animation'>
+            <p>Accueil</p>
+          </div>
+        </div>
+      )}
+      { !desable && (
       <div className='header-logo'>
         <Link to="/">
           <img className='header-logo__img' src={logo} alt="sport finder logo" />
         </Link>
-        
       </div>
+      )}
+      { desable && (
+      <div className='header-logo'>
+        <p>
+          <img className='header-logo__img' src={logo} alt="sport finder logo" />
+        </p>
+      </div>
+      )}
         
-          { !isLogged && (
+          { !isLogged  && (
+            
             <div className='header-rightside'>
               <button 
+                key='1'
                 type="submit"
                 className='header-signin hover-underline-animation'
                 onClick={handleOnClickLogIn}
@@ -51,9 +72,50 @@ const Header = ({
                 Connexion
               </button>
               <button 
+                key='2'
                 type="submit"
                 className='header-signup hover-underline-animation'
                 onClick={handleOnClickLogUp}
+              >
+                Inscription
+              </button>
+            </div>
+            
+            
+          )}
+          { !desable && (
+            <div className='header-rightside'>
+            <button 
+              key='3'
+              type="submit"
+              className='header-signin hover-underline-animation'
+              onClick={handleOnClickLogIn}
+            >
+              Connexion
+            </button>
+            <button 
+              key='4'
+              type="submit"
+              className='header-signup hover-underline-animation'
+              onClick={handleOnClickLogUp}
+            >
+              Inscription
+            </button>
+          </div>
+          )}
+          { desable && (
+            <div className='header-rightside'>
+              <button 
+              key='5'
+                type="submit"
+                className='header-signin hover-underline-animation'
+              >
+                Connexion
+              </button>
+              <button 
+              key='6'
+                type="submit"
+                className='header-signup hover-underline-animation'
               >
                 Inscription
               </button>
@@ -84,6 +146,7 @@ const Header = ({
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
+  desable: PropTypes.bool.isRequired,
 }
 
 export default Header;
