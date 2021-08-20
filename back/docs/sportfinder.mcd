@@ -1,7 +1,0 @@
-ASSOCIATION: key_association, name
-:
-USER: pseudo, email, password
-
-possède, 0N ASSOCIATION, 11 REVIEW
-REVIEW: _star, content
-écrit, 11 REVIEW, 0N USER
