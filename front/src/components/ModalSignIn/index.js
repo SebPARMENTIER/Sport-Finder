@@ -1,29 +1,49 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
 import './modalSignIn.scss';
 
-export default function ModalSignin() {
+const ModalSignin = ({
+  email,
+  password,
+  changeField,
+  handleLogin,
+  isError,
+}) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleLogin();
+  };
   return (
     <div className='modalSignIn'>
       <div className='modalSignIn__container'>
         <IoIosCloseCircleOutline className="modalSignIn__container__close"/>
         <h1 className='modalSignIn__container__title'>Connexion</h1>
-        <form className='modalSignIn__container__form'>
+        <form 
+          className='modalSignIn__container__form'
+          onSubmit={handleSubmit}
+        >
           <Field
             name="email"
             className="modalSignIn__container__form__input"
             type="text"
             placeholder="Email..."
+            onChange={changeField}
+            value={email}
           />
           <Field
             name="password"
             className="modalSignIn__container__form__input"
-            type="text"
+            type="password"
             placeholder="Mot de passe..."
+            onChange={changeField}
+            value={password}
           />
+          {isError && (
+            <p className="modalSignIn__form__error">Vérifiez vos identifiants de connexion</p>
+          )}
           <button
             type="submit"
             className="modalSignIn__container__form__button"
@@ -38,6 +58,12 @@ export default function ModalSignin() {
   );
 }
 
-// ModalSignin.propTypes = {
+ModalSignin.propTypes = {
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  changeField: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired,  
+  isError: PropTypes.bool.isRequired,
+};
 
-// };
+export default ModalSignin;

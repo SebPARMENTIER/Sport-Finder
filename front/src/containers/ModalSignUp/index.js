@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
   passwordConfirm: state.user.passwordConfirm,
+  isCreateUserError: state.user.isCreateUserError,
 });
 
 const mapDispatchToProps = (dispatch) => ({
