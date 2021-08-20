@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { 
-  CREATE_USER_SUCCESS,
+  CREATE_USER,
   SUBMIT_LOGIN,
   createUserSuccessAction,
   createUserErrorAction,
@@ -10,7 +10,7 @@ import {
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
-  if (action.type === CREATE_USER_SUCCESS) {
+  if (action.type === CREATE_USER) {
     const state = store.getState();
 
     const config = {

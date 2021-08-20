@@ -12,6 +12,7 @@ const ModalSignUp = ({
   passwordConfirm,
   changeField,
   handleCreateUser,
+  isCreateUserError,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -55,6 +56,7 @@ const ModalSignUp = ({
               value={passwordConfirm}
             />
           </div>
+          {isCreateUserError && <p className="modalSignUp__form__error">Vérifiez votre saisie</p>}
           <button
             type="submit"
             className="modalSignUp__container__form__button"
@@ -75,6 +77,7 @@ ModalSignUp.propTypes = {
   passwordConfirm: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleCreateUser: PropTypes.func.isRequired,
+  isCreateUserError: PropTypes.bool.isRequired,
 };
 
 export default ModalSignUp;
