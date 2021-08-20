@@ -4,12 +4,12 @@ import {
 } from 'src/actions/contact';
 
 export const initialState = {
-  //civility: '',
+  civility: '',
   lastname: '',
   firstname: '',
   email: '',
   subject: '',
-  //content: '',
+  content: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
