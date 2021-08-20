@@ -12,6 +12,7 @@ const ModalSignin = ({
   handleLogin,
   isError,
   onClickLogUp,
+  onClickLogIn,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,10 +22,19 @@ const ModalSignin = ({
     console.log('click');
     onClickLogUp();
   }
+  const handleOnClickClose = () => {
+    console.log('click');
+    onClickLogIn();
+  }
   return (
     <div className='modalSignIn'>
       <div className='modalSignIn__container'>
-        <IoIosCloseCircleOutline className="modalSignIn__container__close"/>
+        <button
+          type="submit"
+          onClick={handleOnClickClose}
+        >
+          <IoIosCloseCircleOutline className="modalSignIn__container__close"/>
+        </button>
         <h1 className='modalSignIn__container__title'>Connexion</h1>
         <form 
           className='modalSignIn__container__form'
@@ -79,6 +89,7 @@ ModalSignin.propTypes = {
   handleLogin: PropTypes.func.isRequired,  
   isError: PropTypes.bool.isRequired,
   onClickLogUp: PropTypes.func.isRequired,
+  onClickLogIn: PropTypes.func.isRequired,
 };
 
 export default ModalSignin;

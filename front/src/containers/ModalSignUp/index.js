@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import ModalSignUp from 'src/components/ModalSignUp';
 
-import { createUserSetInputValueAction, createUserAction } from 'src/actions/user';
+import {
+  createUserSetInputValueAction,
+  createUserAction,
+  clickOnButtonLogUp
+} from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   pseudo: state.user.pseudo,
@@ -17,6 +21,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleCreateUser: () => {
     dispatch(createUserAction());
+  },
+  onClickLogUp: () => {
+    console.log('in the container Header');
+    const action = clickOnButtonLogUp();
+    dispatch(action);
   },
 });
 
