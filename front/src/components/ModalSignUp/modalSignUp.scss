@@ -5,23 +5,32 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100vw;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top: 63px;
   &__container{
     background-color: v.$secondary-color;
     width: 90%;
     height: auto;
     position: absolute;
-    top: 25%;
+    top: 20%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 7px 21px 15px rgba(0,0,0,0.3);
     &__close{
-      color: v.$text-color;
-      font-size: 2em;
+      border: none;
       position: absolute;
       right: 0;
       top: 0;
-      margin: 15px;
+      background-color: v.$secondary-color;
+      &__circle{
+        color: v.$text-color;
+        font-size: 2em;
+        
+        margin: 15px;
+      }
     }
     &__title{
       text-align: center;

@@ -8,6 +8,8 @@ import {
   LOGIN_ERROR,
   CLICK_ON_BUTTON_LOG_IN,
   CLICK_ON_BUTTON_LOG_UP,
+  CLICK_ON_BUTTON_CLOSE_SIGN_IN,
+  CLICK_ON_BUTTON_CLOSE_SIGN_UP,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -45,13 +47,13 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
-          desable: !state.desable
+          desable: true,
         };
       }
       return{
         ...state, 
         openLogIn: !state.openLogIn,
-        desable: !state.desable
+        desable: true,
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
@@ -61,15 +63,27 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
-          desable: !state.desable
+          desable: true
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: !state.desable
+        desable: true
       }
     };
+    case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
+      return {
+        ...state,
+        openLogIn: !state.openLogIn,
+        desable: false
+      }
+    case CLICK_ON_BUTTON_CLOSE_SIGN_UP: 
+      return {
+        ...state,
+        openLogUp: !state.openLogUp,
+        desable: false
+      }
     case CREATE_USER_ERROR:
       return {
         ...state,

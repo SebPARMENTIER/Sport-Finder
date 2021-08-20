@@ -4,7 +4,7 @@ import ModalSignUp from 'src/components/ModalSignUp';
 import {
   createUserSetInputValueAction,
   createUserAction,
-  clickOnButtonLogUp
+  clickOnButtonCloseSignUp,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -22,9 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
   handleCreateUser: () => {
     dispatch(createUserAction());
   },
-  onClickLogUp: () => {
+  onClickCloseSignUp: () => {
     console.log('in the container Header');
-    const action = clickOnButtonLogUp();
+    const action = clickOnButtonCloseSignUp();
     dispatch(action);
   },
 });

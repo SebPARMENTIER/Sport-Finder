@@ -13,24 +13,25 @@ const ModalSignUp = ({
   changeField,
   handleCreateUser,
   isCreateUserError,
-  onClickLogUp
+  onClickCloseSignUp
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCreateUser();
   };
-  const handleOnClickClose = () => {
+  const handleOnClickCloseSignUp = () => {
     console.log('click');
-    onClickLogUp();
+    onClickCloseSignUp();
   }
   return (
     <div className='modalSignUp'>
       <div className='modalSignUp__container'>
         <button
           type="submit"
-          onClick={handleOnClickClose}
+          className="modalSignUp__container__close"
+          onClick={handleOnClickCloseSignUp}
         >
-          <IoIosCloseCircleOutline className="modalSignUp__container__close"/>
+          <IoIosCloseCircleOutline className="modalSignUp__container__close__circle"/>
         </button>
         
         <h1 className='modalSignUp__container__title'>Inscription</h1>
@@ -89,7 +90,7 @@ ModalSignUp.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleCreateUser: PropTypes.func.isRequired,
   isCreateUserError: PropTypes.bool.isRequired,
-  onClickLogUp: PropTypes.func.isRequired,
+  onClickCloseSignUp: PropTypes.func.isRequired,
 };
 
 export default ModalSignUp;

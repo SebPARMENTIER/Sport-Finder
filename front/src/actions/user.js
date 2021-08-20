@@ -9,6 +9,8 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const CLICK_ON_BUTTON_LOG_IN = 'CLICK_ON_BUTTON_LOG_IN';
 export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
+export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
+export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -30,6 +32,14 @@ export const clickOnButtonLogUp = () => ({
   type: CLICK_ON_BUTTON_LOG_UP,
 });
 
+export const clickOnButtonCloseSignIn = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_SIGN_IN,
+});
+
+
+export const clickOnButtonCloseSignUp = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_SIGN_UP,
+});
 
 
 export const createUserSuccessAction = (data) => ({ type: CREATE_USER_SUCCESS, data });

@@ -5,7 +5,7 @@ import {
   createSetInputValueAction,
   createSubmitAction,
   clickOnButtonLogUp,
-  clickOnButtonLogIn,
+  clickOnButtonCloseSignIn,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -26,9 +26,9 @@ const mapDispatchToProps = (dispatch) => ({
     const action = clickOnButtonLogUp();
     dispatch(action);
   },
-  onClickLogIn: () => {
+  onClickCloseSignIn: () => {
     console.log('in the container Header');
-    const action = clickOnButtonLogIn();
+    const action = clickOnButtonCloseSignIn();
     dispatch(action);
   },
 });
