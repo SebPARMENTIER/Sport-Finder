@@ -39,17 +39,31 @@ const reducer = (state = initialState, action = {}) => {
     };
     case CLICK_ON_BUTTON_LOG_IN: {
       console.log('in the reducer');
-      return {
-        ...state,
+      if( state.openLogUp === true){
+        return {
+          ...state,
+          openLogIn: !state.openLogIn,
+          openLogUp: !state.openLogUp,
+        };
+      }
+      return{
+        ...state, 
         openLogIn: !state.openLogIn,
-      };
+      }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
       console.log('in the reducer');
+      if( state.openLogIn === true){
+        return {
+          ...state,
+          openLogUp: !state.openLogUp,
+          openLogIn: !state.openLogIn,
+        };
+      }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-      };
+      }
     };
     case CREATE_USER_ERROR:
       return {
