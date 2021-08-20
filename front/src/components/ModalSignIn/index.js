@@ -11,11 +11,16 @@ const ModalSignin = ({
   changeField,
   handleLogin,
   isError,
+  onClickLogUp,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleLogin();
   };
+  const handleOnClickLogUp = () => {
+    console.log('click');
+    onClickLogUp();
+  }
   return (
     <div className='modalSignIn'>
       <div className='modalSignIn__container'>
@@ -54,7 +59,13 @@ const ModalSignin = ({
             Valider
           </button>
         </form>
-        <input className='modalSignIn__container__button' type="button" value="Inscription" />
+        <button
+          type="submit"
+          className='modalSignIn__container__button'
+          onClick={handleOnClickLogUp}
+        >
+          Inscription
+        </button>
       </div>
       
     </div>
@@ -67,6 +78,7 @@ ModalSignin.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,  
   isError: PropTypes.bool.isRequired,
+  onClickLogUp: PropTypes.func.isRequired,
 };
 
 export default ModalSignin;

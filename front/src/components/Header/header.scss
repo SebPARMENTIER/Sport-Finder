@@ -80,6 +80,14 @@
       width: 0;
       font-size: 0;
       visibility: hidden;
+      position: fixed;
+      right: -10px;
+    }
+    .header-leftside{
+      margin: 0;
+    }
+    .header-rightside{
+      margin: 0;
     }
   }
 }

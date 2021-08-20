@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ModalSignIn from 'src/components/ModalSignIn';
 
-import { createSetInputValueAction, createSubmitAction } from 'src/actions/user';
+import { createSetInputValueAction, createSubmitAction, clickOnButtonLogUp } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
@@ -16,6 +16,11 @@ const mapDispatchToProps = (dispatch) => ({
   handleLogin: () => {
     dispatch(createSubmitAction());
   },
+  onClickLogUp: () => {
+    console.log('in the container Header');
+    const action = clickOnButtonLogUp();
+    dispatch(action);
+  }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalSignIn);
