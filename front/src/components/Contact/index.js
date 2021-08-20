@@ -1,12 +1,14 @@
 // == Import : npm
 import React from 'react';
 import Banner from 'src/components/Banner';
+import ModalSignIn from 'src/containers/ModalSignIn';
 
+import PropTypes from 'prop-types';
 // == Import : local
 import './contact.scss';
 
 // == Component
-const Contact = () => {
+const Contact = ({openLogIn}) => {
 
   return (
     <div className="contact">
@@ -70,8 +72,13 @@ const Contact = () => {
           </button>
         </div>        
       </form>
+      { openLogIn && <ModalSignIn />}
     </div>
   )
+}
+
+Contact.propTypes = {
+  openLogIn: PropTypes.bool.isRequired,
 }
 
 export default Contact;

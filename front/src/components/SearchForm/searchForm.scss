@@ -19,7 +19,7 @@
 
   &__button{
     width: 20%;
-    padding: v.$gutter*0.7;
+    padding: v.$gutter*0.7 v.$gutter;
     margin-top: v.$gutter*1;
     color: v.$text-color;
     background-color: v.$secondary-color;
@@ -44,7 +44,7 @@
 
   @media (max-width: 768px) {
     .searchForm{
-      margin-top: v.$gutter/2;
+      margin-top: v.$gutter*0.5;
     }
     .searchForm__inputs{
       flex-direction: column;

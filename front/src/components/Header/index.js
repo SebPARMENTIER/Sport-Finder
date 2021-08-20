@@ -9,41 +9,61 @@ import './header.scss';
 
 const Header = ({
   isLogged,
-  onClickButton,
+  onClickArrow,
+  OnClickLogIn,
 }) => {
-  const handleOnClick = () => {
+  const handleOnClickArrow = () => {
     console.log('click');
-    onClickButton();
+    onClickArrow();
   };
+  const handleOnClickLogIn = () => {
+    console.log('click');
+    OnClickLogIn();
+  };
+  const handleOnClickLogUp = () => {
+    console.log('click');
+  }
   return (
     <div className='header'>
     <nav className='header-nav'>
-      <ol className='header-ol'>
+      <div className='header-ol'>
       <div className='header-leftside'>
-        <li className='header-accueil hover-underline-animation'>
+        <div className='header-accueil hover-underline-animation'>
           <Link to="/">Accueil</Link>
-        </li>
+        </div>
       </div>
-      <li className='header-logo'>
+      <div className='header-logo'>
         <Link to="/">
           <img className='header-logo__img' src={logo} alt="sport finder logo" />
         </Link>
         
-      </li>
+      </div>
         
           { !isLogged && (
             <div className='header-rightside'>
-              <li className='header-signin hover-underline-animation'>Sign in</li>
-              <li className='header-signup hover-underline-animation'>Sign up</li>
+              <button 
+                type="submit"
+                className='header-signin hover-underline-animation'
+                onClick={handleOnClickLogIn}
+              >
+                Connexion
+              </button>
+              <button 
+                type="submit"
+                className='header-signup hover-underline-animation'
+                onClick={handleOnClickLogUp}
+              >
+                Inscription
+              </button>
             </div>
           )}
           { isLogged && (
             <div className='header-rightside'>
-              <li className='header-signup hover-underline-animation'>Bienvenue User</li>
+              <div className='header-signup hover-underline-animation'>Bienvenue User</div>
               <button 
               type="submit"
               className='header__open'
-              onClick={handleOnClick}
+              onClick={handleOnClickArrow}
               >
                 <IoIosArrowDown className='header__open__arrow'/>
               </button>
@@ -51,7 +71,7 @@ const Header = ({
             </div>
           )}
 
-      </ol>
+      </div>
     </nav>
     <Settings />
   </div>
@@ -61,7 +81,7 @@ const Header = ({
 
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
-  onClickButton: PropTypes.func.isRequired,
+  onClickArrow: PropTypes.func.isRequired,
 }
 
 export default Header;

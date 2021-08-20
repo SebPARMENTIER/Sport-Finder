@@ -3,10 +3,10 @@ import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from 'src/containers/Header'
 import Footer from 'src/components/Footer';
-import Home from 'src/components/Home';
+import Home from 'src/containers/Home';
 import Profil from 'src/components/Profil';
-import Contact from 'src/components/Contact';
-import About from 'src/components/About';
+import Contact from 'src/containers/Contact';
+import About from 'src/containers/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
 import ModalSignUp from 'src/containers/ModalSignUp';

@@ -6,6 +6,7 @@ import {
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
+  CLICK_ON_BUTTON_LOG_IN,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -15,6 +16,7 @@ export const initialState = {
   passwordConfirm: '',
   logged: false,
   openSettings: false,
+  openLogIn: false,
   isCreateUserError: false,
   isError: false,
 };
@@ -31,6 +33,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openSettings: !state.openSettings,
+      };
+    };
+    case CLICK_ON_BUTTON_LOG_IN: {
+      console.log('in the reducer');
+      return {
+        ...state,
+        openLogIn: !state.openLogIn,
       };
     };
     case CREATE_USER_ERROR:

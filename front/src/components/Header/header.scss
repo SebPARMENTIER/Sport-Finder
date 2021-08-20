@@ -5,6 +5,7 @@
   background: v.$secondary-color;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
   margin-top: -20px;
   color: v.$text-color;
@@ -32,8 +33,9 @@
     text-align: center;
   }
   &-leftside{
-    padding-top: 0.5rem;
+    padding-top: 0.7rem;
     display: flex;
+    justify-content: center;
     margin: 0 v.$gutter;
   }
   &-rightside{
@@ -44,7 +46,6 @@
     margin: 0 v.$gutter;
   }
   &-accueil{
-   
   }
   &-logo{
     position: absolute;
@@ -60,9 +61,15 @@
   }
   &-signin{
     margin-right: 1.2rem;
+    background-color: v.$secondary-color;
+    border: none;
+    font-size: 1em;
   }
   &-signup{
     margin-right: 0.8rem;
+    background-color: v.$secondary-color;
+    border: none;
+    font-size: 1em;
   }
   @media (max-width: 430px){
     .header-signin{

@@ -7,28 +7,33 @@ import ModalSignUp from 'src/containers/ModalSignUp';
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
 
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './home.scss';
 
-export default function Home() {
-  return (
-    <main className='home'>
-      <div className='home__picture'>
-        <h1 className='home__picture__title'>SPORT FINDER</h1>
-      </div>
-      <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
-      <SearchForm />
-      {/* <ModalEditPassword /> */}
-      {/* <ModalEditProfil /> */}
-      {/* <ModalSignIn /> */}
-      <ModalSignUp />
-      {/* <ModalPrivacyData /> */}
-      
-    </main>
-  );
-}
+const Home = ({
+  openLogIn,
+}) => (
+  <main className='home'>
+    <div className='home__picture'>
+      <h1 className='home__picture__title'>SPORT FINDER</h1>
+    </div>
+    <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
+    <SearchForm />
+    { openLogIn && <ModalSignIn />}
 
-// Menu.propTypes = {
+    {/* <ModalEditPassword /> */}
+    {/* <ModalEditProfil /> */}
+    {/* <ModalSignIn /> */}
+    {/* <ModalSignUp /> */}
+    {/* <ModalPrivacyData /> */}
+    
+  </main>
+);
 
-// };
+
+Home.propTypes = {
+  openLogIn: PropTypes.bool.isRequired,
+};
+
+export default Home;
