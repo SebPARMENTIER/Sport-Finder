@@ -3,6 +3,7 @@ import Contact from 'src/components/Contact';
 
 const mapStateToProps = (state) => ({
   openLogIn: state.user.openLogIn,
+  openLogUp: state.user.openLogUp,
 });
   // ajouter le state a utilisé pour le composant '
 

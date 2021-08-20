@@ -8,6 +8,7 @@ export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const CLICK_ON_BUTTON_LOG_IN = 'CLICK_ON_BUTTON_LOG_IN';
+export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -24,6 +25,11 @@ export const clickOnButtonSettings = () => ({
 export const clickOnButtonLogIn = () => ({
   type: CLICK_ON_BUTTON_LOG_IN,
 });
+
+export const clickOnButtonLogUp = () => ({
+  type: CLICK_ON_BUTTON_LOG_UP,
+});
+
 
 
 export const createUserSuccessAction = (data) => ({ type: CREATE_USER_SUCCESS, data });

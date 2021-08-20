@@ -25,9 +25,10 @@ const ModalSignin = ({
           className='modalSignIn__container__form'
           onSubmit={handleSubmit}
         >
-          <Field
+          <div className="modalSignIn__container__form__input">
+            <Field
             name="email"
-            className="modalSignIn__container__form__input"
+            className="modalSignIn__container__form__input__field"
             type="text"
             placeholder="Email..."
             onChange={changeField}
@@ -35,12 +36,14 @@ const ModalSignin = ({
           />
           <Field
             name="password"
-            className="modalSignIn__container__form__input"
+            className="modalSignIn__container__form__input__field"
             type="password"
             placeholder="Mot de passe..."
             onChange={changeField}
             value={password}
           />
+          </div>
+          
           {isError && (
             <p className="modalSignIn__form__error">Vérifiez vos identifiants de connexion</p>
           )}

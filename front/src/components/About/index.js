@@ -2,6 +2,7 @@
 import React from 'react';
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 
 import PropTypes from 'prop-types';
 // == Import : local
@@ -10,6 +11,7 @@ import './about.scss';
 // == Component
 const About = ({
   openLogIn,
+  openLogUp,
 }) => (
   <div className="about">
     <Banner />
@@ -31,11 +33,13 @@ const About = ({
       <div className="about__role__desc">Product Owner - Scrum Master</div>
     </div>
     { openLogIn && <ModalSignIn />}
+    { openLogUp && <ModalSignUp />}
   </div>
 )
 
 About.propTypes = {
   openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default About;

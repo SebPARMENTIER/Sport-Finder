@@ -10,7 +10,8 @@ import './header.scss';
 const Header = ({
   isLogged,
   onClickArrow,
-  OnClickLogIn,
+  onClickLogIn,
+  onClickLogUp,
 }) => {
   const handleOnClickArrow = () => {
     console.log('click');
@@ -18,10 +19,11 @@ const Header = ({
   };
   const handleOnClickLogIn = () => {
     console.log('click');
-    OnClickLogIn();
+    onClickLogIn();
   };
   const handleOnClickLogUp = () => {
     console.log('click');
+    onClickLogUp();
   }
   return (
     <div className='header'>

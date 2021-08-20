@@ -13,6 +13,7 @@ import './home.scss';
 
 const Home = ({
   openLogIn,
+  openLogUp,
 }) => (
   <main className='home'>
     <div className='home__picture'>
@@ -21,6 +22,7 @@ const Home = ({
     <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
     <SearchForm />
     { openLogIn && <ModalSignIn />}
+    { openLogUp && <ModalSignUp />}
 
     {/* <ModalEditPassword /> */}
     {/* <ModalEditProfil /> */}
@@ -34,6 +36,7 @@ const Home = ({
 
 Home.propTypes = {
   openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default Home;

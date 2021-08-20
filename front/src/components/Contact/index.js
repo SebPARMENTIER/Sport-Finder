@@ -2,13 +2,14 @@
 import React from 'react';
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 
 import PropTypes from 'prop-types';
 // == Import : local
 import './contact.scss';
 
 // == Component
-const Contact = ({openLogIn}) => {
+const Contact = ({ openLogIn , openLogUp }) => {
 
   return (
     <div className="contact">
@@ -73,12 +74,14 @@ const Contact = ({openLogIn}) => {
         </div>        
       </form>
       { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   )
 }
 
 Contact.propTypes = {
   openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 }
 
 export default Contact;

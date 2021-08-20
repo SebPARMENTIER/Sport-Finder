@@ -3,6 +3,7 @@ import About from 'src/components/About';
 
 const mapStateToProps = (state) => ({
   openLogIn: state.user.openLogIn,
+  openLogUp: state.user.openLogUp,
 });
   // ajouter le state a utilisé pour le composant '
 
