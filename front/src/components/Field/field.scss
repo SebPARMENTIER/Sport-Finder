@@ -17,7 +17,7 @@
     .inputs{
       &__field{
         font-size: 1em;
-        margin: 0 v.$gutter/2 ;
+        margin: 0 v.$gutter*0.5;
         width: 100%;
         padding: v.$gutter*1.2;
         margin-bottom: v.$gutter;

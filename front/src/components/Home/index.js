@@ -22,7 +22,7 @@ export default function Home() {
       {/* <ModalEditPassword /> */}
       {/* <ModalEditProfil /> */}
       {/* <ModalSignIn /> */}
-      <ModalSignUp />
+      {/* <ModalSignUp /> */}
       {/* <ModalPrivacyData /> */}
       
     </main>

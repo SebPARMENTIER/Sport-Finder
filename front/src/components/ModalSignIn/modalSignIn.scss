@@ -57,7 +57,7 @@
       
       &__button{
         font-size: 1.5em;
-        padding: v.$gutter/2.5;
+        padding: v.$gutter*0.3 v.$gutter;
         color: v.$secondary-color;
         background-color: v.$text-color;
         border: none;

@@ -44,7 +44,7 @@
 
   @media (max-width: 768px) {
     .searchForm{
-      margin-top: v.$gutter/2;
+      margin-top: v.$gutter*0.5;
     }
     .searchForm__inputs{
       flex-direction: column;

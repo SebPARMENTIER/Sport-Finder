@@ -15,7 +15,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3001∕user',
+      url: 'https://sportfinder.herokuapp.com/user',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,7 +39,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3001/login',
+      url: 'https://sportfinder.herokuapp.com/user',
       headers: {
         'Content-Type': 'application/json',
       },

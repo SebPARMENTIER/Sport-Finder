@@ -5,10 +5,10 @@ import Header from 'src/containers/Header'
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Profil from 'src/components/Profil';
-import Contact from 'src/components/Contact';
+import Contact from 'src/containers/Contact';
 import About from 'src/components/About';
-import ModalPrivacyData from '../ModalPrivacyData';
-import ModalEditProfil from '../ModalEditProfil';
+import ModalPrivacyData from 'src/components/ModalPrivacyData';
+import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalSignUp from 'src/containers/ModalSignUp';
 
 
