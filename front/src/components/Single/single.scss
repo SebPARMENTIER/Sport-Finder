@@ -84,20 +84,30 @@
     }
   }
 
-  &__addReview {
+  &__buttons {
     display: flex;
     justify-content: center;
 
-    &__button{
+    &__addReview {
       width: 20%;
-      padding: v.$gutter*0.7 v.$gutter;
-      margin-top: v.$gutter*1;
+      padding: v.$gutter*0.7 v.$gutter;      
       color: v.$text-color;
       background-color: v.$secondary-color;
       border: none;
       border-radius: 5px;
       font-size: 1.5em;
-      margin-bottom: v.$gutter;
+      margin: v.$gutter;
+    }
+
+    &__back {
+      width: 20%;
+      padding: v.$gutter*0.7 v.$gutter;
+      color: v.$text-color;
+      background-color: v.$secondary-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5em;
+      margin: v.$gutter;
     }
   }  
 

@@ -38,8 +38,9 @@ const Single = () => {
         </div>  
           
       </div>
-      <div className="single__addReview">
-        <button className="single__addReview__button">Ajouter un avis</button>
+      <div className="single__buttons">
+        <button className="single__buttons__back">Retour aux résultats</button>
+        <button className="single__buttons__addReview">Ajouter un avis</button>
       </div>
       <div className="single__reviews">
         <Review />
