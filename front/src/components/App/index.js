@@ -10,6 +10,7 @@ import About from 'src/components/About';
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
 import ModalEditProfil from 'src/components/ModalEditProfil';
 import ModalSignUp from 'src/containers/ModalSignUp';
+import Single from 'src/components/Single';
 
 
 // == Import
@@ -27,6 +28,7 @@ const App = () => (
       <Route exact path='/profil' component={Profil}></Route>
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
+      <Route exact path='/single' component={Single}></Route>
       </Switch>
     <Footer />
     {/* <ModalSignUp /> */}

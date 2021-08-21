@@ -1,0 +1,125 @@
+@use 'src/styles/vars' as v;
+
+.single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  padding: v.$gutter*2 0 v.$gutter*2 0;
+  margin: 0 auto;
+
+  &__infos {
+
+    &__header {
+
+      &__picture {
+        width: 100%;
+        height: v.$gutter*10;
+        display: flex;
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        &__title {
+          font-family: 'Anton';
+          font-size: 5em;
+          color: v.$text-color;
+          text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+        }
+      }
+    }
+
+    &__content {
+      background-color: white;
+      padding: v.$gutter;
+      font-size: v.$gutter*1.2;
+
+      &__desc {
+        text-align: justify;
+        padding-bottom: v.$gutter*2;
+
+        &__city {
+          font-weight: bold;
+        }
+      }
+
+      &__association {
+        display: flex;
+        flex-direction: row;
+
+        &__properties {
+          padding-right: v.$gutter;
+
+          &__adress {
+            padding-bottom: v.$gutter;
+          }
+
+          &__email {
+            padding-bottom: v.$gutter;
+          }
+
+          &__web {
+            padding-bottom: v.$gutter;
+          }
+        }
+
+        &__values {
+          
+          &__adress {
+            padding-bottom: v.$gutter;
+          }
+
+          &__email {
+            padding-bottom: v.$gutter;
+          }
+
+          &__web {
+            padding-bottom: v.$gutter;
+          }
+        }
+      }
+    }
+  }
+
+  &__addReview {
+    display: flex;
+    justify-content: center;
+
+    &__button{
+      width: 20%;
+      padding: v.$gutter*0.7 v.$gutter;
+      margin-top: v.$gutter*1;
+      color: v.$text-color;
+      background-color: v.$secondary-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5em;
+      margin-bottom: v.$gutter;
+    }
+  }  
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    height: v.$gutter*12;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.8em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: v.$secondary-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: v.$text-color;
+      border-radius: 5px;
+    }
+  }
+  
+}
