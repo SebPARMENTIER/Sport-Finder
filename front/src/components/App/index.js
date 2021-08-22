@@ -14,6 +14,7 @@ import ModalSignUp from 'src/containers/ModalSignUp';
 
 // == Import
 import './app.scss';
+import Loading from './Loading';
 
 
 // == Composant
@@ -27,6 +28,7 @@ const App = ({ }) => (
       <Route exact path='/profil' component={Profil}></Route>
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
+      <Route exact path='/loading' component={Loading}></Route>
     </Switch>
     
     <Footer />
