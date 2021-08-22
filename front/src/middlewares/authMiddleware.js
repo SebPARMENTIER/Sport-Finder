@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import { 
-  CREATE_USER,
+  SET_USER_INPUT_VALUE,
   SUBMIT_LOGIN,
   createUserSuccessAction,
   createUserErrorAction,
@@ -10,12 +10,12 @@ import {
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
-  if (action.type === CREATE_USER) {
+  if (action.type === SET_USER_INPUT_VALUE) {
     const state = store.getState();
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3001∕user',
+      url: 'http://localhost:3000∕user',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,7 +39,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3001/login',
+      url: 'http://localhost:3000/login',
       headers: {
         'Content-Type': 'application/json',
       },

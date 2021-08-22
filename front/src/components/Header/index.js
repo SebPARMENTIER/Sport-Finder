@@ -25,7 +25,46 @@ const Header = ({
   const handleOnClickLogUp = () => {
     console.log('click');
     onClickLogUp();
-  }
+  };
+  const logOutAndEnabled = () => {
+    if ( isLogged === false  && desable === false){
+      return (
+        <div className='header-rightside'>
+          <button 
+            type="submit"
+            className='header-signin hover-underline-animation'
+            onClick={handleOnClickLogIn}
+          >
+            Connexion
+          </button>
+          <button 
+            type="submit"
+            className='header-signup hover-underline-animation'
+            onClick={handleOnClickLogUp}
+          >
+            Inscription
+          </button>
+        </div>
+      )
+    } else if(isLogged === false && desable === true){
+      return (
+        <div className='header-rightside'>
+          <button 
+            type="submit"
+            className='header-signin hover-underline-animation'
+          >
+            Connexion
+          </button>
+          <button 
+            type="submit"
+            className='header-signup hover-underline-animation'
+          >
+            Inscription
+          </button>
+        </div>
+      )
+    }
+  };
   return (
     <div className='header'>
     <nav className='header-nav'>
@@ -58,82 +97,21 @@ const Header = ({
           <img className='header-logo__img' src={logo} alt="sport finder logo" />
         </p>
       </div>
+      )}  
+      { logOutAndEnabled() }
+      { isLogged && (
+        <div className='header-rightside'>
+          <div className='header-signup hover-underline-animation'>Bienvenue User</div>
+          <button 
+          type="submit"
+          className='header__open'
+          onClick={handleOnClickArrow}
+          >
+            <IoIosArrowDown className='header__open__arrow'/>
+          </button>
+          
+        </div>
       )}
-        
-          { !isLogged  && (
-            
-            <div className='header-rightside'>
-              <button 
-                key='1'
-                type="submit"
-                className='header-signin hover-underline-animation'
-                onClick={handleOnClickLogIn}
-              >
-                Connexion
-              </button>
-              <button 
-                key='2'
-                type="submit"
-                className='header-signup hover-underline-animation'
-                onClick={handleOnClickLogUp}
-              >
-                Inscription
-              </button>
-            </div>
-            
-            
-          )}
-          { !desable && (
-            <div className='header-rightside'>
-            <button 
-              key='3'
-              type="submit"
-              className='header-signin hover-underline-animation'
-              onClick={handleOnClickLogIn}
-            >
-              Connexion
-            </button>
-            <button 
-              key='4'
-              type="submit"
-              className='header-signup hover-underline-animation'
-              onClick={handleOnClickLogUp}
-            >
-              Inscription
-            </button>
-          </div>
-          )}
-          { desable && (
-            <div className='header-rightside'>
-              <button 
-              key='5'
-                type="submit"
-                className='header-signin hover-underline-animation'
-              >
-                Connexion
-              </button>
-              <button 
-              key='6'
-                type="submit"
-                className='header-signup hover-underline-animation'
-              >
-                Inscription
-              </button>
-            </div>
-          )}
-          { isLogged && (
-            <div className='header-rightside'>
-              <div className='header-signup hover-underline-animation'>Bienvenue User</div>
-              <button 
-              type="submit"
-              className='header__open'
-              onClick={handleOnClickArrow}
-              >
-                <IoIosArrowDown className='header__open__arrow'/>
-              </button>
-              
-            </div>
-          )}
 
       </div>
     </nav>
