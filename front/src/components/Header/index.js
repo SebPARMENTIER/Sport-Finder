@@ -67,58 +67,54 @@ const Header = ({
   };
   return (
     <div className='header'>
-    <nav className='header-nav'>
-      <div className='header-ol'>
-      
-      { !desable && (
-        <div className='header-leftside'>
-          <div className='header-accueil hover-underline-animation'>
-            <Link to="/">Accueil</Link>
+      <nav className='header-nav'>
+        <div className='header-ol'>
+          { !desable && (
+            <div className='header-leftside'>
+              <div className='header-accueil hover-underline-animation'>
+                <Link to="/">Accueil</Link>
+              </div>
+            </div>
+          )}
+          { desable && (
+            <div className='header-leftside'>
+              <div className='header-accueil hover-underline-animation'>
+                <p>Accueil</p>
+              </div>
+            </div>
+          )}
+          { !desable && (
+          <div className='header-logo'>
+            <Link to="/">
+              <img className='header-logo__img' src={logo} alt="sport finder logo" />
+            </Link>
           </div>
-        </div>
-      )}
-      { desable && (
-        <div className='header-leftside'>
-          <div className='header-accueil hover-underline-animation'>
-            <p>Accueil</p>
+          )}
+          { desable && (
+          <div className='header-logo'>
+            <p>
+              <img className='header-logo__img' src={logo} alt="sport finder logo" />
+            </p>
           </div>
+          )}  
+          { logOutAndEnabled() }
+          { isLogged && (
+            <div className='header-rightside'>
+              <div className='header-signup hover-underline-animation'>Bienvenue User</div>
+              <button 
+              type="submit"
+              className='header__open'
+              onClick={handleOnClickArrow}
+              >
+                <IoIosArrowDown className='header__open__arrow'/>
+              </button>
+            </div>
+          )}
         </div>
-      )}
-      { !desable && (
-      <div className='header-logo'>
-        <Link to="/">
-          <img className='header-logo__img' src={logo} alt="sport finder logo" />
-        </Link>
-      </div>
-      )}
-      { desable && (
-      <div className='header-logo'>
-        <p>
-          <img className='header-logo__img' src={logo} alt="sport finder logo" />
-        </p>
-      </div>
-      )}  
-      { logOutAndEnabled() }
-      { isLogged && (
-        <div className='header-rightside'>
-          <div className='header-signup hover-underline-animation'>Bienvenue User</div>
-          <button 
-          type="submit"
-          className='header__open'
-          onClick={handleOnClickArrow}
-          >
-            <IoIosArrowDown className='header__open__arrow'/>
-          </button>
-          
-        </div>
-      )}
-
-      </div>
-    </nav>
-    <Settings />
-  </div>
-  );
-  
+      </nav>
+      <Settings />
+    </div>
+  ); 
 }
 
 Header.propTypes = {
