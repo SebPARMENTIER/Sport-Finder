@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import Profil from 'src/components/Profil';
 import { clickOnButtonEditProfil } from 'src/actions/user';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  openEditProfil: state.user.openEditProfil,
+});
   // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({

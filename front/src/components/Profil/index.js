@@ -1,10 +1,13 @@
 import React from 'react';
+import ModalEditProfil from 'src/components/ModalEditProfil';
+
 import PropTypes from 'prop-types';
 
 import './profil.scss';
 
 const Profil = ({
   onClickModalEditProfil,
+  openEditProfil,
 }) => {
   const handleModalEditProfil = () => {
     console.log("click");
@@ -33,12 +36,14 @@ const Profil = ({
         />
       </div>
       <input className='profil__logOut' type="button" value="Déconnexion" />
+      { openEditProfil && <ModalEditProfil />}
     </main>
   );
 }
 
 Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,
+  openEditProfil: PropTypes.bool.isRequired,
 };
 
 export default Profil;
