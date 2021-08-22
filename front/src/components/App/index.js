@@ -4,12 +4,11 @@ import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from 'src/containers/Header'
 import Footer from 'src/containers/Footer';
 import Home from 'src/containers/Home';
-import Profil from 'src/components/Profil';
+import Profil from 'src/containers/Profil';
 import Contact from 'src/containers/Contact';
 import About from 'src/containers/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
-import ModalSignUp from 'src/containers/ModalSignUp';
 
 
 // == Import
@@ -32,7 +31,6 @@ const App = ({ }) => (
     </Switch>
     
     <Footer />
-    {/* <ModalSignUp /> */}
   </div>
 );
 

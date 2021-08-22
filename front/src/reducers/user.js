@@ -12,6 +12,7 @@ import {
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
+  CLICK_ON_BUTTON_EDIT_PROFIL,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -23,6 +24,7 @@ export const initialState = {
   openSettings: false,
   openLogIn: false,
   openLogUp: false,
+  openEditProfil: false,
   isCreateUserError: false,
   isError: false,
   desable: false,
@@ -98,6 +100,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openLogUp: !state.openLogUp,
         desable: false
+      }
+    case CLICK_ON_BUTTON_EDIT_PROFIL:
+      return {
+        ...state,
+        openEditProfil: !state.openEditProfil,
       }
     case CREATE_USER_ERROR:
       return {

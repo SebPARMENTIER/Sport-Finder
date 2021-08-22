@@ -1,9 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './profil.scss';
 
-export default function Profil() {
+const Profil = ({
+  onClickModalEditProfil,
+}) => {
+  const handleModalEditProfil = () => {
+    console.log("click");
+    onClickModalEditProfil();
+  }
   return (
     <main className='profil'>
       <h1 className='profil__title'>Information profil</h1>
@@ -13,6 +19,7 @@ export default function Profil() {
           className='profil__button__edit'
           type="button"
           value="Modifier votre profil"
+          onClick={handleModalEditProfil}
           />
         <input
           className='profil__button__edit'
@@ -30,6 +37,8 @@ export default function Profil() {
   );
 }
 
-// Profil.propTypes = {
+Profil.propTypes = {
+  onClickModalEditProfil: PropTypes.func.isRequired,
+};
 
-// };
+export default Profil;

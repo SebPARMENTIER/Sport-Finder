@@ -13,6 +13,7 @@ export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
 export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
+export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -36,6 +37,10 @@ export const clickOnButtonLogIn = () => ({
 
 export const clickOnButtonLogUp = () => ({
   type: CLICK_ON_BUTTON_LOG_UP,
+});
+
+export const clickOnButtonEditProfil = () => ({
+  type: CLICK_ON_BUTTON_EDIT_PROFIL,
 });
 
 export const clickOnButtonLogOut = () => ({
