@@ -1,6 +1,7 @@
 @use 'src/styles/vars' as v;
 
 .header{
+  position: fixed;
   padding: v.$gutter*1.6 v.$gutter;
   background: v.$secondary-color;
   display: flex;
@@ -51,7 +52,7 @@
     position: absolute;
     right: 40%;
     left: 40%;
-    top: 0;
+    top: 18px;
     
     &__img{
       width: 2.5em;

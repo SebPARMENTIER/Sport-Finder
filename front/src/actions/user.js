@@ -1,6 +1,7 @@
 export const SET_USER_INPUT_VALUE = 'SET_USER_INPUT_VALUE';
 export const CREATE_USER = 'CREATE_USER';
 export const CLICK_ON_BUTTON_SETTINGS = 'CLICK_ON_BUTTON_SETTINGS';
+export const CLICK_ON_BUTTON_CLOSE_SETTINGS = 'CLICK_ON_BUTTON_CLOSE_SETTINGS';
 export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
 export const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
 export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
@@ -9,6 +10,7 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const CLICK_ON_BUTTON_LOG_IN = 'CLICK_ON_BUTTON_LOG_IN';
 export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
+export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 
@@ -24,12 +26,20 @@ export const clickOnButtonSettings = () => ({
   type: CLICK_ON_BUTTON_SETTINGS,
 });
 
+export const clickOnButtonCloseSettings = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_SETTINGS,
+});
+
 export const clickOnButtonLogIn = () => ({
   type: CLICK_ON_BUTTON_LOG_IN,
 });
 
 export const clickOnButtonLogUp = () => ({
   type: CLICK_ON_BUTTON_LOG_UP,
+});
+
+export const clickOnButtonLogOut = () => ({
+  type: CLICK_ON_BUTTON_LOG_OUT,
 });
 
 export const clickOnButtonCloseSignIn = () => ({

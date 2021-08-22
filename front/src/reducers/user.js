@@ -8,8 +8,10 @@ import {
   LOGIN_ERROR,
   CLICK_ON_BUTTON_LOG_IN,
   CLICK_ON_BUTTON_LOG_UP,
+  CLICK_ON_BUTTON_LOG_OUT,
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
+  CLICK_ON_BUTTON_CLOSE_SETTINGS,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -17,7 +19,7 @@ export const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
-  logged: false,
+  logged: true,
   openSettings: false,
   openLogIn: false,
   openLogUp: false,
@@ -34,6 +36,13 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case CLICK_ON_BUTTON_SETTINGS: {
+      console.log('in the reducer');
+      return {
+        ...state,
+        openSettings: !state.openSettings,
+      };
+    };
+    case CLICK_ON_BUTTON_CLOSE_SETTINGS: {
       console.log('in the reducer');
       return {
         ...state,
@@ -72,6 +81,12 @@ const reducer = (state = initialState, action = {}) => {
         desable: true
       }
     };
+    case CLICK_ON_BUTTON_LOG_OUT:
+      return {
+        ...state,
+        logged: false,
+        openSettings: false
+      }
     case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
       return {
         ...state,

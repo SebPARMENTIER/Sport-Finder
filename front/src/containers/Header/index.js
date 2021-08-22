@@ -10,17 +10,17 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onClickArrow: () => {
-    console.log('in the container Header');
+    // console.log('in the container Header');
     const action = clickOnButtonSettings();
     dispatch(action);
   },
   onClickLogIn: () => {
-    console.log('in the container Header');
+    // console.log('in the container Header');
     const action = clickOnButtonLogIn();
     dispatch(action);
   },
   onClickLogUp: () => {
-    console.log('in the container Header');
+    // console.log('in the container Header');
     const action = clickOnButtonLogUp();
     dispatch(action);
   }
