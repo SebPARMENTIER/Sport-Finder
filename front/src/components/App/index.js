@@ -2,23 +2,23 @@
 import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import Header from 'src/containers/Header'
-import Footer from 'src/components/Footer';
-import Home from 'src/components/Home';
-import Profil from 'src/components/Profil';
+import Footer from 'src/containers/Footer';
+import Home from 'src/containers/Home';
+import Profil from 'src/containers/Profil';
 import Contact from 'src/containers/Contact';
-import About from 'src/components/About';
-import ModalPrivacyData from 'src/components/ModalPrivacyData';
-import ModalEditProfil from 'src/components/ModalEditProfil';
-import ModalSignUp from 'src/containers/ModalSignUp';
+import About from 'src/containers/About';
+import ModalPrivacyData from '../ModalPrivacyData';
+import ModalEditProfil from '../ModalEditProfil';
 import Single from 'src/components/Single';
 
 
 // == Import
 import './app.scss';
+import Loading from './Loading';
 
 
 // == Composant
-const App = () => (
+const App = ({ }) => (
   <div className="app">
     <Header />
     <Switch>
@@ -29,11 +29,13 @@ const App = () => (
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
       <Route exact path='/single' component={Single}></Route>
-      </Switch>
+      <Route exact path='/loading' component={Loading}></Route>
+    </Switch>
+    
     <Footer />
-    {/* <ModalSignUp /> */}
   </div>
 );
+
 
 // == Export
 export default App;

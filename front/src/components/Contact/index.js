@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Banner from 'src/components/Banner';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 
 // == Import : local
 import Field from 'src/components/Field';
@@ -17,6 +19,8 @@ const Contact = ({
   content,
   changeField,
   handleContact,
+  openLogIn,
+  openLogUp,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -92,6 +96,8 @@ const Contact = ({
           </button>
         </div>        
       </form>
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   )
 }
@@ -105,6 +111,8 @@ Contact.propTypes = {
   //content: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 }
 
 export default Contact;

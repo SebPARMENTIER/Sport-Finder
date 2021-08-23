@@ -9,59 +9,118 @@ import './header.scss';
 
 const Header = ({
   isLogged,
-  onClickButton,
+  onClickArrow,
+  onClickLogIn,
+  onClickLogUp,
+  desable,
 }) => {
-  const handleOnClick = () => {
+  const handleOnClickArrow = () => {
     console.log('click');
-    onClickButton();
+    onClickArrow();
+  };
+  const handleOnClickLogIn = () => {
+    console.log('click');
+    onClickLogIn();
+  };
+  const handleOnClickLogUp = () => {
+    console.log('click');
+    onClickLogUp();
+  };
+  const logOutAndEnabled = () => {
+    if ( isLogged === false  && desable === false){
+      return (
+        <div className='header-rightside'>
+          <button 
+            type="submit"
+            className='header-signin hover-underline-animation'
+            onClick={handleOnClickLogIn}
+          >
+            Connexion
+          </button>
+          <button 
+            type="submit"
+            className='header-signup hover-underline-animation'
+            onClick={handleOnClickLogUp}
+          >
+            Inscription
+          </button>
+        </div>
+      )
+    } else if(isLogged === false && desable === true){
+      return (
+        <div className='header-rightside'>
+          <button 
+            type="submit"
+            className='header-signin hover-underline-animation'
+          >
+            Connexion
+          </button>
+          <button 
+            type="submit"
+            className='header-signup hover-underline-animation'
+          >
+            Inscription
+          </button>
+        </div>
+      )
+    }
   };
   return (
     <div className='header'>
-    <nav className='header-nav'>
-      <ol className='header-ol'>
-      <div className='header-leftside'>
-        <li className='header-accueil hover-underline-animation'>
-          <Link to="/">Accueil</Link>
-        </li>
-      </div>
-      <li className='header-logo'>
-        <Link to="/">
-          <img className='header-logo__img' src={logo} alt="sport finder logo" />
-        </Link>
-        
-      </li>
-        
-          { !isLogged && (
-            <div className='header-rightside'>
-              <li className='header-signin hover-underline-animation'>Sign in</li>
-              <li className='header-signup hover-underline-animation'>Sign up</li>
+      <nav className='header-nav'>
+        <div className='header-ol'>
+          { !desable && (
+            <div className='header-leftside'>
+              <div className='header-accueil hover-underline-animation'>
+                <Link to="/">Accueil</Link>
+              </div>
             </div>
           )}
+          { desable && (
+            <div className='header-leftside'>
+              <div className='header-accueil hover-underline-animation'>
+                <p>Accueil</p>
+              </div>
+            </div>
+          )}
+          { !desable && (
+          <div className='header-logo'>
+            <Link to="/">
+              <img className='header-logo__img' src={logo} alt="sport finder logo" />
+            </Link>
+          </div>
+          )}
+          { desable && (
+          <div className='header-logo'>
+            <p>
+              <img className='header-logo__img' src={logo} alt="sport finder logo" />
+            </p>
+          </div>
+          )}  
+          { logOutAndEnabled() }
           { isLogged && (
             <div className='header-rightside'>
-              <li className='header-signup hover-underline-animation'>Bienvenue User</li>
+              <div className='header-signup hover-underline-animation'>Bienvenue User</div>
               <button 
               type="submit"
               className='header__open'
-              onClick={handleOnClick}
+              onClick={handleOnClickArrow}
               >
                 <IoIosArrowDown className='header__open__arrow'/>
               </button>
-              
             </div>
           )}
-
-      </ol>
-    </nav>
-    <Settings />
-  </div>
-  );
-  
+        </div>
+      </nav>
+      <Settings />
+    </div>
+  ); 
 }
 
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
-  onClickButton: PropTypes.func.isRequired,
+  onClickArrow: PropTypes.func.isRequired,
+  desable: PropTypes.bool.isRequired,
 }
 
 export default Header;

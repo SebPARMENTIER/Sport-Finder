@@ -12,16 +12,29 @@ const ModalSignUp = ({
   passwordConfirm,
   changeField,
   handleCreateUser,
+  isCreateUserSuccess,
   isCreateUserError,
+  onClickCloseSignUp
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleCreateUser();
   };
+  const handleOnClickCloseSignUp = () => {
+    console.log('click');
+    onClickCloseSignUp();
+  }
   return (
     <div className='modalSignUp'>
       <div className='modalSignUp__container'>
-        <IoIosCloseCircleOutline className="modalSignUp__container__close"/>
+        <button
+          type="submit"
+          className="modalSignUp__container__close"
+          onClick={handleOnClickCloseSignUp}
+        >
+          <IoIosCloseCircleOutline className="modalSignUp__container__close__circle"/>
+        </button>
+        
         <h1 className='modalSignUp__container__title'>Inscription</h1>
         <form className='modalSignUp__container__form' onSubmit={handleSubmit}>
           <div className="modalSignUp__container__form__first">
@@ -56,6 +69,7 @@ const ModalSignUp = ({
               value={passwordConfirm}
             />
           </div>
+          {isCreateUserSuccess && <p className="modalSignUp__form__success">Compte créé avec succès, veuillez vous connecter.</p>}
           {isCreateUserError && <p className="modalSignUp__form__error">Vérifiez votre saisie</p>}
           <button
             type="submit"
@@ -77,7 +91,9 @@ ModalSignUp.propTypes = {
   passwordConfirm: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleCreateUser: PropTypes.func.isRequired,
+  isCreateUserSuccess: PropTypes.bool.isRequired,
   isCreateUserError: PropTypes.bool.isRequired,
+  onClickCloseSignUp: PropTypes.func.isRequired,
 };
 
 export default ModalSignUp;

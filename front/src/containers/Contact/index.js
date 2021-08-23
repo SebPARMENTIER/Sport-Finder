@@ -12,6 +12,8 @@ const mapStateToProps = (state) => ({
   email: state.contact.email,
   subject: state.contact.subject,
   //content: state.contact.content,
+  openLogIn: state.user.openLogIn,
+  openLogUp: state.user.openLogUp,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,10 +1,12 @@
 @use 'src/styles/vars' as v;
 
 .header{
+  position: fixed;
   padding: v.$gutter*1.6 v.$gutter;
   background: v.$secondary-color;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
   margin-top: -20px;
   color: v.$text-color;
@@ -32,8 +34,9 @@
     text-align: center;
   }
   &-leftside{
-    padding-top: 0.5rem;
+    padding-top: 0.7rem;
     display: flex;
+    justify-content: center;
     margin: 0 v.$gutter;
   }
   &-rightside{
@@ -44,13 +47,12 @@
     margin: 0 v.$gutter;
   }
   &-accueil{
-   
   }
   &-logo{
     position: absolute;
     right: 40%;
     left: 40%;
-    top: 0;
+    top: 18px;
     
     &__img{
       width: 2.5em;
@@ -60,9 +62,15 @@
   }
   &-signin{
     margin-right: 1.2rem;
+    background-color: v.$secondary-color;
+    border: none;
+    font-size: 1em;
   }
   &-signup{
     margin-right: 0.8rem;
+    background-color: v.$secondary-color;
+    border: none;
+    font-size: 1em;
   }
   @media (max-width: 430px){
     .header-signin{
@@ -73,6 +81,14 @@
       width: 0;
       font-size: 0;
       visibility: hidden;
+      position: fixed;
+      right: -10px;
+    }
+    .header-leftside{
+      margin: 0;
+    }
+    .header-rightside{
+      margin: 0;
     }
   }
 }

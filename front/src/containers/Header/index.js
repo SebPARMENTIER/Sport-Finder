@@ -1,16 +1,27 @@
 import { connect } from 'react-redux';
 import Header from 'src/components/Header';
-import { clickOnButtonSettings } from 'src/actions/user';
+import { clickOnButtonSettings, clickOnButtonLogIn, clickOnButtonLogUp } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
+  desable: state.user.desable,
 });
 // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({
-  onClickButton: () => {
-    console.log('in the container Header');
+  onClickArrow: () => {
+    // console.log('in the container Header');
     const action = clickOnButtonSettings();
+    dispatch(action);
+  },
+  onClickLogIn: () => {
+    // console.log('in the container Header');
+    const action = clickOnButtonLogIn();
+    dispatch(action);
+  },
+  onClickLogUp: () => {
+    // console.log('in the container Header');
+    const action = clickOnButtonLogUp();
     dispatch(action);
   }
 });

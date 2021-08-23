@@ -25,9 +25,10 @@
     border: none;
     color: v.$text-color;
     background-color: v.$secondary-color;
-    padding-bottom: v.$gutter;
-    border-bottom: 3px solid v.$text-color;
-    width: 80%;
+    width: auto;
+    margin-right: auto;
+    margin-left: 10%;
+    margin-top: v.$gutter;
     
   }
   &__logOut{
@@ -36,7 +37,32 @@
     color: v.$text-color;
     background-color: v.$secondary-color;
     margin-top: v.$gutter;
+    padding-top: v.$gutter;
     width: 80%;
+    border-top: 3px solid v.$text-color;
     
   }
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: v.$text-color;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: v.$text-color;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

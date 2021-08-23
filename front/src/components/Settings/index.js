@@ -1,30 +1,51 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './settings.scss';
 
-export default function Settings({
+const Settings = ({
   open,
-}) {
+  onClickCloseSettings,
+  onClickLogOut,
+}) => {
   const classnameSetting = open ? 'settings settings--open' : 'settings';
+  const handleCloseSettings = () => {
+    // console.log('close setting');
+    onClickCloseSettings();
+  }
+  const handleLogOut = () => {
+    console.log('click');
+    onClickLogOut();
+  }
   return (
     <div className={classnameSetting}>
-      <button
-        type='submit'
-        className="settings__profil"
+      <div
+        className="settings__profil hover-underline-animation"
       >
-        Profil
-      </button>
-      <button
-        type="submit"
-        className="settings__logOut"  
-      >
-        Déconnection
-      </button>
+        <Link
+          to="/profil"
+          onClick={handleCloseSettings}
+        >Profil
+        </Link> 
+      </div>
+      <div className="settings__logOut hover-underline-animation">
+        <Link
+          to="/"
+          onClick={handleLogOut}
+        >
+          Déconnection
+        </Link>
+      </div>
+      
     </div>
   );
 }
 
 Settings.propTypes = {
   open: PropTypes.bool.isRequired,
+  onClickCloseSettings: PropTypes.func.isRequired,
+  onClickLogOut: PropTypes.func.isRequired,
 };
+
+export default Settings;
