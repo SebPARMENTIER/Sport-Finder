@@ -4,6 +4,7 @@ import {
   clickOnButtonSettings,
   clickOnButtonLogIn,
   clickOnButtonLogUp,
+  clickOnButtonCloseSettings,
 } from "src/actions/user";
 
 const mapStateToProps = (state) => ({
@@ -27,6 +28,11 @@ const mapDispatchToProps = (dispatch) => ({
   onClickLogUp: () => {
     // console.log('in the container Header');
     const action = clickOnButtonLogUp();
+    dispatch(action);
+  },
+  onClickCloseSettings: () => {
+    // console.log('container');
+    const action = clickOnButtonCloseSettings();
     dispatch(action);
   },
 });

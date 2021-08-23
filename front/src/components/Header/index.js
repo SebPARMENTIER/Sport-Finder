@@ -11,6 +11,7 @@ const Header = ({
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
+  onClickCloseSettings,
   disable,
   pseudo,
 }) => {
@@ -26,6 +27,10 @@ const Header = ({
     console.log("click");
     onClickLogUp();
   };
+  const handleCloseSettings = () => {
+    // console.log('close setting');
+    onClickCloseSettings();
+  }
   const logOutAndEnabled = () => {
     if (isLogged === false && disable === false) {
       return (
@@ -72,7 +77,12 @@ const Header = ({
           {!disable && (
             <div className="header-leftside">
               <div className="header-accueil hover-underline-animation">
-                <Link to="/">Accueil</Link>
+                <Link
+                  to="/"
+                  onClick={handleCloseSettings}
+                >
+                  Accueil
+                </Link>
               </div>
             </div>
           )}
@@ -85,7 +95,10 @@ const Header = ({
           )}
           {!disable && (
             <div className="header-logo">
-              <Link to="/">
+              <Link 
+                to="/"
+                onClick={handleCloseSettings}
+              >
                 <img
                   className="header-logo__img"
                   src={logo}
@@ -130,6 +143,7 @@ const Header = ({
 Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
+  onClickCloseSettings: PropTypes.func.isRequired,
   disable: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
 };
