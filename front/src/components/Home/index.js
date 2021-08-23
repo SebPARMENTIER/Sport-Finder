@@ -21,8 +21,8 @@ export default function Home() {
       <SearchForm />
       {/* <ModalEditPassword /> */}
       {/* <ModalEditProfil /> */}
-      {/* <ModalSignIn /> */}
-      <ModalSignUp />
+      <ModalSignIn />
+      {/* <ModalSignUp /> */}
       {/* <ModalPrivacyData /> */}
       
     </main>

@@ -48,6 +48,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         ...action.data,
         isError: false,
+        logged: true,
       };
     case LOGIN_ERROR:
       return {
