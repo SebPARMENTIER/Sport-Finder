@@ -1,6 +1,7 @@
 import { 
   SET_USER_INPUT_VALUE,  
   CLICK_ON_BUTTON_SETTINGS,
+  CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
@@ -36,7 +37,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.value,
-        isCreateUserSuccess: true,
       };
     case CLICK_ON_BUTTON_SETTINGS: {
       console.log('in the reducer');
@@ -100,12 +100,22 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: false
+        desable: false,
+        isCreateUserSuccess: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
         ...state,
         openEditProfil: !state.openEditProfil,
+      }
+    case CREATE_USER_SUCCESS:
+      return {
+        ...state,
+        isCreateUserSuccess: action.data.isCreateUserSuccess,
+        email: '',
+        pseudo: '',
+        password: '',
+        passwordConfirm: '',
       }
     case CREATE_USER_ERROR:
       return {

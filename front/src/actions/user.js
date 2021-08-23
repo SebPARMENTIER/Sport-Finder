@@ -2,6 +2,7 @@ export const SET_USER_INPUT_VALUE = 'SET_USER_INPUT_VALUE';
 export const CLICK_ON_BUTTON_SETTINGS = 'CLICK_ON_BUTTON_SETTINGS';
 export const CLICK_ON_BUTTON_CLOSE_SETTINGS = 'CLICK_ON_BUTTON_CLOSE_SETTINGS';
 export const CREATE_USER = 'CREATE_USER';
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
 export const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
 export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
@@ -54,7 +55,9 @@ export const clickOnButtonCloseSignUp = () => ({
 });
 
 
-export const createUserAction = (data) => ({ type: CREATE_USER, data });
+export const createUserAction = () => ({ type: CREATE_USER });
+
+export const createUserSuccessAction = (data) => ({ type: CREATE_USER_SUCCESS, data });
 
 export const createUserErrorAction = () => ({ type: CREATE_USER_ERROR });
 

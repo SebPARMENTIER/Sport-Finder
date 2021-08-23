@@ -3,6 +3,7 @@ import axios from 'axios'
 import { 
   CREATE_USER,
   SUBMIT_LOGIN,
+  createUserSuccessAction,
   createUserErrorAction,
   createLoginSuccessAction,
   createLoginErrorAction
@@ -28,10 +29,12 @@ const authMiddleware = (store) => (next) => (action) => {
     };
     axios(config)
       .then((response) => {
-        store.dispatch(createUserAction(response.data));
+        store.dispatch(createUserSuccessAction(response.data));
+        console.log(response.data.isCreateUserSuccess);
       })
-      .catch(() => {
+      .catch((error) => {
         store.dispatch(createUserErrorAction());
+        console.log(error);
       });
   }
   else if (action.type === SUBMIT_LOGIN) {
