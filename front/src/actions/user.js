@@ -15,6 +15,7 @@ export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
+export const DELETE_PROFIL = 'DELETE_PROFIL';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -75,3 +76,5 @@ export const createSubmitAction = () => ({ type: SUBMIT_LOGIN });
 export const createLoginSuccessAction = (data) => ({ type: LOGIN_SUCCESS, data });
 
 export const createLoginErrorAction = () => ({ type: LOGIN_ERROR });
+
+export const deleteProfilAction = () => ({ type: DELETE_PROFIL });

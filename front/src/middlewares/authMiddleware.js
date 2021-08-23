@@ -3,6 +3,7 @@ import axios from 'axios'
 import { 
   CREATE_USER,
   SUBMIT_LOGIN,
+  DELETE_PROFIL,
   createUserSuccessAction,
   createUserErrorAction,
   createPasswordErrorAction,
@@ -64,6 +65,28 @@ const authMiddleware = (store) => (next) => (action) => {
         store.dispatch(createLoginErrorAction());
       });
   }
+  else if (action.type === DELETE_PROFIL) {
+    const config = {
+      method: 'delete',
+      url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        id: state.user.userId,
+        password: state.user.password,
+      },
+    };
+
+    axios(config)
+      .then((response) => {
+        const data = {...response.data};
+        store.dispatch(createLoginSuccessAction(data));
+      })
+      .catch(() => {
+        store.dispatch(createLoginErrorAction());
+      });
+  }  
   else {
     next(action);
   }

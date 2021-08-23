@@ -150,7 +150,6 @@ const reducer = (state = initialState, action = {}) => {
         openLogIn: false,
         disable:false,
         email: '',
-        password: '',
       };
     case LOGIN_ERROR:
       return {
