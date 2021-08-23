@@ -122,6 +122,7 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         passwordConfirm: '',
         passwordError: false,
+        isCreateUserError: false,
       }
     case CREATE_USER_ERROR:
       return {
