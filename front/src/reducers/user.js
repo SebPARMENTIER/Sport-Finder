@@ -20,7 +20,7 @@ export const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
-  logged: true,
+  logged: false,
   openSettings: false,
   openLogIn: false,
   openLogUp: false,
@@ -121,6 +121,9 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         ...action.data,
         isError: false,
+        logged: true,
+        openLogIn: false,
+        desable:false
       };
     case LOGIN_ERROR:
       return {

@@ -21,7 +21,7 @@ const Settings = ({
   return (
     <div className={classnameSetting}>
       <div
-        className="settings__profil"
+        className="settings__profil hover-underline-animation"
       >
         <Link
           to="/profil"
@@ -29,13 +29,15 @@ const Settings = ({
         >Profil
         </Link> 
       </div>
-      <button
-        type="submit"
-        className="settings__logOut"
-        onClick={handleLogOut}
-      >
-        Déconnection
-      </button>
+      <div className="settings__logOut hover-underline-animation">
+        <Link
+          to="/"
+          onClick={handleLogOut}
+        >
+          Déconnection
+        </Link>
+      </div>
+      
     </div>
   );
 }

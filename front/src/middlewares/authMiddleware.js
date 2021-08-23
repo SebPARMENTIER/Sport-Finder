@@ -15,7 +15,7 @@ const authMiddleware = (store) => (next) => (action) => {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3000∕user',
+      url: 'https://sportfinder.herokuapp.com/api/v1/signup',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -23,7 +23,7 @@ const authMiddleware = (store) => (next) => (action) => {
         pseudo: state.user.pseudo,
         email: state.user.email,
         password: state.user.password,
-        passwordConfirm: state.user.passwordConfirm,
+        // passwordConfirm: state.user.passwordConfirm,
       },
     };
     axios(config)
@@ -39,12 +39,12 @@ const authMiddleware = (store) => (next) => (action) => {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:3000/login',
+      url: 'https://sportfinder.herokuapp.com/api/v1/login',
       headers: {
         'Content-Type': 'application/json',
       },
       data: {
-        email: state.user.email,
+        login: state.user.email,
         password: state.user.password,
       },
     };
