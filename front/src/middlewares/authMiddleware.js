@@ -5,41 +5,44 @@ import {
   SUBMIT_LOGIN,
   createUserSuccessAction,
   createUserErrorAction,
+  createPasswordErrorAction,
   createLoginSuccessAction,
-  createLoginErrorAction
+  createLoginErrorAction,
 } from 'src/actions/user';
-import { CREATE_USER_SUCCESS } from '../actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
+  const state = store.getState();  
+    
   if (action.type === CREATE_USER) {
-    const state = store.getState();
-
-    const config = {
-      method: 'post',
-      url: 'https://sportfinder.herokuapp.com/api/v1/signup',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: {
-        pseudo: state.user.pseudo,
-        email: state.user.email,
-        password: state.user.password,
-        // passwordConfirm: state.user.passwordConfirm,
-      },
-    };
-    axios(config)
-      .then((response) => {
-        store.dispatch(createUserSuccessAction(response.data));
-        console.log(response.data.isCreateUserSuccess);
-      })
-      .catch((error) => {
-        store.dispatch(createUserErrorAction(data.error));
-        console.log(data.error);
-      });
-  }
+    if (state.user.password !== state.user.passwordConfirm) {
+      store.dispatch(createPasswordErrorAction());
+    }
+    else {
+      const config = {
+        method: 'post',
+        url: 'https://sportfinder.herokuapp.com/api/v1/signup',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          pseudo: state.user.pseudo,
+          email: state.user.email,
+          password: state.user.password,
+          passwordConfirm: state.user.passwordConfirm,
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(createUserSuccessAction(response.data));
+          console.log(response.data.isCreateUserSuccess);
+        })
+        .catch((error) => {
+          store.dispatch(createUserErrorAction());
+          console.log(error);
+        });
+    }
+  }  
   else if (action.type === SUBMIT_LOGIN) {
-    const state = store.getState();
-
     const config = {
       method: 'post',
       url: 'https://sportfinder.herokuapp.com/api/v1/login',
@@ -54,7 +57,8 @@ const authMiddleware = (store) => (next) => (action) => {
 
     axios(config)
       .then((response) => {
-        store.dispatch(createLoginSuccessAction(response.data));
+        const data = {...response.data};
+        store.dispatch(createLoginSuccessAction(data));
       })
       .catch(() => {
         store.dispatch(createLoginErrorAction());

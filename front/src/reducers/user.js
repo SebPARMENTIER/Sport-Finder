@@ -3,6 +3,7 @@ import {
   CLICK_ON_BUTTON_SETTINGS,
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
+  CREATE_PASSWORD_ERROR,
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
@@ -21,6 +22,7 @@ export const initialState = {
   email: '',
   password: '',
   passwordConfirm: '',
+  passwordError: false,
   logged: false,
   openSettings: false,
   openLogIn: false,
@@ -89,7 +91,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: false,
-        openSettings: false
+        openSettings: false,
+        pseudo: '',
+        userId: '',
       }
     case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
       return {
@@ -117,11 +121,17 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
         password: '',
         passwordConfirm: '',
+        passwordError: false,
       }
     case CREATE_USER_ERROR:
       return {
         ...state,
         isCreateUserError: true,
+      }
+    case CREATE_PASSWORD_ERROR:
+      return {
+        ...state,
+        passwordError: true,
       }
     case SET_INPUT_VALUE:
       return {
