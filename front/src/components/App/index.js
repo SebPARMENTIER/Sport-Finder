@@ -17,7 +17,7 @@ import Loading from './Loading';
 
 
 // == Composant
-const App = ({ }) => (
+const App = ({}) => (
   <div className="app">
     <Header />
     <Switch>
@@ -29,7 +29,6 @@ const App = ({ }) => (
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
       <Route exact path='/loading' component={Loading}></Route>
     </Switch>
-    
     <Footer />
   </div>
 );

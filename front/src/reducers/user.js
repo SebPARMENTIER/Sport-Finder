@@ -13,6 +13,7 @@ import {
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
+  CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
   CLICK_ON_BUTTON_EDIT_PROFIL,
 } from 'src/actions/user';
 
@@ -52,7 +53,7 @@ const reducer = (state = initialState, action = {}) => {
       console.log('in the reducer');
       return {
         ...state,
-        openSettings: !state.openSettings,
+        openSettings: false,
       };
     };
     case CLICK_ON_BUTTON_LOG_IN: {
@@ -111,6 +112,11 @@ const reducer = (state = initialState, action = {}) => {
         isCreateUserSuccess: false,
         email: "",
         password:"",
+      }
+    case CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL:
+      return {
+        ...state,
+        openEditProfil: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {

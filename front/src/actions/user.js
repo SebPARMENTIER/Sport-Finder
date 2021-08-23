@@ -14,6 +14,7 @@ export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
 export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
+export const CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL = 'CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
 export const DELETE_PROFIL = 'DELETE_PROFIL';
 
@@ -51,9 +52,12 @@ export const clickOnButtonCloseSignIn = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_IN,
 });
 
-
 export const clickOnButtonCloseSignUp = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_UP,
+});
+
+export const clickOnButtonCloseEditProfil = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
 });
 
 

@@ -8,7 +8,8 @@
   width: 100vw;
   background-color: rgb(129, 125, 125, 0.7);
   position: absolute;
-  top: 63px;
+  top:0;
+  z-index: 1;
   &__container{
     background-color: v.$secondary-color;
     width: 90%;

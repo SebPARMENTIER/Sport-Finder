@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalEditProfil from 'src/components/ModalEditProfil';
+import ModalEditProfil from 'src/containers/ModalEditProfil';
 
 import PropTypes from 'prop-types';
 
