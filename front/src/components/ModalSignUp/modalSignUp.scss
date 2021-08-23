@@ -50,6 +50,26 @@
       padding-bottom: v.$gutter*2;
       margin-bottom: v.$gutter*2;
 
+      &__success{
+        background-color: rgb(115, 185, 109);
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: v.$gutter*3;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      &__error{
+        background-color: rgb(185, 109, 109);
+        border-radius: 10px;
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        margin-bottom: v.$gutter;
+        font-size: 2em;
+        text-align: center;
+      }
+
       &__text{
         color: v.$text-color;
         font-size: 1.5em;

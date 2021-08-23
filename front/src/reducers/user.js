@@ -1,4 +1,4 @@
-import { 
+import {
   SET_USER_INPUT_VALUE,
   CLICK_ON_BUTTON_SETTINGS,
   CREATE_USER_SUCCESS,
@@ -13,13 +13,14 @@ import {
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
   CLICK_ON_BUTTON_EDIT_PROFIL,
-} from 'src/actions/user';
+} from "src/actions/user";
 
 export const initialState = {
-  pseudo: '',
-  email: '',
-  password: '',
-  passwordConfirm: '',
+  userId:"",
+  pseudo: "",
+  email: "",
+  password: "",
+  passwordConfirm: "",
   logged: false,
   openSettings: false,
   openLogIn: false,
@@ -28,7 +29,7 @@ export const initialState = {
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
-  desable: false,
+  disable: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -39,105 +40,109 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case CLICK_ON_BUTTON_SETTINGS: {
-      console.log('in the reducer');
+      console.log("in the reducer");
       return {
         ...state,
         openSettings: !state.openSettings,
       };
-    };
+    }
     case CLICK_ON_BUTTON_CLOSE_SETTINGS: {
-      console.log('in the reducer');
+      console.log("in the reducer");
       return {
         ...state,
         openSettings: !state.openSettings,
       };
-    };
+    }
     case CLICK_ON_BUTTON_LOG_IN: {
-      console.log('in the reducer');
-      if( state.openLogUp === true){
+      console.log("in the reducer");
+      if (state.openLogUp === true) {
         return {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
-          desable: true,
+          disable: true,
         };
       }
-      return{
-        ...state, 
+      return {
+        ...state,
         openLogIn: !state.openLogIn,
-        desable: true,
-      }
-    };
+        disable: true,
+      };
+    }
     case CLICK_ON_BUTTON_LOG_UP: {
-      console.log('in the reducer');
-      if( state.openLogIn === true){
+      console.log("in the reducer");
+      if (state.openLogIn === true) {
         return {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
-          desable: true
+          disable: true,
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: true
-      }
-    };
+        disable: true,
+      };
+    }
     case CLICK_ON_BUTTON_LOG_OUT:
       return {
         ...state,
         logged: false,
-        openSettings: false
-      }
-    case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
+        openSettings: false,
+      };
+    case CLICK_ON_BUTTON_CLOSE_SIGN_IN:
       return {
         ...state,
         openLogIn: !state.openLogIn,
-        desable: false
-      }
-    case CLICK_ON_BUTTON_CLOSE_SIGN_UP: 
+        disable: false,
+      };
+    case CLICK_ON_BUTTON_CLOSE_SIGN_UP:
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: false,
+        disable: false,
         isCreateUserSuccess: false,
-      }
+      };
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
         ...state,
         openEditProfil: !state.openEditProfil,
-      }
+      };
     case CREATE_USER_SUCCESS:
       return {
         ...state,
         isCreateUserSuccess: action.data.isCreateUserSuccess,
-        email: '',
-        pseudo: '',
-        password: '',
-        passwordConfirm: '',
-      }
+        email: "",
+        pseudo: "",
+        password: "",
+        passwordConfirm: "",
+      };
     case CREATE_USER_ERROR:
       return {
         ...state,
         isCreateUserError: true,
-      }
+      };
     case SET_INPUT_VALUE:
       return {
         ...state,
         [action.name]: action.value,
       };
-      case LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
+      const { pseudo,id  } = action.data.data;
+      console.log(pseudo);
       return {
         ...state,
-        ...action.data,
+        pseudo: pseudo,
+        userId: id,
         isError: false,
         logged: true,
         openLogIn: false,
-        desable:false,
-        email: '',
-        password:'',
+        disable: false,
+        email: "",
+        password: "",
       };
+      
     case LOGIN_ERROR:
       return {
         ...state,

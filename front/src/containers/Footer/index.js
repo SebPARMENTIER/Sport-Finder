@@ -1,13 +1,13 @@
-import { connect } from 'react-redux';
-import Footer from 'src/components/Footer';
+import { connect } from "react-redux";
+import Footer from "src/components/Footer";
 
 const mapStateToProps = (state) => ({
-  desable: state.user.desable,
+  disable: state.user.disable,
 });
-  // ajouter le state a utilisé pour le composant '
+// ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = () => ({});
-  // ajouter la fonction utilisé dans le composant
+// ajouter la fonction utilisé dans le composant
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Footer);
 

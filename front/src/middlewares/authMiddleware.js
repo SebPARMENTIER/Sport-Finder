@@ -53,7 +53,8 @@ const authMiddleware = (store) => (next) => (action) => {
 
     axios(config)
       .then((response) => {
-        store.dispatch(createLoginSuccessAction(response.data));
+        const data = {...response.data};
+        store.dispatch(createLoginSuccessAction(data));
       })
       .catch(() => {
         store.dispatch(createLoginErrorAction());

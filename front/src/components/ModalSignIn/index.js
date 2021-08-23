@@ -61,7 +61,7 @@ const ModalSignin = ({
           </div>
           
           {isError && (
-            <p className="modalSignIn__form__error">Vérifiez vos identifiants de connexion</p>
+            <p className="modalSignIn__container__form__error">Vérifiez vos identifiants de connexion</p>
           )}
           <button
             type="submit"

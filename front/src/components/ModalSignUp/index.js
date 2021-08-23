@@ -74,8 +74,8 @@ const ModalSignUp = ({
               />
             </div>
           )}
-          {isCreateUserSuccess && <p className="modalSignUp__form__success">Compte crée avec succès, veuillez vous connecter</p>}
-          {isCreateUserError && <p className="modalSignUp__form__error">Vérifiez votre saisie</p>}
+          {isCreateUserSuccess && <p className="modalSignUp__container__form__success">Compte crée avec succès, veuillez vous connecter</p>}
+          {isCreateUserError && <p className="modalSignUp__container__form__error">Vérifiez votre saisie</p>}
           {isCreateUserSuccess && (
             <button
               type="submit"
