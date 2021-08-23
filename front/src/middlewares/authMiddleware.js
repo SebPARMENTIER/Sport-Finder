@@ -1,16 +1,16 @@
 import axios from 'axios'
 
 import { 
-  SET_USER_INPUT_VALUE,
+  CREATE_USER,
   SUBMIT_LOGIN,
   createUserSuccessAction,
   createUserErrorAction,
   createLoginSuccessAction,
-  createLoginErrorAction
+  createLoginErrorAction,
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
-  if (action.type === SET_USER_INPUT_VALUE) {
+  if (action.type === CREATE_USER) {
     const state = store.getState();
 
     const config = {
@@ -23,15 +23,17 @@ const authMiddleware = (store) => (next) => (action) => {
         pseudo: state.user.pseudo,
         email: state.user.email,
         password: state.user.password,
-        // passwordConfirm: state.user.passwordConfirm,
+        passwordConfirm: state.user.passwordConfirm,
       },
     };
     axios(config)
       .then((response) => {
         store.dispatch(createUserSuccessAction(response.data));
+        console.log(response.data.isCreateUserSuccess);
       })
-      .catch(() => {
+      .catch((error) => {
         store.dispatch(createUserErrorAction());
+        console.log(error);
       });
   }
   else if (action.type === SUBMIT_LOGIN) {
@@ -44,7 +46,7 @@ const authMiddleware = (store) => (next) => (action) => {
         'Content-Type': 'application/json',
       },
       data: {
-        login: state.user.email,
+        email: state.user.email,
         password: state.user.password,
       },
     };

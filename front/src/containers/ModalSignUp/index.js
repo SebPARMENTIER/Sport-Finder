@@ -12,6 +12,7 @@ const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
   passwordConfirm: state.user.passwordConfirm,
+  isCreateUserSuccess: state.user.isCreateUserSuccess,
   isCreateUserError: state.user.isCreateUserError,
 });
 

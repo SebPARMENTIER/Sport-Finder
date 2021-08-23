@@ -1,7 +1,7 @@
 import { 
   SET_USER_INPUT_VALUE,
-  CREATE_USER,
   CLICK_ON_BUTTON_SETTINGS,
+  CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
   SET_INPUT_VALUE,
   LOGIN_SUCCESS,
@@ -25,6 +25,7 @@ export const initialState = {
   openLogIn: false,
   openLogUp: false,
   openEditProfil: false,
+  isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
   desable: false,
@@ -99,12 +100,22 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: false
+        desable: false,
+        isCreateUserSuccess: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
         ...state,
         openEditProfil: !state.openEditProfil,
+      }
+    case CREATE_USER_SUCCESS:
+      return {
+        ...state,
+        isCreateUserSuccess: action.data.isCreateUserSuccess,
+        email: '',
+        pseudo: '',
+        password: '',
+        passwordConfirm: '',
       }
     case CREATE_USER_ERROR:
       return {
@@ -123,7 +134,9 @@ const reducer = (state = initialState, action = {}) => {
         isError: false,
         logged: true,
         openLogIn: false,
-        desable:false
+        desable:false,
+        email: '',
+        password:'',
       };
     case LOGIN_ERROR:
       return {

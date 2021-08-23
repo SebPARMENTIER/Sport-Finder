@@ -1,7 +1,7 @@
 export const SET_USER_INPUT_VALUE = 'SET_USER_INPUT_VALUE';
-export const CREATE_USER = 'CREATE_USER';
 export const CLICK_ON_BUTTON_SETTINGS = 'CLICK_ON_BUTTON_SETTINGS';
 export const CLICK_ON_BUTTON_CLOSE_SETTINGS = 'CLICK_ON_BUTTON_CLOSE_SETTINGS';
+export const CREATE_USER = 'CREATE_USER';
 export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
 export const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
 export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
@@ -20,8 +20,6 @@ export const createUserSetInputValueAction = (newValue, name) => ({
   value: newValue,
   name: name,
 });
-
-export const createUserAction = () => ({ type: CREATE_USER });
 
 export const clickOnButtonSettings = () => ({
   type: CLICK_ON_BUTTON_SETTINGS,
@@ -56,6 +54,7 @@ export const clickOnButtonCloseSignUp = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_UP,
 });
 
+export const createUserAction = () => ({ type: CREATE_USER});
 
 export const createUserSuccessAction = (data) => ({ type: CREATE_USER_SUCCESS, data });
 
