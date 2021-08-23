@@ -8,11 +8,12 @@ import './header.scss';
 
 
 const Header = ({
+  pseudo,
   isLogged,
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
-  desable,
+  disable,
 }) => {
   const handleOnClickArrow = () => {
     console.log('click');
@@ -27,7 +28,7 @@ const Header = ({
     onClickLogUp();
   };
   const logOutAndEnabled = () => {
-    if ( isLogged === false  && desable === false){
+    if ( isLogged === false  && disable === false){
       return (
         <div className='header-rightside'>
           <button 
@@ -46,7 +47,7 @@ const Header = ({
           </button>
         </div>
       )
-    } else if(isLogged === false && desable === true){
+    } else if(isLogged === false && disable === true){
       return (
         <div className='header-rightside'>
           <button 
@@ -69,28 +70,28 @@ const Header = ({
     <div className='header'>
       <nav className='header-nav'>
         <div className='header-ol'>
-          { !desable && (
+          { !disable && (
             <div className='header-leftside'>
               <div className='header-accueil hover-underline-animation'>
                 <Link to="/">Accueil</Link>
               </div>
             </div>
           )}
-          { desable && (
+          { disable && (
             <div className='header-leftside'>
               <div className='header-accueil hover-underline-animation'>
                 <p>Accueil</p>
               </div>
             </div>
           )}
-          { !desable && (
+          { !disable && (
           <div className='header-logo'>
             <Link to="/">
               <img className='header-logo__img' src={logo} alt="sport finder logo" />
             </Link>
           </div>
           )}
-          { desable && (
+          { disable && (
           <div className='header-logo'>
             <p>
               <img className='header-logo__img' src={logo} alt="sport finder logo" />
@@ -100,7 +101,7 @@ const Header = ({
           { logOutAndEnabled() }
           { isLogged && (
             <div className='header-rightside'>
-              <div className='header-signup hover-underline-animation'>Bienvenue User</div>
+              <div className='header-signup hover-underline-animation'>Bienvenue {pseudo}</div>
               <button 
               type="submit"
               className='header__open'
@@ -118,9 +119,10 @@ const Header = ({
 }
 
 Header.propTypes = {
+  pseudo: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
-  desable: PropTypes.bool.isRequired,
+  disable: PropTypes.bool.isRequired,
 }
 
 export default Header;

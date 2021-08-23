@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Footer from 'src/components/Footer';
 
 const mapStateToProps = (state) => ({
-  desable: state.user.desable,
+  disable: state.user.disable,
 });
   // ajouter le state a utilisé pour le composant '
 

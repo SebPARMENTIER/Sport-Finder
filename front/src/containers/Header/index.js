@@ -4,7 +4,8 @@ import { clickOnButtonSettings, clickOnButtonLogIn, clickOnButtonLogUp } from 's
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
-  desable: state.user.desable,
+  disable: state.user.disable,
+  pseudo: state.user.pseudo,
 });
 // ajouter le state a utilisé pour le composant '
 

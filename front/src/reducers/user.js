@@ -16,6 +16,7 @@ import {
 } from 'src/actions/user';
 
 export const initialState = {
+  userId:'',
   pseudo: '',
   email: '',
   password: '',
@@ -28,7 +29,7 @@ export const initialState = {
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
-  desable: false,
+  disable: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -59,13 +60,13 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
-          desable: true,
+          disable: true,
         };
       }
       return{
         ...state, 
         openLogIn: !state.openLogIn,
-        desable: true,
+        disable: true,
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
@@ -75,13 +76,13 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
-          desable: true
+          disable: true
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: true
+        disable: true
       }
     };
     case CLICK_ON_BUTTON_LOG_OUT:
@@ -94,13 +95,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogIn: !state.openLogIn,
-        desable: false
+        disable: false
       }
     case CLICK_ON_BUTTON_CLOSE_SIGN_UP: 
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        desable: false,
+        disable: false,
         isCreateUserSuccess: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
@@ -127,14 +128,16 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
-      case LOGIN_SUCCESS:
+    case LOGIN_SUCCESS:
+      const { id, pseudo } = action.data.data;
       return {
         ...state,
-        ...action.data,
+        userId: id,
+        pseudo,
         isError: false,
         logged: true,
         openLogIn: false,
-        desable:false,
+        disable:false,
         email: '',
         password: '',
       };

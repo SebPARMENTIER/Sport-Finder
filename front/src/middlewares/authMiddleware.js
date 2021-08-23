@@ -33,8 +33,8 @@ const authMiddleware = (store) => (next) => (action) => {
         console.log(response.data.isCreateUserSuccess);
       })
       .catch((error) => {
-        store.dispatch(createUserErrorAction());
-        console.log(error);
+        store.dispatch(createUserErrorAction(data.error));
+        console.log(data.error);
       });
   }
   else if (action.type === SUBMIT_LOGIN) {

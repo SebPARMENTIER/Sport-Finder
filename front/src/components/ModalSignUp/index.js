@@ -36,47 +36,64 @@ const ModalSignUp = ({
         </button>
         
         <h1 className='modalSignUp__container__title'>Inscription</h1>
+        
         <form className='modalSignUp__container__form' onSubmit={handleSubmit}>
-          <div className="modalSignUp__container__form__first">
-            <Field
-              name="email"
-              type="text"
-              placeholder="Email..."
-              onChange={changeField}
-              value={email}
-            />
-            <Field
-              name="pseudo"
-              type="text"
-              placeholder="Pseudo..."
-              onChange={changeField}
-              value={pseudo}
-            />
-          </div>
-          <div className="modalSignUp__container__form__second">
-            <Field
-              name="password"
-              type="password"
-              placeholder="Mot de passe..."
-              onChange={changeField}
-              value={password}
-            />
-            <Field
-              name="passwordConfirm"
-              type="password"
-              placeholder="Vérification mot de passe..."
-              onChange={changeField}
-              value={passwordConfirm}
-            />
-          </div>
-          {isCreateUserSuccess && <p className="modalSignUp__form__success">Compte créé avec succès, veuillez vous connecter.</p>}
-          {isCreateUserError && <p className="modalSignUp__form__error">Vérifiez votre saisie</p>}
-          <button
-            type="submit"
-            className="modalSignUp__container__form__button"
-          >
-            Valider
-          </button>
+          { !isCreateUserSuccess && (
+            <div className="modalSignUp__container__form__first">
+              <Field
+                name="email"
+                type="text"
+                placeholder="Email..."
+                onChange={changeField}
+                value={email}
+              />
+              <Field
+                name="pseudo"
+                type="text"
+                placeholder="Pseudo..."
+                onChange={changeField}
+                value={pseudo}
+              />
+            </div>
+          )}
+          { !isCreateUserSuccess && (
+            <div className="modalSignUp__container__form__second">
+              <Field
+                name="password"
+                type="password"
+                placeholder="Mot de passe..."
+                onChange={changeField}
+                value={password}
+              />
+              <Field
+                name="passwordConfirm"
+                type="password"
+                placeholder="Vérification mot de passe..."
+                onChange={changeField}
+                value={passwordConfirm}
+              />
+            </div>
+          )}
+          {isCreateUserSuccess && <p className="modalSignUp__container__form__success">Compte crée avec succès, veuillez vous connecter</p>}
+          {isCreateUserError && <p className="modalSignUp__container__form__error">Vérifiez votre saisie</p>}
+          {isCreateUserSuccess && (
+            <button
+              type="submit"
+              className="modalSignUp__container__form__button"
+              onClick={handleOnClickCloseSignUp}
+            >
+              Ok
+            </button>
+          )}
+          {!isCreateUserSuccess && (
+            <button
+              type="submit"
+              className="modalSignUp__container__form__button"
+            >
+              Valider
+            </button>
+          )}
+          
         </form>
         
       </div>
