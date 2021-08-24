@@ -1,6 +1,7 @@
 import React from 'react';
 import ModalEditProfil from 'src/containers/ModalEditProfil';
-import ModalEditPassword from 'src/containers/ModalEditPassword'
+import ModalEditPassword from 'src/containers/ModalEditPassword';
+import ModalDeleteProfile from 'src/components/ModalDeleteProfile'
 
 import PropTypes from 'prop-types';
 
@@ -61,6 +62,7 @@ const Profil = ({
       <input className='profil__logOut' type="button" value="Déconnexion" />
       { openEditProfil && <ModalEditProfil />}
       { openEditPassword && <ModalEditPassword />}
+      <ModalDeleteProfile />
     </main>
   );
 }
