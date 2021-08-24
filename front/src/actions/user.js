@@ -14,7 +14,10 @@ export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
 export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
+export const CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL = 'CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL';
+export const CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD = 'CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD';
 export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
+export const CLICK_ON_BUTTON_EDIT_PASSWORD = 'CLICK_ON_BUTTON_EDIT_PASSWORD';
 export const DELETE_PROFIL = 'DELETE_PROFIL';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
@@ -43,6 +46,10 @@ export const clickOnButtonEditProfil = () => ({
   type: CLICK_ON_BUTTON_EDIT_PROFIL,
 });
 
+export const clickOnButtonEditPassword = () => ({
+  type: CLICK_ON_BUTTON_EDIT_PASSWORD,
+});
+
 export const clickOnButtonLogOut = () => ({
   type: CLICK_ON_BUTTON_LOG_OUT,
 });
@@ -51,11 +58,17 @@ export const clickOnButtonCloseSignIn = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_IN,
 });
 
-
 export const clickOnButtonCloseSignUp = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_UP,
 });
 
+export const clickOnButtonCloseEditProfil = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
+});
+
+export const clickOnButtonCloseEditPassword = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
+});
 
 export const createUserAction = () => ({ type: CREATE_USER });
 

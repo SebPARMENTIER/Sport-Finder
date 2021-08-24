@@ -73,6 +73,9 @@
     font-size: 1em;
   }
   @media (max-width: 430px){
+    .header{
+      padding-right: 0px;
+    }
     .header-signin{
       width: auto;
       margin-right: 0;
@@ -80,15 +83,18 @@
     .header-signup{
       width: 0;
       font-size: 0;
-      visibility: hidden;
-      position: fixed;
-      right: -10px;
+      margin-right: 0;
     }
     .header-leftside{
       margin: 0;
     }
     .header-rightside{
       margin: 0;
+      width: 35%;
+    }
+    .connect{
+      width: auto;
+      font-size: 0.9em;
     }
   }
 }

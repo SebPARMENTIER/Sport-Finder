@@ -1,6 +1,6 @@
 // == Import : npm
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // == Import : local
 import './review.scss';
@@ -33,8 +33,8 @@ const Review = () => {
   );
 };
 
-Review.propTypes = {
+// Review.propTypes = {
 
-}
+// }
 
 export default Review;

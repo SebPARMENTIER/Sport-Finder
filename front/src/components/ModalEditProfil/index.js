@@ -1,25 +1,29 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-// import PropTypes from 'prop-types';
+
+import PropTypes from 'prop-types';
 
 import './modalEditProfil.scss';
 
-export default function 
-ModalEditProfil() {
+const ModalEditProfil = ({
+  onClickCloseEditProfil,
+}) => {
+  const handleOnClickCloseEditProfil = () => {
+    console.log('click');
+    onClickCloseEditProfil();
+  }
   return (
     <container className='modalEditProfil'>
       <div className='modalEditProfil__container'>
-        <IoIosCloseCircleOutline className="modalEditProfil__container__close"/>
+        <button
+          type="submit"
+          className="modalSignIn__container__close"
+          onClick={handleOnClickCloseEditProfil}
+        >
+          <IoIosCloseCircleOutline className="modalSignIn__container__close__circle"/>
+        </button>
         <h1 className='modalEditProfil__container__title'>Modifier votre profil</h1>
         <form className='modalEditProfil__container__form'>
-          <div className='modalEditProfil__container__form__edit'>
-            <p className='modalEditProfil__container__form__edit__text'>Modifier votre email</p>
-            <input
-              className="modalEditProfil__container__form__edit__input"
-              type="text"
-              placeholder="Nouveau mail..."
-            />
-          </div>
           <div className='modalEditProfil__container__form__edit'>
             <p className='modalEditProfil__container__form__edit__text'>Modifier votre pseudo</p>
             <input
@@ -50,6 +54,8 @@ ModalEditProfil() {
   );
 }
 
-// ModalEditProfil.propTypes = {
+ModalEditProfil.propTypes = {
+  onClickCloseEditProfil: PropTypes.func.isRequired,
+};
 
-// };
+export default ModalEditProfil;
