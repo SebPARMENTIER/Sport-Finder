@@ -10,13 +10,20 @@ import {
   CLICK_ON_BUTTON_LOG_IN,
   CLICK_ON_BUTTON_LOG_UP,
   CLICK_ON_BUTTON_LOG_OUT,
+  CLICK_ON_BUTTON_DELETE_PROFILE,
+  CLICK_ON_BUTTON_EDIT_PROFIL,
+  CLICK_ON_BUTTON_EDIT_PASSWORD,
+  CLICK_ON_BUTTON_PRIVACY_DATA,
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
   CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
-  CLICK_ON_BUTTON_EDIT_PROFIL,
-  CLICK_ON_BUTTON_EDIT_PASSWORD,
+  CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
+  CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
+  DELETE_PROFILE_SUCCESS,
+  DELETE_PROFILE_ERROR,
+  DELETE_PASSWORD_CONFIRM_VALUE,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -32,10 +39,13 @@ export const initialState = {
   openLogUp: false,
   openEditProfil: false,
   openEditPassword: false,
+  openDeleteProfile: false,
+  openPrivacyData: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
-  disable: false,
+  isDeleteProfileSuccess: false,
+  isDeleteProfileError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -66,13 +76,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
-          disable: true,
         };
       }
       return{
         ...state, 
         openLogIn: !state.openLogIn,
-        disable: true,
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
@@ -82,13 +90,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
-          disable: true
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        disable: true
       }
     };
     case CLICK_ON_BUTTON_LOG_OUT:
@@ -99,11 +105,21 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
         userId: '',
       }
+    case CLICK_ON_BUTTON_DELETE_PROFILE:
+      return {
+        ...state,
+        openDeleteProfile: true,
+      }
+    case CLICK_ON_BUTTON_PRIVACY_DATA:
+      return {
+        ...state,
+        openPrivacyData: true,
+      }
     case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
       return {
         ...state,
         openLogIn: !state.openLogIn,
-        disable: false,
+        isError: false,
         email:"",
         password: "",
       }
@@ -111,8 +127,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        disable: false,
         isCreateUserSuccess: false,
+        isCreateUserError: false,
         email: "",
         password:"",
       }
@@ -125,6 +141,18 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openEditPassword: false,
+      }
+    case CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE:
+      return {
+        ...state,
+        openDeleteProfile: false,
+        isDeleteProfileError: false,
+        password: '',
+      }
+    case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
+      return {
+        ...state,
+        openPrivacyData: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
@@ -171,13 +199,32 @@ const reducer = (state = initialState, action = {}) => {
         isError: false,
         logged: true,
         openLogIn: false,
-        disable:false,
         email: '',
+        password: '',
       };
     case LOGIN_ERROR:
       return {
         ...state,
         isError: true,
+      };
+    case DELETE_PROFILE_SUCCESS:
+      return {
+        ...state,
+        isDeleteProfileSuccess: action.data.OK,
+        isDeleteProfileError: false,
+        logged: false,
+        id: '',
+        password: '',
+      }
+    case DELETE_PROFILE_ERROR:
+      return {
+        ...state,
+        isDeleteProfileError: true,
+      }
+    case DELETE_PASSWORD_CONFIRM_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
       };
     default:
       return state;

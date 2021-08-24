@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.modalSignIn{
+.modalDeleteProfile{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
     width: 90%;
     height: auto;
     position: absolute;
-    top: 20%;
+    top: 25%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -41,6 +41,12 @@
         text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
         margin: v.$gutter*3 0;
     }
+    &__text{
+      color: v.$text-color;
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: v.$gutter*2;
+    }
     &__form{
       margin: 0 auto;
       display: flex;
@@ -52,6 +58,16 @@
       border-bottom: 2px solid v.$text-color;
       margin-bottom: v.$gutter*2;
 
+      &__success{
+        background-color: rgb(115, 185, 109);
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: v.$gutter*3;
+        font-size: 2em;
+        text-align: center;
+      }
+
       &__error{
         background-color: rgb(185, 109, 109);
         border-radius: 10px;
@@ -62,22 +78,13 @@
         text-align: center;
       }
 
-      &__text{
-        color: v.$text-color;
+      &__field{
         font-size: 1.5em;
+        padding: v.$gutter*0.5;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: v.$gutter;
       }
-
-      &__input{
-        &__field{
-          font-size: 1.5em;
-          padding: v.$gutter*0.5;
-          border-radius: 5px;
-          border: none;
-          margin-bottom: v.$gutter;
-        }
-      }
-      
-      
       &__button{
         font-size: 1.5em;
         padding: v.$gutter*0.3 v.$gutter;
@@ -104,17 +111,14 @@
   
   @media (max-width: 321px){
     
-    .modalSignIn{
+    .modalDeleteProfile{
       
       &__container__title{
         font-size: 3em;
       }
       &__container__form{
         
-        &__text{
-          font-size: 1em;
-        }
-        &__input{
+        &__field{
           font-size: 1em;
           margin-bottom: v.$gutter*2;
           width: 90%;
@@ -142,17 +146,10 @@
         &__text{
           font-size: 1.8em;
         }
-        &__input{
-          display: flex;
-          flex-direction: row;
-          margin-bottom: v.$gutter*2;
-          &__field{
-            font-size: 1.8em;
-          margin-bottom: 0;
-          margin-right: v.$gutter;
-          }
-        }  
-
+        &__field{
+          font-size: 1.8em;
+          margin-bottom: v.$gutter;
+        }
         &__button{
           font-size: 2em;
         }

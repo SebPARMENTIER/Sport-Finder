@@ -2,9 +2,7 @@ import { connect } from "react-redux";
 import Footer from "src/components/Footer";
 import { clickOnButtonCloseSettings } from 'src/actions/user';
 
-const mapStateToProps = (state) => ({
-  disable: state.user.disable,
-});
+const mapStateToProps = (state) => ({});
 // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({

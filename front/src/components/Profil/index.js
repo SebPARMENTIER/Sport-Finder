@@ -1,6 +1,8 @@
 import React from 'react';
 import ModalEditProfil from 'src/containers/ModalEditProfil';
-import ModalEditPassword from 'src/containers/ModalEditPassword'
+import ModalEditPassword from 'src/containers/ModalEditPassword';
+import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
+import ModalPrivacyData from 'src/containers/ModalPrivacyData';
 
 import PropTypes from 'prop-types';
 
@@ -9,21 +11,27 @@ import './profil.scss';
 const Profil = ({
   onClickModalEditProfil,
   onClickModalEditPassword,
-  onClickDeleteProfil,
+  onClickModalDeleteProfile,
+  onClickModalPrivacyData,
   openEditProfil,
   openEditPassword,
+  openDeleteProfile,
+  openPrivacyData,
   pseudo,
 }) => {
   const handleModalEditProfil = () => {
     console.log("click");
     onClickModalEditProfil();
   }
-  const handleDeleteProfil = () => {
-    onClickDeleteProfil();
+  const handleModalDeleteProfile = () => {
+    onClickModalDeleteProfile();
   }
   const handleModalEditPassword = () => {
     console.log('click');
     onClickModalEditPassword();
+  }
+  const handleModalPrivacyData = () => {
+    onClickModalPrivacyData();
   }
   return (
     <main className='profil'>
@@ -47,13 +55,14 @@ const Profil = ({
         <button
           className='profil__button__edit'
           type="button"
-          onClick={handleDeleteProfil}
+          onClick={handleModalDeleteProfile}
         >
           Supprimer votre compte
         </button>
         <button
           className='profil__button__edit'
           type="button"
+          onClick={handleModalPrivacyData}
         >
           Vie privée et données
         </button>
@@ -61,6 +70,8 @@ const Profil = ({
       <input className='profil__logOut' type="button" value="Déconnexion" />
       { openEditProfil && <ModalEditProfil />}
       { openEditPassword && <ModalEditPassword />}
+      { openDeleteProfile && <ModalDeleteProfile />}
+      { openPrivacyData && <ModalPrivacyData />}
     </main>
   );
 }
@@ -68,9 +79,10 @@ const Profil = ({
 Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,
   onClickModalEditPassword: PropTypes.func.isRequired,
-  onClickDeleteProfil: PropTypes.func.isRequired,
-  openEditProfil: PropTypes.bool.isRequired,
+  onClickModalDeleteProfile: PropTypes.func.isRequired,
   openEditPassword: PropTypes.bool.isRequired,
+  openDeleteProfile: PropTypes.bool.isRequired,
+  openPrivacyData: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
 };
 
