@@ -11,12 +11,14 @@ import {
   CLICK_ON_BUTTON_LOG_UP,
   CLICK_ON_BUTTON_LOG_OUT,
   CLICK_ON_BUTTON_DELETE_PROFILE,
+  CLICK_ON_BUTTON_PRIVACY_DATA,
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
   CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
   CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
+  CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
   CLICK_ON_BUTTON_EDIT_PROFIL,
   CLICK_ON_BUTTON_EDIT_PASSWORD,
   DELETE_PROFILE_SUCCESS,
@@ -38,6 +40,7 @@ export const initialState = {
   openEditProfil: false,
   openDeleteProfile: false,
   openEditPassword: false,
+  openPrivacyData: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
@@ -112,6 +115,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openDeleteProfile: true,
       }
+    case CLICK_ON_BUTTON_PRIVACY_DATA:
+      return {
+        ...state,
+        openPrivacyData: true,
+      }
     case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
       return {
         ...state,
@@ -147,6 +155,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openEditPassword: false,
+      }
+    case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
+      return {
+        ...state,
+        openPrivacyData: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {

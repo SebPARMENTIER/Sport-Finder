@@ -2,6 +2,7 @@ import React from 'react';
 import ModalEditProfil from 'src/containers/ModalEditProfil';
 import ModalEditPassword from 'src/containers/ModalEditPassword';
 import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
+import ModalPrivacyData from 'src/containers/ModalPrivacyData';
 
 import PropTypes from 'prop-types';
 
@@ -11,9 +12,11 @@ const Profil = ({
   onClickModalEditProfil,
   onClickModalEditPassword,
   onClickModalDeleteProfile,
+  onClickModalPrivacyData,
   openEditProfil,
   openEditPassword,
   openDeleteProfile,
+  openPrivacyData,
   pseudo,
 }) => {
   const handleModalEditProfil = () => {
@@ -26,6 +29,9 @@ const Profil = ({
   const handleModalEditPassword = () => {
     console.log('click');
     onClickModalEditPassword();
+  }
+  const handleModalPrivacyData = () => {
+    onClickModalPrivacyData();
   }
   return (
     <main className='profil'>
@@ -56,6 +62,7 @@ const Profil = ({
         <button
           className='profil__button__edit'
           type="button"
+          onClick={handleModalPrivacyData}
         >
           Vie privée et données
         </button>
@@ -64,6 +71,7 @@ const Profil = ({
       { openEditProfil && <ModalEditProfil />}
       { openEditPassword && <ModalEditPassword />}
       { openDeleteProfile && <ModalDeleteProfile />}
+      { openPrivacyData && <ModalPrivacyData />}
     </main>
   );
 }
@@ -72,9 +80,11 @@ Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,
   onClickModalEditPassword: PropTypes.func.isRequired,
   onClickModalDeleteProfile: PropTypes.func.isRequired,
+  onClickModalPrivacyData: PropTypes.func.isRequired,
   openEditProfil: PropTypes.bool.isRequired,
   openEditPassword: PropTypes.bool.isRequired,
   openDeleteProfile: PropTypes.bool.isRequired,
+  openPrivacyData: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
 };
 

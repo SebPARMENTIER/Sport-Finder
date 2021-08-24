@@ -13,12 +13,14 @@ export const CLICK_ON_BUTTON_LOG_IN = 'CLICK_ON_BUTTON_LOG_IN';
 export const CLICK_ON_BUTTON_LOG_UP = 'CLICK_ON_BUTTON_LOG_UP';
 export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_DELETE_PROFILE = 'CLICK_ON_BUTTON_DELETE_PROFILE';
+export const CLICK_ON_BUTTON_PRIVACY_DATA = 'CLICK_ON_BUTTON_PRIVACY_DATA';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 export const CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL = 'CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD = 'CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD';
 export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE = 'CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE';
+export const CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA = 'CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA';
 export const CLICK_ON_BUTTON_EDIT_PASSWORD = 'CLICK_ON_BUTTON_EDIT_PASSWORD';
 export const DELETE_PROFIL = 'DELETE_PROFIL';
 export const DELETE_PROFILE_SUCCESS = 'DELETE_PROFILE_SUCCESS';
@@ -63,6 +65,10 @@ export const clickOnButtonDeleteProfile = () => ({
   type: CLICK_ON_BUTTON_DELETE_PROFILE,
 });
 
+export const clickOnButtonPrivacyData = () => ({
+  type: CLICK_ON_BUTTON_PRIVACY_DATA,
+});
+
 export const clickOnButtonCloseSignIn = () => ({
   type: CLICK_ON_BUTTON_CLOSE_SIGN_IN,
 });
@@ -82,6 +88,10 @@ export const clickOnButtonCloseEditPassword = () => ({
 export const clickOnButtonCloseDeleteProfile = () => ({
   type: CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
 });
+
+export const clickOnButtonClosePrivacyData = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
+})
 
 export const createUserAction = () => ({ type: CREATE_USER });
 
