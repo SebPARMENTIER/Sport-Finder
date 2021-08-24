@@ -14,7 +14,9 @@ import {
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
   CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
+  CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
   CLICK_ON_BUTTON_EDIT_PROFIL,
+  CLICK_ON_BUTTON_EDIT_PASSWORD,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -29,6 +31,7 @@ export const initialState = {
   openLogIn: false,
   openLogUp: false,
   openEditProfil: false,
+  openEditPassword: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
@@ -118,10 +121,20 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openEditProfil: false,
       }
+    case CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD:
+      return {
+        ...state,
+        openEditPassword: false,
+      }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
         ...state,
         openEditProfil: !state.openEditProfil,
+      }
+    case CLICK_ON_BUTTON_EDIT_PASSWORD:
+      return {
+        ...state,
+        openEditPassword: !state.openEditPassword,
       }
     case CREATE_USER_SUCCESS:
       return {

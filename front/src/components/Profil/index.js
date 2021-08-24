@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalEditProfil from 'src/containers/ModalEditProfil';
+import ModalEditPassword from 'src/containers/ModalEditPassword'
 
 import PropTypes from 'prop-types';
 
@@ -7,8 +8,10 @@ import './profil.scss';
 
 const Profil = ({
   onClickModalEditProfil,
+  onClickModalEditPassword,
   onClickDeleteProfil,
   openEditProfil,
+  openEditPassword,
   pseudo,
 }) => {
   const handleModalEditProfil = () => {
@@ -18,44 +21,56 @@ const Profil = ({
   const handleDeleteProfil = () => {
     onClickDeleteProfil();
   }
+  const handleModalEditPassword = () => {
+    console.log('click');
+    onClickModalEditPassword();
+  }
   return (
     <main className='profil'>
       <h1 className='profil__title'>Information profil</h1>
       <h2 className='profil__name'>{pseudo}</h2>
       <div className='profil__button'> 
-        <input 
+        <button 
           className='profil__button__edit'
           type="button"
-          value="Modifier votre profil"
           onClick={handleModalEditProfil}
-          />
-        <input
+        >
+          Modifier votre profil
+        </button>
+        <button
           className='profil__button__edit'
           type="button"
-          value="Supprimer votre compte"
+          onClick={handleModalEditPassword}
+        >
+          Modifier mot de passe
+        </button>
+        <button
+          className='profil__button__edit'
+          type="button"
           onClick={handleDeleteProfil}
-        />
-        <input
+        >
+          Supprimer votre compte
+        </button>
+        <button
           className='profil__button__edit'
           type="button"
-          value="Vie privée et données"
-        />
-        <input
-          className='profil__button__edit'
-          type="button"
-          value="vie privée et données"
-        />
+        >
+          Vie privée et données
+        </button>
       </div>
       <input className='profil__logOut' type="button" value="Déconnexion" />
       { openEditProfil && <ModalEditProfil />}
+      { openEditPassword && <ModalEditPassword />}
     </main>
   );
 }
 
 Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,
+  onClickModalEditPassword: PropTypes.func.isRequired,
   onClickDeleteProfil: PropTypes.func.isRequired,
   openEditProfil: PropTypes.bool.isRequired,
+  openEditPassword: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
 };
 

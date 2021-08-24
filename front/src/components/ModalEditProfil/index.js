@@ -15,7 +15,7 @@ const ModalEditProfil = ({
   return (
     <container className='modalEditProfil'>
       <div className='modalEditProfil__container'>
-      <button
+        <button
           type="submit"
           className="modalSignIn__container__close"
           onClick={handleOnClickCloseEditProfil}

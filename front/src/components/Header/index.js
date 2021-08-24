@@ -121,7 +121,7 @@ const Header = ({
           {logOutAndEnabled()}
           {isLogged && (
             <div className="header-rightside">
-              <div className="header-signup hover-underline-animation">
+              <div className="header-signup connect hover-underline-animation">
                 Bienvenue {pseudo}
               </div>
               <button
