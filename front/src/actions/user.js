@@ -21,6 +21,8 @@ export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE = 'CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE';
 export const CLICK_ON_BUTTON_EDIT_PASSWORD = 'CLICK_ON_BUTTON_EDIT_PASSWORD';
 export const DELETE_PROFIL = 'DELETE_PROFIL';
+export const DELETE_PROFILE_SUCCESS = 'DELETE_PROFILE_SUCCESS';
+export const DELETE_PROFILE_ERROR = 'DELETE_PROFILE_ERROR';
 export const DELETE_PASSWORD_CONFIRM_VALUE = 'DELETE_PASSWORD_CONFIRM_VALUE';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
@@ -102,6 +104,10 @@ export const createLoginSuccessAction = (data) => ({ type: LOGIN_SUCCESS, data }
 export const createLoginErrorAction = () => ({ type: LOGIN_ERROR });
 
 export const deleteProfilAction = () => ({ type: DELETE_PROFIL });
+
+export const deleteProfileSuccessAction = (data) => ({ type: DELETE_PROFILE_SUCCESS, data });
+
+export const deleteProfileErrorAction = () => ({ type: DELETE_PROFILE_ERROR });
 
 export const deleteConfirmSetInputValueAction = (newValue, name) => ({
   type: DELETE_PASSWORD_CONFIRM_VALUE,

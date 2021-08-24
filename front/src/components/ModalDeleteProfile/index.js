@@ -10,6 +10,8 @@ const ModalDeleteProfile = ({
   changeField,
   handleDeleteProfile,
   onClickCloseDeleteProfile,
+  isDeleteProfileSuccess,
+  isDeleteProfileError,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,6 +47,8 @@ const ModalDeleteProfile = ({
             onChange={changeField}
             value={password}
           />
+          {isDeleteProfileSuccess && <p className="modalDeleteProfile__container__form__success">Votre profil a été supprimé avec succès.</p>}
+          {isDeleteProfileError && <p className="modalDeleteProfile__container__form__error">Impossible de supprimer votre profil, vérifier votre saisie.</p>}
           <button
             type="submit"
             className="modalDeleteProfile__container__form__button"
@@ -69,6 +73,8 @@ ModalDeleteProfile.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleDeleteProfile: PropTypes.func.isRequired,
   onClickCloseDeleteProfile: PropTypes.func.isRequired,
+  isDeleteProfileSuccess: PropTypes.bool.isRequired,
+  isDeleteProfileError: PropTypes.bool.isRequired,
 };
 
 export default ModalDeleteProfile

@@ -19,6 +19,8 @@ import {
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
   CLICK_ON_BUTTON_EDIT_PROFIL,
   CLICK_ON_BUTTON_EDIT_PASSWORD,
+  DELETE_PROFILE_SUCCESS,
+  DELETE_PROFILE_ERROR,
   DELETE_PASSWORD_CONFIRM_VALUE,
 } from 'src/actions/user';
 
@@ -40,6 +42,8 @@ export const initialState = {
   isCreateUserError: false,
   isError: false,
   disable: false,
+  isDeleteProfileSuccess: false,
+  isDeleteProfileError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -194,6 +198,16 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         isError: true,
       };
+    case DELETE_PROFILE_SUCCESS:
+      return {
+        ...state,
+        isDeleteProfileSuccess: action.data.OK,
+      }
+    case DELETE_PROFILE_ERROR:
+      return {
+        ...state,
+        isDeleteProfileError: true,
+      }
     case DELETE_PASSWORD_CONFIRM_VALUE:
       return {
         ...state,

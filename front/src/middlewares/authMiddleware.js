@@ -9,6 +9,8 @@ import {
   createPasswordErrorAction,
   createLoginSuccessAction,
   createLoginErrorAction,
+  deleteProfileSuccessAction,
+  deleteProfileErrorAction,
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -80,11 +82,10 @@ const authMiddleware = (store) => (next) => (action) => {
 
     axios(config)
       .then((response) => {
-        const data = {...response.data};
-        store.dispatch(createLoginSuccessAction(data));
+        store.dispatch(deleteProfileSuccessAction(response.data));
       })
       .catch(() => {
-        store.dispatch(createLoginErrorAction());
+        store.dispatch(deleteProfileErrorAction());
       });
   }  
   else {

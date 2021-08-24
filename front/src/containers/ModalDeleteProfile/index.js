@@ -4,6 +4,8 @@ import { deleteConfirmSetInputValueAction, deleteProfilAction, clickOnButtonClos
 
 const mapStateToProps = (state) => ({
   password: state.user.password,
+  isDeleteProfileSuccess: state.user.isDeleteProfileSuccess,
+  isDeleteProfileError: state.user.isDeleteProfileError,
 });
 
 const mapDispatchToProps = (dispatch) => ({
