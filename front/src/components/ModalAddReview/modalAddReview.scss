@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100vw;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top: 0;
+  z-index: 1;
   &__container{
     background-color: v.$secondary-color;
     width: 90%;
@@ -67,8 +72,8 @@
         }
       }
       &__button{
-        font-size: 1.5em;
-        padding: v.$gutter v.$gutter*1.5;
+        font-size: 2em;
+        padding: v.$gutter*0.3 v.$gutter*1.5;
         color: v.$secondary-color;
         background-color: v.$text-color;
         border: none;
@@ -79,13 +84,12 @@
       }
     }
     @media (min-width: 770px){
-      .modalEditProfil{
+      .modalAddReview{
         &__container__title{
           font-size: 4em;
         }
         &__container__form{
           &__edit{
-            flex-direction: row;
             width: 80%;
             &__text{
               font-size: 2em;
