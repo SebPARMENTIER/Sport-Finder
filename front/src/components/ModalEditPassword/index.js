@@ -55,7 +55,6 @@ const ModalEditPassword = ({
           >
             Valider
           </button>
-          
         </form>
       </div>
       
