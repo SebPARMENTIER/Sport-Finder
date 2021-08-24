@@ -1,9 +1,15 @@
 import { connect } from 'react-redux';
 import Profil from 'src/components/Profil';
-import { clickOnButtonEditProfil } from 'src/actions/user';
+import {
+  clickOnButtonEditProfil,
+  deleteProfilAction,
+  clickOnButtonEditPassword,
+} from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   openEditProfil: state.user.openEditProfil,
+  openEditPassword: state.user.openEditPassword,
+  pseudo: state.user.pseudo,
 });
   // ajouter le state a utilisé pour le composant '
 
@@ -11,6 +17,13 @@ const mapDispatchToProps = (dispatch) => ({
   onClickModalEditProfil: () => {
     console.log('container');
     const action = clickOnButtonEditProfil();
+    dispatch(action);
+  },
+  onClickDeleteProfil: () => {
+    dispatch(deleteProfilAction());
+  },
+  onClickModalEditPassword: () => {
+    const action = clickOnButtonEditPassword();
     dispatch(action);
   }
 });

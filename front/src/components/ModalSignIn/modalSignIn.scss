@@ -8,7 +8,8 @@
   width: 100vw;
   background-color: rgb(129, 125, 125, 0.7);
   position: absolute;
-  top: 63px;
+  top:0;
+  z-index: 1;
   &__container{
     background-color: v.$secondary-color;
     width: 90%;
@@ -51,6 +52,16 @@
       padding-bottom: v.$gutter*2;
       border-bottom: 2px solid v.$text-color;
       margin-bottom: v.$gutter*2;
+
+      &__error{
+        background-color: rgb(185, 109, 109);
+        border-radius: 10px;
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        margin-bottom: v.$gutter;
+        font-size: 2em;
+        text-align: center;
+      }
 
       &__text{
         color: v.$text-color;
