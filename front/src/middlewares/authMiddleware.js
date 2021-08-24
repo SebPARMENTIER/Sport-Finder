@@ -9,86 +9,90 @@ import {
   createPasswordErrorAction,
   createLoginSuccessAction,
   createLoginErrorAction,
+  deleteProfileSuccessAction,
+  deleteProfileErrorAction
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
   const state = store.getState();  
-    
-  if (action.type === CREATE_USER) {
-    if (state.user.password !== state.user.passwordConfirm) {
-      store.dispatch(createPasswordErrorAction());
-    }
-    else {
+  switch (action.type) {
+    case CREATE_USER:{
+      if (state.user.password !== state.user.passwordConfirm) {
+        store.dispatch(createPasswordErrorAction());
+      }
+      else {
+        const config = {
+          method: 'post',
+          url: 'https://sportfinder.herokuapp.com/api/v1/signup',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          data: {
+            pseudo: state.user.pseudo,
+            email: state.user.email,
+            password: state.user.password,
+            passwordConfirm: state.user.passwordConfirm,
+          },
+        };
+        axios(config)
+          .then((response) => {
+            store.dispatch(createUserSuccessAction(response.data));
+            console.log(response.data.isCreateUserSuccess);
+          })
+          .catch((error) => {
+            store.dispatch(createUserErrorAction());
+            console.log(error);
+          });
+      }
+      break;
+    } 
+    case SUBMIT_LOGIN:{
       const config = {
         method: 'post',
-        url: 'https://sportfinder.herokuapp.com/api/v1/signup',
+        url: 'https://sportfinder.herokuapp.com/api/v1/login',
         headers: {
           'Content-Type': 'application/json',
         },
         data: {
-          pseudo: state.user.pseudo,
           email: state.user.email,
           password: state.user.password,
-          passwordConfirm: state.user.passwordConfirm,
         },
       };
+  
       axios(config)
         .then((response) => {
-          store.dispatch(createUserSuccessAction(response.data));
-          console.log(response.data.isCreateUserSuccess);
+          const data = {...response.data};
+          store.dispatch(createLoginSuccessAction(data));
         })
-        .catch((error) => {
-          store.dispatch(createUserErrorAction());
-          console.log(error);
+        .catch(() => {
+          store.dispatch(createLoginErrorAction());
         });
+      break;
     }
-  }  
-  else if (action.type === SUBMIT_LOGIN) {
-    const config = {
-      method: 'post',
-      url: 'https://sportfinder.herokuapp.com/api/v1/login',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: {
-        email: state.user.email,
-        password: state.user.password,
-      },
-    };
-
-    axios(config)
-      .then((response) => {
-        const data = {...response.data};
-        store.dispatch(createLoginSuccessAction(data));
-      })
-      .catch(() => {
-        store.dispatch(createLoginErrorAction());
-      });
-  }
-  else if (action.type === DELETE_PROFIL) {
-    const config = {
-      method: 'delete',
-      url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      data: {
-        id: state.user.userId,
-        password: state.user.password,
-      },
-    };
-
-    axios(config)
-      .then((response) => {
-        const data = {...response.data};
-        store.dispatch(createLoginSuccessAction(data));
-      })
-      .catch(() => {
-        store.dispatch(createLoginErrorAction());
-      });
-  }  
-  else {
-    next(action);
+    case DELETE_PROFIL:{
+      const config = {
+        method: 'delete',
+        url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          id: state.user.userId,
+          password: state.user.password,
+        },
+      };
+  
+      axios(config)
+        .then((response) => {
+          store.dispatch(deleteProfileSuccessAction(response.data));
+        })
+        .catch(() => {
+          store.dispatch(deleteProfileErrorAction());
+        });
+      break;
+    }
+    default:
+      next(action);
   }
 };
 
