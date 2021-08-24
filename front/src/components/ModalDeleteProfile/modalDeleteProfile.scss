@@ -29,8 +29,7 @@
       &__circle{
         color: v.$text-color;
         font-size: 2em;
-        
-        margin: 15px;
+        margin: 15px 15px 0 0;
       }
     }
     
@@ -59,6 +58,16 @@
       border-bottom: 2px solid v.$text-color;
       margin-bottom: v.$gutter*2;
 
+      &__success{
+        background-color: rgb(115, 185, 109);
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: v.$gutter*3;
+        font-size: 2em;
+        text-align: center;
+      }
+
       &__error{
         background-color: rgb(185, 109, 109);
         border-radius: 10px;
@@ -69,10 +78,6 @@
         text-align: center;
       }
 
-      &__text{
-        color: v.$text-color;
-        font-size: 1.5em;
-      }
       &__field{
         font-size: 1.5em;
         padding: v.$gutter*0.5;
@@ -113,10 +118,7 @@
       }
       &__container__form{
         
-        &__text{
-          font-size: 1em;
-        }
-        &__input{
+        &__field{
           font-size: 1em;
           margin-bottom: v.$gutter*2;
           width: 90%;
@@ -146,8 +148,7 @@
         }
         &__field{
           font-size: 1.8em;
-        margin-bottom: 0;
-        margin-right: v.$gutter;
+          margin-bottom: v.$gutter;
         }
         &__button{
           font-size: 2em;

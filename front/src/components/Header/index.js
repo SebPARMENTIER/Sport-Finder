@@ -12,8 +12,7 @@ const Header = ({
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
-  onClickCloseSettings,
-  disable,
+  onClickCloseSettings,  
 }) => {
   const handleOnClickArrow = () => {
     console.log("click");
@@ -30,95 +29,51 @@ const Header = ({
   const handleCloseSettings = () => {
     // console.log('close setting');
     onClickCloseSettings();
-  }
-  const logOutAndEnabled = () => {
-    if (isLogged === false && disable === false) {
-      return (
-        <div className="header-rightside">
-          <button
-            type="submit"
-            className="header-signin hover-underline-animation"
-            onClick={handleOnClickLogIn}
-          >
-            Connexion
-          </button>
-          <button
-            type="submit"
-            className="header-signup hover-underline-animation"
-            onClick={handleOnClickLogUp}
-          >
-            Inscription
-          </button>
-        </div>
-      );
-    } else if (isLogged === false && disable === true) {
-      return (
-        <div className="header-rightside">
-          <button
-            type="submit"
-            className="header-signin hover-underline-animation"
-          >
-            Connexion
-          </button>
-          <button
-            type="submit"
-            className="header-signup hover-underline-animation"
-          >
-            Inscription
-          </button>
-        </div>
-      );
-    }
   };
   return (
     <div className="header">
       <nav className="header-nav">
         <div className="header-ol">
-          {!disable && (
-            <div className="header-leftside">
-              <div className="header-accueil hover-underline-animation">
-                <Link
-                  to="/"
-                  onClick={handleCloseSettings}
-                >
-                  Accueil
-                </Link>
-              </div>
-            </div>
-          )}
-          {disable && (
-            <div className="header-leftside">
-              <div className="header-accueil hover-underline-animation">
-                <p>Accueil</p>
-              </div>
-            </div>
-          )}
-          {!disable && (
-            <div className="header-logo">
-              <Link 
+          <div className="header-leftside">
+            <div className="header-accueil hover-underline-animation">
+              <Link
                 to="/"
                 onClick={handleCloseSettings}
               >
-                <img
-                  className="header-logo__img"
-                  src={logo}
-                  alt="sport finder logo"
-                />
+                Accueil
               </Link>
             </div>
-          )}
-          {disable && (
-            <div className="header-logo">
-              <p>
-                <img
-                  className="header-logo__img"
-                  src={logo}
-                  alt="sport finder logo"
-                />
-              </p>
+          </div>
+          <div className="header-logo">
+            <Link 
+              to="/"
+              onClick={handleCloseSettings}
+            >
+              <img
+                className="header-logo__img"
+                src={logo}
+                alt="sport finder logo"
+              />
+            </Link>
+          </div>
+          {!isLogged && (
+            <div className="header-rightside">
+              <button
+                type="submit"
+                className="header-signin hover-underline-animation"
+                onClick={handleOnClickLogIn}
+              >
+                Connexion
+              </button>
+              <button
+                type="submit"
+                className="header-signup hover-underline-animation"
+                onClick={handleOnClickLogUp}
+              >
+                Inscription
+              </button>
             </div>
           )}
-          {logOutAndEnabled()}
           {isLogged && (
             <div className="header-rightside">
               <div className="header-signup connect hover-underline-animation">
@@ -145,7 +100,7 @@ Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
-  disable: PropTypes.bool.isRequired,
+  pseudo: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -9,7 +9,6 @@ import {
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
-  disable: state.user.disable,
   pseudo: state.user.pseudo,
 });
 // ajouter le state a utilisé pour le composant '
