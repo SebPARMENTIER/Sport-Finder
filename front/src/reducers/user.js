@@ -10,13 +10,16 @@ import {
   CLICK_ON_BUTTON_LOG_IN,
   CLICK_ON_BUTTON_LOG_UP,
   CLICK_ON_BUTTON_LOG_OUT,
+  CLICK_ON_BUTTON_DELETE_PROFILE,
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
   CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
+  CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
   CLICK_ON_BUTTON_EDIT_PROFIL,
   CLICK_ON_BUTTON_EDIT_PASSWORD,
+  DELETE_PASSWORD_CONFIRM_VALUE,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -31,6 +34,7 @@ export const initialState = {
   openLogIn: false,
   openLogUp: false,
   openEditProfil: false,
+  openDeleteProfile: false,
   openEditPassword: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
@@ -99,6 +103,11 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
         userId: '',
       }
+    case CLICK_ON_BUTTON_DELETE_PROFILE:
+      return {
+        ...state,
+        openDeleteProfile: true,
+      }
     case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
       return {
         ...state,
@@ -120,6 +129,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openEditProfil: false,
+      }
+    case CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE:
+      return {
+        ...state,
+        openDeleteProfile: false,
       }
     case CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD:
       return {
@@ -173,11 +187,17 @@ const reducer = (state = initialState, action = {}) => {
         openLogIn: false,
         disable:false,
         email: '',
+        password: '',
       };
     case LOGIN_ERROR:
       return {
         ...state,
         isError: true,
+      };
+    case DELETE_PASSWORD_CONFIRM_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
       };
     default:
       return state;
