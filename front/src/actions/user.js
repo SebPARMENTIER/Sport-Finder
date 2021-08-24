@@ -15,6 +15,7 @@ export const CLICK_ON_BUTTON_LOG_OUT = 'CLICK_ON_BUTTON_LOG_OUT';
 export const CLICK_ON_BUTTON_EDIT_PROFIL = 'CLICK_ON_BUTTON_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_EDIT_PASSWORD = 'CLICK_ON_BUTTON_EDIT_PASSWORD';
 export const CLICK_ON_BUTTON_DELETE_PROFILE = 'CLICK_ON_BUTTON_DELETE_PROFILE';
+export const CLICK_ON_BUTTON_PRIVACY_DATA = 'CLICK_ON_BUTTON_PRIVACY_DATA';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_IN = 'CLICK_ON_BUTTON_CLOSE_SIGN_IN';
 export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 export const CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL = 'CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL';
@@ -61,6 +62,10 @@ export const clickOnButtonLogOut = () => ({
 
 export const clickOnButtonDeleteProfile = () => ({
   type: CLICK_ON_BUTTON_DELETE_PROFILE,
+});
+
+export const clickOnButtonPrivacyData = () => ({
+  type: CLICK_ON_BUTTON_PRIVACY_DATA,
 });
 
 export const clickOnButtonCloseSignIn = () => ({

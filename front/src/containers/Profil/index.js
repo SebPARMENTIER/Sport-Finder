@@ -4,12 +4,14 @@ import {
   clickOnButtonEditProfil,
   clickOnButtonEditPassword,
   clickOnButtonDeleteProfile,
+  clickOnButtonPrivacyData,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   openEditProfil: state.user.openEditProfil,
   openEditPassword: state.user.openEditPassword,
   openDeleteProfile: state.user.openDeleteProfile,
+  openPrivacyData: state.user.openPrivacyData,
   pseudo: state.user.pseudo,
 });
   // ajouter le state a utilisé pour le composant '
@@ -26,6 +28,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickModalDeleteProfile: () => {
     dispatch(clickOnButtonDeleteProfile());
+  },
+  onClickModalPrivacyData: () => {
+    dispatch(clickOnButtonPrivacyData())
   }
 });
   // ajouter la fonction utilisé dans le composant
