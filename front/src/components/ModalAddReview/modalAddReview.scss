@@ -1,0 +1,109 @@
+@use 'src/styles/vars' as v;
+
+.modalAddReview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  &__container{
+    background-color: v.$secondary-color;
+    width: 90%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    border-radius: 10px;
+    box-shadow: 0px 7px 21px 15px rgba(0,0,0,0.3);
+    &__close{
+      color: v.$text-color;
+      font-size: 2em;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 15px;
+    }
+    &__title{
+      text-align: center;
+      font-family: 'Anton';
+      font-size: 1.5em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0;
+    }
+    &__form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      &__edit{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: v.$gutter;
+
+        &__text {
+          color: v.$text-color;
+          font-size: 1.5em;
+          padding-top: v.$gutter*2;
+          padding-bottom: v.$gutter*0.8;
+        }
+
+        &__rating{
+          display: flex;
+          flex-direction: row;
+          font-size: 2.5em;
+          color: grey;
+        }
+
+        &__input{
+          width: 90%;
+          height: v.$gutter*8;
+          font-size: 1.5em;
+          padding: v.$gutter*0.5;
+          border-radius: 5px;
+          border: none;
+        }
+      }
+      &__button{
+        font-size: 2em;
+        padding: v.$gutter*0.3 v.$gutter*1.5;
+        color: v.$secondary-color;
+        background-color: v.$text-color;
+        border: none;
+        border-radius: 5px;
+        width: auto;
+        margin-bottom: v.$gutter*3;
+        margin-top: v.$gutter;
+      }
+    }
+    @media (min-width: 770px){
+      .modalAddReview{
+        &__container__title{
+          font-size: 4em;
+        }
+        &__container__form{
+          &__edit{
+            width: 80%;
+            &__text{
+              font-size: 2em;
+            }
+            &__input{
+              font-size: 2em;
+            }
+          }
+          &__button{
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+  
+}

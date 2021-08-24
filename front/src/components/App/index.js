@@ -9,6 +9,8 @@ import Contact from 'src/containers/Contact';
 import About from 'src/containers/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
+import ModalAddReview from '../ModalAddReview';
+import Single from 'src/components/Single';
 
 
 // == Import
@@ -27,6 +29,8 @@ const App = ({}) => (
       <Route exact path='/profil' component={Profil}></Route>
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
+      <Route exact path='/addreview' component={ModalAddReview}></Route>
+      <Route exact path='/single' component={Single}></Route>
       <Route exact path='/loading' component={Loading}></Route>
     </Switch>
     <Footer />

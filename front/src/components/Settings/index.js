@@ -34,7 +34,7 @@ const Settings = ({
           to="/"
           onClick={handleLogOut}
         >
-          Déconnection
+          Déconnexion
         </Link>
       </div>
       
