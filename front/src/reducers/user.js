@@ -119,6 +119,7 @@ const reducer = (state = initialState, action = {}) => {
         disable: false,
         email:"",
         password: "",
+        isError: false,
       }
     case CLICK_ON_BUTTON_CLOSE_SIGN_UP: 
       return {
@@ -126,6 +127,7 @@ const reducer = (state = initialState, action = {}) => {
         openLogUp: !state.openLogUp,
         disable: false,
         isCreateUserSuccess: false,
+        isCreateUserError: false,
         email: "",
         password:"",
       }
@@ -138,6 +140,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openDeleteProfile: false,
+        isDeleteProfileError: false,
+        password: '',
       }
     case CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD:
       return {
@@ -202,6 +206,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isDeleteProfileSuccess: action.data.OK,
+        isDeleteProfileError: false,
+        userId: '',
+        password: '',
       }
     case DELETE_PROFILE_ERROR:
       return {

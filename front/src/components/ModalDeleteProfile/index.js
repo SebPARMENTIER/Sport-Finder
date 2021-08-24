@@ -47,8 +47,8 @@ const ModalDeleteProfile = ({
             onChange={changeField}
             value={password}
           />
-          {isDeleteProfileSuccess && <p className="modalDeleteProfile__container__form__success">Votre profil a été supprimé avec succès.</p>}
-          {isDeleteProfileError && <p className="modalDeleteProfile__container__form__error">Impossible de supprimer votre profil, vérifier votre saisie.</p>}
+          {isDeleteProfileSuccess && <p className="modalDeleteProfile__container__form__success">Votre compte a été supprimé avec succès.</p>}
+          {isDeleteProfileError && <p className="modalDeleteProfile__container__form__error">Impossible de supprimer votre compte, vérifier votre saisie.</p>}
           <button
             type="submit"
             className="modalDeleteProfile__container__form__button"
