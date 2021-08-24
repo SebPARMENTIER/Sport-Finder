@@ -18,7 +18,7 @@ const Home = ({
       <div className='home__picture'>
         <h1 className='home__picture__title'>SPORT FINDER</h1>
       </div>
-      <p className='home__slogan'>Recherchez un sport à pratiquez près de chez vous ou partout en France</p>
+      <p className='home__slogan'>Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
       <SearchForm />
       { openLogIn && <ModalSignIn />}
       { openLogUp && <ModalSignUp />}      

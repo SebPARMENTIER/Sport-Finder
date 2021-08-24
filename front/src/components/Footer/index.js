@@ -31,7 +31,7 @@ const Footer = ({disable}) => {
         </p>
       )}
       
-      <p className="footer__copyright">Sport finder - {year} ©</p>
+      <p className="footer__copyright">Sport Finder - {year} ©</p>
     </footer>
   );
 };

@@ -45,7 +45,7 @@
 
         &__text {
           color: v.$text-color;
-          font-size: 1em;
+          font-size: 1.5em;
           padding-top: v.$gutter*2;
           padding-bottom: v.$gutter*0.8;
         }
@@ -53,21 +53,21 @@
         &__rating{
           display: flex;
           flex-direction: row;
-          font-size: v.$gutter*2;
+          font-size: 2.5em;
           color: grey;
         }
 
         &__input{
           width: 90%;
           height: v.$gutter*8;
-          font-size: 1em;
+          font-size: 1.5em;
           padding: v.$gutter*0.5;
           border-radius: 5px;
           border: none;
         }
       }
       &__button{
-        font-size: 1em;
+        font-size: 1.5em;
         padding: v.$gutter v.$gutter*1.5;
         color: v.$secondary-color;
         background-color: v.$text-color;
