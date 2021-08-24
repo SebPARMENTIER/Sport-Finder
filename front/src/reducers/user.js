@@ -41,7 +41,6 @@ export const initialState = {
   isCreateUserSuccess: false,
   isCreateUserError: false,
   isError: false,
-  disable: false,
   isDeleteProfileSuccess: false,
   isDeleteProfileError: false,
 };
@@ -74,13 +73,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
-          disable: true,
         };
       }
       return{
         ...state, 
         openLogIn: !state.openLogIn,
-        disable: true,
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
@@ -90,13 +87,11 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
-          disable: true
         };
       }
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        disable: true
       }
     };
     case CLICK_ON_BUTTON_LOG_OUT:
@@ -116,7 +111,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogIn: !state.openLogIn,
-        disable: false,
         isError: false,
         email:"",
         password: "",
@@ -125,7 +119,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogUp: !state.openLogUp,
-        disable: false,
         isCreateUserSuccess: false,
         isCreateUserError: false,
         email: "",
@@ -193,7 +186,6 @@ const reducer = (state = initialState, action = {}) => {
         isError: false,
         logged: true,
         openLogIn: false,
-        disable:false,
         email: '',
         password: '',
       };
