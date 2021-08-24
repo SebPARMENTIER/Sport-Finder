@@ -21,6 +21,7 @@ export const CLICK_ON_BUTTON_CLOSE_SIGN_UP = 'CLICK_ON_BUTTON_CLOSE_SIGN_UP';
 export const CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL = 'CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL';
 export const CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD = 'CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD';
 export const CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE = 'CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE';
+export const CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA = 'CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA';
 export const DELETE_PROFIL = 'DELETE_PROFIL';
 export const DELETE_PROFILE_SUCCESS = 'DELETE_PROFILE_SUCCESS';
 export const DELETE_PROFILE_ERROR = 'DELETE_PROFILE_ERROR';
@@ -87,6 +88,10 @@ export const clickOnButtonCloseEditPassword = () => ({
 export const clickOnButtonCloseDeleteProfile = () => ({
   type: CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
 });
+
+export const clickOnButtonClosePrivacyData = () => ({
+  type: CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
+})
 
 export const createUserAction = () => ({ type: CREATE_USER });
 

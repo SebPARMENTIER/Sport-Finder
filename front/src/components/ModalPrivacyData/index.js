@@ -1,16 +1,21 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './modalPrivacyData.scss';
 
-export default function ModalPrivacyData() {
+export default function ModalPrivacyData({ onClickClosePrivacyData }) {
+  const handleOnClickClosePrivacyData = () => {
+    console.log('click');
+    onClickClosePrivacyData();
+  }
   return (
     <div className='modalPrivacyData'>
       <div className='modalPrivacyData__modal'>
         <button
           type="submit"
           className="modalPrivacyData__modal__close"
+          onClick={handleOnClickClosePrivacyData}
         >
           <IoIosCloseCircleOutline className="modalPrivacyData__modal__close__circle"/>
         </button>
@@ -195,6 +200,6 @@ export default function ModalPrivacyData() {
   );
 }
 
-// ModalPrivacyData.propTypes = {
-
-// };
+ModalPrivacyData.propTypes = {
+  onClickClosePrivacyData: PropTypes.func.isRequired,
+};

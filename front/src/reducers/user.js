@@ -20,6 +20,7 @@ import {
   CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
   CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
+  CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
   DELETE_PROFILE_SUCCESS,
   DELETE_PROFILE_ERROR,
   DELETE_PASSWORD_CONFIRM_VALUE,
@@ -147,6 +148,11 @@ const reducer = (state = initialState, action = {}) => {
         openDeleteProfile: false,
         isDeleteProfileError: false,
         password: '',
+      }
+    case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
+      return {
+        ...state,
+        openPrivacyData: false,
       }
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {

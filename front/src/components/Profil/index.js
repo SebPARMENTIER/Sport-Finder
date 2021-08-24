@@ -2,7 +2,7 @@ import React from 'react';
 import ModalEditProfil from 'src/containers/ModalEditProfil';
 import ModalEditPassword from 'src/containers/ModalEditPassword';
 import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
-import ModalPrivacyData from 'src/components/ModalPrivacyData';
+import ModalPrivacyData from 'src/containers/ModalPrivacyData';
 
 import PropTypes from 'prop-types';
 
