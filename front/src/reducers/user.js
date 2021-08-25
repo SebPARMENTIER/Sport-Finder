@@ -128,6 +128,7 @@ const reducer = (state = initialState, action = {}) => {
         openSettings: false,
         pseudo: '',
         userId: '',
+        token: null,
       }
     case CLICK_ON_BUTTON_DELETE_PROFILE:
       return {

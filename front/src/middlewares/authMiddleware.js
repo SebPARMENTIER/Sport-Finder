@@ -87,6 +87,7 @@ const authMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.user.userId,
@@ -109,6 +110,7 @@ const authMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/user/pseudo/${state.user.userId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.user.userId,
@@ -139,6 +141,7 @@ const authMiddleware = (store) => (next) => (action) => {
           url: `https://sportfinder.herokuapp.com/api/v1/user/password/${state.user.userId}`,
           headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${state.user.token}`,
           },
           data: {
             id: state.user.userId,
