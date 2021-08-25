@@ -27,6 +27,9 @@ import {
   UPDATE_PSEUDO_VALUE,
   UPDATE_PSEUDO_SUCCESS,
   UPDATE_ERROR,
+  UPDATE_PASSWORD_VALUE,
+  UPDATE_PASSWORD_COMFIRM_ERROR,
+
 } from 'src/actions/user';
 
 export const initialState = {
@@ -52,6 +55,9 @@ export const initialState = {
   isUpdatePseudoSuccess: false,
   isUpdatePseudoError: false,
   newPseudo: '',
+  newPassword: '',
+  newPasswordConfirm: '',
+  updatePasswordError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -257,6 +263,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isUpdatePseudoError: true,
+      }
+    case UPDATE_PASSWORD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      }
+    case UPDATE_PASSWORD_COMFIRM_ERROR:
+      return {
+        ...state,
+        updatePasswordError: true,
       }
     default:
       return state;

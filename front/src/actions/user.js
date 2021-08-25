@@ -30,6 +30,9 @@ export const UPDATE_PSEUDO_VALUE = 'UPDATE_PSEUDO_VALUE';
 export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
 export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
+export const UPDATE_PASSWORD_VALUE = 'UPDATE_PASSWORD_VALUE';
+export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const UPDATE_PASSWORD_COMFIRM_ERROR = 'UPDATE_PASSWORD_COMFIRM_ERROR';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -140,3 +143,13 @@ export const updatePseudoAction = () => ({ type: UPDATE_PSEUDO });
 export const updatePseudoSuccessAction = (data) => ({ type: UPDATE_PSEUDO_SUCCESS, data });
 
 export const updatePseudoErrorAction = () => ({ type: UPDATE_ERROR });
+
+export const updatePasswordSetInputValueAction = (newValue, name) => ({
+  type: UPDATE_PASSWORD_VALUE,
+  value: newValue,
+  name: name,
+});
+
+export const updatePasswordAction = () => ({ type: UPDATE_PASSWORD });
+
+export const updatePasswordComfirmErrorAction = () => ({ type: UPDATE_PASSWORD_COMFIRM_ERROR });
