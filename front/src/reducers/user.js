@@ -149,6 +149,7 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePseudoSuccess: false,
         isUpdatePseudoError: false,
         password: '',
+        newPseudo: '',
       }
     case CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE:
       return {

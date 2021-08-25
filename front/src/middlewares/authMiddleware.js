@@ -97,7 +97,7 @@ const authMiddleware = (store) => (next) => (action) => {
     case UPDATE_PSEUDO: {
       const config = {
         method: 'patch',
-        url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
+        url: `https://sportfinder.herokuapp.com/api/v1/user/pseudo/${state.user.userId}`,
         headers: {
           'Content-Type': 'application/json',
         },
