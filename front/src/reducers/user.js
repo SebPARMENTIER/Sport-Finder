@@ -90,6 +90,9 @@ const reducer = (state = initialState, action = {}) => {
           ...state,
           openLogUp: !state.openLogUp,
           openLogIn: !state.openLogIn,
+          isError: false,
+          email: '',
+          password: '',
         };
       }
       return {
