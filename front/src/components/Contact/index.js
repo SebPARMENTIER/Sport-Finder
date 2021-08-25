@@ -7,6 +7,7 @@ import ModalSignUp from 'src/containers/ModalSignUp';
 
 // == Import : local
 import Field from 'src/components/Field';
+import FieldTextarea from 'src/components/FieldTextarea';
 import './contact.scss';
 
 // == Component
@@ -34,11 +35,11 @@ const Contact = ({
       <form className="contact__form" onSubmit={handleSubmit}>
         <div className="contact__form__block__first">
           <select
-            //name="civility"
+            name="civility"
             title="Civilité"
             className="contact__form__block__first__civility"
-            //value={civility}
-            //onChange={changeField}
+            value={civility}
+            onChange={changeField}
           >
             <option defaultValue="" hidden>Civilité</option>
             <option value="mister">M.</option>
@@ -71,7 +72,7 @@ const Contact = ({
             onChange={changeField}
           />
           <Field
-          name="subject"
+            name="subject"
             type="text"
             className="contact__form__block__second__subject"
             placeholder="Sujet"            
@@ -80,17 +81,17 @@ const Contact = ({
           />
         </div>
         <div className="contact__form__block__third">
-            <textarea
-              //name="content"
+            <FieldTextarea
+              name="content"
               className="contact__form__block__third__content"
               placeholder="Veuillez saisir votre message"
               cols="30"
               rows="3"
               maxLength="255"
-              //value={content}
-              //onChange={changeField}
-            >
-            </textarea>
+              value={content}
+              onChange={changeField}
+            />
+            
           <button className="contact__form__block__third__button" type="submit">
             Envoyer
           </button>
