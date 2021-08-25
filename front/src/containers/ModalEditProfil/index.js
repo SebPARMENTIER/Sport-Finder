@@ -1,16 +1,31 @@
 import { connect } from 'react-redux';
 import ModalEditProfil from 'src/components/ModalEditProfil';
-import { clickOnButtonCloseEditProfil } from 'src/actions/user';
+import {
+  updatePseudoSetInputValueAction,
+  clickOnButtonCloseEditProfil,
+  updatePseudoAction,
+} from 'src/actions/user';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  newPseudo: state.user.newPseudo,
+  password: state.user.password,
+  isUpdatePseudoSuccess: state.user.isUpdatePseudoSuccess,
+  isUpdatePseudoError: state.user.isUpdatePseudoError,
+});
   // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({
+  changeField: (newValue, name) => {
+    dispatch(updatePseudoSetInputValueAction(newValue, name));
+  },
   onClickCloseEditProfil: () => {
     console.log('in the container Header');
     const action = clickOnButtonCloseEditProfil();
     dispatch(action);
-  }
+  },
+  handleUpdatePseudo: () => {
+    dispatch(updatePseudoAction());
+  },
 });
   // ajouter la fonction utilisé dans le composant
 

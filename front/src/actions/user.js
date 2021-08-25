@@ -26,6 +26,10 @@ export const DELETE_PROFIL = 'DELETE_PROFIL';
 export const DELETE_PROFILE_SUCCESS = 'DELETE_PROFILE_SUCCESS';
 export const DELETE_PROFILE_ERROR = 'DELETE_PROFILE_ERROR';
 export const DELETE_PASSWORD_CONFIRM_VALUE = 'DELETE_PASSWORD_CONFIRM_VALUE';
+export const UPDATE_PSEUDO_VALUE = 'UPDATE_PSEUDO_VALUE';
+export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
+export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
+export const UPDATE_ERROR = 'UPDATE_ERROR';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -124,3 +128,15 @@ export const deleteConfirmSetInputValueAction = (newValue, name) => ({
   value: newValue,
   name: name,
 });
+
+export const updatePseudoSetInputValueAction = (newValue, name) => ({
+  type: UPDATE_PSEUDO_VALUE,
+  value: newValue,
+  name: name,
+});
+
+export const updatePseudoAction = () => ({ type: UPDATE_PSEUDO });
+
+export const updatePseudoSuccessAction = (data) => ({ type: UPDATE_PSEUDO_SUCCESS, data });
+
+export const updatePseudoErrorAction = () => ({ type: UPDATE_ERROR });

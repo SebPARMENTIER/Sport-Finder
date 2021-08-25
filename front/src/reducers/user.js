@@ -24,6 +24,9 @@ import {
   DELETE_PROFILE_SUCCESS,
   DELETE_PROFILE_ERROR,
   DELETE_PASSWORD_CONFIRM_VALUE,
+  UPDATE_PSEUDO_VALUE,
+  UPDATE_PSEUDO_SUCCESS,
+  UPDATE_ERROR,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -46,6 +49,9 @@ export const initialState = {
   isError: false,
   isDeleteProfileSuccess: false,
   isDeleteProfileError: false,
+  isUpdatePseudoSuccess: false,
+  isUpdatePseudoError: false,
+  newPseudo: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -140,6 +146,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openEditProfil: false,
+        isUpdatePseudoSuccess: false,
+        isUpdatePseudoError: false,
+        password: '',
       }
     case CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE:
       return {
@@ -196,7 +205,7 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case LOGIN_SUCCESS:
-      const { id, pseudo } = action.data.data;
+      const { id, pseudo } = action.data;
       return {
         ...state,
         userId: id,
@@ -232,6 +241,23 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
+    case UPDATE_PSEUDO_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_PSEUDO_SUCCESS:
+      return {
+        ...state,
+        isUpdatePseudoSuccess: true,
+        isUpdatePseudoError: false,
+        pseudo: state.newPseudo,
+      }
+    case UPDATE_ERROR:
+      return {
+        ...state,
+        isUpdatePseudoError: true,
+      }
     default:
       return state;
   }
