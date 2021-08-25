@@ -143,6 +143,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openDeleteProfile: false,
         isDeleteProfileError: false,
+        isDeleteProfileSuccess: false,
         password: '',
       }
     case CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD:
