@@ -11,6 +11,7 @@ import {
   createPasswordErrorAction,
   createLoginSuccessAction,
   createLoginErrorAction,
+  createPasswordLengthError,
   deleteProfileSuccessAction,
   deleteProfileErrorAction,
   updatePseudoSuccessAction,
@@ -25,7 +26,10 @@ const authMiddleware = (store) => (next) => (action) => {
   const state = store.getState();  
   switch (action.type) {
     case CREATE_USER:{
-      if (state.user.password !== state.user.passwordConfirm) {
+      if ( state.user.password.length < 8 ){
+        store.dispatch(createPasswordLengthError());
+      }
+      else if (state.user.password !== state.user.passwordConfirm) {
         store.dispatch(createPasswordErrorAction());
       }
       else {

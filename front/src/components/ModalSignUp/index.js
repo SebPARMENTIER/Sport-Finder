@@ -15,7 +15,8 @@ const ModalSignUp = ({
   handleCreateUser,
   isCreateUserSuccess,
   isCreateUserError,
-  onClickCloseSignUp
+  onClickCloseSignUp,
+  isCreatePasswordLengthError,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -78,6 +79,7 @@ const ModalSignUp = ({
           {isCreateUserSuccess && <p className="modalSignUp__container__form__success">Compte crée avec succès, veuillez vous connecter</p>}
           {passwordError && <p className="modalSignUp__container__form__error">Mot de passe non identique.</p>}
           {isCreateUserError && <p className="modalSignUp__container__form__error">Email ou pseudo déjà existant.</p>}
+          {isCreatePasswordLengthError && <p className="modalSignUp__container__form__error">Votre nouveau mot de passe doit contenir au minimum 8 caractères.</p>}
           {isCreateUserSuccess && (
             <button
               type="submit"
@@ -114,6 +116,7 @@ ModalSignUp.propTypes = {
   isCreateUserSuccess: PropTypes.bool.isRequired,
   isCreateUserError: PropTypes.bool.isRequired,
   onClickCloseSignUp: PropTypes.func.isRequired,
+  isCreatePasswordLengthError: PropTypes.bool.isRequired,
 };
 
 export default ModalSignUp;
