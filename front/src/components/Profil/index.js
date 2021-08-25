@@ -80,6 +80,8 @@ Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,
   onClickModalEditPassword: PropTypes.func.isRequired,
   onClickModalDeleteProfile: PropTypes.func.isRequired,
+  onClickModalPrivacyData: PropTypes.func.isRequired,
+  openEditProfil: PropTypes.bool.isRequired,
   openEditPassword: PropTypes.bool.isRequired,
   openDeleteProfile: PropTypes.bool.isRequired,
   openPrivacyData: PropTypes.bool.isRequired,

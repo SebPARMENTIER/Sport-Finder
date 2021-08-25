@@ -10,7 +10,7 @@ import {
   createLoginSuccessAction,
   createLoginErrorAction,
   deleteProfileSuccessAction,
-  deleteProfileErrorAction
+  deleteProfileErrorAction,
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {

@@ -147,6 +147,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openDeleteProfile: false,
         isDeleteProfileError: false,
+        isDeleteProfileSuccess: false,
         password: '',
       }
     case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
@@ -213,8 +214,9 @@ const reducer = (state = initialState, action = {}) => {
         isDeleteProfileSuccess: action.data.OK,
         isDeleteProfileError: false,
         logged: false,
-        id: '',
+        userId: '',
         password: '',
+        pseudo: '',
       }
     case DELETE_PROFILE_ERROR:
       return {
