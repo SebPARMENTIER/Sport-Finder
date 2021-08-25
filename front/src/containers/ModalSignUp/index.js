@@ -5,6 +5,7 @@ import {
   createUserSetInputValueAction,
   createUserAction,
   clickOnButtonCloseSignUp,
+  isCreatePasswordLengthError,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => ({
   passwordError: state.user.passwordError,
   isCreateUserSuccess: state.user.isCreateUserSuccess,
   isCreateUserError: state.user.isCreateUserError,
+  isCreatePasswordLengthError: state.user.isCreatePasswordLengthError,
 });
 
 const mapDispatchToProps = (dispatch) => ({

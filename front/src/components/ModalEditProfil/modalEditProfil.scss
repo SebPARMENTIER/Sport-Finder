@@ -61,7 +61,6 @@
         }
         
       }
-
       &__success{
         background-color: rgb(115, 185, 109);
         padding: v.$gutter v.$gutter*2;
@@ -81,7 +80,7 @@
         font-size: 2em;
         text-align: center;
       }
-
+      
       &__button{
         font-size: 1em;
         padding: v.$gutter v.$gutter*1.5;

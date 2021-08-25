@@ -32,6 +32,7 @@ import {
   UPDATE_PASSWORD_SUCCESS,
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_LENGTH_ERROR,
+  CREATE_PASSWORD_LENGTH_ERROR,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -51,6 +52,7 @@ export const initialState = {
   openPrivacyData: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
+  isCreatePasswordLengthError: false,
   isError: false,
   isDeleteProfileSuccess: false,
   isDeleteProfileError: false,
@@ -110,6 +112,7 @@ const reducer = (state = initialState, action = {}) => {
           isError: false,
           email: '',
           password: '',
+          isCreatePasswordLengthError: false,
         };
       }
       return {
@@ -152,6 +155,10 @@ const reducer = (state = initialState, action = {}) => {
         isCreateUserError: false,
         email: "",
         password:"",
+        pseudo: "",
+        passwordConfirm: "",
+        isCreatePasswordLengthError: false,
+        passwordError: false,
       }
     case CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL:
       return {
@@ -204,6 +211,7 @@ const reducer = (state = initialState, action = {}) => {
         passwordConfirm: '',
         passwordError: false,
         isCreateUserError: false,
+        isCreatePasswordLengthError: false,
       }
     case CREATE_USER_ERROR:
       return {
@@ -214,6 +222,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         passwordError: true,
+        isCreatePasswordLengthError: false,
+      }
+    case CREATE_PASSWORD_LENGTH_ERROR:
+      return {
+        ...state,
+        isCreatePasswordLengthError: true
       }
     case SET_INPUT_VALUE:
       return {
@@ -246,12 +260,12 @@ const reducer = (state = initialState, action = {}) => {
         userId: '',
         password: '',
         pseudo: '',
-      }
+      };
     case DELETE_PROFILE_ERROR:
       return {
         ...state,
         isDeleteProfileError: true,
-      }
+      };
     case DELETE_PASSWORD_CONFIRM_VALUE:
       return {
         ...state,

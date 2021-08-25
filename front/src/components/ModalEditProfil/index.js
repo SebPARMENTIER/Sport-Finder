@@ -22,7 +22,7 @@ const ModalEditProfil = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUpdatePseudo();
-  }
+  };
   return (
     <div className='modalEditProfil'>
       <div className='modalEditProfil__container'>
