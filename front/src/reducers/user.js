@@ -27,6 +27,11 @@ import {
   UPDATE_PSEUDO_VALUE,
   UPDATE_PSEUDO_SUCCESS,
   UPDATE_ERROR,
+  UPDATE_PASSWORD_VALUE,
+  UPDATE_PASSWORD_CONFIRM_ERROR,
+  UPDATE_PASSWORD_SUCCESS,
+  UPDATE_PASSWORD_ERROR,
+  UPDATE_PASSWORD_LENGTH_ERROR,
 } from 'src/actions/user';
 
 export const initialState = {
@@ -52,6 +57,12 @@ export const initialState = {
   isUpdatePseudoSuccess: false,
   isUpdatePseudoError: false,
   newPseudo: '',
+  newPassword: '',
+  newPasswordConfirm: '',
+  updatePasswordError: false,
+  isUpdatePasswordSuccess: false,
+  isUpdatePasswordError: false,
+  isUpdatePasswordLengthError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -163,6 +174,10 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openEditPassword: false,
+        isUpdatePasswordSuccess: false,
+        password: '',
+        newPassword: '',
+        newPasswordConfirm: '',
       }
     case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
       return {
@@ -258,6 +273,40 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isUpdatePseudoError: true,
+      }
+    case UPDATE_PASSWORD_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      }
+    case UPDATE_PASSWORD_CONFIRM_ERROR:
+      return {
+        ...state,
+        updatePasswordError: true,
+        isUpdatePasswordError: false,
+        isUpdatePasswordLengthError: false,
+      }
+    case UPDATE_PASSWORD_SUCCESS:
+      return {
+        ...state,
+        isUpdatePasswordSuccess: true,
+        isUpdatePasswordError: false,
+        isUpdatePasswordLengthError: false,
+        updatePasswordError: false,
+      }
+    case UPDATE_PASSWORD_ERROR:
+      return {
+        ...state,
+        isUpdatePasswordError: true,
+        updatePasswordError: false,
+        isUpdatePasswordLengthError: false,
+      }
+    case UPDATE_PASSWORD_LENGTH_ERROR:
+      return {
+        ...state,
+        isUpdatePasswordLengthError: true,
+        isUpdatePasswordError: false,
+        updatePasswordError: false,
       }
     default:
       return state;
