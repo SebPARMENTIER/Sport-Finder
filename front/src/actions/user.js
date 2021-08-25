@@ -26,6 +26,17 @@ export const DELETE_PROFIL = 'DELETE_PROFIL';
 export const DELETE_PROFILE_SUCCESS = 'DELETE_PROFILE_SUCCESS';
 export const DELETE_PROFILE_ERROR = 'DELETE_PROFILE_ERROR';
 export const DELETE_PASSWORD_CONFIRM_VALUE = 'DELETE_PASSWORD_CONFIRM_VALUE';
+export const UPDATE_PSEUDO_VALUE = 'UPDATE_PSEUDO_VALUE';
+export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
+export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
+export const UPDATE_ERROR = 'UPDATE_ERROR';
+export const UPDATE_PASSWORD_VALUE = 'UPDATE_PASSWORD_VALUE';
+export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const UPDATE_PASSWORD_COMFIRM_ERROR = 'UPDATE_PASSWORD_COMFIRM_ERROR';
+export const UPDATE_PASSWORD_SUCCESS = 'UPDATE_PASSWORD_SUCCESS';
+export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
+export const UPDATE_PASSWORD_LENGTH_ERROR = 'UPDATE_PASSWORD_LENGTH_ERROR';
+export const CREATE_PASSWORD_LENGTH_ERROR = 'CREATE_PASSWORD_LENGTH_ERROR';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -101,6 +112,8 @@ export const createUserErrorAction = () => ({ type: CREATE_USER_ERROR });
 
 export const createPasswordErrorAction = () => ({ type: CREATE_PASSWORD_ERROR });
 
+export const createPasswordLengthError = () => ({ type: CREATE_PASSWORD_LENGTH_ERROR })
+
 export const createSetInputValueAction = (newValue, name) => ({
   type: SET_INPUT_VALUE,
   value: newValue,
@@ -124,3 +137,31 @@ export const deleteConfirmSetInputValueAction = (newValue, name) => ({
   value: newValue,
   name: name,
 });
+
+export const updatePseudoSetInputValueAction = (newValue, name) => ({
+  type: UPDATE_PSEUDO_VALUE,
+  value: newValue,
+  name: name,
+});
+
+export const updatePseudoAction = () => ({ type: UPDATE_PSEUDO });
+
+export const updatePseudoSuccessAction = (data) => ({ type: UPDATE_PSEUDO_SUCCESS, data });
+
+export const updatePseudoErrorAction = () => ({ type: UPDATE_ERROR });
+
+export const updatePasswordSetInputValueAction = (newValue, name) => ({
+  type: UPDATE_PASSWORD_VALUE,
+  value: newValue,
+  name: name,
+});
+
+export const updatePasswordAction = () => ({ type: UPDATE_PASSWORD });
+
+export const updatePasswordComfirmErrorAction = () => ({ type: UPDATE_PASSWORD_COMFIRM_ERROR });
+
+export const updatePasswordSuccessAction = (data) => ({ type: UPDATE_PASSWORD_SUCCESS });
+
+export const updatePasswordErrorAction = () => ({ type: UPDATE_PASSWORD_ERROR });
+
+export const updatePasswordLengthError = () => ({ type: UPDATE_PASSWORD_LENGTH_ERROR });

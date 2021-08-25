@@ -4,20 +4,32 @@ import {
   CREATE_USER,
   SUBMIT_LOGIN,
   DELETE_PROFIL,
+  UPDATE_PSEUDO,
+  UPDATE_PASSWORD,
   createUserSuccessAction,
   createUserErrorAction,
   createPasswordErrorAction,
   createLoginSuccessAction,
   createLoginErrorAction,
+  createPasswordLengthError,
   deleteProfileSuccessAction,
-  deleteProfileErrorAction
+  deleteProfileErrorAction,
+  updatePseudoSuccessAction,
+  updatePseudoErrorAction,
+  updatePasswordComfirmErrorAction,
+  updatePasswordSuccessAction,
+  updatePasswordErrorAction,
+  updatePasswordLengthError,
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
   const state = store.getState();  
   switch (action.type) {
     case CREATE_USER:{
-      if (state.user.password !== state.user.passwordConfirm) {
+      if ( state.user.password.length < 8 ){
+        store.dispatch(createPasswordLengthError());
+      }
+      else if (state.user.password !== state.user.passwordConfirm) {
         store.dispatch(createPasswordErrorAction());
       }
       else {
@@ -31,7 +43,6 @@ const authMiddleware = (store) => (next) => (action) => {
             pseudo: state.user.pseudo,
             email: state.user.email,
             password: state.user.password,
-            passwordConfirm: state.user.passwordConfirm,
           },
         };
         axios(config)
@@ -89,6 +100,61 @@ const authMiddleware = (store) => (next) => (action) => {
         .catch(() => {
           store.dispatch(deleteProfileErrorAction());
         });
+      break;
+    }
+    case UPDATE_PSEUDO:{
+      const config = {
+        method:'patch',
+        url: `https://sportfinder.herokuapp.com/api/v1/user/pseudo/${state.user.userId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          id: state.user.userId,
+          password: state.user.password,
+          pseudo:state.user.newPseudo,
+        },
+      };
+
+      axios(config)
+        .then((response) => {
+          store.dispatch(updatePseudoSuccessAction(response.data));
+        })
+        .catch(() => {
+          store.dispatch(updatePseudoErrorAction());
+        });
+      break;
+    }
+    case UPDATE_PASSWORD:{
+      if ( state.user.newPassword.length < 8 ){
+        store.dispatch(updatePasswordLengthError());
+      }
+      else if ( state.user.newPassword !== state.user.newPasswordConfirm ) {
+        store.dispatch(updatePasswordComfirmErrorAction());
+      }
+      else {
+        const config = {
+          method: 'patch',
+          url: `https://sportfinder.herokuapp.com/api/v1/user/password/${state.user.userId}`,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          data: {
+            id: state.user.userId,
+            password: state.user.password,
+            new_password: state.user.newPassword,
+          },
+        };
+        axios(config)
+          .then((response) => {
+            store.dispatch(updatePasswordSuccessAction(response.data));
+            console.log(response.data.isCreateUserSuccess);
+          })
+          .catch((error) => {
+            store.dispatch(updatePasswordErrorAction());
+            console.log(error);
+          });
+      }
       break;
     }
     default:
