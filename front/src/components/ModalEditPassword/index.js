@@ -14,6 +14,9 @@ const ModalEditPassword = ({
   newPasswordConfirm,
   handleUpdatePassword,
   updatePasswordError,
+  isUpdatePasswordSuccess,
+  isUpdatePasswordError,
+  isUpdatePasswordLengthError,
 }) => {
   const handleOnClickCloseEditPassword = () => {
     console.log('click');
@@ -38,6 +41,7 @@ const ModalEditPassword = ({
           className='modalEditPassword__container__form'
           onSubmit={handleSubmit}
         >
+          { !isUpdatePasswordSuccess && (
           <div className='modalEditPassword__container__form__edit'>
             <p className='modalEditPassword__container__form__edit__text'>Mot de passe actuel</p>
             <Field
@@ -48,6 +52,8 @@ const ModalEditPassword = ({
               value={password}
             />
           </div>
+          )}
+          { !isUpdatePasswordSuccess && (
           <div className='modalEditPassword__container__form__edit'>
             <p className='modalEditPassword__container__form__edit__text'>Nouveau mot de passe</p>
             <Field
@@ -58,6 +64,8 @@ const ModalEditPassword = ({
               value={newPassword}
             />
           </div>
+          )}
+          { !isUpdatePasswordSuccess && (
           <div className='modalEditPassword__container__form__edit'>
             <p className='modalEditPassword__container__form__edit__text'>Vérification mot de passe</p>
             <Field
@@ -68,13 +76,28 @@ const ModalEditPassword = ({
               value={newPasswordConfirm}
             />
           </div>
+          )}
+          {isUpdatePasswordSuccess && <p className="modalSignUp__container__form__success">Mot de passe modifié avec succès.</p>}
           {updatePasswordError && <p className="modalEditPassword__container__form__error">Mot de passe non identique.</p>}
-          <button
-            type="submit"
-            className="modalEditPassword__container__form__button"
-          >
-            Valider
-          </button>
+          {isUpdatePasswordError && <p className="modalEditPassword__container__form__error">Mot de passe actuel erroné.</p>}
+          {isUpdatePasswordLengthError && <p className="modalEditPassword__container__form__error">Votre nouveau mot de passe doit contenir au minimum 8 caractères.</p>}
+          {isUpdatePasswordSuccess && (
+            <button
+              type="submit"
+              className="modalSignUp__container__form__button"
+              onClick={handleOnClickCloseEditPassword}
+            >
+              Ok
+            </button>
+          )}
+          {!isUpdatePasswordSuccess && (
+            <button
+              type="submit"
+              className="modalEditPassword__container__form__button"
+            >
+              Valider
+            </button>
+          )}
         </form>
       </div>
       
@@ -90,6 +113,9 @@ ModalEditPassword.propTypes = {
   newPasswordConfirm: PropTypes.string.isRequired,
   handleUpdatePassword: PropTypes.func.isRequired,
   updatePasswordError: PropTypes.bool.isRequired,
+  isUpdatePasswordSuccess: PropTypes.bool.isRequired,
+  isUpdatePasswordError: PropTypes.bool.isRequired,
+  isUpdatePasswordLengthError: PropTypes.bool.isRequired,
 };
 
 export default ModalEditPassword

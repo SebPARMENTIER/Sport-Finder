@@ -29,6 +29,9 @@ import {
   UPDATE_ERROR,
   UPDATE_PASSWORD_VALUE,
   UPDATE_PASSWORD_COMFIRM_ERROR,
+  UPDATE_PASSWORD_SUCCESS,
+  UPDATE_PASSWORD_ERROR,
+  UPDATE_PASSWORD_LENGTH_ERROR,
 
 } from 'src/actions/user';
 
@@ -58,6 +61,9 @@ export const initialState = {
   newPassword: '',
   newPasswordConfirm: '',
   updatePasswordError: false,
+  isUpdatePasswordSuccess: false,
+  isUpdatePasswordError: false,
+  isUpdatePasswordLengthError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -273,6 +279,30 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         updatePasswordError: true,
+        isUpdatePasswordError: false,
+        isUpdatePasswordLengthError: false,
+      }
+    case UPDATE_PASSWORD_SUCCESS:
+      return{
+        ...state,
+        isUpdatePasswordSuccess: true,
+        updatePasswordError: false,
+        isUpdatePasswordError: false,
+        isUpdatePasswordLengthError: false,
+      }
+    case UPDATE_PASSWORD_ERROR:
+      return {
+        ...state,
+        updatePasswordError: false,
+        isUpdatePasswordError: true,
+        isUpdatePasswordLengthError: false,
+      }
+    case UPDATE_PASSWORD_LENGTH_ERROR:
+      return {
+        ...state,
+        isUpdatePasswordLengthError: true,
+        isUpdatePasswordError: false,
+        updatePasswordError: false,
       }
     default:
       return state;

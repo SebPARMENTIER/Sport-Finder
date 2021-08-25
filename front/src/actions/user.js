@@ -33,6 +33,9 @@ export const UPDATE_ERROR = 'UPDATE_ERROR';
 export const UPDATE_PASSWORD_VALUE = 'UPDATE_PASSWORD_VALUE';
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
 export const UPDATE_PASSWORD_COMFIRM_ERROR = 'UPDATE_PASSWORD_COMFIRM_ERROR';
+export const UPDATE_PASSWORD_SUCCESS = 'UPDATE_PASSWORD_SUCCESS';
+export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
+export const UPDATE_PASSWORD_LENGTH_ERROR = 'UPDATE_PASSWORD_LENGTH_ERROR';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -153,3 +156,9 @@ export const updatePasswordSetInputValueAction = (newValue, name) => ({
 export const updatePasswordAction = () => ({ type: UPDATE_PASSWORD });
 
 export const updatePasswordComfirmErrorAction = () => ({ type: UPDATE_PASSWORD_COMFIRM_ERROR });
+
+export const updatePasswordSuccessAction = (data) => ({ type: UPDATE_PASSWORD_SUCCESS });
+
+export const updatePasswordErrorAction = () => ({ type: UPDATE_PASSWORD_ERROR });
+
+export const updatePasswordLengthError = () => ({ type: UPDATE_PASSWORD_LENGTH_ERROR });

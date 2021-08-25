@@ -16,6 +16,9 @@ import {
   updatePseudoSuccessAction,
   updatePseudoErrorAction,
   updatePasswordComfirmErrorAction,
+  updatePasswordSuccessAction,
+  updatePasswordErrorAction,
+  updatePasswordLengthError,
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
@@ -119,7 +122,10 @@ const authMiddleware = (store) => (next) => (action) => {
       break;
     }
     case UPDATE_PASSWORD:{
-      if (state.user.newPassword !== state.user.newPasswordConfirm) {
+      if ( state.user.newPassword.length < 8 ){
+        store.dispatch(updatePasswordLengthError());
+      }
+      else if ( state.user.newPassword !== state.user.newPasswordConfirm ) {
         store.dispatch(updatePasswordComfirmErrorAction());
       }
       else {
@@ -130,18 +136,18 @@ const authMiddleware = (store) => (next) => (action) => {
             'Content-Type': 'application/json',
           },
           data: {
-            id: state.user.iserId,
+            id: state.user.userId,
             password: state.user.password,
             new_password: state.user.newPassword,
           },
         };
         axios(config)
           .then((response) => {
-            store.dispatch(createUserSuccessAction(response.data));
+            store.dispatch(updatePasswordSuccessAction(response.data));
             console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
-            store.dispatch(createUserErrorAction());
+            store.dispatch(updatePasswordErrorAction());
             console.log(error);
           });
       }

@@ -11,6 +11,9 @@ const mapStateToProps = (state) => ({
   newPassword: state.user.newPassword,
   newPasswordConfirm: state.user.newPasswordConfirm,
   updatePasswordError: state.user.updatePasswordError,
+  isUpdatePasswordSuccess: state.user.isUpdatePasswordSuccess,
+  isUpdatePasswordError: state.user.isUpdatePasswordError,
+  isUpdatePasswordLengthError: state.user.isUpdatePasswordLengthError,
 });
   // ajouter le state a utilisé pour le composant '
 
