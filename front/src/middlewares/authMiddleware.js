@@ -16,7 +16,7 @@ import {
   deleteProfileErrorAction,
   updatePseudoSuccessAction,
   updatePseudoErrorAction,
-  updatePasswordComfirmErrorAction,
+  updatePasswordConfirmErrorAction,
   updatePasswordSuccessAction,
   updatePasswordErrorAction,
   updatePasswordLengthError,
@@ -130,7 +130,7 @@ const authMiddleware = (store) => (next) => (action) => {
         store.dispatch(updatePasswordLengthError());
       }
       else if ( state.user.newPassword !== state.user.newPasswordConfirm ) {
-        store.dispatch(updatePasswordComfirmErrorAction());
+        store.dispatch(updatePasswordConfirmErrorAction());
       }
       else {
         const config = {

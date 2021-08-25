@@ -28,7 +28,7 @@ import {
   UPDATE_PSEUDO_SUCCESS,
   UPDATE_ERROR,
   UPDATE_PASSWORD_VALUE,
-  UPDATE_PASSWORD_COMFIRM_ERROR,
+  UPDATE_PASSWORD_CONFIRM_ERROR,
   UPDATE_PASSWORD_SUCCESS,
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_LENGTH_ERROR,
@@ -293,7 +293,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       }
-    case UPDATE_PASSWORD_COMFIRM_ERROR:
+    case UPDATE_PASSWORD_CONFIRM_ERROR:
       return {
         ...state,
         updatePasswordError: true,
