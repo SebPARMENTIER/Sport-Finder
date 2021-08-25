@@ -65,6 +65,7 @@ export const initialState = {
   isUpdatePasswordSuccess: false,
   isUpdatePasswordError: false,
   isUpdatePasswordLengthError: false,
+  token: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -235,11 +236,12 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case LOGIN_SUCCESS:
-      const { id, pseudo } = action.data;
+      const { id, pseudo, accessToken } = action.data;
       return {
         ...state,
         userId: id,
         pseudo,
+        token: accessToken,
         isError: false,
         logged: true,
         openLogIn: false,
