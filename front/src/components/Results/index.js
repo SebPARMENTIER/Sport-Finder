@@ -1,5 +1,6 @@
 // == Import : npm
 import React from 'react';
+import datajson from 'src/assets/csvjson2.json'
 
 // == Import : local
 import SearchForm from 'src/containers/SearchForm';
@@ -9,6 +10,7 @@ import './results.scss';
 // == Component
 const Results = () => {
 
+  
   return (
     <div className="results">
       <Banner />
@@ -18,17 +20,22 @@ const Results = () => {
       </div>
       <div className="results__all">
         <div className="results__list">
-          <div className="results__list__single">
-            <p className="results__list__single__name">
-              Association Sportive 1
-            </p>
-            <p className="results__list__single__adress">
-              10 rue de la soif - 87000 LIMOGES
-            </p>
-            <p className="results__list__single__rating">
-            ⭐⭐⭐⭐⭐
-            </p>
-          </div>
+          {datajson.map((result) => (
+            <div 
+              key={result.id}
+              className="results__list__single"
+            >
+              <p className="results__list__single__name">
+                {result.titre}
+              </p>
+              <p className="results__list__single__adress">
+                10 rue de la soif - 87000 LIMOGES
+              </p>
+              <p className="results__list__single__rating">
+              ⭐⭐⭐⭐⭐
+              </p>
+            </div>
+          ))}
           <div className="results__list__single">
             <p className="results__list__single__name">
               Association Sportive 2

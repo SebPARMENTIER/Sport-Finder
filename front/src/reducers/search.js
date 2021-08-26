@@ -1,11 +1,15 @@
 import {
   SET_INPUT_VALUE,
-  SEARCH,
+  RESULT_API_RNA_TOTAL_PAGE_SUCCESS,
+  RESULT_API_RNA_ERROR,
+  RESULT_API_RNA_SUCCESS
 } from 'src/actions/search';
 
 export const initialState = {
   city: '',
   sport: '',
+  searchTotalPages: '',
+  results: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -15,6 +19,20 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
+      case RESULT_API_RNA_TOTAL_PAGE_SUCCESS:
+        return {
+          ...state,
+          searchTotalPages: action.data
+        };
+      case RESULT_API_RNA_ERROR:
+        return {
+          ...state,
+        }
+      case RESULT_API_RNA_SUCCESS:
+        return {
+          ...state,
+          results: action.data
+        }
     default:
       return state;
   }
