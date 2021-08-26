@@ -24,7 +24,7 @@ const Contact = ({
   openLogUp,
 }) => {
   const handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault();  
     handleContact();
   };
   return (
@@ -35,8 +35,7 @@ const Contact = ({
       <form className="contact__form" onSubmit={handleSubmit}>
         <div className="contact__form__block__first">
           <select
-            name="civility"
-            title="Civilité"
+            name="civility"          
             className="contact__form__block__first__civility"
             value={civility}
             onChange={changeField}

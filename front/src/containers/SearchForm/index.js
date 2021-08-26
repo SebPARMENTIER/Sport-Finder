@@ -5,6 +5,7 @@ import { createSetInputValueAction, createSearchAction } from 'src/actions/searc
 const mapStateToProps = (state) => ({
   city: state.search.city,
   sport: state.search.sport,
+  results: state.search.results,
 })
 ;
 
