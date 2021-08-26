@@ -54,7 +54,7 @@ const Results = ({
 Results.propTypes = {
   resluts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       titre: PropTypes.string.isRequired,
       adresse_numero_voie: PropTypes.string,
       adresse_repetition: PropTypes.string,
@@ -63,7 +63,7 @@ Results.propTypes = {
       adresse_code_postal: PropTypes.string,
       adresse_libelle_commune: PropTypes.string,
     }),
-  )
+  ),
 }
 
 export default Results;
