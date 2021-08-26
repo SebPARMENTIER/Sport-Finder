@@ -47,6 +47,7 @@ const ModalEditPassword = ({
             <Field
               name="password"
               type="password"
+              className=""
               placeholder="Mot de passe..."
               onChange={changeField}
               value={password}
@@ -59,6 +60,7 @@ const ModalEditPassword = ({
             <Field
               name="newPassword"
               type="password"
+              className=""
               placeholder="Nouveau mot de passe..."
               onChange={changeField}
               value={newPassword}
@@ -71,6 +73,7 @@ const ModalEditPassword = ({
             <Field
               name="newPasswordConfirm"
               type="password"
+              className=""
               placeholder="Vérification mot de passe..."
               onChange={changeField}
               value={newPasswordConfirm}

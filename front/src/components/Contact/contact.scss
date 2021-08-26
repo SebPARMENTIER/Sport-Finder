@@ -24,20 +24,32 @@
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
 
+    &__success{
+      background-color: rgb(115, 185, 109);
+      padding: v.$gutter v.$gutter*2;
+      color: white;
+      border-radius: 10px;
+      margin-bottom: v.$gutter*3;
+      font-size: 2em;
+      text-align: center;
+    }
+    
     &__block__first {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
 
       &__civility {        
-        width: 90%;
-        height: 1.8em;
+        width: 100%;
+        height: 30px;
         padding-left: v.$gutter;
-        margin-bottom: v.$gutter ;
+        margin-bottom: v.$gutter*1.2 ;
         font-size: 1em;
         border-radius: 5px;
         border: none;
@@ -46,19 +58,22 @@
       }
 
       &__lastname {
-        width: 90%;
+        width: 100%;
         height: 20px;
         padding: v.$gutter;
+        margin: 0;
         margin-bottom: v.$gutter;
         font-size: 1em;
         border-radius: 5px;
         border: none;
+        
       }
 
       &__firstname {
-        width: 90%;
+        width: 100%;
         height: 20px;
         padding: v.$gutter;
+        margin: 0;
         margin-bottom: v.$gutter;
         font-size: 1em;
         border-radius: 5px;
@@ -73,9 +88,10 @@
       justify-content: space-between;
 
       &__email {
-        width: 90%;
+        width: 100%;
         height: 20px;
         padding: v.$gutter;
+        margin: 0;
         margin-bottom: v.$gutter;
         font-size: 1em;
         border-radius: 5px;
@@ -83,9 +99,10 @@
       }
 
       &__subject {
-        width: 90%;
+        width: 100%;
         height: 20px;
         padding: v.$gutter;
+        margin: 0;
         margin-bottom: v.$gutter;
         font-size: 1em;
         border-radius: 5px;
@@ -135,16 +152,22 @@
       &__form{
         &__block__first{
           flex-direction: row;
-          margin-bottom: v.$gutter;
+          justify-content: center;
+          align-items: center;
           &__civility{
-            width: 15%;
+            width: 10vw;
+            font-size: 1em;
+            height: 35px;
+            margin-bottom: v.$gutter;
+            margin-right: v.$gutter*2;
           }
-          &__lastname{
-            width: 40%;
+          &__lastname {
+            width: 37vw;
             padding: v.$gutter*1.1 ;
+            margin-right: v.$gutter*2;
           }
           &__firstname{
-            width: 40%;
+            width: 37vw;
             padding: v.$gutter*1.1 ;
           }
         }
@@ -152,18 +175,20 @@
           flex-direction: row;
           margin-bottom: v.$gutter;
           &__email{
-            width: 32%;
+            width: 35vw;
             padding: v.$gutter*1.1 ;
+            margin-right: v.$gutter;
           }
           &__subject{
-            width: 65%;
+            width: 52vw;
             padding: v.$gutter*1.1 ;
+            margin-left: v.$gutter;
           }
         }
         &__block__third{
           margin-bottom: v.$gutter;
           &__content{
-            width: 100%;
+            width: 90vw;
             height: 180px;
           }
           

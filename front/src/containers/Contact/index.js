@@ -1,17 +1,39 @@
 import { connect } from 'react-redux';
 import Contact from 'src/components/Contact';
+import {
+  createContactSetInputValueAction,
+  createContactAction,
+  changeSelectAction,
+  submitContactForm,
+  closeMessageSuccess,
+} from 'src/actions/contact';
 
 const mapStateToProps = (state) => ({
+  lastname: state.contact.lastname,
+  firstname: state.contact.firstname,
+  email: state.contact.email,
+  subject: state.contact.subject,
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
+  submitMessage: state.contact.submitMessage,
 });
-  // ajouter le state a utilisé pour le composant '
 
-const mapDispatchToProps = () => ({});
-  // ajouter la fonction utilisé dans le composant
+const mapDispatchToProps = (dispatch) => ({
+  changeField: (newValue, name) => {
+    dispatch(createContactSetInputValueAction(newValue, name));
+  },
+  handleContact: () => {
+    dispatch(createContactAction());
+  },
+  handleSelectCivility: (newValue) => {
+    dispatch(changeSelectAction(newValue));
+  },
+  onClickSubmit: () => {
+    dispatch(submitContactForm())
+  },
+  onClickMessageSuccess: () => {
+    dispatch(closeMessageSuccess())
+  }
+})
 
-const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Contact);
-
-// on exporte le composant connecté
-// => ne pas oublier de l'utiliser à la place du stateless component
-export default connectedComponent;
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

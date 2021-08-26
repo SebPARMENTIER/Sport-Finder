@@ -2,27 +2,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './field.scss';
+//import './field.scss';
 
 // == Composant
-const Field = ({
+const FieldTextarea = ({
   value,
   type,
   name,
   placeholder,
   onChange,
-  className,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
   };
 
   const inputId = `field-${name}`;
-  const style = `inputs__field ${className}`;
+
   return (
-    <div>
-      <input
-        className={style}
+    <div className="inputs ">
+      <textarea
+        className="contact__form__block__third__content"
         // React - state
         value={value}
         onChange={handleChange}
@@ -31,20 +30,22 @@ const Field = ({
         type={type}        
         placeholder={placeholder}
         name={name}
+        cols="30"
+        rows="3"
+        maxLength="255"
       />
 
     </div>
   );
 };
 
-Field.propTypes = {
+FieldTextarea.propTypes = {
   value: PropTypes.string,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
 };
 
 // == Export
-export default Field;
+export default FieldTextarea;

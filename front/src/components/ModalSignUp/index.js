@@ -45,6 +45,7 @@ const ModalSignUp = ({
               <Field
                 name="email"
                 type="text"
+                className=""
                 placeholder="Email..."
                 onChange={changeField}
                 value={email}
@@ -52,6 +53,7 @@ const ModalSignUp = ({
               <Field
                 name="pseudo"
                 type="text"
+                className=""
                 placeholder="Pseudo..."
                 onChange={changeField}
                 value={pseudo}
@@ -63,6 +65,7 @@ const ModalSignUp = ({
               <Field
                 name="password"
                 type="password"
+                className=""
                 placeholder="Mot de passe..."
                 onChange={changeField}
                 value={password}
@@ -70,6 +73,7 @@ const ModalSignUp = ({
               <Field
                 name="passwordConfirm"
                 type="password"
+                className=""
                 placeholder="Vérification mot de passe..."
                 onChange={changeField}
                 value={passwordConfirm}
