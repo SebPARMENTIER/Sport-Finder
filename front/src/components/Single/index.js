@@ -5,19 +5,27 @@ import PropTypes from 'prop-types';
 // == Import : local
 import './single.scss';
 import Review from 'src/components/Review'
+import sportsData from 'src/assets/sportsData';
 
-const Single = () => {
+const Single = ({
+  result,
+}) => {
+  console.log('résult', result);
   return (
     <div className="single">
-      <div className="single__infos">
+      
+        <div className="single__infos">
         <div className="single__infos__header">
-          <div
-          className="single__infos__header__picture"
-          style={{
-            backgroundImage: `url("https://media.istockphoto.com/photos/conflict-concept-picture-id1177188061?k=6&m=1177188061&s=612x612&w=0&h=AA-Dq3ggFD55YHpthW3kcWdLSUoFmorAWa-rQ3LuPfI=")`}}
-          >
-            <h1 className="single__infos__header__picture__title">Boxing club</h1>
-          </div>        
+          
+            <div
+              className="single__infos__header__picture"
+              style={{
+                backgroundImage: `url(${sportData.image})`}}
+            >
+              <h1 className="single__infos__header__picture__title">{result.titre}</h1>
+            </div>        
+          
+          
         </div>
         <div className="single__infos__content">
           <p className="single__infos__content__desc">Pour toute demande de renseignements complémentaires, n'hésitez pas à visiter le site web de l'association sportive ou rapprochez vous de la maire de <span className="single__infos__content__desc__city">Salmon-sur-Gaillard</span>.</p>
@@ -38,6 +46,8 @@ const Single = () => {
         </div>  
           
       </div>
+      
+      
       <div className="single__buttons">
         <button className="single__buttons__back">Retour aux résultats</button>
         <button className="single__buttons__addReview">Ajouter un avis</button>
@@ -52,7 +62,18 @@ const Single = () => {
 };
 
 Single.propTypes = {
-
+  resluts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      titre: PropTypes.string.isRequired,
+      adresse_numero_voie: PropTypes.string,
+      adresse_repetition: PropTypes.string,
+      adresse_type_voie: PropTypes.string,
+      adresse_libelle_voie: PropTypes.string,
+      adresse_code_postal: PropTypes.string,
+      adresse_libelle_commune: PropTypes.string,
+    }),
+  )
 }
 
 export default Single;

@@ -7,7 +7,7 @@ import {
 export const initialState = {
   city: '',
   sport: '',
-  results: '',
+  results: [],
 };
 
 const reducer = (state = initialState, action = {}) => {

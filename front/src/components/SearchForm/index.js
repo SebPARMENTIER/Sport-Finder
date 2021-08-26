@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import sportsData from 'src/assets/sportsData';
 import Field from 'src/components/Field';
@@ -41,7 +42,7 @@ const SearchForm = ({
           onChange={changeField}
         />
       </div>
-      <div className="searchForm__list" >
+      <div className="searchForm__list" hidden >
         {sportsList.map((sportList) => (
           <li
             key={sportList.name}
@@ -55,7 +56,9 @@ const SearchForm = ({
         type="submit"
         className="searchForm__button"
       >
+        <Link to="/results" className="searchForm_button">
         Rechercher
+        </Link>
       </button>
     </form>
   );
