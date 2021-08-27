@@ -1,9 +1,9 @@
 @use 'src/styles/vars' as v;
 
 .results {
-  padding-top: v.$gutter*5;
-  
+  padding: v.$gutter*5 0 v.$gutter*2 0;
   &__slogan{
+    width: 100vw;
     font-size: 2em;
     font-weight: bold;
     margin: v.$gutter 0;
@@ -17,44 +17,66 @@
   }
 
   &__all {
-    margin: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
+    padding: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
     height: v.$gutter*20;
-  }
 
-  &__list {
-    margin-right: v.$gutter*1.5;
-    width: 25%;
+    &__list {
+      margin-right: v.$gutter;
+      width: 25%;
+      overflow-y: auto;
+      padding-right: v.$gutter*0.5;
 
-    &__single {
+      &::-webkit-scrollbar {
+        width: 1em;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: v.$secondary-color;
+        border-radius: 5px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: v.$text-color;
+        border-radius: 5px;
+      } 
+
+      &__single {
+        background-color: white;
+        width: 100%;
+        border-radius: 5px;
+        padding: v.$gutter;
+        margin-bottom: v.$gutter;  
+          
+
+        &__name {
+          font-size: v.$gutter*1.5;
+          padding-bottom: v.$gutter*0.2;
+        }
+
+        &__adress {
+          font-size: v.$gutter*0.8;
+        }
+
+        &__rating {
+          font-size: v.$gutter*2;
+          color: v.$star-color;
+        }
+        
+         
+      }
+    }
+    
+    &__map {
       background-color: white;
-      width: 100%;
+      width: 70%;
+      font-size: 5em;
       border-radius: 5px;
-      padding: v.$gutter;
-      margin-bottom: v.$gutter;      
-
-      &__name {
-        font-size: v.$gutter*1.5;
-        padding-bottom: v.$gutter*0.2;
-      }
-
-      &__adress {
-        font-size: v.$gutter*0.8;
-      }
-
-      &__rating {
-        font-size: v.$gutter*2;
-        color: v.$star-color;
-      }
+      margin-left: v.$gutter;
     }
   }
 
-  &__map {
-    background-color: white;
-    width: 75%;
-    font-size: 5em;
-    border-radius: 5px;
-    margin-left: v.$gutter*1.5;
-  }
+ 
+
 }

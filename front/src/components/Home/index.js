@@ -19,7 +19,7 @@ const Home = ({
         <h1 className='home__picture__title'>SPORT FINDER</h1>
       </div>
       <p className='home__slogan'>Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
-      <SearchForm />
+      <SearchForm component={SearchForm}/>
       { openLogIn && <ModalSignIn />}
       { openLogUp && <ModalSignUp />}      
     </main>

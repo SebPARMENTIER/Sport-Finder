@@ -32,4 +32,3 @@ const searchMiddleware = (store) => (next) => (action) => {
 };
     
 export default searchMiddleware;
-    

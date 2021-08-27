@@ -10,13 +10,13 @@ import sportsData from 'src/assets/sportsData';
 const Single = ({
   result,
   sport,
+  history,
 }) => {
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
   return (
     <div className="single">
-      
         <div className="single__infos">
         <div className="single__infos__header">
             <div
@@ -47,10 +47,8 @@ const Single = ({
       <div className="single__buttons">
         <button
           className="single__buttons__back"
-          
-        >
-          Retour aux résultats
-        </button>
+          onClick={() => history.push('/results')}
+        >Retour aux résultats</button>
         <button className="single__buttons__addReview">Ajouter un avis</button>
       </div>
       <div className="single__reviews">
@@ -74,6 +72,9 @@ Single.propTypes = {
     adresse_libelle_commune: PropTypes.string,
     site_web: PropTypes.string,
     object: PropTypes.string,
+  }),
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
   }),
   sport: PropTypes.string.isRequired,
 }

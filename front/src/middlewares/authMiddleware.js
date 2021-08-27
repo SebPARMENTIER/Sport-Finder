@@ -39,6 +39,7 @@ const authMiddleware = (store) => (next) => (action) => {
           url: 'https://sportfinder.herokuapp.com/api/v1/signup',
           headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${state.user.token}`,
           },
           data: {
             pseudo: state.user.pseudo,
@@ -64,6 +65,7 @@ const authMiddleware = (store) => (next) => (action) => {
         url: 'https://sportfinder.herokuapp.com/api/v1/login',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           email: state.user.email,

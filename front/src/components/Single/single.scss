@@ -37,7 +37,7 @@
       padding: v.$gutter;
       font-size: v.$gutter*1.2;
 
-      &__name {
+      &__name{
         text-align: center;
         font-weight: bold;
         font-size: 2em;
@@ -63,14 +63,14 @@
           &__adress {
             padding-bottom: v.$gutter;
             width: 8em;
-          }          
+          }
 
           &__web {
             padding-bottom: v.$gutter;
           }
 
           &__object {
-            padding-bottom: v.$gutter;
+            padding-bottom: v.$gutter 
           }
         }
 

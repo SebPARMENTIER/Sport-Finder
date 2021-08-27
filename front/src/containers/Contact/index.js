@@ -3,17 +3,19 @@ import Contact from 'src/components/Contact';
 import {
   createContactSetInputValueAction,
   createContactAction,
+  changeSelectAction,
+  submitContactForm,
+  closeMessageSuccess,
 } from 'src/actions/contact';
 
 const mapStateToProps = (state) => ({
-  //civility: state.contact.civility,
   lastname: state.contact.lastname,
   firstname: state.contact.firstname,
   email: state.contact.email,
   subject: state.contact.subject,
-  //content: state.contact.content,
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
+  submitMessage: state.contact.submitMessage,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,6 +25,15 @@ const mapDispatchToProps = (dispatch) => ({
   handleContact: () => {
     dispatch(createContactAction());
   },
+  handleSelectCivility: (newValue) => {
+    dispatch(changeSelectAction(newValue));
+  },
+  onClickSubmit: () => {
+    dispatch(submitContactForm())
+  },
+  onClickMessageSuccess: () => {
+    dispatch(closeMessageSuccess())
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

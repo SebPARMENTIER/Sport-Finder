@@ -66,16 +66,6 @@
         font-size: 1.5em;
       }
 
-      &__input{
-        &__field{
-          font-size: 1.5em;
-          padding: v.$gutter*0.5;
-          border-radius: 5px;
-          border: none;
-          margin-bottom: v.$gutter;
-        }
-      }
-      
       
       &__button{
         font-size: 1.5em;
@@ -145,11 +135,7 @@
           display: flex;
           flex-direction: row;
           margin-bottom: v.$gutter*2;
-          &__field{
-            font-size: 1.8em;
-          margin-bottom: 0;
-          margin-right: v.$gutter;
-          }
+          
         }  
 
         &__button{

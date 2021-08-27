@@ -19,9 +19,9 @@ const FieldTextarea = ({
   const inputId = `field-${name}`;
 
   return (
-    <div className="inputs">
+    <div className="inputs ">
       <textarea
-        className="inputs__field"
+        className="contact__form__block__third__content"
         // React - state
         value={value}
         onChange={handleChange}

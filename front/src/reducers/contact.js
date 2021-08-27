@@ -1,6 +1,8 @@
 import {
   SET_CONTACT_INPUT_VALUE,
-  CONTACT,
+  CHANGE_SELECT,
+  SUBMIT_CONTACT_FORM,
+  CLOSE_MESSAGE_SUCCESS,
 } from 'src/actions/contact';
 
 export const initialState = {
@@ -10,6 +12,7 @@ export const initialState = {
   email: '',
   subject: '',
   content: '',
+  submitMessage: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,10 +22,27 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
-    // case CONTACT:
-    //   return {
-
-    //   }
+    case CHANGE_SELECT:
+      return {
+        ...state,
+        civility: action.value,
+      }
+    case SUBMIT_CONTACT_FORM:
+      return {
+        ...state,
+        submitMessage: true,
+      }
+    case CLOSE_MESSAGE_SUCCESS:
+      return {
+        ...state,
+        civility: '',
+        lastname: '',
+        firstname: '',
+        email: '',
+        subject: '',
+        content: '',
+        submitMessage: false,
+      }
     default:
       return state;
   }

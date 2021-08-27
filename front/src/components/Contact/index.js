@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
@@ -12,6 +13,8 @@ import './contact.scss';
 
 // == Component
 const Contact = ({
+  openLogIn,
+  openLogUp,
   civility,
   lastname,
   firstname,
@@ -20,66 +23,87 @@ const Contact = ({
   content,
   changeField,
   handleContact,
-  openLogIn,
-  openLogUp,
+  handleSelectCivility,
+  onClickSubmit,
+  submitMessage,
+  onClickMessageSuccess,
 }) => {
   const handleSubmit = (event) => {
-    event.preventDefault();  
+    event.preventDefault();
     handleContact();
   };
+  const changeSelect = (event) => {
+    handleSelectCivility(event.target.value);
+  };
+  const handleOnClick = () => {
+    console.log('click');
+    onClickSubmit();
+  }
+  const handleOnClickMessageSuccess = () => {
+    onClickMessageSuccess();
+  }
   return (
     <div className="contact">
       <Banner />
       <h1 className="contact__title">Nous contacter</h1>
       <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
-      <form className="contact__form" onSubmit={handleSubmit}>
-        <div className="contact__form__block__first">
-          <select
-            name="civility"          
-            className="contact__form__block__first__civility"
-            value={civility}
-            onChange={changeField}
-          >
-            <option defaultValue="" hidden>Civilité</option>
-            <option value="mister">M.</option>
-            <option value="miss">Mme</option>
-          </select>
-          <Field
-            name="lastname"              
-            type="text"
-            className="contact__form__block__first__lastname"
-            placeholder="Nom"
-            value={lastname}
-            onChange={changeField}
-          />
-          <Field
-          name="firstname"
-            type="text"
-            className="contact__form__block__first__firstname"
-            placeholder="Prénom"
-            value={firstname}
-            onChange={changeField}
-          />
-        </div>
-        <div className="contact__form__block__second">          
-          <Field
-          name="email"
-            type="text"
-            className="contact__form__block__second__email"
-            placeholder="Email"
-            value={email}
-            onChange={changeField}
-          />
-          <Field
-            name="subject"
-            type="text"
-            className="contact__form__block__second__subject"
-            placeholder="Sujet"            
-            onChange={changeField}
-            value={subject}
-          />
-        </div>
+      <form
+        className="contact__form"
+        onSubmit={handleSubmit}
+      >
+        {!submitMessage && (
+          <div className="contact__form__block__first">
+            <select
+              name="civility"
+              title="Civilité"
+              className="contact__form__block__first__civility"
+              value={civility}
+              onChange={changeSelect}
+            >
+              <option defaultValue="" hidden>Civilité</option>
+              <option value="mister">M.</option>
+              <option value="miss">Mme</option>
+            </select>
+            <Field              
+              name="lastname"
+              type="text"
+              className="contact__form__block__first__lastname"
+              placeholder="Nom"
+              value={lastname}
+              onChange={changeField}
+            />
+            <Field
+              name="firstname"
+              type="text"
+              className="contact__form__block__first__firstname"
+              placeholder="Prénom"
+              value={firstname}
+              onChange={changeField}
+            />
+          </div>
+        )}
+        { !submitMessage && (
+          <div className="contact__form__block__second">          
+            <Field
+              name="email"
+              type="text"
+              className="contact__form__block__second__email"
+              placeholder="Email"
+              value={email}
+              onChange={changeField}
+            />
+            <Field
+              name="subject"
+              type="text"
+              className="contact__form__block__second__subject"
+              placeholder="Sujet"
+              onChange={changeField}
+              value={subject}
+            />
+          </div>
+        )}
         <div className="contact__form__block__third">
+          {!submitMessage && (
             <FieldTextarea
               name="content"
               className="contact__form__block__third__content"
@@ -90,29 +114,50 @@ const Contact = ({
               value={content}
               onChange={changeField}
             />
-            
-          <button className="contact__form__block__third__button" type="submit">
-            Envoyer
-          </button>
+          )}
+          { submitMessage && (
+            <p className="contact__form__success">Méssage bien envoyé !!! </p>
+          )}
+          { !submitMessage && (
+            <button
+              className="contact__form__block__third__button"
+              type="submit"
+              onClick={handleOnClick}
+            >
+              Envoyer  
+            </button>
+          )}
+          { submitMessage && (
+            <Link 
+              to="/"
+              className="contact__form__block__third__button"
+              onClick={handleOnClickMessageSuccess}
+            >
+              Ok
+            </Link>
+          )}
         </div>        
       </form>
       { openLogIn && <ModalSignIn />}
       { openLogUp && <ModalSignUp />}
+
     </div>
   )
 }
 
 Contact.propTypes = {
-  //civility: PropTypes.string.isRequired,
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
-  //content: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,
   openLogIn: PropTypes.bool.isRequired,
   openLogUp: PropTypes.bool.isRequired,
+  handleSelectCivility: PropTypes.func.isRequired,
+  onClickSubmit: PropTypes.func.isRequired,
+  submitMessage: PropTypes.bool.isRequired,
+  onClickMessageSuccess: PropTypes.func.isRequired,
 }
 
 export default Contact;

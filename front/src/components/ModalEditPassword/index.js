@@ -41,41 +41,44 @@ const ModalEditPassword = ({
           className='modalEditPassword__container__form'
           onSubmit={handleSubmit}
         >
-          {!isUpdatePasswordSuccess && (
-            <div className='modalEditPassword__container__form__edit'>
-              <p className='modalEditPassword__container__form__edit__text'>Mot de passe actuel</p>
-              <Field
-                name="password"
-                type="password"
-                placeholder="Mot de passe..."
-                onChange={changeField}
-                value={password}
-              />
-            </div>
+          { !isUpdatePasswordSuccess && (
+          <div className='modalEditPassword__container__form__edit'>
+            <p className='modalEditPassword__container__form__edit__text'>Mot de passe actuel</p>
+            <Field
+              name="password"
+              type="password"
+              className=""
+              placeholder="Mot de passe..."
+              onChange={changeField}
+              value={password}
+            />
+          </div>
           )}
-          {!isUpdatePasswordSuccess && (
-            <div className='modalEditPassword__container__form__edit'>
-              <p className='modalEditPassword__container__form__edit__text'>Nouveau mot de passe</p>
-              <Field
-                name="newPassword"
-                type="password"
-                placeholder="Nouveau mot de passe..."
-                onChange={changeField}
-                value={newPassword}
-              />
-            </div>
+          { !isUpdatePasswordSuccess && (
+          <div className='modalEditPassword__container__form__edit'>
+            <p className='modalEditPassword__container__form__edit__text'>Nouveau mot de passe</p>
+            <Field
+              name="newPassword"
+              type="password"
+              className=""
+              placeholder="Nouveau mot de passe..."
+              onChange={changeField}
+              value={newPassword}
+            />
+          </div>
           )}
-          {!isUpdatePasswordSuccess && (
-            <div className='modalEditPassword__container__form__edit'>
-              <p className='modalEditPassword__container__form__edit__text'>Vérification mot de passe</p>
-              <Field
-                name="newPasswordConfirm"
-                type="password"
-                placeholder="Vérification mot de passe..."
-                onChange={changeField}
-                value={newPasswordConfirm}
-              />
-            </div>
+          { !isUpdatePasswordSuccess && (
+          <div className='modalEditPassword__container__form__edit'>
+            <p className='modalEditPassword__container__form__edit__text'>Vérification mot de passe</p>
+            <Field
+              name="newPasswordConfirm"
+              type="password"
+              className=""
+              placeholder="Vérification mot de passe..."
+              onChange={changeField}
+              value={newPasswordConfirm}
+            />
+          </div>
           )}
           {isUpdatePasswordSuccess && <p className="modalEditPassword__container__form__success">Mot de passe modifié avec succès.</p>}
           {isUpdatePasswordError && <p className="modalEditPassword__container__form__error">Mot de passe actuel erroné.</p>}

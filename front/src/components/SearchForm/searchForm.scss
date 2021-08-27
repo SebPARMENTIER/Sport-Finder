@@ -14,11 +14,14 @@
     align-items: center;
     width: 100%;
     height: 100px;
-
+    &__sport{
+      margin-bottom: v.$gutter;
+      width: 340px;
+    }
   }
 
   &__button{
-    width: 20%;
+    width: auto;
     padding: v.$gutter*0.7 v.$gutter;
     margin-top: v.$gutter*1;
     color: v.$text-color;
@@ -48,6 +51,9 @@
     }
     .searchForm__inputs{
       flex-direction: column;
+      &__sport{
+        width: 80%;
+      }
     }
     .searchForm__button{
       font-size: 1em;
