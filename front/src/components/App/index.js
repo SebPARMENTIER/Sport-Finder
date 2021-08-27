@@ -35,7 +35,7 @@ const App = ({}) => (
       <Route exact path='/results' component={Results}></Route>
       <Route exact path='/loading' component={Loading}></Route>
     </Switch>
-    <ModalAddReview />
+    {/* <ModalAddReview /> */}
     <Footer />
   </div>
 );

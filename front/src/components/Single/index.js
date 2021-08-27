@@ -14,7 +14,6 @@ const Single = ({
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
-  //const history = history.goBack();
   return (
     <div className="single">
       
@@ -48,7 +47,7 @@ const Single = ({
       <div className="single__buttons">
         <button
           className="single__buttons__back"
-          //onClick={history}
+          
         >
           Retour aux résultats
         </button>

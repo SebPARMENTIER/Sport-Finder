@@ -42,16 +42,6 @@ const SearchForm = ({
           onChange={changeField}
         />
       </div>
-      <div className="searchForm__list" hidden >
-        {sportsList.map((sportList) => (
-          <li
-            key={sportList.name}
-            className="searchForm__list__item"
-          >
-            {sportList.name}
-          </li>
-        ))}
-      </div>
       <button
         type="submit"
         className="searchForm__button"

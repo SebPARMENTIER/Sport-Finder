@@ -1,12 +1,15 @@
 @use 'src/styles/vars' as v;
 
 .results {
+  padding-top: v.$gutter*5;
+  
   &__slogan{
     font-size: 2em;
     font-weight: bold;
     margin: v.$gutter 0;
     text-align: center;
     color: v.$text-color;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }
     
   &__searchform {
@@ -14,14 +17,15 @@
   }
 
   &__all {
-    margin: v.$gutter v.$gutter*2 v.$gutter*3 v.$gutter*2;
+    margin: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
     height: v.$gutter*20;
   }
 
   &__list {
-    margin-right: v.$gutter*2;
+    margin-right: v.$gutter*1.5;
+    width: 25%;
 
     &__single {
       background-color: white;
@@ -51,6 +55,6 @@
     width: 75%;
     font-size: 5em;
     border-radius: 5px;
-    margin-left: v.$gutter*2;
+    margin-left: v.$gutter*1.5;
   }
 }
