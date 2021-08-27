@@ -62,13 +62,14 @@
 
           &__adress {
             padding-bottom: v.$gutter;
-          }
+            width: 8em;
+          }          
 
-          &__email {
+          &__web {
             padding-bottom: v.$gutter;
           }
 
-          &__web {
+          &__object {
             padding-bottom: v.$gutter;
           }
         }
@@ -77,14 +78,15 @@
           
           &__adress {
             padding-bottom: v.$gutter;
-          }
-
-          &__email {
-            padding-bottom: v.$gutter;
-          }
+          }  
 
           &__web {
             padding-bottom: v.$gutter;
+          }
+
+          &__object {
+            padding-bottom: v.$gutter;
+            text-align: justify;
           }
         }
       }
@@ -123,6 +125,7 @@
     flex-direction: column;
     height: v.$gutter*12;
     overflow-y: auto;
+    padding-right: v.$gutter*0.5;
 
     &::-webkit-scrollbar {
       width: 0.8em;

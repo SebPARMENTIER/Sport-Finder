@@ -11,12 +11,9 @@ const Single = ({
   result,
   sport,
 }) => {
-  console.log('résult', result);
-  console.log('sport', sport);
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
-  console.log('image', image);
   return (
     <div className="single">
       
@@ -40,15 +37,13 @@ const Single = ({
           <div className="single__infos__content__association">
             <div className="single__infos__content__association__properties">
               <p className="single__infos__content__association__properties__adress">Adresse postale:</p>
-              <p className="single__infos__content__association__properties__email">Adresse mail:</p>
               <p className="single__infos__content__association__properties__web">Site web:</p>
-              <p className="single__infos__content__association__properties__phone">Téléphone:</p>
+              <p className="single__infos__content__association__properties__object">Description:</p>
             </div>
             <div className="single__infos__content__association__values">
               <p className="single__infos__content__association__values__adress">{result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}</p>
-              <p className="single__infos__content__association__values__email">{result.email}</p>
-              <p className="single__infos__content__association__values__web">{result.site_web}</p>
-              <p className="single__infos__content__association__values__phone">{result.telephone}</p>
+              <p className="single__infos__content__association__values__web"> {result.site_web ? result.site_web : '-'}</p>
+              <p className="single__infos__content__association__values__object">{result.objet}</p>
             </div>
           </div>
         </div>  
@@ -71,18 +66,16 @@ const Single = ({
 
 Single.propTypes = {
   result: PropTypes.shape({
-    
-      id: PropTypes.number.isRequired,
-      titre: PropTypes.string.isRequired,
-      adresse_numero_voie: PropTypes.string,
-      adresse_repetition: PropTypes.string,
-      adresse_type_voie: PropTypes.string,
-      adresse_libelle_voie: PropTypes.string,
-      adresse_code_postal: PropTypes.string,
-      adresse_libelle_commune: PropTypes.string,
-      email: PropTypes.string,
-      site_web: PropTypes.string,
-      telephone: PropTypes.string,
+    id: PropTypes.number.isRequired,
+    titre: PropTypes.string.isRequired,
+    adresse_numero_voie: PropTypes.string,
+    adresse_repetition: PropTypes.string,
+    adresse_type_voie: PropTypes.string,
+    adresse_libelle_voie: PropTypes.string,
+    adresse_code_postal: PropTypes.string,
+    adresse_libelle_commune: PropTypes.string,
+    site_web: PropTypes.string,
+    object: PropTypes.string,
   }),
   sport: PropTypes.string.isRequired,
 }

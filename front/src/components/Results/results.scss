@@ -14,9 +14,10 @@
   }
 
   &__all {
-    margin: v.$gutter*3 v.$gutter*2 v.$gutter*3 v.$gutter*2;
+    margin: v.$gutter v.$gutter*2 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
+    height: v.$gutter*20;
   }
 
   &__list {
