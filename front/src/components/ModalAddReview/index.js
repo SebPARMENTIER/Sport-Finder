@@ -27,9 +27,6 @@ ModalAddReview({
               name="reviewContent"
               className="modalAddReview__container__form__edit__input"
               placeholder="Veuillez saisir votre message"
-              cols="30"
-              rows="3"
-              maxLength="255"
               value={reviewContent}
               onChange={changeField}
           />

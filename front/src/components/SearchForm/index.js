@@ -12,6 +12,7 @@ const SearchForm = ({
   changeField,
   changeSelect,
   handleSearch,
+  changeFielCity,
   history,
 }) => {
   const handleSubmit = (event) => {
@@ -28,7 +29,7 @@ const SearchForm = ({
           className=""
           placeholder="Votre ville..."
           value={city}
-          onChange={console.log('slt')}
+          onChange={changeFielCity}
         />
         <div className='searchForm__inputs__sport'>
           <ReactSearchAutocomplete
@@ -52,7 +53,6 @@ const SearchForm = ({
         </div>
         
       </div>
-      
       <button
         type="submit"
         className="searchForm__button"
@@ -69,6 +69,7 @@ SearchForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  changeFielCity: PropTypes.func.isRequired,
   history:  PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
