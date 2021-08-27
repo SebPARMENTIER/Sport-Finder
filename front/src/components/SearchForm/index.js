@@ -72,10 +72,9 @@ SearchForm.propTypes = {
   sport: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
-  history: PropTypes.objectOf( PropTypes.shape({
+  history:  PropTypes.shape({
     push: PropTypes.func,
-    length: PropTypes.number.isRequired,
-  }),).isRequired,
+  }).isRequired,
 };
 
 export default SearchForm;
