@@ -1,26 +1,38 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
-// import PropTypes from 'prop-types';
+
+import PropTypes from 'prop-types';
+import FieldTextarea from 'src/components/FieldTextarea';
 
 import './modalAddReview.scss';
 
 export default function 
-ModalAddReview() {
+ModalAddReview({
+  reviewContent,
+  changeField,
+  handleReview,
+}) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleReview();
+  };
   return (
-    <container className='modalAddReview'>
+    <div className='modalAddReview'>
       <div className='modalAddReview__container'>
         <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
         <h1 className='modalAddReview__container__title'>Ajouter un avis</h1>
-        <form className='modalAddReview__container__form'>
+        <form className='modalAddReview__container__form' onSubmit={handleSubmit}>
           <div className='modalAddReview__container__form__edit'>
-          <textarea
+          <FieldTextarea
+              name="reviewContent"
               className="modalAddReview__container__form__edit__input"
               placeholder="Veuillez saisir votre message"
               cols="30"
               rows="3"
               maxLength="255"
-            >
-            </textarea>
+              value={reviewContent}
+              onChange={changeField}
+          />
           </div>
           <div className='modalAddReview__container__form__edit'>
             <p className='modalAddReview__container__form__edit__text'>Donnez votre note</p>
@@ -41,10 +53,12 @@ ModalAddReview() {
           
         </form>
       </div>
-    </container>
+    </div>
   );
 }
 
-// ModalAddReview.propTypes = {
-
-// };
+ModalAddReview.propTypes = {
+  reviewContent: PropTypes.string,
+  changeField: PropTypes.func.isRequired,
+  handleReview: PropTypes.func.isRequired,
+};

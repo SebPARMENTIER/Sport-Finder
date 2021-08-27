@@ -5,8 +5,8 @@ import Single from 'src/components/Single';
 import { findSingle } from 'src/selectors/single';
 
 const mapStateToProps = (state, { match, history }) => {
-  console.log('match', match);
-  console.log('state', state.search.results);
+  // console.log('match', match);
+  // console.log('state', state.search.results);
   const { id } = match.params;
   return ({
     result: findSingle(state.search.results, id),

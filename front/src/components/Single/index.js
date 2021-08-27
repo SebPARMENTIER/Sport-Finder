@@ -17,7 +17,6 @@ const Single = ({
   });
   return (
     <div className="single">
-      
         <div className="single__infos">
         <div className="single__infos__header">
             <div
@@ -26,9 +25,7 @@ const Single = ({
                 backgroundImage: `url(${image.image})`}}
             >
               <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
-            </div> 
-          
-          
+            </div>
         </div>
         <div className="single__infos__content">
           <p className="single__infos__content__name">{result.titre}</p>
@@ -48,8 +45,6 @@ const Single = ({
         </div>  
           
       </div>
-      
-      
       <div className="single__buttons">
         <button
           className="single__buttons__back"

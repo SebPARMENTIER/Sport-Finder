@@ -6,7 +6,7 @@
   justify-content: center;
   width: 90%;
   height: auto;
-  padding: v.$gutter*2 0 v.$gutter*2 0;
+  padding: v.$gutter*5 0 v.$gutter*2 0;
   margin: 0 auto;
 
   &__infos {
@@ -37,6 +37,13 @@
       padding: v.$gutter;
       font-size: v.$gutter*1.2;
 
+      &__name{
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+        padding-bottom: v.$gutter;
+      }
+
       &__desc {
         text-align: center;
         padding-bottom: v.$gutter*2;
@@ -55,14 +62,15 @@
 
           &__adress {
             padding-bottom: v.$gutter;
-          }
-
-          &__email {
-            padding-bottom: v.$gutter;
+            width: 8em;
           }
 
           &__web {
             padding-bottom: v.$gutter;
+          }
+
+          &__object {
+            padding-bottom: v.$gutter 
           }
         }
 
@@ -72,12 +80,13 @@
             padding-bottom: v.$gutter;
           }
 
-          &__email {
+          &__web {
             padding-bottom: v.$gutter;
           }
 
-          &__web {
+          &__object {
             padding-bottom: v.$gutter;
+            text-align: justify;
           }
         }
       }
@@ -116,6 +125,7 @@
     flex-direction: column;
     height: v.$gutter*12;
     overflow-y: auto;
+    padding-right: v.$gutter*0.5;
 
     &::-webkit-scrollbar {
       width: 0.8em;

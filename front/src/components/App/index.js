@@ -9,7 +9,7 @@ import Contact from 'src/containers/Contact';
 import About from 'src/containers/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
-import ModalAddReview from '../ModalAddReview';
+import ModalAddReview from 'src/containers/ModalAddReview';
 import Single from 'src/containers/Single';
 import Results from 'src/containers/Results';
 
@@ -35,6 +35,7 @@ const App = ({}) => (
       <Route exact path='/results' component={Results}></Route>
       <Route exact path='/loading' component={Loading}></Route>
     </Switch>
+    {/* <ModalAddReview /> */}
     <Footer />
   </div>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 
 import sportsData from 'src/assets/sportsData';
 import Field from 'src/components/Field';
@@ -10,6 +10,7 @@ const SearchForm = ({
   city,
   sport,
   changeField,
+  changeSelect,
   handleSearch,
   history,
 }) => {
@@ -18,14 +19,6 @@ const SearchForm = ({
     handleSearch();
     history.push('/results')
   };
-  const getFilteredCurrencies = () => {
-    return sportsData.filter(
-      (sportData) => sportData.name.toLowerCase().includes(
-        sport.toLowerCase(),
-      ),
-    );
-  };
-  const sportsList = getFilteredCurrencies ();
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
@@ -35,26 +28,29 @@ const SearchForm = ({
           className=""
           placeholder="Votre ville..."
           value={city}
-          onChange={changeField}
+          onChange={console.log('slt')}
         />
-        <Field
-          name="sport"
-          type="text"
-          className=""
-          placeholder="Chercher un sport..."
-          value={sport}
-          onChange={changeField}
-        />
-      </div>
-      <div className="searchForm__list" hidden >
-        {sportsList.map((sportList) => (
-          <li
-            key={sportList.name}
-            className="searchForm__list__item"
-          >
-            {sportList.name}
-          </li>
-        ))}
+        <div className='searchForm__inputs__sport'>
+          <ReactSearchAutocomplete
+            items={sportsData}
+            onSearch={changeField}
+            onSelect={changeSelect}
+            autoFocus
+            name="sport"
+            type="text"
+            placeholder="Chercher un sport..."
+            value={sport}
+            styling={
+              {
+                borderRadius: "5px",
+                with:"90%",
+                fontSize: "23px",
+                height:"46px",
+              }
+            }
+          />
+        </div>
+        
       </div>
       
       <button
@@ -71,6 +67,7 @@ SearchForm.propTypes = {
   city: PropTypes.string.isRequired,
   sport: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
+  changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
   history:  PropTypes.shape({
     push: PropTypes.func,
