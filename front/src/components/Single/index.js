@@ -14,6 +14,7 @@ const Single = ({
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
+  //const history = history.goBack();
   return (
     <div className="single">
       
@@ -25,11 +26,7 @@ const Single = ({
                 backgroundImage: `url(${image.image})`}}
             >
               <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
-            </div> 
-          
-                   
-          
-          
+            </div>
         </div>
         <div className="single__infos__content">
           <p className="single__infos__content__name">{result.titre}</p>
@@ -46,13 +43,15 @@ const Single = ({
               <p className="single__infos__content__association__values__object">{result.objet}</p>
             </div>
           </div>
-        </div>  
-          
+        </div>
       </div>
-      
-      
       <div className="single__buttons">
-        <button className="single__buttons__back">Retour aux résultats</button>
+        <button
+          className="single__buttons__back"
+          //onClick={history}
+        >
+          Retour aux résultats
+        </button>
         <button className="single__buttons__addReview">Ajouter un avis</button>
       </div>
       <div className="single__reviews">
