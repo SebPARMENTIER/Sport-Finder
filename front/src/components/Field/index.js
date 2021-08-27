@@ -11,17 +11,18 @@ const Field = ({
   name,
   placeholder,
   onChange,
+  className,
 }) => {
   const handleChange = (evt) => {
     onChange(evt.target.value, name);
   };
 
   const inputId = `field-${name}`;
-
+  const style = `inputs__field ${className}`;
   return (
-    <div className="inputs">
+    <div>
       <input
-        className="inputs__field"
+        className={style}
         // React - state
         value={value}
         onChange={handleChange}
@@ -42,6 +43,7 @@ Field.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 // == Export

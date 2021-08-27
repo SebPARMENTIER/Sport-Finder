@@ -9,9 +9,9 @@ import Contact from 'src/containers/Contact';
 import About from 'src/containers/About';
 import ModalPrivacyData from '../ModalPrivacyData';
 import ModalEditProfil from '../ModalEditProfil';
-import ModalAddReview from '../ModalAddReview';
-import Single from 'src/components/Single';
-import Results from 'src/components/Results';
+import ModalAddReview from 'src/containers/ModalAddReview';
+import Single from 'src/containers/Single';
+import Results from 'src/containers/Results';
 
 
 // == Import
@@ -31,10 +31,11 @@ const App = ({}) => (
       <Route exact path='/privacydata' component={ModalPrivacyData}></Route>
       <Route exact path='/editprofil' component={ModalEditProfil}></Route>
       <Route exact path='/addreview' component={ModalAddReview}></Route>
-      <Route exact path='/single' component={Single}></Route>
+      <Route exact path='/single/:id' component={Single}></Route>
       <Route exact path='/results' component={Results}></Route>
       <Route exact path='/loading' component={Loading}></Route>
     </Switch>
+    {/* <ModalAddReview /> */}
     <Footer />
   </div>
 );

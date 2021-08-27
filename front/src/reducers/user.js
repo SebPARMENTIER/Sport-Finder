@@ -28,7 +28,7 @@ import {
   UPDATE_PSEUDO_SUCCESS,
   UPDATE_ERROR,
   UPDATE_PASSWORD_VALUE,
-  UPDATE_PASSWORD_COMFIRM_ERROR,
+  UPDATE_PASSWORD_CONFIRM_ERROR,
   UPDATE_PASSWORD_SUCCESS,
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_LENGTH_ERROR,
@@ -65,7 +65,7 @@ export const initialState = {
   isUpdatePasswordSuccess: false,
   isUpdatePasswordError: false,
   isUpdatePasswordLengthError: false,
-  
+  token: null,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -128,6 +128,7 @@ const reducer = (state = initialState, action = {}) => {
         openSettings: false,
         pseudo: '',
         userId: '',
+        token: null,
       }
     case CLICK_ON_BUTTON_DELETE_PROFILE:
       return {
@@ -235,11 +236,12 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case LOGIN_SUCCESS:
-      const { id, pseudo } = action.data;
+      const { id, pseudo, accessToken } = action.data;
       return {
         ...state,
         userId: id,
         pseudo,
+        token: accessToken,
         isError: false,
         logged: true,
         openLogIn: false,
@@ -293,7 +295,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       }
-    case UPDATE_PASSWORD_COMFIRM_ERROR:
+    case UPDATE_PASSWORD_CONFIRM_ERROR:
       return {
         ...state,
         updatePasswordError: true,
