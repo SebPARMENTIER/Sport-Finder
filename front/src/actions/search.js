@@ -23,3 +23,9 @@ export const getResultsFromApiSuccess = (data) => ({
 });
 
 export const getResultsFromApiError = () => ({ type: RESULT_API_RNA_ERROR });
+
+export const createSearchCityAction = (newValue, name) => ({
+  type: SET_INPUT_VALUE,
+  value: newValue,
+  name: name,
+});
