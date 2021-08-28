@@ -2,6 +2,11 @@ import axios from 'axios'
 
 import {
   CREATE_REVIEW,
+  GET_ALL_REVIEWS,
+  createReviewSuccessAction,
+  createReviewErrorAction,
+  getAllReviewsSuccessAction,
+  getAllReviewsErrorAction,
 } from 'src/actions/review';
 
 const reviewMiddleware = (store) => (next) => (action) => {
@@ -16,22 +21,38 @@ const reviewMiddleware = (store) => (next) => (action) => {
         },
         data: {
           content: state.review.reviewContent,
-          star: 1,
-          //association_id: 37415680,
-          user_id: 136,
+          star: '1',
+          associationId: state.review.associationId,
+          user_id: state.user.userId,
         },
       };
       axios(config)
         .then((response) => {
-          store.dispatch(createUserSuccessAction(response.data));
-          console.log(response.data.isCreateUserSuccess);
+          store.dispatch(createReviewSuccessAction(response.data));
         })
         .catch((error) => {
-          store.dispatch(createUserErrorAction());
-          console.log(error);
+          store.dispatch(createReviewErrorAction());
         });
         break;
-    }    
+    };
+    case GET_ALL_REVIEWS: {
+      const config = {
+        method: 'get',
+        url: 'https://sportfinder.herokuapp.com/api/v1/review',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(getAllReviewsSuccessAction(response.data));
+          console.log('middleware review get all:', response.data);
+        })
+        .catch((error) => {
+          store.dispatch(getAllReviewsErrorAction());
+        });
+        break;
+    };
     default:
         next(action);
   }    

@@ -12,6 +12,7 @@ ModalAddReview({
   changeField,
   handleReview,
   onClickCloseAddReview,
+  isCreateReviewError,
 }) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -51,6 +52,9 @@ ModalAddReview({
               <div className="modalAddReview__container__form__edit__rating__star">★</div>
             </div>
           </div>
+          {isCreateReviewError && (
+            <p className="modalAddReview__container__form__error">Une erreur s'est produite, veuillez réessayer.</p>
+          )}
           <button
             type="submit"
             className="modalAddReview__container__form__button"
@@ -69,4 +73,5 @@ ModalAddReview.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleReview: PropTypes.func.isRequired,
   onClickCloseAddReview: PropTypes.func.isRequired,
+  isCreateReviewError: PropTypes.bool.isRequired,
 };

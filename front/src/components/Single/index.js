@@ -13,6 +13,7 @@ const Single = ({
   sport,
   onClickModalAddReview,
   openAddReview,
+  allReviews,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
@@ -21,6 +22,7 @@ const Single = ({
   const handleModalAddReview = () => {
     onClickModalAddReview();
   };
+  console.log('allReviews:', allReviews);
   return (
     <div className="single">
         <div className="single__infos">
@@ -63,9 +65,9 @@ const Single = ({
         </button>
       </div>
       <div className="single__reviews">
-        <Review />
-        <Review />
-        <Review />
+        {allReviews.map((review) => (
+          <Review review={review} />
+        ))}
       </div>
       { openAddReview && <ModalAddReview /> }
     </div>
@@ -91,6 +93,7 @@ Single.propTypes = {
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
   openAddReview: PropTypes.bool.isRequired,
-}
+  allReviews: PropTypes.string,
+};
 
 export default Single;

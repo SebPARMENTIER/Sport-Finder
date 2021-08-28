@@ -10,8 +10,12 @@ import './results.scss';
 // == Component
 const Results = ({
   results,
+  history,
+  getAllReviews,
 }) => { 
-
+  const handleGetAllReviews = () => {
+    getAllReviews();
+  };
   return (
     <div className="results">
       <Banner />
@@ -27,7 +31,10 @@ const Results = ({
               className="results__all__list__single"
             >
               <p className="results__all__list__single__name">
-                <Link to={`/single/${result.id}`}>
+                <Link
+                  to={`/single/${result.id}`}
+                  onClick={handleGetAllReviews}
+                >
                   {result.titre}
                 </Link>
                 
@@ -64,6 +71,10 @@ Results.propTypes = {
       adresse_libelle_commune: PropTypes.string,
     }),
   ),
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  getAllReviews: PropTypes.func.isRequired,
 }
 
 export default Results;
