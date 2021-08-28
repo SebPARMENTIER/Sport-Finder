@@ -11,15 +11,25 @@ ModalAddReview({
   reviewContent,
   changeField,
   handleReview,
+  onClickCloseAddReview,
 }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleReview();
   };
+  const handleOnClickCloseAddReview = () => {
+    console.log('click');
+    onClickCloseAddReview();
+  };
   return (
     <div className='modalAddReview'>
       <div className='modalAddReview__container'>
-        <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
+        <button
+          className="modalAddReview__container__close"
+          onClick={handleOnClickCloseAddReview}
+        >
+          <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
+        </button>
         <h1 className='modalAddReview__container__title'>Ajouter un avis</h1>
         <form className='modalAddReview__container__form' onSubmit={handleSubmit}>
           <div className='modalAddReview__container__form__edit'>
@@ -58,4 +68,5 @@ ModalAddReview.propTypes = {
   reviewContent: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleReview: PropTypes.func.isRequired,
+  onClickCloseAddReview: PropTypes.func.isRequired,
 };
