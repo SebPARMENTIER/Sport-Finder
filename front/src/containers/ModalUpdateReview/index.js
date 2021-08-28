@@ -8,7 +8,7 @@ import {
 
 const mapStateToProps = (state) => ({
   newReviewContent: state.review.newReviewContent,
-  isUpdateReviewError: state.review.isCreateReviewError,
+  isUpdateReviewError: state.review.isUpdateReviewError,
 });
 
 const mapDispatchToProps = (dispatch) => ({

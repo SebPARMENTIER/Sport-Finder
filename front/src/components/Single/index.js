@@ -7,6 +7,7 @@ import './single.scss';
 import Review from 'src/containers/Review'
 import ModalAddReview from 'src/containers/ModalAddReview';
 import ModalUpdateReview from 'src/containers/ModalUpdateReview';
+import ModalDeleteReview from 'src/containers/ModalDeleteReview';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
@@ -16,6 +17,7 @@ const Single = ({
   openAddReview,
   allReviews,
   openUpdateReview,
+  openDeleteReview,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
@@ -88,6 +90,7 @@ const Single = ({
       </div>
       { openAddReview && <ModalAddReview /> }
       { openUpdateReview && <ModalUpdateReview /> }
+      { openDeleteReview && <ModalDeleteReview /> }
     </div>
   );
 };
@@ -113,6 +116,7 @@ Single.propTypes = {
   openAddReview: PropTypes.bool.isRequired,
   allReviews: PropTypes.array.isRequired,
   openUpdateReview: PropTypes.bool.isRequired,
+  openDeleteReview: PropTypes.bool.isRequired,
 };
 
 export default Single;

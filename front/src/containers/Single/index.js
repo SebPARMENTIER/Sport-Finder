@@ -16,6 +16,7 @@ const mapStateToProps = (state, { match, history }) => {
     associationId: state.review.associationId,
     allReviews: state.review.allReviews,
     openUpdateReview: state.review.openUpdateReview,
+    openDeleteReview: state.review.openDeleteReview,
     history: history,
   });  
 };

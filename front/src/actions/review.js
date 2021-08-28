@@ -12,6 +12,11 @@ export const UPDATE_REVIEW_SUCCESS = 'UPDATE_REVIEW_SUCCESS';
 export const UPDATE_REVIEW_ERROR = 'UPDATE_REVIEW_ERROR';
 export const CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW = 'CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW';
 export const CLICK_ON_BUTTON_UPDATE_REVIEW = 'CLICK_ON_BUTTON_UPDATE_REVIEW';
+export const CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW = 'CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW';
+export const DELETE_REVIEW = 'DELETE_REVIEW';
+export const DELETE_REVIEW_SUCCESS = 'DELETE_REVIEW_SUCCESS';
+export const DELETE_REVIEW_ERROR = 'DELETE_REVIEW_ERROR';
+export const CLICK_ON_BUTTON_DELETE_REVIEW = 'CLICK_ON_BUTTON_DELETE_REVIEW';
 
 export const GET_ALL_REVIEWS_ERROR = 'GET_ALL_REVIEWS_ERROR';
 
@@ -52,3 +57,13 @@ export const updateReviewErrorAction = () => ({ type: UPDATE_REVIEW_ERROR });
 export const clickOnButtonCloseUpdateReview = () => ({ type: CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW });
 
 export const clickOnButtonUpdateReview = () => ({ type: CLICK_ON_BUTTON_UPDATE_REVIEW });
+
+export const clickOnButtonCloseDeleteReview = () => ({ type: CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW});
+
+export const deleteReviewAction = () => ({ type: DELETE_REVIEW });
+
+export const deleteReviewSuccessAction = (data) => ({ type: DELETE_REVIEW_SUCCESS, data });
+
+export const deleteReviewErrorAction = () => ({ type: DELETE_REVIEW_ERROR });
+
+export const clickOnButtonDeleteReview = () => ({ type: CLICK_ON_BUTTON_DELETE_REVIEW });

@@ -9,9 +9,13 @@ import './review.scss';
 const Review = ({
   reviewResult,
   onClickModalUpdateReview,
+  onClickModalDeleteReview,
 }) => {
   const handleModalUpdateReview = () => {
     onClickModalUpdateReview();
+  };
+  const handleModalDeleteReview = () => {
+    onClickModalDeleteReview();
   };
   return (
     <div className="review">
@@ -35,7 +39,7 @@ const Review = ({
             <ImPencil2 onClick={handleModalUpdateReview} />
           </div>
           <div className="review__block2__change__delete">
-            <ImBin />
+            <ImBin onClick={handleModalDeleteReview} />
           </div>
         </div>
       </div>
@@ -50,6 +54,7 @@ Review.propTypes = {
     content: PropTypes.string.isRequired,
   }),
   onClickModalUpdateReview: PropTypes.func.isRequired,
+  onClickModalDeleteReview: PropTypes.func.isRequired,
 };
 
 export default Review;
