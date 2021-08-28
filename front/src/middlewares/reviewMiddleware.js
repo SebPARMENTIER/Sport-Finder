@@ -3,10 +3,13 @@ import axios from 'axios'
 import {
   CREATE_REVIEW,
   GET_ALL_REVIEWS,
+  UPDATE_REVIEW,
   createReviewSuccessAction,
   createReviewErrorAction,
   getAllReviewsSuccessAction,
   getAllReviewsErrorAction,
+  updateReviewSuccessAction,
+  updateReviewErrorAction,
 } from 'src/actions/review';
 
 const reviewMiddleware = (store) => (next) => (action) => {
@@ -53,6 +56,29 @@ const reviewMiddleware = (store) => (next) => (action) => {
         });
         break;
     };
+    case UPDATE_REVIEW: {
+      const config = {
+        method: 'patch',
+        url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          content: state.review.newReviewContent,
+          star: '1',
+          associationId: state.review.associationId,
+          user_id: state.user.userId,
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(updateReviewSuccessAction(response.data));
+        })
+        .catch((error) => {
+          store.dispatch(updateReviewErrorAction());
+        });
+        break;
+    }
     default:
         next(action);
   }    
