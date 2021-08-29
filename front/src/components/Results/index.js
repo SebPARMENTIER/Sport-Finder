@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 // == Import : local
 import SearchForm from 'src/containers/SearchForm';
 import Banner from 'src/components/Banner';
@@ -16,6 +17,7 @@ const Results = ({
   const handleGetAllReviews = () => {
     getAllReviews();
   };
+  const position = [45.825008, 1.230507];
   return (
     <div className="results">
       <Banner />
@@ -47,11 +49,28 @@ const Results = ({
               </p>
             </div>
           ))}
-          
-        </div>
-        <div className="results__all__map">
-          MAP
-        </div>
+        </div>        
+        <MapContainer
+          id="mapId"
+          center={position}
+          zoom={13}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[46.227638, 2.213749]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+          <Marker position={[48.8534, 2.3488]}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup>
+          </Marker>
+        </MapContainer>
       </div>
       
     </div>

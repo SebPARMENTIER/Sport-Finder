@@ -23,14 +23,6 @@ const SearchForm = ({
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
-        <Field
-          name="city"
-          type="text"
-          className=""
-          placeholder="Votre ville..."
-          value={city}
-          onChange={changeFielCity}
-        />
         <div className='searchForm__inputs__sport'>
           <ReactSearchAutocomplete
             items={sportsData}
@@ -51,7 +43,14 @@ const SearchForm = ({
             }
           />
         </div>
-        
+        <Field
+          name="city"
+          type="text"
+          className=""
+          placeholder="Votre ville..."
+          value={city}
+          onChange={changeFielCity}
+        />
       </div>
       
       <button
