@@ -64,20 +64,12 @@
           font-size: v.$gutter*2;
           color: v.$star-color;
         }
-        
-         
       }
     }
-    
-    &__map {
-      background-color: white;
-      width: 70%;
-      font-size: 5em;
-      border-radius: 5px;
-      margin-left: v.$gutter;
-    }
   }
+}
 
- 
-
+#mapid { 
+  height: 180px;
+  width: 100%; 
 }
