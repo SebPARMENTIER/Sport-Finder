@@ -13,7 +13,7 @@ const Results = ({
   results,
 }) => { 
   
-  const position = [51.505, -0.07]
+  const position = [50.534611 ,3.170776]
 
   return (
     <div className="results">

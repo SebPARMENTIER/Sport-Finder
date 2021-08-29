@@ -1,9 +1,10 @@
-import axios from 'axios'
+import axios from 'axios';
 
 import {
   getResultsFromApiSuccess,
   getResultsFromApiError,
   SEARCH_SPORT,
+  getGPSCoordinates,
 } from 'src/actions/search';
 
 const searchMiddleware = (store) => (next) => (action) => {
@@ -24,8 +25,8 @@ const searchMiddleware = (store) => (next) => (action) => {
           // on stocke le nb de page
           const nbPageNoSport = Number(response.data.total_pages);
           const nbResultNoSport = Number(response.data.total_results);
-          console.log('nbPageNoSport', nbPageNoSport);
-          console.log('nbResultNoSport', nbResultNoSport);
+          // console.log('nbPageNoSport', nbPageNoSport);
+          // console.log('nbResultNoSport', nbResultNoSport);
           //  en réponse on boucle chaque association pour la push dans le tableau la 1er foix
           for (let index = 0; index < 100; index++) {
             tableau.push(response.data.association[index]); 
@@ -54,7 +55,7 @@ const searchMiddleware = (store) => (next) => (action) => {
                       const filteredArray = tabFlat.filter(function(ele , pos){
                         return tabFlat.indexOf(ele) == pos;
                       }) 
-                      console.log("filteredArray",filteredArray);
+                      // console.log("filteredArray",filteredArray);
                       store.dispatch(getResultsFromApiSuccess(cityFilter));
                 
               }
@@ -82,8 +83,8 @@ const searchMiddleware = (store) => (next) => (action) => {
               // on stocke le nb de page
               const nbPage = Number(response.data.total_pages);
               const nbResult = Number(response.data.total_results);
-              console.log('nbpage', nbPage);
-              console.log('nbresult', nbResult);
+              // console.log('nbpage', nbPage);
+              // console.log('nbresult', nbResult);
               //  en réponse on boucle chaque association pour la push dans le tableau la 1er foix
               for (let index = 0; index < 100; index++) {
                 tableau.push(response.data.association[index]); 
@@ -146,15 +147,15 @@ const searchMiddleware = (store) => (next) => (action) => {
                     
                     if ( isNaN(state.search.city) == false) {
                       const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.toLowerCase().startsWith(state.search.city.toLowerCase()));
-                      console.log(" code postal result > 7",cityFilter);
+                      // console.log(" code postal result > 7",cityFilter);
                       tableauFilter.push(cityFilter)
-                      console.log("tableauFilter", tableauFilter);
+                      // console.log("tableauFilter", tableauFilter);
                       const tabFlat = tableauFilter.flat();
-                      console.log("tabFlat", tabFlat);
+                      // console.log("tabFlat", tabFlat);
                       const filteredArray = tabFlat.filter(function(ele , pos){
                         return tabFlat.indexOf(ele) == pos;
                       }) 
-                      console.log("filteredArray",filteredArray);
+                      // console.log("filteredArray",filteredArray);
                       store.dispatch(getResultsFromApiSuccess(cityFilter));
                       
                     }
@@ -170,8 +171,15 @@ const searchMiddleware = (store) => (next) => (action) => {
             })
             .catch((error) => {
               store.dispatch(getResultsFromApiError());
+            })
+            .finally(() => {
+              setTimeout(
+                () => store.dispatch(getGPSCoordinates()),
+                200
+              );
+              
             });
-              console.log('tableau filter', tableau);
+              // console.log('tableau filter', tableau);
               
   
             // store.dispatch(getResultsFromApiSuccess(cityFilter))

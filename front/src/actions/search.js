@@ -4,6 +4,7 @@ export const RESULT_API_RNA_SUCCESS = 'RESULT_API_RNA_SUCCESS';
 export const RESULT_API_RNA_ERROR = 'RESULT_API_RNA_ERROR';
 export const SET_SEARCH_SPORT = 'SET_SEARCH_SPORT';
 export const SET_SEARCH_SELECT_SPORT = 'SET_SEARCH_SELECT_SPORT';
+export const GET_GPS_COORDINATES = 'GET_GPS_COORDINATES';
 
 export const createSetSearchSportAction = (newValue) => ({
   type: SET_SEARCH_SPORT,
@@ -28,4 +29,8 @@ export const createSearchCityAction = (newValue, name) => ({
   type: SET_INPUT_VALUE,
   value: newValue,
   name: name,
+});
+
+export const getGPSCoordinates = () => ({
+  type: GET_GPS_COORDINATES,
 })
