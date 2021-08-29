@@ -19,7 +19,7 @@ const ModalEditPassword = ({
   isUpdatePasswordLengthError,
 }) => {
   const handleOnClickCloseEditPassword = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseEditPassword();
   }
   const handleSubmit = (event) => {

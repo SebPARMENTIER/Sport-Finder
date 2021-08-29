@@ -14,11 +14,12 @@ const Results = ({
   cityCenterLat,
   cityCenterLng,
   buildMap,
+  markers,
 }) => { 
-  console.log('cityCenterLat', cityCenterLat);
+  //console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
-  console.log('position',position);
-    
+  //console.log('position',position);
+  const position2 = [50.636565, 3.063528]
   return (
     <div className="results">
       <Banner />
@@ -63,11 +64,16 @@ const Results = ({
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {/* <Marker position={position}>
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
-            </Marker> */}
+            {markers.map((marker) => (
+              <Marker 
+                key={marker[0]}
+                position={[marker[1][1], marker[1][0]]}
+              >
+                <Popup>
+                  {marker[0]}
+                </Popup>
+              </Marker>
+            ))}
           </MapContainer>
         )}
         
@@ -93,6 +99,13 @@ Results.propTypes = {
   cityCenterLat: PropTypes.number.isRequired,
   cityCenterLng: PropTypes.number.isRequired,
   buildMap: PropTypes.bool.isRequired,
+  markers: PropTypes.arrayOf(
+    PropTypes.string.isRequired,
+    PropTypes.arrayOf(
+      PropTypes.number.isRequired,
+      PropTypes.number.isRequired,
+    ),
+  ),
 }
 
 export default Results;

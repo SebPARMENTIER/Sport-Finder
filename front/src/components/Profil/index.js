@@ -20,14 +20,14 @@ const Profil = ({
   pseudo,
 }) => {
   const handleModalEditProfil = () => {
-    console.log("click");
+    //console.log("click");
     onClickModalEditProfil();
   }
   const handleModalDeleteProfile = () => {
     onClickModalDeleteProfile();
   }
   const handleModalEditPassword = () => {
-    console.log('click');
+    //console.log('click');
     onClickModalEditPassword();
   }
   const handleModalPrivacyData = () => {

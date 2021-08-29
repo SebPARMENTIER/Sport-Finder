@@ -76,21 +76,21 @@ const reducer = (state = initialState, action = {}) => {
         [action.name]: action.value,
       };
     case CLICK_ON_BUTTON_SETTINGS: {
-      console.log('in the reducer');
+      //console.log('in the reducer');
       return {
         ...state,
         openSettings: !state.openSettings,
       };
     };
     case CLICK_ON_BUTTON_CLOSE_SETTINGS: {
-      console.log('in the reducer');
+      //console.log('in the reducer');
       return {
         ...state,
         openSettings: false,
       };
     };
     case CLICK_ON_BUTTON_LOG_IN: {
-      console.log('in the reducer');
+      //console.log('in the reducer');
       if( state.openLogUp === true){
         return {
           ...state,
@@ -104,7 +104,7 @@ const reducer = (state = initialState, action = {}) => {
       }
     };
     case CLICK_ON_BUTTON_LOG_UP: {
-      console.log('in the reducer');
+      //console.log('in the reducer');
       if( state.openLogIn === true){
         return {
           ...state,

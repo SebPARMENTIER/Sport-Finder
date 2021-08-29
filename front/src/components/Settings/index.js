@@ -15,7 +15,7 @@ const Settings = ({
     onClickCloseSettings();
   }
   const handleLogOut = () => {
-    console.log('click');
+    //console.log('click');
     onClickLogOut();
   }
   return (

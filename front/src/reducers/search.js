@@ -6,6 +6,7 @@ import {
   SET_SEARCH_SELECT_SPORT,
   GET_CITY_CENTER_COORDINATES,
   BUILD_MAP,
+  GET_DATA_FOR_MARKERS,
 } from 'src/actions/search';
 
 export const initialState = {
@@ -14,7 +15,8 @@ export const initialState = {
   results: [],
   cityCenterLat: 46.227638,
   cityCenterLng: 2.213749,
-  buildMap: false
+  buildMap: false,
+  markers: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -54,6 +56,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         buildMap: false,
+      }
+    case GET_DATA_FOR_MARKERS:
+      return {
+        ...state,
+        markers: action.data,
       }
     default:
       return state;

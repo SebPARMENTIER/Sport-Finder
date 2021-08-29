@@ -49,11 +49,11 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(createUserSuccessAction(response.data));
-            console.log(response.data.isCreateUserSuccess);
+            //console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
             store.dispatch(createUserErrorAction());
-            console.log(error);
+            //console.log(error);
           });
       }
       break;
@@ -151,11 +151,11 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(updatePasswordSuccessAction(response.data));
-            console.log(response.data.isCreateUserSuccess);
+            //console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
             store.dispatch(updatePasswordErrorAction());
-            console.log(error);
+            //console.log(error);
           });
       }
       break;

@@ -23,7 +23,7 @@ const ModalSignUp = ({
     handleCreateUser();
   };
   const handleOnClickCloseSignUp = () => {
-    console.log('click');
+    //console.log('click');
     onClickCloseSignUp();
   }
   return (

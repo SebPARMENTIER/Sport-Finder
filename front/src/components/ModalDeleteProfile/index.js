@@ -19,7 +19,7 @@ const ModalDeleteProfile = ({
     handleDeleteProfile();
   };
   const handleOnClickCloseDeleteProfile = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseDeleteProfile();
   }
   return (

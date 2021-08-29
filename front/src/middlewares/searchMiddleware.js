@@ -47,11 +47,11 @@ const searchMiddleware = (store) => (next) => (action) => {
               }
               if ( isNaN(state.search.city) == false) {
                 const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.startsWith(Number(state.search.city)));
-                      console.log(" code postal result > 7",cityFilter);
+                      //console.log(" code postal result > 7",cityFilter);
                       tableauFilter.push(cityFilter)
-                      console.log("tableauFilter", tableauFilter);
+                      //console.log("tableauFilter", tableauFilter);
                       const tabFlat = tableauFilter.flat();
-                      console.log("tabFlat", tabFlat);
+                      //console.log("tabFlat", tabFlat);
                       const filteredArray = tabFlat.filter(function(ele , pos){
                         return tabFlat.indexOf(ele) == pos;
                       }) 
@@ -92,12 +92,12 @@ const searchMiddleware = (store) => (next) => (action) => {
               // si le nb de page est égale a 1
               if (nbPage === 1) {
                 if (state.search.city.length === 0) {
-                  console.log("no city",response.data.association);
+                  //console.log("no city",response.data.association);
                   store.dispatch(getResultsFromApiSuccess(response.data.association));
                 }
                 else if ( isNaN(state.search.city) == false ) {
                   const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.toLowerCase().startsWith(state.search.city.toLowerCase()));
-                  console.log('code postal result for 1',cityFilter);
+                  //console.log('code postal result for 1',cityFilter);
                   store.dispatch(getResultsFromApiSuccess(cityFilter));
                   
                 }
@@ -119,7 +119,7 @@ const searchMiddleware = (store) => (next) => (action) => {
                     
                     if ( isNaN(state.search.city) == false) {
                       const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.toLowerCase().startsWith(state.search.city.toLowerCase()));
-                      console.log('code postal result < 7',cityFilter);
+                      //console.log('code postal result < 7',cityFilter);
                       store.dispatch(getResultsFromApiSuccess(cityFilter));
                       tableauFilter.push(cityFilter);
                     }

@@ -1,7 +1,7 @@
 @use 'src/styles/vars' as v;
 
 .results {
-  padding: v.$gutter*5 0 v.$gutter*2 0;
+  padding: v.$gutter*5 0 v.$gutter 0;
   &__slogan{
     width: 100vw;
     font-size: 2em;
@@ -12,16 +12,13 @@
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
 
   }
-    
-  &__searchform {
-    padding-top: v.$gutter;
-  }
+  
 
   &__all {
     padding: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
-    height: v.$gutter*20;
+    height: 45vh;
 
     &__list {
       margin-right: v.$gutter;
@@ -70,6 +67,8 @@
 }
 
 #mapid { 
-  height: 280px;
+  height: 100%;
   width: 100%; 
+  border-radius: 10px;
+  z-index: 0;
 }

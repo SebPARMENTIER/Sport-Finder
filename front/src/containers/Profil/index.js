@@ -18,7 +18,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onClickModalEditProfil: () => {
-    console.log('container');
+    //console.log('container');
     const action = clickOnButtonEditProfil();
     dispatch(action);
   },

@@ -7,6 +7,7 @@ export const SET_SEARCH_SELECT_SPORT = 'SET_SEARCH_SELECT_SPORT';
 export const GET_GPS_COORDINATES = 'GET_GPS_COORDINATES';
 export const GET_CITY_CENTER_COORDINATES = 'GET_CITY_CENTER_COORDINATES';
 export const BUILD_MAP = 'BUILD_MAP';
+export const GET_DATA_FOR_MARKERS = 'GET_DATA_FOR_MARKERS';
 
 export const createSetSearchSportAction = (newValue) => ({
   type: SET_SEARCH_SPORT,
@@ -44,4 +45,9 @@ export const getCityCenterCoordinates = (data) => ({
 
 export const buildMapAction = () => ({
   type: BUILD_MAP,
+});
+
+export const getDataForMarkers = (data) => ({
+  type: GET_DATA_FOR_MARKERS,
+  data,
 })
