@@ -14,12 +14,17 @@ const SearchForm = ({
   handleSearch,
   changeFielCity,
   history,
+  onClickBuildMap,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
     history.push('/results')
   };
+  const handleOnClickBuildMap = () => {
+    console.log('click');
+    onClickBuildMap();
+  }
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
@@ -56,6 +61,7 @@ const SearchForm = ({
       <button
         type="submit"
         className="searchForm__button"
+        onClick={handleOnClickBuildMap}
       >
         Rechercher
       </button>
@@ -70,6 +76,7 @@ SearchForm.propTypes = {
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
   changeFielCity: PropTypes.func.isRequired,
+  onClickBuildMap: PropTypes.func.isRequired,
   history:  PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,

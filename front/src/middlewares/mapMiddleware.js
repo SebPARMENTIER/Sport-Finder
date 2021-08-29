@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_GPS_COORDINATES } from 'src/actions/search';
+import { GET_GPS_COORDINATES, getCityCenterCoordinates } from 'src/actions/search';
 
 const mapMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
@@ -28,7 +28,9 @@ const mapMiddleware = (store) => (next) => (action) => {
       };
       
       axios(config).then(function (response) {
-        console.log(response.data);
+        console.log(response.data.features[0].geometry.coordinates[1]);
+        store.dispatch(getCityCenterCoordinates(response.data.features[0].geometry.coordinates));
+
       }).catch(function (error) {
         console.error(error);
       });

@@ -11,10 +11,14 @@ import './results.scss';
 // == Component
 const Results = ({
   results,
+  cityCenterLat,
+  cityCenterLng,
+  buildMap,
 }) => { 
-  
-  const position = [50.534611 ,3.170776]
-
+  console.log('cityCenterLat', cityCenterLat);
+  const position = [cityCenterLat, cityCenterLng];
+  console.log('position',position);
+    
   return (
     <div className="results">
       <Banner />
@@ -45,22 +49,28 @@ const Results = ({
           ))}
           
         </div>
-        <MapContainer
-          id="mapid"
-          center={position}
-          zoom={13}
-          scrollWheelZoom={true}
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
+        { buildMap && (
+          <MapContainer
+            id="mapid"
+            center={position}
+            zoom={10}
+            scrollWheelZoom={true}
+            maxZoom={20}
+            panTo={position}
+            animate={true}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {/* <Marker position={position}>
+              <Popup>
+                A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+            </Marker> */}
+          </MapContainer>
+        )}
+        
       </div>
     </div>
 
@@ -80,6 +90,9 @@ Results.propTypes = {
       adresse_libelle_commune: PropTypes.string,
     }),
   ),
+  cityCenterLat: PropTypes.number.isRequired,
+  cityCenterLng: PropTypes.number.isRequired,
+  buildMap: PropTypes.bool.isRequired,
 }
 
 export default Results;

@@ -5,6 +5,8 @@ export const RESULT_API_RNA_ERROR = 'RESULT_API_RNA_ERROR';
 export const SET_SEARCH_SPORT = 'SET_SEARCH_SPORT';
 export const SET_SEARCH_SELECT_SPORT = 'SET_SEARCH_SELECT_SPORT';
 export const GET_GPS_COORDINATES = 'GET_GPS_COORDINATES';
+export const GET_CITY_CENTER_COORDINATES = 'GET_CITY_CENTER_COORDINATES';
+export const BUILD_MAP = 'BUILD_MAP';
 
 export const createSetSearchSportAction = (newValue) => ({
   type: SET_SEARCH_SPORT,
@@ -33,4 +35,13 @@ export const createSearchCityAction = (newValue, name) => ({
 
 export const getGPSCoordinates = () => ({
   type: GET_GPS_COORDINATES,
+});
+
+export const getCityCenterCoordinates = (data) => ({
+  type: GET_CITY_CENTER_COORDINATES,
+  data,
+});
+
+export const buildMapAction = () => ({
+  type: BUILD_MAP,
 })

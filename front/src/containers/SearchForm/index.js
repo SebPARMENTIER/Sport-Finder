@@ -6,6 +6,7 @@ import {
   createSearchAction,
   createSetSearchSportSelectAction,
   createSearchCityAction,
+  buildMapAction,
 } from 'src/actions/search';
 
 const mapStateToProps = (state, { history }) => {
@@ -30,6 +31,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeFielCity: (newValue, name) => {
     dispatch(createSearchCityAction(newValue, name));
+  },
+  onClickBuildMap: () => {
+    dispatch(buildMapAction());
   }
 });
 
