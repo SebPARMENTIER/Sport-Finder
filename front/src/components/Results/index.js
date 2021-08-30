@@ -19,8 +19,22 @@ const Results = ({
   //console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
   //console.log('position',position);
-  const position2 = [50.636565, 3.063528]
+  const position2 = [50.636565, 3.063528];
+  const index = 0;
+  
+  const icons = markers.map((marker) => ( 
+    <Marker 
+      key={marker[2]}
+      position={[marker[1][1], marker[1][0]]}
+    >
+      <Popup>
+        {marker[0]}
+      </Popup>
+    </Marker>
+  ));
+  
   return (
+    
     <div className="results">
       <Banner />
       <p className='results__slogan'>Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
@@ -57,23 +71,12 @@ const Results = ({
             zoom={10}
             scrollWheelZoom={true}
             maxZoom={20}
-            panTo={position}
-            animate={true}
           >
             <TileLayer
               attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {markers.map((marker) => (
-              <Marker 
-                key={marker[0]}
-                position={[marker[1][1], marker[1][0]]}
-              >
-                <Popup>
-                  {marker[0]}
-                </Popup>
-              </Marker>
-            ))}
+            {icons} 
           </MapContainer>
         )}
         
@@ -84,7 +87,7 @@ const Results = ({
 };
 
 Results.propTypes = {
-  resluts: PropTypes.arrayOf(
+  results: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       titre: PropTypes.string.isRequired,
@@ -100,11 +103,7 @@ Results.propTypes = {
   cityCenterLng: PropTypes.number.isRequired,
   buildMap: PropTypes.bool.isRequired,
   markers: PropTypes.arrayOf(
-    PropTypes.string.isRequired,
-    PropTypes.arrayOf(
-      PropTypes.number.isRequired,
-      PropTypes.number.isRequired,
-    ),
+    PropTypes.shape,
   ),
 }
 

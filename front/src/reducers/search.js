@@ -61,6 +61,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         markers: action.data,
+        city: '',
       }
     default:
       return state;

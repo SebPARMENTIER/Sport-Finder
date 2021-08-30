@@ -11,7 +11,7 @@ const mapMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_GPS_COORDINATES:
       //console.log('dans mapMiddleware');
-      //console.log(state.search.results);
+      console.log(state.search.results);
       //console.log(state.search.city);
       //console.log(state.search.results[0].adresse_numero_voie);
       
@@ -53,10 +53,10 @@ const mapMiddleware = (store) => (next) => (action) => {
             params: { q: adress},
           })
             .then((response) => {
-              markerArray.push([results[index].titre, response.data.features[0].geometry.coordinates]);
+              markerArray.push([ results[index].titre, response.data.features[0].geometry.coordinates, index]);
               store.dispatch(getDataForMarkers(markerArray));
             })
-        }, 150);
+        }, 100*index);
         
       }
       console.log('markerArray', markerArray);
