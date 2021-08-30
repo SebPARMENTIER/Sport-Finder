@@ -52,7 +52,7 @@ const reducer = (state = initialState, action = {}) => {
     case CLICK_ON_BUTTON_ADD_REVIEW:
       return {
         ...state,
-        openAddReview: false,
+        openAddReview: true,
         isCreateReviewError: false,
       };
     case CLICK_ON_BUTTON_CLOSE_ADD_REVIEW:
