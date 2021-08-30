@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/components/Review';
+import Review from 'src/containers/Review'
 import ModalAddReview from 'src/containers/ModalAddReview';
+import ModalUpdateReview from 'src/containers/ModalUpdateReview';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
@@ -14,6 +15,7 @@ const Single = ({
   onClickModalAddReview,
   openAddReview,
   allReviews,
+  openUpdateReview,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
@@ -22,6 +24,12 @@ const Single = ({
   const handleModalAddReview = () => {
     onClickModalAddReview();
   };
+  // let allReviewsForAnAssociation = [];
+  // allReviews.map((review) => {
+  //   if (review.association_id === result.id) {
+  //     allReviewsForAnAssociation.push(review);
+  //   }
+  // });
   console.log('allReviews:', allReviews);
   return (
     <div className="single">
@@ -66,11 +74,21 @@ const Single = ({
         </button>
       </div>
       <div className="single__reviews">
-        {allReviews.map((review) => (
-          <Review review={review} />
+        {/* {allReviewsForAnAssociation.map((reviewResult) => (
+          <Review
+            key={reviewResult.id}
+            reviewResult={reviewResult}
+          />
+        ))} */}
+        {allReviews.map((reviewResult) => (
+          <Review
+            key={reviewResult.id}
+            reviewResult={reviewResult}
+          />
         ))}
       </div>
       { openAddReview && <ModalAddReview /> }
+      { openUpdateReview && <ModalUpdateReview /> }
     </div>
   );
 };
@@ -94,7 +112,8 @@ Single.propTypes = {
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
   openAddReview: PropTypes.bool.isRequired,
-  allReviews: PropTypes.string,
+  allReviews: PropTypes.array.isRequired,
+  openUpdateReview: PropTypes.bool.isRequired,
 };
 
 export default Single;

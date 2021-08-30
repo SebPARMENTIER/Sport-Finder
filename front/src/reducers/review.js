@@ -6,6 +6,11 @@ import {
   CLICK_ON_BUTTON_CLOSE_ADD_REVIEW,
   GET_ALL_REVIEWS_SUCCESS,
   GET_ALL_REVIEWS_ERROR,
+  UPDATE_REVIEW_VALUE,
+  UPDATE_REVIEW_SUCCESS,
+  UPDATE_REVIEW_ERROR,
+  CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW,
+  CLICK_ON_BUTTON_UPDATE_REVIEW,
 } from 'src/actions/review';
 
 export const initialState = {
@@ -13,7 +18,11 @@ export const initialState = {
   isCreateReviewError: false,
   openAddReview: false,
   associationId: 36847686,
+  reviewId: '',
   allReviews: [],
+  newReviewContent: '',
+  openUpdateReview: false,
+  isUpdateReviewError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,6 +35,7 @@ const reducer = (state = initialState, action = {}) => {
     case CREATE_REVIEW_SUCCESS:
       return {
         ...state,
+        reviewId: action.data.id,
         openAddReview: false,
       };
     case CREATE_REVIEW_ERROR:
@@ -48,7 +58,34 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         allReviews: action.data,
-      }
+      };
+    
+    case UPDATE_REVIEW_VALUE:
+      return {
+        ...state,
+        [action.name]: action.value,
+      };
+    case UPDATE_REVIEW_SUCCESS:
+      return {
+        ...state,
+        openUpdateReview: false,
+      };
+    case UPDATE_REVIEW_ERROR:
+      return {
+        ...state,
+        isUpdateReviewError: true,
+      };
+    case CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW:
+      return {
+        ...state,
+        openUpdateReview: false,
+        isUpdateReviewError: false,
+      };
+    case CLICK_ON_BUTTON_UPDATE_REVIEW:
+      return {
+        ...state,
+        openUpdateReview: !state.openUpdateReview,
+      };
     default:
       return state;
   }
