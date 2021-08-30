@@ -11,7 +11,7 @@ const StarRating = ({
   const handleOnClick = (event) => {
     // console.log('click')
     onClickStar(event.target.value);
-  }
+  };
 
   return (
     <div className="rating">

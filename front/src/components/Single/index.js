@@ -18,6 +18,8 @@ const Single = ({
   allReviews,
   openUpdateReview,
   openDeleteReview,
+  getSingleAssociationName,
+  getSingleAssociationKey,
   history,
 }) => {
   const image = sportsData.find((sportData) => (
@@ -25,6 +27,9 @@ const Single = ({
   ));
   const handleModalAddReview = () => {
     onClickModalAddReview();
+    getSingleAssociationName(result.titre);
+    getSingleAssociationKey(result.id);
+    console.log('id:', result.id, 'titre:', result.titre);
   };
   // let allReviewsForAnAssociation = [];
   // allReviews.map((review) => {
@@ -86,7 +91,7 @@ const Single = ({
         {allReviews.map((reviewResult) => (
           <Review
             key={reviewResult.id}
-            reviewResult={reviewResult}
+            {...reviewResult}
           />
         ))}
       </div>
@@ -117,6 +122,8 @@ Single.propTypes = {
   openUpdateReview: PropTypes.bool.isRequired,
   openDeleteReview: PropTypes.bool.isRequired,
   history: PropTypes.string.isRequired,
+  getSingleAssociationName: PropTypes.func.isRequired,
+  getSingleAssociationKey: PropTypes.func.isRequired,
 };
 
 export default Single;

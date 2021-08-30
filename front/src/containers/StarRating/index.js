@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import StarRating from 'src/components/StarRating';
 import { setStarValue } from 'src/actions/review';
+
 const mapStateToProps = (state) => ({
   rating: state.review.rating,
 });

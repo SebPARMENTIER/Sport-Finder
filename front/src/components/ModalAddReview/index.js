@@ -20,7 +20,7 @@ ModalAddReview({
     handleReview();
   };
   const handleOnClickCloseAddReview = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseAddReview();
   };
   return (
@@ -42,7 +42,7 @@ ModalAddReview({
               placeholder="Veuillez saisir votre message"
               value={reviewContent}
               onChange={changeField}
-          />
+            />
           </div>
           <div className="modalAddReview__container__form__edit">
             <p className="modalAddReview__container__form__edit__text">Donnez votre note</p>
