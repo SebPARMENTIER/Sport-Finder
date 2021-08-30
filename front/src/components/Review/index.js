@@ -1,28 +1,38 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ImPencil2, ImBin } from 'react-icons/im'
+import { ImPencil2, ImBin } from 'react-icons/im';
 
 // == Import : local
 import './review.scss';
 
 const Review = ({
-  reviewResult,
+  id,
+  createdAt,
+  author,
+  content,
   onClickModalUpdateReview,
   onClickModalDeleteReview,
+  getIdValue,
 }) => {
   const handleModalUpdateReview = () => {
+    getIdValue(id);
     onClickModalUpdateReview();
+    
   };
   const handleModalDeleteReview = () => {
     onClickModalDeleteReview();
   };
+  // const handleGetId = (value) => {
+  //   getIdValue(value);
+  // }
+  console.log('id', id);
   return (
     <div className="review">
       <div className="review__block1">
         <div className="review__block1__header">
           <div className="review__block1__header__subject">Super Club de Boxe !!! :)</div>
-          <div className="review__block1__header__date">{reviewResult.createdAt}</div>
+          <div className="review__block1__header__date">{createdAt}</div>
         </div>
         <div className="review__block1__rating">
           <div className="review__block1__rating__star__full">★</div>
@@ -33,17 +43,28 @@ const Review = ({
         </div>
       </div>
       <div className="review__block2">
-        <div className="review__block2__from">Avis de BeBoxe85</div>
+        <div className="review__block2__from">Avis de {author.pseudo}</div>
         <div className="review__block2__change">
           <div className="review__block2__change__update">
-            <ImPencil2 onClick={handleModalUpdateReview} />
+            
+              <button
+                type="submit"
+                onClick={handleModalUpdateReview}
+                //onSelect={handleGetId}
+                //value={id}
+              >
+                <ImPencil2 />
+              </button>
+            
+            
+            
           </div>
           <div className="review__block2__change__delete">
             <ImBin onClick={handleModalDeleteReview} />
           </div>
         </div>
       </div>
-      <div className="review__content">{reviewResult.content}</div>
+      <div className="review__content">{content}</div>
     </div>
   );
 };

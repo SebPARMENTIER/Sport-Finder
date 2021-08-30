@@ -18,6 +18,8 @@ const Single = ({
   allReviews,
   openUpdateReview,
   openDeleteReview,
+  getSingleAssociationName,
+  getSingleAssociationKey,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
@@ -25,6 +27,9 @@ const Single = ({
   });
   const handleModalAddReview = () => {
     onClickModalAddReview();
+    getSingleAssociationName(result.titre);
+    getSingleAssociationKey(result.id);
+    console.log('id:', result.id, 'titre:', result.titre);
   };
   // let allReviewsForAnAssociation = [];
   // allReviews.map((review) => {
@@ -32,18 +37,18 @@ const Single = ({
   //     allReviewsForAnAssociation.push(review);
   //   }
   // });
-  console.log('allReviews:', allReviews);
+  // console.log('allReviews:', allReviews);
   return (
     <div className="single">
-        <div className="single__infos">
+      <div className="single__infos">
         <div className="single__infos__header">
-            <div
-              className="single__infos__header__picture"
-              style={{
-                backgroundImage: `url(${image.image})`}}
-            >
-              <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
-            </div>
+          <div
+            className="single__infos__header__picture"
+            style={{
+              backgroundImage: `url(${image.image})`}}
+          >
+            <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
+          </div>
         </div>
         <div className="single__infos__content">
           <p className="single__infos__content__name">{result.titre}</p>
@@ -84,7 +89,7 @@ const Single = ({
         {allReviews.map((reviewResult) => (
           <Review
             key={reviewResult.id}
-            reviewResult={reviewResult}
+            {...reviewResult}
           />
         ))}
       </div>

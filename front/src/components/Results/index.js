@@ -36,6 +36,7 @@ const Results = ({
                 <Link
                   to={`/single/${result.id}`}
                   onClick={handleGetAllReviews}
+                  {...result}
                 >
                   {result.titre}
                 </Link>
