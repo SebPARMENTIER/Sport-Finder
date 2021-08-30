@@ -3,10 +3,12 @@ import ModalAddReview from 'src/components/ModalAddReview';
 import {
   createReviewSetInputValueAction,
   createReviewAction,
+  clickOnButtonCloseAddReview,
 } from 'src/actions/review';
 
 const mapStateToProps = (state) => ({
   reviewContent: state.review.reviewContent,
+  isCreateReviewError: state.review.isCreateReviewError,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -15,6 +17,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handleReview: () => {
     dispatch(createReviewAction());
+  },
+  onClickCloseAddReview: () => {
+    dispatch(clickOnButtonCloseAddReview());
   },
 })
 

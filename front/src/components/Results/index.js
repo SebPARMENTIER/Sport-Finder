@@ -15,13 +15,13 @@ const Results = ({
   cityCenterLng,
   buildMap,
   markers,
+  history,
+  getAllReviews,
 }) => { 
   //console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
   //console.log('position',position);
-  const position2 = [50.636565, 3.063528];
-  const index = 0;
-  
+    
   const icons = markers.map((marker) => ( 
     <Marker 
       key={marker[2]}
@@ -32,7 +32,10 @@ const Results = ({
       </Popup>
     </Marker>
   ));
-  
+
+  const handleGetAllReviews = () => {
+    getAllReviews();
+  };
   return (
     
     <div className="results">
@@ -49,7 +52,10 @@ const Results = ({
               className="results__all__list__single"
             >
               <p className="results__all__list__single__name">
-                <Link to={`/single/${result.id}`}>
+                <Link
+                  to={`/single/${result.id}`}
+                  onClick={handleGetAllReviews}
+                >
                   {result.titre}
                 </Link>
                 
@@ -105,6 +111,10 @@ Results.propTypes = {
   markers: PropTypes.arrayOf(
     PropTypes.shape,
   ),
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  getAllReviews: PropTypes.func.isRequired,
 }
 
 export default Results;

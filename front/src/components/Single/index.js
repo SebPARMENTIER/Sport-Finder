@@ -4,17 +4,25 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/components/Review'
+import Review from 'src/components/Review';
+import ModalAddReview from 'src/containers/ModalAddReview';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
   result,
   sport,
+  onClickModalAddReview,
+  openAddReview,
+  allReviews,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
+  const handleModalAddReview = () => {
+    onClickModalAddReview();
+  };
+  console.log('allReviews:', allReviews);
   return (
     <div className="single">
         <div className="single__infos">
@@ -50,13 +58,19 @@ const Single = ({
           className="single__buttons__back"
           onClick={() => history.push('/results')}
         >Retour aux résultats</button>
-        <button className="single__buttons__addReview">Ajouter un avis</button>
+        <button
+          className="single__buttons__addReview"
+          onClick={handleModalAddReview}
+        >
+          Ajouter un avis
+        </button>
       </div>
       <div className="single__reviews">
-        <Review />
-        <Review />
-        <Review />
+        {allReviews.map((review) => (
+          <Review review={review} />
+        ))}
       </div>
+      { openAddReview && <ModalAddReview /> }
     </div>
   );
 };
@@ -78,6 +92,9 @@ Single.propTypes = {
     push: PropTypes.func.isRequired,
   }),
   sport: PropTypes.string.isRequired,
-}
+  onClickModalAddReview: PropTypes.func.isRequired,
+  openAddReview: PropTypes.bool.isRequired,
+  allReviews: PropTypes.string,
+};
 
 export default Single;
