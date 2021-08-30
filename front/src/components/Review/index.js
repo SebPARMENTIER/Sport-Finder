@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ImPencil2, ImBin } from 'react-icons/im';
+import { FaStar } from 'react-icons/fa';
 
 // == Import : local
 import './review.scss';
@@ -11,6 +12,7 @@ const Review = ({
   createdAt,
   author,
   content,
+  star,
   onClickModalUpdateReview,
   onClickModalDeleteReview,
   getIdValue,
@@ -18,16 +20,19 @@ const Review = ({
   const handleModalUpdateReview = () => {
     getIdValue(id);
     onClickModalUpdateReview();
-    
   };
   const handleModalDeleteReview = () => {
     getIdValue(id);
     onClickModalDeleteReview();
   };
-  // const handleGetId = (value) => {
-  //   getIdValue(value);
-  // }
-  
+  const getStarsForOneReview = () => {
+    for (let i = 0; i < 5; i++) {
+      if (i < star) {
+        return <FaStar className="review__block1__rating__star__full" />;
+      }
+      return <FaStar className="review__block1__rating__star__empty" />;
+    }
+  };
   return (
     <div className="review">
       <div className="review__block1">
@@ -36,6 +41,7 @@ const Review = ({
           <div className="review__block1__header__date">{createdAt}</div>
         </div>
         <div className="review__block1__rating">
+          {/* {getStarsForOneReview()} */}
           <div className="review__block1__rating__star__full">★</div>
           <div className="review__block1__rating__star__full">★</div>
           <div className="review__block1__rating__star__full">★</div>

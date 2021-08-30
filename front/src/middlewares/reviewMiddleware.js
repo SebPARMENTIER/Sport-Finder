@@ -46,7 +46,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
               },
               data: {
                 content: state.review.reviewContent,
-                star: 1,
+                star: state.review.rating,
                 association_id: associationFiltered[0].id,
                 user_id: state.user.userId,
               },
@@ -94,7 +94,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         },
         data: {
           content: state.review.reviewContent,
-          star: 1,
+          star: state.review.rating,
           association_id: state.review.associationId,
           user_id: state.user.userId,
         },
@@ -136,7 +136,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         data: {
           id: state.review.reviewId,
           content: state.review.newReviewContent,
-          star: 1,
+          star: state.review.rating,
           associationKey: 1,
           user_id: state.user.userId,
         },

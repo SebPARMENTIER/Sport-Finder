@@ -36,6 +36,7 @@ export const initialState = {
   isDeleteReviewError: false,
   singleAssociationName: '',
   associationId: '',
+  rating: 0,
 };
 
 const reducer = (state = initialState, action = {}) => {
