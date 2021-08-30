@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Single from 'src/components/Single';
 
 import { findSingle } from 'src/selectors/single';
+import { clickOnButtonAddReview } from 'src/actions/review';
 
 const mapStateToProps = (state, { match, history }) => {
   // console.log('match', match);
@@ -11,8 +12,19 @@ const mapStateToProps = (state, { match, history }) => {
   return ({
     result: findSingle(state.search.results, id),
     sport: state.search.sport,
+    openAddReview: state.review.openAddReview,
+    associationId: state.review.associationId,
+    allReviews: state.review.allReviews,
+    openUpdateReview: state.review.openUpdateReview,
+    openDeleteReview: state.review.openDeleteReview,
     history: history,
   });  
 };
 
-export default withRouter(connect(mapStateToProps)(Single));
+const mapDispatchToProps = (dispatch) => ({
+  onClickModalAddReview: () => {
+    dispatch(clickOnButtonAddReview());
+  },
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Single));

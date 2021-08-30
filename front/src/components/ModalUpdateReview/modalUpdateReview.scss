@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.modalAddReview {
+.modalUpdateReview {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,5 +114,5 @@
       }
     }
   }
-  
+
 }

@@ -16,7 +16,7 @@ const ModalEditProfil = ({
   isUpdatePseudoError,
 }) => {
   const handleOnClickCloseEditProfil = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseEditProfil();
   }
   const handleSubmit = (event) => {

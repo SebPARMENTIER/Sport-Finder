@@ -12,24 +12,22 @@ const SearchForm = ({
   changeField,
   changeSelect,
   handleSearch,
+  changeFielCity,
   history,
+  onClickBuildMap,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
     history.push('/results')
   };
+  const handleOnClickBuildMap = () => {
+    //console.log('click');
+    onClickBuildMap();
+  }
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
-        <Field
-          name="city"
-          type="text"
-          className=""
-          placeholder="Votre ville..."
-          value={city}
-          onChange={console.log('slt')}
-        />
         <div className='searchForm__inputs__sport'>
           <ReactSearchAutocomplete
             items={sportsData}
@@ -50,12 +48,19 @@ const SearchForm = ({
             }
           />
         </div>
-        
+        <Field
+          name="city"
+          type="text"
+          className=""
+          placeholder="Votre ville..."
+          value={city}
+          onChange={changeFielCity}
+        />
       </div>
-      
       <button
         type="submit"
         className="searchForm__button"
+        onClick={handleOnClickBuildMap}
       >
         Rechercher
       </button>
@@ -69,6 +74,8 @@ SearchForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  changeFielCity: PropTypes.func.isRequired,
+  onClickBuildMap: PropTypes.func.isRequired,
   history:  PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,

@@ -37,7 +37,7 @@ const Contact = ({
     handleSelectCivility(event.target.value);
   };
   const handleOnClick = () => {
-    console.log('click');
+    // console.log('click');
     onClickSubmit();
   }
   const handleOnClickMessageSuccess = () => {

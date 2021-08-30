@@ -4,17 +4,35 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/components/Review'
+import Review from 'src/containers/Review'
+import ModalAddReview from 'src/containers/ModalAddReview';
+import ModalUpdateReview from 'src/containers/ModalUpdateReview';
+import ModalDeleteReview from 'src/containers/ModalDeleteReview';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
   result,
   sport,
+  onClickModalAddReview,
+  openAddReview,
+  allReviews,
+  openUpdateReview,
+  openDeleteReview,
   history,
 }) => {
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
   });
+  const handleModalAddReview = () => {
+    onClickModalAddReview();
+  };
+  // let allReviewsForAnAssociation = [];
+  // allReviews.map((review) => {
+  //   if (review.association_id === result.id) {
+  //     allReviewsForAnAssociation.push(review);
+  //   }
+  // });
+  console.log('allReviews:', allReviews);
   return (
     <div className="single">
         <div className="single__infos">
@@ -50,13 +68,30 @@ const Single = ({
           className="single__buttons__back"
           onClick={() => history.push('/results')}
         >Retour aux résultats</button>
-        <button className="single__buttons__addReview">Ajouter un avis</button>
+        <button
+          className="single__buttons__addReview"
+          onClick={handleModalAddReview}
+        >
+          Ajouter un avis
+        </button>
       </div>
       <div className="single__reviews">
-        <Review />
-        <Review />
-        <Review />
+        {/* {allReviewsForAnAssociation.map((reviewResult) => (
+          <Review
+            key={reviewResult.id}
+            reviewResult={reviewResult}
+          />
+        ))} */}
+        {allReviews.map((reviewResult) => (
+          <Review
+            key={reviewResult.id}
+            reviewResult={reviewResult}
+          />
+        ))}
       </div>
+      { openAddReview && <ModalAddReview /> }
+      { openUpdateReview && <ModalUpdateReview /> }
+      { openDeleteReview && <ModalDeleteReview /> }
     </div>
   );
 };
@@ -78,6 +113,11 @@ Single.propTypes = {
     push: PropTypes.func.isRequired,
   }),
   sport: PropTypes.string.isRequired,
-}
+  onClickModalAddReview: PropTypes.func.isRequired,
+  openAddReview: PropTypes.bool.isRequired,
+  allReviews: PropTypes.array.isRequired,
+  openUpdateReview: PropTypes.bool.isRequired,
+  openDeleteReview: PropTypes.bool.isRequired,
+};
 
 export default Single;

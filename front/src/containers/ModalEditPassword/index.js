@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updatePasswordSetInputValueAction(newValue, name));
   },
   onClickCloseEditPassword: () => {
-    console.log('in the container ');
+    //console.log('in the container ');
     const action = clickOnButtonCloseEditPassword();
     dispatch(action);
   },

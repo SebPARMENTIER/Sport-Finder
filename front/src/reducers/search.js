@@ -4,12 +4,19 @@ import {
   RESULT_API_RNA_ERROR,
   SET_SEARCH_SPORT,
   SET_SEARCH_SELECT_SPORT,
+  GET_CITY_CENTER_COORDINATES,
+  BUILD_MAP,
+  GET_DATA_FOR_MARKERS,
 } from 'src/actions/search';
 
 export const initialState = {
   city: '',
   sport: '',
   results: [],
+  cityCenterLat: 46.227638,
+  cityCenterLng: 2.213749,
+  buildMap: false,
+  markers: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,6 +44,24 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         sport: action.value.name,
+      }
+    case GET_CITY_CENTER_COORDINATES:
+      return{
+        ...state,
+        cityCenterLat: action.data[1],
+        cityCenterLng: action.data[0],
+        buildMap: true,
+      }
+    case BUILD_MAP:
+      return {
+        ...state,
+        buildMap: false,
+      }
+    case GET_DATA_FOR_MARKERS:
+      return {
+        ...state,
+        markers: action.data,
+        city: '',
       }
     default:
       return state;

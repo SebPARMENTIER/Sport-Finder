@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createUserAction());
   },
   onClickCloseSignUp: () => {
-    console.log('in the container Header');
+    //console.log('in the container Header');
     const action = clickOnButtonCloseSignUp();
     dispatch(action);
   },

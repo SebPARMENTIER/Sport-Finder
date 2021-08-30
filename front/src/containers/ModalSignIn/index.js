@@ -22,12 +22,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createSubmitAction());
   },
   onClickLogUp: () => {
-    console.log('in the container Header');
+    //console.log('in the container Header');
     const action = clickOnButtonLogUp();
     dispatch(action);
   },
   onClickCloseSignIn: () => {
-    console.log('in the container Header');
+    //console.log('in the container Header');
     const action = clickOnButtonCloseSignIn();
     dispatch(action);
   },

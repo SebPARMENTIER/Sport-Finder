@@ -15,15 +15,15 @@ const Header = ({
   pseudo,
 }) => {
   const handleOnClickArrow = () => {
-    console.log("click");
+    // console.log("click");
     onClickArrow();
   };
   const handleOnClickLogIn = () => {
-    console.log("click");
+    // console.log("click");
     onClickLogIn();
   };
   const handleOnClickLogUp = () => {
-    console.log("click");
+    // console.log("click");
     onClickLogUp();
   };
   const handleCloseSettings = () => {

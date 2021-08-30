@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.modalAddReview {
+.modalDeleteReview {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,64 +34,42 @@
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
       margin: v.$gutter*3 0;
     }
-    &__form{
+    &__edit{
       display: flex;
+      justify-content: space-between;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       width: 100%;
-      &__edit{
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-bottom: v.$gutter;
+      margin-bottom: v.$gutter;
 
-        &__text {
-          color: v.$text-color;
-          font-size: 1.5em;
-          padding-top: v.$gutter*2;
-          padding-bottom: v.$gutter*0.8;
-        }
-
-        &__rating{
-          display: flex;
-          flex-direction: row;
-          font-size: 2.5em;
-          color: grey;
-        }
-
-        &__input{
-          width: 90%;
-          height: v.$gutter*8;
-          font-size: 1.5em;
-          padding: v.$gutter*0.5;
-          border-radius: 5px;
-          border: none;
-        }
-      }
-      &__error{
-        background-color: rgb(185, 109, 109);
-        border-radius: 10px;
-        padding: v.$gutter v.$gutter*2;
-        color: white;
-        margin-bottom: v.$gutter;
-        font-size: 2em;
-        text-align: center;
-      }
-      &__button{
-        font-size: 2em;
-        padding: v.$gutter*0.3 v.$gutter*1.5;
-        color: v.$secondary-color;
-        background-color: v.$text-color;
-        border: none;
-        border-radius: 5px;
-        width: auto;
-        margin-bottom: v.$gutter*3;
-        margin-top: v.$gutter;
+      &__text {
+        color: v.$text-color;
+        font-size: 1.5em;
+        padding-top: v.$gutter*2;
+        padding-bottom: v.$gutter*0.8;
       }
     }
+    &__error{
+      background-color: rgb(185, 109, 109);
+      border-radius: 10px;
+      padding: v.$gutter v.$gutter*2;
+      color: white;
+      margin-bottom: v.$gutter;
+      font-size: 2em;
+      text-align: center;
+    }
+    &__button{
+      font-size: 2em;
+      padding: v.$gutter*0.3 v.$gutter*1.5;
+      color: v.$secondary-color;
+      background-color: v.$text-color;
+      border: none;
+      border-radius: 5px;
+      width: auto;
+      margin-bottom: v.$gutter*3;
+      margin-top: v.$gutter;
+    }
+
     @media (min-width: 770px){
       .modalAddReview{
         &__container__title{
@@ -114,5 +92,5 @@
       }
     }
   }
-  
+
 }

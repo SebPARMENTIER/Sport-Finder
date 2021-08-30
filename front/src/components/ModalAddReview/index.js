@@ -11,15 +11,26 @@ ModalAddReview({
   reviewContent,
   changeField,
   handleReview,
+  onClickCloseAddReview,
+  isCreateReviewError,
 }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleReview();
   };
+  const handleOnClickCloseAddReview = () => {
+    console.log('click');
+    onClickCloseAddReview();
+  };
   return (
     <div className='modalAddReview'>
       <div className='modalAddReview__container'>
-        <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
+        <button
+          className="modalAddReview__container__close"
+          onClick={handleOnClickCloseAddReview}
+        >
+          <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
+        </button>
         <h1 className='modalAddReview__container__title'>Ajouter un avis</h1>
         <form className='modalAddReview__container__form' onSubmit={handleSubmit}>
           <div className='modalAddReview__container__form__edit'>
@@ -27,9 +38,6 @@ ModalAddReview({
               name="reviewContent"
               className="modalAddReview__container__form__edit__input"
               placeholder="Veuillez saisir votre message"
-              cols="30"
-              rows="3"
-              maxLength="255"
               value={reviewContent}
               onChange={changeField}
           />
@@ -44,6 +52,9 @@ ModalAddReview({
               <div className="modalAddReview__container__form__edit__rating__star">★</div>
             </div>
           </div>
+          {isCreateReviewError && (
+            <p className="modalAddReview__container__form__error">Une erreur s'est produite, veuillez réessayer.</p>
+          )}
           <button
             type="submit"
             className="modalAddReview__container__form__button"
@@ -61,4 +72,6 @@ ModalAddReview.propTypes = {
   reviewContent: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleReview: PropTypes.func.isRequired,
+  onClickCloseAddReview: PropTypes.func.isRequired,
+  isCreateReviewError: PropTypes.bool.isRequired,
 };

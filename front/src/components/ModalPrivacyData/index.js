@@ -6,7 +6,7 @@ import './modalPrivacyData.scss';
 
 export default function ModalPrivacyData({ onClickClosePrivacyData }) {
   const handleOnClickClosePrivacyData = () => {
-    console.log('click');
+    // console.log('click');
     onClickClosePrivacyData();
   }
   return (

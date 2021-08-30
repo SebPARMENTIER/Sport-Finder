@@ -5,6 +5,8 @@ import {
   createSetSearchSportAction,
   createSearchAction,
   createSetSearchSportSelectAction,
+  createSearchCityAction,
+  buildMapAction,
 } from 'src/actions/search';
 
 const mapStateToProps = (state, { history }) => {
@@ -27,6 +29,12 @@ const mapDispatchToProps = (dispatch) => ({
   handleSearch: () => {
     dispatch(createSearchAction());
   },
+  changeFielCity: (newValue, name) => {
+    dispatch(createSearchCityAction(newValue, name));
+  },
+  onClickBuildMap: () => {
+    dispatch(buildMapAction());
+  }
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm)) ;

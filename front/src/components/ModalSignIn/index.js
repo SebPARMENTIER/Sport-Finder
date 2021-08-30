@@ -19,11 +19,11 @@ const ModalSignin = ({
     handleLogin();
   };
   const handleOnClickLogUp = () => {
-    console.log('click');
+    //console.log('click');
     onClickLogUp();
   }
   const handleOnClickCloseSignIn = () => {
-    console.log('click');
+    //console.log('click');
     onClickCloseSignIn();
   }
   return (

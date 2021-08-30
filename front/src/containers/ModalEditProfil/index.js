@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updatePseudoSetInputValueAction(newValue, name));
   },
   onClickCloseEditProfil: () => {
-    console.log('in the container Header');
+    //console.log('in the container Header');
     const action = clickOnButtonCloseEditProfil();
     dispatch(action);
   },
