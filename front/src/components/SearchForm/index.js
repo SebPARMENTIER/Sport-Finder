@@ -39,6 +39,7 @@ const SearchForm = ({
                 with: '90%',
                 fontSize: '23px',
                 height: '46px',
+                marginRight: '16px',
               }
             }
           />
