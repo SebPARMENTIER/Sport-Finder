@@ -36,7 +36,8 @@ const reviewMiddleware = (store) => (next) => (action) => {
           const associationFiltered = associationExists.filter(
             (elem) => elem.key_association.includes(state.review.associationKey),
           );
-          if (associationFiltered == true) {
+          console.log(associationFiltered);
+          if (associationFiltered.length > 0) {
             axios({
               method: 'post',
               url: 'https://sportfinder.herokuapp.com/api/v1/review',
@@ -52,13 +53,13 @@ const reviewMiddleware = (store) => (next) => (action) => {
             })
               .then((response) => {
                 store.dispatch(createReviewSuccessAction(response.data));
-                //store.dispatch(getAllReviewsAction());
+                store.dispatch(getAllReviewsAction());
               })
               .catch((error) => {
                 store.dispatch(createReviewErrorAction());
               });
           }
-          else {
+          else if (associationFiltered.length === 0) {
             axios({
               method: 'post',
               url: 'https://sportfinder.herokuapp.com/api/v1/association',
@@ -100,6 +101,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           store.dispatch(createReviewSuccessAction(response.data));
+          store.dispatch(getAllReviewsAction());
         })
         .catch((error) => {
           store.dispatch(createReviewErrorAction());
@@ -163,6 +165,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(deleteReviewSuccessAction(response.data));
+          store.dispatch(getAllReviewsAction());
         })
         .catch((error) => {
           store.dispatch(deleteReviewErrorAction());

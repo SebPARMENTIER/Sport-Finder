@@ -21,12 +21,13 @@ const Review = ({
     
   };
   const handleModalDeleteReview = () => {
+    getIdValue(id);
     onClickModalDeleteReview();
   };
   // const handleGetId = (value) => {
   //   getIdValue(value);
   // }
-  console.log('id', id);
+  
   return (
     <div className="review">
       <div className="review__block1">
