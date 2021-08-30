@@ -1,5 +1,6 @@
 import React from 'react';
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import StarRating from 'src/containers/StarRating';
 
 import PropTypes from 'prop-types';
 import FieldTextarea from 'src/components/FieldTextarea';
@@ -45,11 +46,7 @@ ModalAddReview({
           <div className='modalAddReview__container__form__edit'>
             <p className='modalAddReview__container__form__edit__text'>Donnez votre note</p>
               <div className="modalAddReview__container__form__edit__rating">
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
+                <StarRating />
             </div>
           </div>
           {isCreateReviewError && (

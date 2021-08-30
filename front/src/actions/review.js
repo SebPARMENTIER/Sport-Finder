@@ -23,6 +23,7 @@ export const GET_SINGLE_ASSOCIATION_NAME_VALUE = 'GET_SINGLE_ASSOCIATION_NAME_VA
 export const GET_SINGLE_ASSOCIATION_KEY_VALUE = 'GET_SINGLE_ASSOCIATION_KEY_VALUE';
 export const CREATE_ASSOCIATION_SUCCESS = 'CREATE_ASSOCIATION_SUCCESS';
 export const CREATE_REVIEW_AFTER_CREATE_ASSOCIATION = 'CREATE_REVIEW_AFTER_CREATE_ASSOCIATION';
+export const CLICK_STAR_VALUE = 'CLICK_STAR_VALUE';
 
 export const createReviewSetInputValueAction = (newValue, name) => ({
   type: SET_REVIEW_INPUT_VALUE,
@@ -93,3 +94,8 @@ export const createAssociationSuccessAction = (data) => ({
 });
 
 export const createReviewAfterCreateAssociation = () => ({ type: CREATE_REVIEW_AFTER_CREATE_ASSOCIATION });
+
+export const setStarValue = (data) => ({
+  type: CLICK_STAR_VALUE,
+  data,
+});
