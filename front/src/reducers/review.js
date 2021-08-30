@@ -11,6 +11,10 @@ import {
   UPDATE_REVIEW_ERROR,
   CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW,
   CLICK_ON_BUTTON_UPDATE_REVIEW,
+  CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW,
+  DELETE_REVIEW_SUCCESS,
+  DELETE_REVIEW_ERROR,
+  CLICK_ON_BUTTON_DELETE_REVIEW,
 } from 'src/actions/review';
 
 export const initialState = {
@@ -23,6 +27,8 @@ export const initialState = {
   newReviewContent: '',
   openUpdateReview: false,
   isUpdateReviewError: false,
+  openDeleteReview: false,
+  isDeleteReviewError: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -86,6 +92,27 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openUpdateReview: !state.openUpdateReview,
       };
+    case CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW:
+      return {
+        ...state,
+        openDeleteReview: false,
+        isDeleteReviewError: false,
+      };
+    case DELETE_REVIEW_SUCCESS:
+      return {
+        ...state,
+        openDeleteReview: false,
+      };
+    case DELETE_REVIEW_ERROR:
+      return {
+        ...state,
+        isDeleteReviewError: true,
+      };
+    case CLICK_ON_BUTTON_DELETE_REVIEW:
+      return {
+        ...state,
+        openDeleteReview: !state.openDeleteReview,
+      }
     default:
       return state;
   }

@@ -4,12 +4,15 @@ import {
   CREATE_REVIEW,
   GET_ALL_REVIEWS,
   UPDATE_REVIEW,
+  DELETE_REVIEW,
   createReviewSuccessAction,
   createReviewErrorAction,
   getAllReviewsSuccessAction,
   getAllReviewsErrorAction,
   updateReviewSuccessAction,
   updateReviewErrorAction,
+  deleteReviewSuccessAction,
+  deleteReviewErrorAction,
 } from 'src/actions/review';
 
 const reviewMiddleware = (store) => (next) => (action) => {
@@ -25,7 +28,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         data: {
           content: state.review.reviewContent,
           star: '1',
-          associationId: state.review.associationId,
+          association_id: state.review.associationId,
           user_id: state.user.userId,
         },
       };
@@ -78,6 +81,26 @@ const reviewMiddleware = (store) => (next) => (action) => {
             store.dispatch(updateReviewErrorAction());
           });
           break;
+        };
+        case DELETE_REVIEW: {
+          const config = {
+            method: 'delete',
+            url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            data: {
+              id: state.review.reviewId,
+            },
+          };
+          axios(config)
+            .then((response) => {
+              store.dispatch(deleteReviewSuccessAction(response.data));
+            })
+            .catch((error) => {
+              store.dispatch(deleteReviewErrorAction());
+            });
+            break;
       }   
     default:
         next(action);

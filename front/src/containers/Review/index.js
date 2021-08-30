@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
 import Review from 'src/components/Review';
 
-import { clickOnButtonUpdateReview } from 'src/actions/review';
+import {
+  clickOnButtonUpdateReview,
+  clickOnButtonDeleteReview,
+} from 'src/actions/review';
 
 const mapDispatchToProps = (dispatch) => ({
   onClickModalUpdateReview: () => {
     dispatch(clickOnButtonUpdateReview());
+  },
+  onClickModalDeleteReview: () => {
+    dispatch(clickOnButtonDeleteReview());
   },
 });
 
