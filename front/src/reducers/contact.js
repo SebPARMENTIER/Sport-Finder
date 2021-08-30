@@ -26,12 +26,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         civility: action.value,
-      }
+      };
     case SUBMIT_CONTACT_FORM:
       return {
         ...state,
         submitMessage: true,
-      }
+      };
     case CLOSE_MESSAGE_SUCCESS:
       return {
         ...state,
@@ -42,7 +42,7 @@ const reducer = (state = initialState, action = {}) => {
         subject: '',
         content: '',
         submitMessage: false,
-      }
+      };
     default:
       return state;
   }

@@ -18,13 +18,18 @@ const Single = ({
   allReviews,
   openUpdateReview,
   openDeleteReview,
+  getSingleAssociationName,
+  getSingleAssociationKey,
   history,
 }) => {
-  const image = sportsData.find((sportData) => {
-    return sportData.name.toLowerCase() === sport.toLowerCase();
-  });
+  const image = sportsData.find((sportData) => (
+    sportData.name.toLowerCase() === sport.toLowerCase()
+  ));
   const handleModalAddReview = () => {
     onClickModalAddReview();
+    getSingleAssociationName(result.titre);
+    getSingleAssociationKey(result.id);
+    console.log('id:', result.id, 'titre:', result.titre);
   };
   // let allReviewsForAnAssociation = [];
   // allReviews.map((review) => {
@@ -32,18 +37,17 @@ const Single = ({
   //     allReviewsForAnAssociation.push(review);
   //   }
   // });
-  console.log('allReviews:', allReviews);
+  // console.log('allReviews:', allReviews);
   return (
     <div className="single">
-        <div className="single__infos">
+      <div className="single__infos">
         <div className="single__infos__header">
-            <div
-              className="single__infos__header__picture"
-              style={{
-                backgroundImage: `url(${image.image})`}}
-            >
-              <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
-            </div>
+          <div
+            className="single__infos__header__picture"
+            style={{ backgroundImage: `url(${image.image})` }}
+          >
+            <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
+          </div>
         </div>
         <div className="single__infos__content">
           <p className="single__infos__content__name">{result.titre}</p>
@@ -60,15 +64,17 @@ const Single = ({
               <p className="single__infos__content__association__values__object">{result.objet}</p>
             </div>
           </div>
-        </div>  
-          
+        </div>
       </div>
       <div className="single__buttons">
         <button
+          type="submit"
           className="single__buttons__back"
           onClick={() => history.push('/results')}
-        >Retour aux résultats</button>
+        >Retour aux résultats
+        </button>
         <button
+          type="submit"
           className="single__buttons__addReview"
           onClick={handleModalAddReview}
         >
@@ -85,7 +91,7 @@ const Single = ({
         {allReviews.map((reviewResult) => (
           <Review
             key={reviewResult.id}
-            reviewResult={reviewResult}
+            {...reviewResult}
           />
         ))}
       </div>
@@ -108,16 +114,16 @@ Single.propTypes = {
     adresse_libelle_commune: PropTypes.string,
     site_web: PropTypes.string,
     object: PropTypes.string,
-  }),
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }),
+  }).isRequired,
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
   openAddReview: PropTypes.bool.isRequired,
   allReviews: PropTypes.array.isRequired,
   openUpdateReview: PropTypes.bool.isRequired,
   openDeleteReview: PropTypes.bool.isRequired,
+  history: PropTypes.string.isRequired,
+  getSingleAssociationName: PropTypes.func.isRequired,
+  getSingleAssociationKey: PropTypes.func.isRequired,
 };
 
 export default Single;

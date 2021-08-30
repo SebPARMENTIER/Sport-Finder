@@ -1,6 +1,6 @@
-import axios from 'axios'
+import axios from 'axios';
 
-import { 
+import {
   CREATE_USER,
   SUBMIT_LOGIN,
   DELETE_PROFIL,
@@ -23,10 +23,10 @@ import {
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
-  const state = store.getState();  
+  const state = store.getState();
   switch (action.type) {
-    case CREATE_USER:{
-      if ( state.user.password.length < 8 ){
+    case CREATE_USER: {
+      if (state.user.password.length < 8) {
         store.dispatch(createPasswordLengthError());
       }
       else if (state.user.password !== state.user.passwordConfirm) {
@@ -49,16 +49,16 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(createUserSuccessAction(response.data));
-            //console.log(response.data.isCreateUserSuccess);
+            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
-            store.dispatch(createUserErrorAction());
-            //console.log(error);
+            store.dispatch(createUserErrorAction(error));
+            // console.log(error);
           });
       }
       break;
-    } 
-    case SUBMIT_LOGIN:{
+    }
+    case SUBMIT_LOGIN: {
       const config = {
         method: 'post',
         url: 'https://sportfinder.herokuapp.com/api/v1/login',
@@ -71,10 +71,9 @@ const authMiddleware = (store) => (next) => (action) => {
           password: state.user.password,
         },
       };
-  
       axios(config)
         .then((response) => {
-          const data = {...response.data};
+          const data = { ...response.data };
           store.dispatch(createLoginSuccessAction(data));
         })
         .catch(() => {
@@ -82,7 +81,7 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
-    case DELETE_PROFIL:{
+    case DELETE_PROFIL: {
       const config = {
         method: 'delete',
         url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
@@ -95,7 +94,6 @@ const authMiddleware = (store) => (next) => (action) => {
           password: state.user.password,
         },
       };
-  
       axios(config)
         .then((response) => {
           store.dispatch(deleteProfileSuccessAction(response.data));
@@ -105,17 +103,18 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
-    case UPDATE_PSEUDO:{
+    case UPDATE_PSEUDO: {
       const config = {
-        method:'patch',
+        method: 'patch',
         url: `https://sportfinder.herokuapp.com/api/v1/user/pseudo/${state.user.userId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.user.userId,
           password: state.user.password,
-          pseudo:state.user.newPseudo,
+          pseudo: state.user.newPseudo,
         },
       };
 
@@ -128,11 +127,11 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
-    case UPDATE_PASSWORD:{
-      if ( state.user.newPassword.length < 8 ){
+    case UPDATE_PASSWORD: {
+      if (state.user.newPassword.length < 8) {
         store.dispatch(updatePasswordLengthError());
       }
-      else if ( state.user.newPassword !== state.user.newPasswordConfirm ) {
+      else if (state.user.newPassword !== state.user.newPasswordConfirm) {
         store.dispatch(updatePasswordConfirmErrorAction());
       }
       else {
@@ -141,6 +140,7 @@ const authMiddleware = (store) => (next) => (action) => {
           url: `https://sportfinder.herokuapp.com/api/v1/user/password/${state.user.userId}`,
           headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${state.user.token}`,
           },
           data: {
             id: state.user.userId,
@@ -151,11 +151,11 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(updatePasswordSuccessAction(response.data));
-            //console.log(response.data.isCreateUserSuccess);
+            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
-            store.dispatch(updatePasswordErrorAction());
-            //console.log(error);
+            store.dispatch(updatePasswordErrorAction(error));
+            // console.log(error);
           });
       }
       break;

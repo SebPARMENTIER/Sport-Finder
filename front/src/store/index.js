@@ -1,4 +1,9 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  createStore,
+  applyMiddleware,
+  compose,
+} from 'redux';
 
 import reducer from 'src/reducers';
 

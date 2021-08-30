@@ -4,4 +4,3 @@ export function findSingle(results, searchedId) {
   });
   return result;
 }
-

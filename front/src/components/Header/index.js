@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import logo from "src/assets/logo.png";
-import Settings from "src/containers/Settings";
-import { IoIosArrowDown } from "react-icons/io";
-import "./header.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import logo from 'src/assets/logo.png';
+import Settings from 'src/containers/Settings';
+import { IoIosArrowDown } from 'react-icons/io';
+import './header.scss';
 
 const Header = ({
   isLogged,
@@ -45,7 +45,7 @@ const Header = ({
             </div>
           </div>
           <div className="header-logo">
-            <Link 
+            <Link
               to="/"
               onClick={handleCloseSettings}
             >
@@ -100,6 +100,8 @@ Header.propTypes = {
   onClickArrow: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
   pseudo: PropTypes.string.isRequired,
+  onClickLogIn: PropTypes.func.isRequired,
+  onClickLogUp: PropTypes.func.isRequired,
 };
 
 export default Header;

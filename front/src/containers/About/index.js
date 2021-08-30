@@ -5,10 +5,10 @@ const mapStateToProps = (state) => ({
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
 });
-  // ajouter le state a utilisé pour le composant '
+// ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = () => ({});
-  // ajouter la fonction utilisé dans le composant
+// ajouter la fonction utilisé dans le composant
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(About);
 

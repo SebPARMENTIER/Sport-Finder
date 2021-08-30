@@ -1,11 +1,11 @@
-import { connect } from "react-redux";
-import Header from "src/components/Header";
+import { connect } from 'react-redux';
+import Header from 'src/components/Header';
 import {
   clickOnButtonSettings,
   clickOnButtonLogIn,
   clickOnButtonLogUp,
   clickOnButtonCloseSettings,
-} from "src/actions/user";
+} from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
