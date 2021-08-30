@@ -1,11 +1,14 @@
 // == Import : npm
-import React from 'react';
+import React, {
+  useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+// import Marker from 'react-leaflet-animated-marker';
 // == Import : local
 import SearchForm from 'src/containers/SearchForm';
 import Banner from 'src/components/Banner';
+import Loading from 'src/components/Loading';
 import './results.scss';
 
 // == Component
@@ -36,6 +39,12 @@ const Results = ({
   const handleGetAllReviews = () => {
     getAllReviews();
   };
+
+  useEffect(() => {
+    
+    buildMap = true
+    
+  }, [markers])
   return (
     
     <div className="results">
@@ -45,31 +54,33 @@ const Results = ({
         <SearchForm />
       </div>
       <div className="results__all">
-        <div className="results__all__list">
-          {results.map((result) => (
-            <div
-              key={result.id}
-              className="results__all__list__single"
-            >
-              <p className="results__all__list__single__name">
-                <Link
-                  to={`/single/${result.id}`}
-                  onClick={handleGetAllReviews}
-                >
-                  {result.titre}
-                </Link>
-                
-              </p>
-              <p className="results__all__list__single__adress">
-              {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
-              </p>
-              <p className="results__all__list__single__rating">
-              ⭐⭐⭐⭐⭐
-              </p>
-            </div>
-          ))}
-          
-        </div>
+        { buildMap && (
+          <div className="results__all__list">
+            {results.map((result) => (
+              <div
+                key={result.id}
+                className="results__all__list__single"
+              >
+                <p className="results__all__list__single__name">
+                  <Link
+                    to={`/single/${result.id}`}
+                    onClick={handleGetAllReviews}
+                  >
+                    {result.titre}
+                  </Link>
+                  
+                </p>
+                <p className="results__all__list__single__adress">
+                {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
+                </p>
+                <p className="results__all__list__single__rating">
+                ⭐⭐⭐⭐⭐
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+        { !buildMap && (<Loading />)}
         { buildMap && (
           <MapContainer
             id="mapid"

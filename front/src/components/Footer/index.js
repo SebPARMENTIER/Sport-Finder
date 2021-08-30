@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import "./footer.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import './footer.scss';
 
 const Footer = ({
   onClickCloseSettings,
@@ -11,7 +11,7 @@ const Footer = ({
   const handleCloseSettings = () => {
     // console.log('close setting');
     onClickCloseSettings();
-  }
+  };
   return (
     <footer className="footer">
       <p className="footer__contact hover-underline-animation">

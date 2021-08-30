@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 import {
   CREATE_REVIEW,
@@ -27,7 +27,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         },
         data: {
           content: state.review.reviewContent,
-          star: '1',
+          star: 1,
           association_id: state.review.associationId,
           user_id: state.user.userId,
         },
@@ -37,74 +37,74 @@ const reviewMiddleware = (store) => (next) => (action) => {
           store.dispatch(createReviewSuccessAction(response.data));
         })
         .catch((error) => {
-          store.dispatch(createReviewErrorAction());
+          store.dispatch(createReviewErrorAction(error));
         });
-        break;
+      break;
+    }
+    case GET_ALL_REVIEWS: {
+      const config = {
+        method: 'get',
+        url: 'https://sportfinder.herokuapp.com/api/v1/review',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       };
-      case GET_ALL_REVIEWS: {
-        const config = {
-          method: 'get',
-          url: 'https://sportfinder.herokuapp.com/api/v1/review',
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        };
-        axios(config)
-          .then((response) => {
-            store.dispatch(getAllReviewsSuccessAction(response.data));
-            console.log('middleware review get all:', response.data);
-          })
-          .catch((error) => {
-            store.dispatch(getAllReviewsErrorAction());
-          });
-          break;
+      axios(config)
+        .then((response) => {
+          store.dispatch(getAllReviewsSuccessAction(response.data));
+          // console.log('middleware review get all:', response.data);
+        })
+        .catch((error) => {
+          store.dispatch(getAllReviewsErrorAction(error));
+        });
+      break;
+    }
+    case UPDATE_REVIEW: {
+      const config = {
+        method: 'patch',
+        url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          content: state.review.newReviewContent,
+          star: '1',
+          associationId: state.review.associationId,
+          user_id: state.user.userId,
+        },
       };
-      case UPDATE_REVIEW: {
-        const config = {
-          method: 'patch',
-          url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          data: {
-            content: state.review.newReviewContent,
-            star: '1',
-            associationId: state.review.associationId,
-            user_id: state.user.userId,
-          },
-        };
-        axios(config)
-          .then((response) => {
-            store.dispatch(updateReviewSuccessAction(response.data));
-          })
-          .catch((error) => {
-            store.dispatch(updateReviewErrorAction());
-          });
-          break;
-        };
-        case DELETE_REVIEW: {
-          const config = {
-            method: 'delete',
-            url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            data: {
-              id: state.review.reviewId,
-            },
-          };
-          axios(config)
-            .then((response) => {
-              store.dispatch(deleteReviewSuccessAction(response.data));
-            })
-            .catch((error) => {
-              store.dispatch(deleteReviewErrorAction());
-            });
-            break;
-      }   
+      axios(config)
+        .then((response) => {
+          store.dispatch(updateReviewSuccessAction(response.data));
+        })
+        .catch((error) => {
+          store.dispatch(updateReviewErrorAction(error));
+        });
+      break;
+    }
+    case DELETE_REVIEW: {
+      const config = {
+        method: 'delete',
+        url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          id: state.review.reviewId,
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(deleteReviewSuccessAction(response.data));
+        })
+        .catch((error) => {
+          store.dispatch(deleteReviewErrorAction(error));
+        });
+      break;
+    }
     default:
-        next(action);
-  }    
+      next(action);
+  }
 };
 
 export default reviewMiddleware;

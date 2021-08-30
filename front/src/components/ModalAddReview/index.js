@@ -1,12 +1,13 @@
 import React from 'react';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import StarRating from 'src/containers/StarRating';
 
 import PropTypes from 'prop-types';
 import FieldTextarea from 'src/components/FieldTextarea';
 
 import './modalAddReview.scss';
 
-export default function 
+export default function
 ModalAddReview({
   reviewContent,
   changeField,
@@ -23,18 +24,19 @@ ModalAddReview({
     onClickCloseAddReview();
   };
   return (
-    <div className='modalAddReview'>
-      <div className='modalAddReview__container'>
+    <div className="modalAddReview">
+      <div className="modalAddReview__container">
         <button
+          type="submit"
           className="modalAddReview__container__close"
           onClick={handleOnClickCloseAddReview}
         >
-          <IoIosCloseCircleOutline className="modalAddReview__container__close"/>
+          <IoIosCloseCircleOutline className="modalAddReview__container__close__circle" />
         </button>
-        <h1 className='modalAddReview__container__title'>Ajouter un avis</h1>
-        <form className='modalAddReview__container__form' onSubmit={handleSubmit}>
-          <div className='modalAddReview__container__form__edit'>
-          <FieldTextarea
+        <h1 className="modalAddReview__container__title">Ajouter un avis</h1>
+        <form className="modalAddReview__container__form" onSubmit={handleSubmit}>
+          <div className="modalAddReview__container__form__edit">
+            <FieldTextarea
               name="reviewContent"
               className="modalAddReview__container__form__edit__input"
               placeholder="Veuillez saisir votre message"
@@ -42,14 +44,10 @@ ModalAddReview({
               onChange={changeField}
           />
           </div>
-          <div className='modalAddReview__container__form__edit'>
-            <p className='modalAddReview__container__form__edit__text'>Donnez votre note</p>
-              <div className="modalAddReview__container__form__edit__rating">
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
-              <div className="modalAddReview__container__form__edit__rating__star">★</div>
+          <div className="modalAddReview__container__form__edit">
+            <p className="modalAddReview__container__form__edit__text">Donnez votre note</p>
+            <div className="modalAddReview__container__form__edit__rating">
+              <StarRating />
             </div>
           </div>
           {isCreateReviewError && (
@@ -61,7 +59,6 @@ ModalAddReview({
           >
             Valider
           </button>
-          
         </form>
       </div>
     </div>
@@ -74,4 +71,8 @@ ModalAddReview.propTypes = {
   handleReview: PropTypes.func.isRequired,
   onClickCloseAddReview: PropTypes.func.isRequired,
   isCreateReviewError: PropTypes.bool.isRequired,
+};
+
+ModalAddReview.defaultProps = {
+  reviewContent: '',
 };

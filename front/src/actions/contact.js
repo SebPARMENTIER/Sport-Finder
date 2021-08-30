@@ -19,4 +19,4 @@ export const changeSelectAction = (newValue) => ({
 
 export const submitContactForm = () => ({ type: SUBMIT_CONTACT_FORM });
 
-export const closeMessageSuccess = () => ({ type: CLOSE_MESSAGE_SUCCESS })
+export const closeMessageSuccess = () => ({ type: CLOSE_MESSAGE_SUCCESS });

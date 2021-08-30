@@ -1,5 +1,5 @@
-import { 
-  SET_USER_INPUT_VALUE,  
+import {
+  SET_USER_INPUT_VALUE,
   CLICK_ON_BUTTON_SETTINGS,
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
@@ -36,7 +36,7 @@ import {
 } from 'src/actions/user';
 
 export const initialState = {
-  userId:'',
+  userId: '',
   pseudo: '',
   email: '',
   password: '',
@@ -75,37 +75,31 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.value,
       };
-    case CLICK_ON_BUTTON_SETTINGS: {
-      //console.log('in the reducer');
+    case CLICK_ON_BUTTON_SETTINGS:
       return {
         ...state,
         openSettings: !state.openSettings,
       };
-    };
-    case CLICK_ON_BUTTON_CLOSE_SETTINGS: {
-      //console.log('in the reducer');
+    case CLICK_ON_BUTTON_CLOSE_SETTINGS:
       return {
         ...state,
         openSettings: false,
       };
-    };
     case CLICK_ON_BUTTON_LOG_IN: {
-      //console.log('in the reducer');
-      if( state.openLogUp === true){
+      if (state.openLogUp === true) {
         return {
           ...state,
           openLogIn: !state.openLogIn,
           openLogUp: !state.openLogUp,
         };
       }
-      return{
-        ...state, 
+      return {
+        ...state,
         openLogIn: !state.openLogIn,
-      }
-    };
+      };
+    }
     case CLICK_ON_BUTTON_LOG_UP: {
-      //console.log('in the reducer');
-      if( state.openLogIn === true){
+      if (state.openLogIn === true) {
         return {
           ...state,
           openLogUp: !state.openLogUp,
@@ -119,8 +113,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogUp: !state.openLogUp,
-      }
-    };
+      };
+    }
     case CLICK_ON_BUTTON_LOG_OUT:
       return {
         ...state,
@@ -129,38 +123,38 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
         userId: '',
         token: null,
-      }
+      };
     case CLICK_ON_BUTTON_DELETE_PROFILE:
       return {
         ...state,
         openDeleteProfile: true,
-      }
+      };
     case CLICK_ON_BUTTON_PRIVACY_DATA:
       return {
         ...state,
         openPrivacyData: true,
-      }
-    case CLICK_ON_BUTTON_CLOSE_SIGN_IN: 
+      };
+    case CLICK_ON_BUTTON_CLOSE_SIGN_IN:
       return {
         ...state,
         openLogIn: !state.openLogIn,
         isError: false,
-        email:"",
-        password: "",
+        email: '',
+        password: '',
       }
-    case CLICK_ON_BUTTON_CLOSE_SIGN_UP: 
+    case CLICK_ON_BUTTON_CLOSE_SIGN_UP:
       return {
         ...state,
         openLogUp: !state.openLogUp,
         isCreateUserSuccess: false,
         isCreateUserError: false,
-        email: "",
-        password:"",
-        pseudo: "",
-        passwordConfirm: "",
+        email: '',
+        password: '',
+        pseudo: '',
+        passwordConfirm: '',
         isCreatePasswordLengthError: false,
         passwordError: false,
-      }
+      };
     case CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL:
       return {
         ...state,
@@ -169,7 +163,7 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePseudoError: false,
         password: '',
         newPseudo: '',
-      }
+      };
     case CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD:
       return {
         ...state,
@@ -178,7 +172,7 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         newPassword: '',
         newPasswordConfirm: '',
-      }
+      };
     case CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE:
       return {
         ...state,
@@ -186,22 +180,22 @@ const reducer = (state = initialState, action = {}) => {
         isDeleteProfileError: false,
         isDeleteProfileSuccess: false,
         password: '',
-      }
+      };
     case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
       return {
         ...state,
         openPrivacyData: false,
-      }
+      };
     case CLICK_ON_BUTTON_EDIT_PROFIL:
       return {
         ...state,
         openEditProfil: !state.openEditProfil,
-      }
+      };
     case CLICK_ON_BUTTON_EDIT_PASSWORD:
       return {
         ...state,
         openEditPassword: !state.openEditPassword,
-      }
+      };
     case CREATE_USER_SUCCESS:
       return {
         ...state,
@@ -213,29 +207,30 @@ const reducer = (state = initialState, action = {}) => {
         passwordError: false,
         isCreateUserError: false,
         isCreatePasswordLengthError: false,
-      }
+      };
     case CREATE_USER_ERROR:
       return {
         ...state,
         isCreateUserError: true,
-      }
+      };
     case CREATE_PASSWORD_ERROR:
       return {
         ...state,
         passwordError: true,
         isCreatePasswordLengthError: false,
-      }
+      };
     case CREATE_PASSWORD_LENGTH_ERROR:
       return {
         ...state,
-        isCreatePasswordLengthError: true
-      }
+        isCreatePasswordLengthError: true,
+      };
     case SET_INPUT_VALUE:
       return {
         ...state,
         [action.name]: action.value,
       };
     case LOGIN_SUCCESS:
+      // eslint-disable-next-line no-case-declarations
       const { id, pseudo, accessToken } = action.data;
       return {
         ...state,
@@ -284,24 +279,24 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePseudoSuccess: true,
         isUpdatePseudoError: false,
         pseudo: state.newPseudo,
-      }
+      };
     case UPDATE_ERROR:
       return {
         ...state,
         isUpdatePseudoError: true,
-      }
+      };
     case UPDATE_PASSWORD_VALUE:
       return {
         ...state,
         [action.name]: action.value,
-      }
+      };
     case UPDATE_PASSWORD_CONFIRM_ERROR:
       return {
         ...state,
         updatePasswordError: true,
         isUpdatePasswordError: false,
         isUpdatePasswordLengthError: false,
-      }
+      };
     case UPDATE_PASSWORD_SUCCESS:
       return{
         ...state,
@@ -309,21 +304,21 @@ const reducer = (state = initialState, action = {}) => {
         updatePasswordError: false,
         isUpdatePasswordError: false,
         isUpdatePasswordLengthError: false,
-      }
+      };
     case UPDATE_PASSWORD_ERROR:
       return {
         ...state,
         updatePasswordError: false,
         isUpdatePasswordError: true,
         isUpdatePasswordLengthError: false,
-      }
+      };
     case UPDATE_PASSWORD_LENGTH_ERROR:
       return {
         ...state,
         isUpdatePasswordLengthError: true,
         isUpdatePasswordError: false,
         updatePasswordError: false,
-      }
+      };
     default:
       return state;
   }

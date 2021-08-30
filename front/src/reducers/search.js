@@ -34,35 +34,35 @@ const reducer = (state = initialState, action = {}) => {
     case RESULT_API_RNA_ERROR:
       return {
         ...state,
-      }
+      };
     case SET_SEARCH_SPORT:
       return {
         ...state,
         sport: action.value,
-      }
+      };
     case SET_SEARCH_SELECT_SPORT:
-      return{
+      return {
         ...state,
         sport: action.value.name,
-      }
+      };
     case GET_CITY_CENTER_COORDINATES:
-      return{
+      return {
         ...state,
         cityCenterLat: action.data[1],
         cityCenterLng: action.data[0],
         buildMap: true,
-      }
+      };
     case BUILD_MAP:
       return {
         ...state,
         buildMap: false,
-      }
+      };
     case GET_DATA_FOR_MARKERS:
       return {
         ...state,
         markers: action.data,
         city: '',
-      }
+      };
     default:
       return state;
   }

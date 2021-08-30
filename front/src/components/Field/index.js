@@ -28,7 +28,7 @@ const Field = ({
         onChange={handleChange}
         // infos de base
         id={inputId}
-        type={type}        
+        type={type}
         placeholder={placeholder}
         name={name}
       />
@@ -44,6 +44,11 @@ Field.propTypes = {
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
+};
+
+Field.defaultProps = {
+  value: '',
+  type: '',
 };
 
 // == Export
