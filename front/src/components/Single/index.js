@@ -31,13 +31,10 @@ const Single = ({
     getSingleAssociationKey(result.id);
     console.log('id:', result.id, 'titre:', result.titre);
   };
-  // let allReviewsForAnAssociation = [];
-  // allReviews.map((review) => {
-  //   if (review.association_id === result.id) {
-  //     allReviewsForAnAssociation.push(review);
-  //   }
-  // });
-  // console.log('allReviews:', allReviews);
+  const allReviewsForAnAssociation = [];
+  const reviewFilter = allReviews.filter(review => review.association.key_association.includes(result.id));
+  console.log('reviewFilter:', reviewFilter);
+  
   return (
     <div className="single">
       <div className="single__infos">
@@ -80,13 +77,8 @@ const Single = ({
         </button>
       </div>
       <div className="single__reviews">
-        {/* {allReviewsForAnAssociation.map((reviewResult) => (
-          <Review
-            key={reviewResult.id}
-            reviewResult={reviewResult}
-          />
-        ))} */}
-        {allReviews.map((reviewResult) => (
+        
+        {reviewFilter.map((reviewResult) => (
           <Review
             key={reviewResult.id}
             {...reviewResult}

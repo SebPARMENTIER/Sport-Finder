@@ -37,7 +37,7 @@ const Review = ({
     <div className="review">
       <div className="review__block1">
         <div className="review__block1__header">
-          <div className="review__block1__header__subject">Super Club de Boxe !!! :)</div>
+        <div className="review__block1__header__from">Avis de {author.pseudo}</div>
           <div className="review__block1__header__date">{createdAt}</div>
         </div>
         <div className="review__block1__rating">
@@ -50,7 +50,6 @@ const Review = ({
         </div>
       </div>
       <div className="review__block2">
-        <div className="review__block2__from">Avis de {author.pseudo}</div>
         <div className="review__block2__change">
           <div className="review__block2__change__update">
             

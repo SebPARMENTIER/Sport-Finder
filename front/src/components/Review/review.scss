@@ -19,8 +19,8 @@
       flex-direction: row;
       align-items: baseline;
 
-      &__subject {
-        font-size: v.$gutter*1.5;
+      &__from {
+        font-style: italic;
       }
 
       &__date {
@@ -51,13 +51,12 @@
     flex-direction: row;
     justify-content: space-between;
 
-    &__from {
-      font-style: italic;
-    }
+    
 
     &__change {
       display: flex;
       flex-direction: row;
+      justify-content: right;
       font-size: v.$gutter*1.5;
 
       &__update {
