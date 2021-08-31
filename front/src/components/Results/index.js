@@ -2,6 +2,7 @@
 import React, {useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import StarRatingStatic from 'src/containers/StarRatingStatic';
 import {
   MapContainer,
   TileLayer,
@@ -50,7 +51,6 @@ const Results = ({
   return (
     <div className="results">
       <Banner />
-      <p className="results__slogan">Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
       <div className="results__searchform">
         <SearchForm />
       </div>
@@ -80,7 +80,9 @@ const Results = ({
                   {result.adresse_libelle_commune}
                 </p>
                 <p className="results__all__list__single__rating">
-                  ⭐⭐⭐⭐⭐
+                  <StarRatingStatic
+                    rating={1}
+                  />
                 </p>
               </div>
             ))}

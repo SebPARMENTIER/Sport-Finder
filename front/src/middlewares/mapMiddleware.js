@@ -43,12 +43,7 @@ const mapMiddleware = (store) => (next) => (action) => {
         //   popup: `${results[index].titre}`,
         // };
         setTimeout(() => {
-          const adress = `${results[index].adresse_numero_voie}
-            ${results[index].adresse_repetition} 
-            ${results[index].adresse_type_voie} 
-            ${results[index].adresse_libelle_voie}
-            ${results[index].adresse_code_postal}
-            ${results[index].adresse_libelle_commune}`;
+          const adress = `${results[index].adresse_numero_voie} ${results[index].adresse_repetition} ${results[index].adresse_type_voie} ${results[index].adresse_libelle_voie} ${results[index].adresse_code_postal} ${results[index].adresse_libelle_commune}`;
           axios({
             method: 'GET',
             url: 'https://api-adresse.data.gouv.fr/search/',
