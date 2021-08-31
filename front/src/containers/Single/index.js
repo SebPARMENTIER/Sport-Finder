@@ -17,8 +17,9 @@ const mapStateToProps = (state, { match, history }) => {
     allReviews: state.review.allReviews,
     openUpdateReview: state.review.openUpdateReview,
     openDeleteReview: state.review.openDeleteReview,
+    logged: state.user.logged,
     history: history,
-  });  
+  });
 };
 
 const mapDispatchToProps = (dispatch) => ({

@@ -21,6 +21,7 @@ const Single = ({
   getSingleAssociationName,
   getSingleAssociationKey,
   history,
+  logged,
 }) => {
   const image = sportsData.find((sportData) => {
     return sportData.name.toLowerCase() === sport.toLowerCase();
@@ -66,18 +67,23 @@ const Single = ({
       </div>
       <div className="single__buttons">
         <button
+          type="button"
           className="single__buttons__back"
           onClick={() => history.push('/results')}
-        >Retour aux résultats</button>
-        <button
-          className="single__buttons__addReview"
-          onClick={handleModalAddReview}
         >
-          Ajouter un avis
+          Retour aux résultats
         </button>
+        {logged && (
+          <button
+            type="button"
+            className="single__buttons__addReview"
+            onClick={handleModalAddReview}
+          >
+            Ajouter un avis
+          </button>
+        )}
       </div>
       <div className="single__reviews">
-        
         {reviewFilter.map((reviewResult) => (
           <Review
             key={reviewResult.id}
@@ -114,6 +120,7 @@ Single.propTypes = {
   allReviews: PropTypes.array.isRequired,
   openUpdateReview: PropTypes.bool.isRequired,
   openDeleteReview: PropTypes.bool.isRequired,
+  logged: PropTypes.bool.isRequired,
 };
 
 export default Single;
