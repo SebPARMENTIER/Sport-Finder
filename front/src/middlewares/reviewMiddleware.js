@@ -43,6 +43,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
               url: 'https://sportfinder.herokuapp.com/api/v1/review',
               headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${state.user.token}`,
               },
               data: {
                 content: state.review.reviewContent,
@@ -91,6 +92,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: 'https://sportfinder.herokuapp.com/api/v1/review',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           content: state.review.reviewContent,
@@ -132,6 +134,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.review.reviewId,
@@ -157,6 +160,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.review.reviewId,
