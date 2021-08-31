@@ -22,7 +22,6 @@ const Results = ({
   cityCenterLng,
   buildMap,
   markers,
-  history,
   getAllReviews,
 }) => {
   // console.log('cityCenterLat', cityCenterLat);

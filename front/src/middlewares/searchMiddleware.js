@@ -30,7 +30,7 @@ const searchMiddleware = (store) => (next) => (action) => {
           // console.log('nbResultNoSport', nbResultNoSport);
           //  en réponse on boucle chaque association pour la push dans le tableau la 1er foix
             for (let index = 0; index < 100; index++) {
-              tableau.push(response.data.association[index]); 
+              tableau.push(response.data.association[index]);
             }
             for (let index = 2; index < 7 ; index++) {
               axios({

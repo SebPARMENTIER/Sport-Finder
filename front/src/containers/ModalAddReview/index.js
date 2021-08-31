@@ -21,6 +21,6 @@ const mapDispatchToProps = (dispatch) => ({
   onClickCloseAddReview: () => {
     dispatch(clickOnButtonCloseAddReview());
   },
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalAddReview);

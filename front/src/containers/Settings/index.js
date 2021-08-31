@@ -14,10 +14,10 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   onClickLogOut: () => {
-    //console.log('container');
+    // console.log('container');
     const action = clickOnButtonLogOut();
-    dispatch(action)
-  }
+    dispatch(action);
+  },
 });
   // ajouter la fonction utilisé dans le composant
 

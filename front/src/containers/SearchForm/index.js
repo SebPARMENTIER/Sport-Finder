@@ -9,15 +9,13 @@ import {
   buildMapAction,
 } from 'src/actions/search';
 
-const mapStateToProps = (state, { history }) => {
-  // console.log('history', history);
-  return ({
-    city: state.search.city,
-    sport: state.search.sport,
-    results: state.search.results,
-    history: history,
-  })
-};
+const mapStateToProps = (state, { history }) => ({
+  city: state.search.city,
+  sport: state.search.sport,
+  results: state.search.results,
+  history: history,
+})
+;
 
 const mapDispatchToProps = (dispatch) => ({
   changeSelect: (newValue) => {
@@ -34,7 +32,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickBuildMap: () => {
     dispatch(buildMapAction());
-  }
+  },
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm)) ;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm));

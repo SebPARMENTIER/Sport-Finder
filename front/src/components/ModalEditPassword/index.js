@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import Field from 'src/components/Field';
 
 import PropTypes from 'prop-types';
@@ -21,29 +21,29 @@ const ModalEditPassword = ({
   const handleOnClickCloseEditPassword = () => {
     // console.log('click');
     onClickCloseEditPassword();
-  }
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUpdatePassword();
   };
   return (
     <div className="modalEditPassword">
-      <div className='modalEditPassword__container'>
+      <div className="modalEditPassword__container">
         <button
           type="submit"
           className="modalSignIn__container__close"
           onClick={handleOnClickCloseEditPassword}
         >
-          <IoIosCloseCircleOutline className="modalSignIn__container__close__circle"/>
+          <IoIosCloseCircleOutline className="modalSignIn__container__close__circle" />
         </button>
-        <h1 className='modalEditPassword__container__title'>Modifier votre mot de passe</h1>
-        <form 
-          className='modalEditPassword__container__form'
+        <h1 className="modalEditPassword__container__title">Modifier votre mot de passe</h1>
+        <form
+          className="modalEditPassword__container__form"
           onSubmit={handleSubmit}
         >
           { !isUpdatePasswordSuccess && (
-          <div className='modalEditPassword__container__form__edit'>
-            <p className='modalEditPassword__container__form__edit__text'>Mot de passe actuel</p>
+          <div className="modalEditPassword__container__form__edit">
+            <p className="modalEditPassword__container__form__edit__text">Mot de passe actuel</p>
             <Field
               name="password"
               type="password"
@@ -55,8 +55,8 @@ const ModalEditPassword = ({
           </div>
           )}
           { !isUpdatePasswordSuccess && (
-          <div className='modalEditPassword__container__form__edit'>
-            <p className='modalEditPassword__container__form__edit__text'>Nouveau mot de passe</p>
+          <div className="modalEditPassword__container__form__edit">
+            <p className="modalEditPassword__container__form__edit__text">Nouveau mot de passe</p>
             <Field
               name="newPassword"
               type="password"
@@ -68,8 +68,8 @@ const ModalEditPassword = ({
           </div>
           )}
           { !isUpdatePasswordSuccess && (
-          <div className='modalEditPassword__container__form__edit'>
-            <p className='modalEditPassword__container__form__edit__text'>Vérification mot de passe</p>
+          <div className="modalEditPassword__container__form__edit">
+            <p className="modalEditPassword__container__form__edit__text">Vérification mot de passe</p>
             <Field
               name="newPasswordConfirm"
               type="password"
@@ -103,10 +103,9 @@ const ModalEditPassword = ({
           )}
         </form>
       </div>
-      
     </div>
   );
-}
+};
 
 ModalEditPassword.propTypes = {
   onClickCloseEditPassword: PropTypes.func.isRequired,
@@ -121,4 +120,4 @@ ModalEditPassword.propTypes = {
   isUpdatePasswordLengthError: PropTypes.bool.isRequired,
 };
 
-export default ModalEditPassword
+export default ModalEditPassword;
