@@ -21,6 +21,8 @@ const Review = ({
   onClickModalUpdateReview,
   onClickModalDeleteReview,
   getIdValue,
+  user_id,
+  userId,
 }) => {
   const handleModalUpdateReview = () => {
     getIdValue(id);
@@ -30,14 +32,11 @@ const Review = ({
     getIdValue(id);
     onClickModalDeleteReview();
   };
-  const getStarsForOneReview = () => {
-    for (let i = 0; i < 5; i++) {
-      if (i < star) {
-        return <FaStar className="review__block1__rating__star__full" />;
-      }
-      return <FaStar className="review__block1__rating__star__empty" />;
-    }
-  };
+  let reviewOwner = '';
+  if (user_id === userId) {
+    reviewOwner = true;
+  }
+  console.log('reviewOwner:', reviewOwner);
   return (
     <div className="review">
       <div className="review__block1">
@@ -57,25 +56,21 @@ const Review = ({
         </div>
       </div>
       <div className="review__block2">
-        <div className="review__block2__change">
-          <div className="review__block2__change__update">
-            
+        {reviewOwner && (
+          <div className="review__block2__change">
+            <div className="review__block2__change__update">
               <button
                 type="submit"
                 onClick={handleModalUpdateReview}
-                //onSelect={handleGetId}
-                //value={id}
               >
                 <ImPencil2 />
               </button>
-            
-            
-            
+            </div>
+            <div className="review__block2__change__delete">
+              <ImBin onClick={handleModalDeleteReview} />
+            </div>
           </div>
-          <div className="review__block2__change__delete">
-            <ImBin onClick={handleModalDeleteReview} />
-          </div>
-        </div>
+        )}
       </div>
       <div className="review__content">{content}</div>
     </div>
@@ -89,6 +84,7 @@ Review.propTypes = {
   }),
   onClickModalUpdateReview: PropTypes.func.isRequired,
   onClickModalDeleteReview: PropTypes.func.isRequired,
+  userId: PropTypes.number.isRequired,
 };
 
 export default Review;
