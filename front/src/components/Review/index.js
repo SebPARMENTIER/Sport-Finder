@@ -32,7 +32,7 @@ const Review = ({
     getIdValue(id);
     onClickModalDeleteReview();
   };
-  let reviewOwner = '';
+  let reviewOwner = false;
   if (user_id === userId) {
     reviewOwner = true;
   }

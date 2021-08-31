@@ -15,16 +15,35 @@ const Results = ({
   city,
   onClickNewSearch,
   history,
-  getAllReviews,
   isNoResult,
-}) => { 
-  const handleGetAllReviews = () => {
-    getAllReviews();
-  };
+  allReviews,
+}) => {
   const handleNewSearch = () => {
     onClickNewSearch();
   };
+  console.log('results', results);
   const position = [45.825008, 1.230507];
+  // let containsReview = '';
+  // for (let i = 0; i < allReviews.length; i++) {
+  //   const existReviewId = allReviews[i].association.key_association;
+  //   // const containsReview = results.filter((result) => result.id === existReviewId);
+  //   // console.log('containsReview:', result.id);
+  // }
+  // allReviews.map((reviewId) => (
+  //   let existReviewId = results.filter((result) => result.id === reviewId);
+  //   console.log('containsReview:', existReviewId);
+  // ));
+  // console.log('containsReview:', existReviewId);
+  // const containsReview = results.filter(result => result.id === 36847686);
+  // console.log('containsReview:', containsReview);
+  // let ratingAverage = '';
+  // if (results.map((result) => (
+  //   result.id === allReviews.map((review) => (
+  //     review.association.key_association
+  //   ))
+  // ))) {
+  //   containsReview = true;
+  // }
   return (
     <div className="results">
       <Banner />
@@ -53,7 +72,6 @@ const Results = ({
               <p className="results__all__list__single__name">
                 <Link
                   to={`/single/${result.id}`}
-                  onClick={handleGetAllReviews}
                   {...result}
                 >
                   {result.titre}
@@ -113,11 +131,11 @@ Results.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
-  getAllReviews: PropTypes.func.isRequired,
   sport: PropTypes.string.isRequired,
   city: PropTypes.number.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
-}
+  allReviews: PropTypes.array,
+};
 
 export default Results;

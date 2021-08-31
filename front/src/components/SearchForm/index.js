@@ -14,10 +14,12 @@ const SearchForm = ({
   handleSearch,
   changeFielCity,
   history,
+  getAllReviews,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
+    getAllReviews();
     history.push('/results')
   };
   return (
@@ -73,6 +75,7 @@ SearchForm.propTypes = {
   history:  PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  getAllReviews: PropTypes.func.isRequired,
 };
 
 export default SearchForm;

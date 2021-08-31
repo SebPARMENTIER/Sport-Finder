@@ -7,6 +7,7 @@ import {
   createSetSearchSportSelectAction,
   createSearchCityAction,
 } from 'src/actions/search';
+import { getAllReviewsAction } from 'src/actions/review';
 
 const mapStateToProps = (state, { history }) => {
   // console.log('history', history);
@@ -30,6 +31,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   changeFielCity: (newValue, name) => {
     dispatch(createSearchCityAction(newValue, name));
+  },
+  getAllReviews: () => {
+    dispatch(getAllReviewsAction());
   },
 });
 

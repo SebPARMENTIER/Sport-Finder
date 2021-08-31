@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Results from 'src/components/Results';
 
-import { getAllReviewsAction } from 'src/actions/review';
 import { clickOnNewSearch } from 'src/actions/search';
 
 const mapStateToProps = (state, { history }) => {
@@ -12,13 +11,11 @@ const mapStateToProps = (state, { history }) => {
     sport: state.search.sport,
     city: state.search.city,
     isNoResult: state.search.isNoResult,
+    allReviews: state.review.allReviews,
   })  
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllReviews: () => {
-    dispatch(getAllReviewsAction());
-  },
   onClickNewSearch: () => {
     dispatch(clickOnNewSearch());
   },
