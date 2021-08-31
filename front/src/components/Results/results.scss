@@ -11,6 +11,17 @@
     color: v.$text-color;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }
+
+  &__count {
+    text-align: center;
+
+    &__desc {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: v.$text-color;
+      text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+    }
+  }
     
   &__searchform {
     padding-top: v.$gutter;

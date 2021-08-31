@@ -11,19 +11,37 @@ import './results.scss';
 // == Component
 const Results = ({
   results,
+  sport,
+  city,
+  onClickNewSearch,
   history,
   getAllReviews,
+  isNoResult,
 }) => { 
   const handleGetAllReviews = () => {
     getAllReviews();
+  };
+  const handleNewSearch = () => {
+    onClickNewSearch();
   };
   const position = [45.825008, 1.230507];
   return (
     <div className="results">
       <Banner />
       <p className='results__slogan'>Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
-      <div className="results__searchform">
+      {/* <div className="results__searchform">
         <SearchForm />
+      </div> */}
+      <Link
+        className="results__newSearch"
+        onClick={handleNewSearch}
+        to="/"
+      >
+        Nouvelle recherche
+      </Link>
+      <div className="results__count">
+        {isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} n'a donné aucun résultat.</p>}
+        {!isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} a donné {results.length} résultats.</p>}
       </div>
       <div className="results__all">
         <div className="results__all__list">
@@ -50,7 +68,8 @@ const Results = ({
               </p>
             </div>
           ))}
-        </div>        
+        </div>
+        {!isNoResult && (
         <MapContainer
           id="mapId"
           center={position}
@@ -72,8 +91,8 @@ const Results = ({
             </Popup>
           </Marker>
         </MapContainer>
+        )}
       </div>
-      
     </div>
   )
 };
@@ -95,6 +114,10 @@ Results.propTypes = {
     push: PropTypes.func,
   }).isRequired,
   getAllReviews: PropTypes.func.isRequired,
+  sport: PropTypes.string.isRequired,
+  city: PropTypes.number.isRequired,
+  onClickNewSearch: PropTypes.func.isRequired,
+  isNoResult: PropTypes.bool.isRequired,
 }
 
 export default Results;

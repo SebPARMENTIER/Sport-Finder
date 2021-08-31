@@ -4,12 +4,14 @@ import {
   RESULT_API_RNA_ERROR,
   SET_SEARCH_SPORT,
   SET_SEARCH_SELECT_SPORT,
+  CLICK_ON_NEW_SEARCH,
 } from 'src/actions/search';
 
 export const initialState = {
   city: '',
   sport: '',
   results: [],
+  isNoResult: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -27,6 +29,7 @@ const reducer = (state = initialState, action = {}) => {
     case RESULT_API_RNA_ERROR:
       return {
         ...state,
+        isNoResult: true,
       }
     case SET_SEARCH_SPORT:
       return {
@@ -37,6 +40,14 @@ const reducer = (state = initialState, action = {}) => {
       return{
         ...state,
         sport: action.value.name,
+      }
+    case CLICK_ON_NEW_SEARCH:
+      return {
+        ...state,
+        sport: '',
+        city: '',
+        results: [],
+        isNoResult: false,
       }
     default:
       return state;

@@ -4,6 +4,7 @@ export const RESULT_API_RNA_SUCCESS = 'RESULT_API_RNA_SUCCESS';
 export const RESULT_API_RNA_ERROR = 'RESULT_API_RNA_ERROR';
 export const SET_SEARCH_SPORT = 'SET_SEARCH_SPORT';
 export const SET_SEARCH_SELECT_SPORT = 'SET_SEARCH_SELECT_SPORT';
+export const CLICK_ON_NEW_SEARCH = 'CLICK_ON_NEW_SEARCH';
 
 export const createSetSearchSportAction = (newValue) => ({
   type: SET_SEARCH_SPORT,
@@ -29,3 +30,5 @@ export const createSearchCityAction = (newValue, name) => ({
   value: newValue,
   name: name,
 });
+
+export const clickOnNewSearch = () => ({ type: CLICK_ON_NEW_SEARCH });

@@ -100,7 +100,6 @@ Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
-  pseudo: PropTypes.string.isRequired,
 };
 
 export default Header;
