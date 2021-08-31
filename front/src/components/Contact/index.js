@@ -117,7 +117,7 @@ const Contact = ({
             />
           )}
           { submitMessage && (
-            <p className="contact__form__success">Méssage bien envoyé !!! </p>
+            <p className="contact__form__success">Message bien envoyé</p>
           )}
           { !submitMessage && (
             <button
