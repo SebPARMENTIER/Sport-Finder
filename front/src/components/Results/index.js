@@ -3,6 +3,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import StarRatingStatic from 'src/containers/StarRatingStatic';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
+
 import {
   MapContainer,
   TileLayer,
@@ -28,6 +31,8 @@ const Results = ({
   getAllReviews,
   isNoResult,
   onBuildMap,
+  openLogIn,
+  openLogUp,
 }) => {
   // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
@@ -126,6 +131,8 @@ const Results = ({
           </MapContainer>
         )}
       </div>
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -155,6 +162,8 @@ Results.propTypes = {
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
   onBuildMap: PropTypes.func.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default Results;

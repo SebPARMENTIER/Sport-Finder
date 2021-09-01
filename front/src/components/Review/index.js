@@ -26,7 +26,7 @@ const Review = ({
 }) => {
   const handleModalUpdateReview = () => {
     getIdValue(id);
-    onClickModalUpdateReview(content);
+    onClickModalUpdateReview(content, star);
   };
   const handleModalDeleteReview = () => {
     onClickModalDeleteReview();

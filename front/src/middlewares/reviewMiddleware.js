@@ -65,7 +65,6 @@ const reviewMiddleware = (store) => (next) => (action) => {
               url: 'https://sportfinder.herokuapp.com/api/v1/association',
               headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${state.user.token}`,
               },
               data: {
                 key_association: state.review.associationKey,
@@ -116,7 +115,6 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: 'https://sportfinder.herokuapp.com/api/v1/review',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${state.user.token}`,
         },
       };
       axios(config)

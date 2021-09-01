@@ -35,7 +35,7 @@ export const initialState = {
   isDeleteReviewError: false,
   singleAssociationName: '',
   associationId: '',
-  rating: 0,
+  rating: 1,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -50,6 +50,8 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         reviewId: action.data.id,
         openAddReview: false,
+        rating: 1,
+        reviewContent: '',
       };
     case CREATE_REVIEW_ERROR:
       return {
@@ -97,7 +99,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: !state.openUpdateReview,
-        newReviewContent: action.value,
+        newReviewContent: action.value1,
+        rating: action.value2,
       };
     case CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW:
       return {

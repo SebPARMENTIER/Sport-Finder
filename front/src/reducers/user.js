@@ -141,7 +141,7 @@ const reducer = (state = initialState, action = {}) => {
         isError: false,
         email: '',
         password: '',
-      }
+      };
     case CLICK_ON_BUTTON_CLOSE_SIGN_UP:
       return {
         ...state,
@@ -298,7 +298,7 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordLengthError: false,
       };
     case UPDATE_PASSWORD_SUCCESS:
-      return{
+      return {
         ...state,
         isUpdatePasswordSuccess: true,
         updatePasswordError: false,

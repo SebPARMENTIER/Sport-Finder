@@ -73,7 +73,8 @@ const Single = ({
           type="button"
           className="single__buttons__back"
           onClick={() => history.push('/results')}
-        >Retour aux résultats
+        >
+          Retour aux résultats
         </button>
         {logged && (
           <button
@@ -113,7 +114,7 @@ Single.propTypes = {
     adresse_code_postal: PropTypes.string,
     adresse_libelle_commune: PropTypes.string,
     site_web: PropTypes.string,
-    object: PropTypes.string,
+    objet: PropTypes.string,
   }).isRequired,
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
