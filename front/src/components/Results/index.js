@@ -21,7 +21,7 @@ const Results = ({
   const handleNewSearch = () => {
     onClickNewSearch();
   };
-  console.log('results', results);
+  // console.log('results', results);
   const position = [45.825008, 1.230507];
   // let containsReview = '';
   // for (let i = 0; i < allReviews.length; i++) {
@@ -29,10 +29,11 @@ const Results = ({
   //   // const containsReview = results.filter((result) => result.id === existReviewId);
   //   // console.log('containsReview:', result.id);
   // }
-  // allReviews.map((reviewId) => (
-  //   let existReviewId = results.filter((result) => result.id === reviewId);
-  //   console.log('containsReview:', existReviewId);
-  // ));
+  allReviews.map((reviewId) => {
+    const existReviewId = results.filter((result) => result.id === reviewId);
+    console.log('containsReview:', existReviewId);
+    return existReviewId;
+  });
   // console.log('containsReview:', existReviewId);
   // const containsReview = results.filter(result => result.id === 36847686);
   // console.log('containsReview:', containsReview);
