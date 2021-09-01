@@ -41,7 +41,7 @@ const Review = ({
     <div className="review">
       <div className="review__block1">
         <div className="review__block1__header">
-          <div className="review__block1__header__from">Avis de {author.pseudo}</div>
+          <div className="review__block1__header__from">Avis de <span>{author.pseudo}</span></div>
           <div className="review__block1__header__date">
             <Moment fromNow>{createdAt}</Moment>
           </div>
@@ -53,15 +53,11 @@ const Review = ({
         </div>
       </div>
       <div className="review__block2">
+        <div className="review__block2__content">{content}</div>
         {reviewOwner && (
           <div className="review__block2__change">
             <div className="review__block2__change__update">
-              <button
-                type="submit"
-                onClick={handleModalUpdateReview}
-              >
-                <ImPencil2 />
-              </button>
+              <ImPencil2 onClick={handleModalUpdateReview} />
             </div>
             <div className="review__block2__change__delete">
               <ImBin onClick={handleModalDeleteReview} />
@@ -69,7 +65,6 @@ const Review = ({
           </div>
         )}
       </div>
-      <div className="review__content">{content}</div>
     </div>
   );
 };

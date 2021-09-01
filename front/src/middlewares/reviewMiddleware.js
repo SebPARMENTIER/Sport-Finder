@@ -139,7 +139,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
           id: state.review.reviewId,
           content: state.review.newReviewContent,
           star: state.review.rating,
-          associationKey: 1,
+          associationKey: state.review.key_association,
           user_id: state.user.userId,
         },
       };
