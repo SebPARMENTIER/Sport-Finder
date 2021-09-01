@@ -2,6 +2,8 @@
 
 .results {
   padding: v.$gutter*5 0 v.$gutter 0;
+  display: flex;
+  flex-direction: column;
   &__slogan{
     width: 100vw;
     font-size: 2em;
@@ -10,15 +12,36 @@
     text-align: center;
     color: v.$text-color;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
-
   }
-  
+
+  &__newSearch{
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: v.$gutter*0.5;
+    text-align: center;
+    padding: v.$gutter*0.7 v.$gutter;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+  }
+  &__count {
+    text-align: center;
+
+    &__desc {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: v.$text-color;
+      text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+    }
+  }
 
   &__all {
     padding: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
-    height: 45vh;
+    height: 60vh;
 
     &__list {
       margin-right: v.$gutter;

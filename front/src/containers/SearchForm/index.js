@@ -14,8 +14,12 @@ const mapStateToProps = (state, { history }) => ({
   sport: state.search.sport,
   results: state.search.results,
   history: history,
+<<<<<<< HEAD
 })
 ;
+=======
+});
+>>>>>>> giovanni
 
 const mapDispatchToProps = (dispatch) => ({
   changeSelect: (newValue) => {

@@ -7,9 +7,13 @@ import {
   IdReviewValue,
 } from 'src/actions/review';
 
+const mapStateToProps = (state) => ({
+  userId: state.user.userId,
+});
+
 const mapDispatchToProps = (dispatch) => ({
-  onClickModalUpdateReview: () => {
-    dispatch(clickOnButtonUpdateReview());
+  onClickModalUpdateReview: (value) => {
+    dispatch(clickOnButtonUpdateReview(value));
   },
   onClickModalDeleteReview: () => {
     dispatch(clickOnButtonDeleteReview());
@@ -19,4 +23,8 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+<<<<<<< HEAD
 export default connect(null, mapDispatchToProps)(Review);
+=======
+export default connect(mapStateToProps, mapDispatchToProps)(Review);
+>>>>>>> giovanni

@@ -7,6 +7,7 @@ import {
   GET_CITY_CENTER_COORDINATES,
   BUILD_MAP,
   GET_DATA_FOR_MARKERS,
+  CLICK_ON_NEW_SEARCH,
 } from 'src/actions/search';
 
 export const initialState = {
@@ -17,6 +18,7 @@ export const initialState = {
   cityCenterLng: 2.213749,
   buildMap: false,
   markers: [],
+  isNoResult: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,6 +36,7 @@ const reducer = (state = initialState, action = {}) => {
     case RESULT_API_RNA_ERROR:
       return {
         ...state,
+        isNoResult: true,
       };
     case SET_SEARCH_SPORT:
       return {
@@ -50,18 +53,27 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         cityCenterLat: action.data[1],
         cityCenterLng: action.data[0],
-        buildMap: true,
       };
     case BUILD_MAP:
       return {
         ...state,
-        buildMap: false,
+        buildMap: true,
       };
     case GET_DATA_FOR_MARKERS:
       return {
         ...state,
         markers: action.data,
+      };
+    case CLICK_ON_NEW_SEARCH:
+      return {
+        ...state,
+        sport: '',
         city: '',
+        results: [],
+        cityCenterLat: '',
+        cityCenterLng: '',
+        isNoResult: false,
+        buildMap: false,
       };
     default:
       return state;

@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/containers/Review'
+import Review from 'src/containers/Review';
 import ModalAddReview from 'src/containers/ModalAddReview';
 import ModalUpdateReview from 'src/containers/ModalUpdateReview';
 import ModalDeleteReview from 'src/containers/ModalDeleteReview';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
@@ -21,6 +23,9 @@ const Single = ({
   getSingleAssociationName,
   getSingleAssociationKey,
   history,
+  logged,
+  openLogIn,
+  openLogUp,
 }) => {
   const image = sportsData.find((sportData) => (
     sportData.name.toLowerCase() === sport.toLowerCase()
@@ -29,15 +34,12 @@ const Single = ({
     onClickModalAddReview();
     getSingleAssociationName(result.titre);
     getSingleAssociationKey(result.id);
-    console.log('id:', result.id, 'titre:', result.titre);
+    // console.log('id:', result.id, 'titre:', result.titre);
   };
-  // let allReviewsForAnAssociation = [];
-  // allReviews.map((review) => {
-  //   if (review.association_id === result.id) {
-  //     allReviewsForAnAssociation.push(review);
-  //   }
-  // });
-  // console.log('allReviews:', allReviews);
+  const reviewFilter = allReviews.filter(
+    (review) => review.association.key_association.includes(result.id),
+  );
+  // console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">
@@ -68,27 +70,23 @@ const Single = ({
       </div>
       <div className="single__buttons">
         <button
-          type="submit"
+          type="button"
           className="single__buttons__back"
           onClick={() => history.push('/results')}
         >Retour aux résultats
         </button>
-        <button
-          type="submit"
-          className="single__buttons__addReview"
-          onClick={handleModalAddReview}
-        >
-          Ajouter un avis
-        </button>
+        {logged && (
+          <button
+            type="button"
+            className="single__buttons__addReview"
+            onClick={handleModalAddReview}
+          >
+            Ajouter un avis
+          </button>
+        )}
       </div>
       <div className="single__reviews">
-        {/* {allReviewsForAnAssociation.map((reviewResult) => (
-          <Review
-            key={reviewResult.id}
-            reviewResult={reviewResult}
-          />
-        ))} */}
-        {allReviews.map((reviewResult) => (
+        {reviewFilter.map((reviewResult) => (
           <Review
             key={reviewResult.id}
             {...reviewResult}
@@ -98,6 +96,8 @@ const Single = ({
       { openAddReview && <ModalAddReview /> }
       { openUpdateReview && <ModalUpdateReview /> }
       { openDeleteReview && <ModalDeleteReview /> }
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -124,6 +124,9 @@ Single.propTypes = {
   history: PropTypes.string.isRequired,
   getSingleAssociationName: PropTypes.func.isRequired,
   getSingleAssociationKey: PropTypes.func.isRequired,
+  logged: PropTypes.bool.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default Single;

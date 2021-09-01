@@ -42,6 +42,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
               url: 'https://sportfinder.herokuapp.com/api/v1/review',
               headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${state.user.token}`,
               },
               data: {
                 content: state.review.reviewContent,
@@ -64,6 +65,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
               url: 'https://sportfinder.herokuapp.com/api/v1/association',
               headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${state.user.token}`,
               },
               data: {
                 key_association: state.review.associationKey,
@@ -90,6 +92,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: 'https://sportfinder.herokuapp.com/api/v1/review',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           content: state.review.reviewContent,
@@ -113,12 +116,13 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: 'https://sportfinder.herokuapp.com/api/v1/review',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
       };
       axios(config)
         .then((response) => {
           store.dispatch(getAllReviewsSuccessAction(response.data));
-          console.log('middleware review get all:', response.data);
+          // console.log('middleware review get all:', response.data);
         })
         .catch((error) => {
           store.dispatch(getAllReviewsErrorAction());
@@ -131,6 +135,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.review.reviewId,
@@ -156,6 +161,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         url: `https://sportfinder.herokuapp.com/api/v1/review/${state.review.reviewId}`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${state.user.token}`,
         },
         data: {
           id: state.review.reviewId,

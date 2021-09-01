@@ -1,7 +1,8 @@
 // == Import : npm
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import StarRatingStatic from 'src/containers/StarRatingStatic';
 import {
   MapContainer,
   TileLayer,
@@ -10,7 +11,6 @@ import {
 } from 'react-leaflet';
 // import Marker from 'react-leaflet-animated-marker';
 // == Import : local
-import SearchForm from 'src/containers/SearchForm';
 import Banner from 'src/components/Banner';
 import Loading from 'src/components/Loading';
 import './results.scss';
@@ -18,11 +18,16 @@ import './results.scss';
 // == Component
 const Results = ({
   results,
+  sport,
+  city,
+  onClickNewSearch,
   cityCenterLat,
   cityCenterLng,
   buildMap,
   markers,
   getAllReviews,
+  isNoResult,
+  onBuildMap,
 }) => {
   // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
@@ -41,17 +46,34 @@ const Results = ({
   const handleGetAllReviews = () => {
     getAllReviews();
   };
-
+  const handleNewSearch = () => {
+    onClickNewSearch();
+  };
+  // console.log('result.length', results.length);
+  // const time = results.length * 150;
+  // console.log('time', time);
   useEffect(() => {
-    // eslint-disable-next-line no-param-reassign
-    buildMap = true;
+    const timer = setTimeout(() => {
+      onBuildMap();
+    }, 2000);
+    return () => clearTimeout(timer);
   }, [markers]);
   return (
     <div className="results">
       <Banner />
-      <p className="results__slogan">Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
-      <div className="results__searchform">
+      {/* <div className="results__searchform">
         <SearchForm />
+      </div> */}
+      <Link
+        className="results__newSearch"
+        onClick={handleNewSearch}
+        to="/"
+      >
+        Nouvelle recherche
+      </Link>
+      <div className="results__count">
+        {isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} n'a donné aucun résultat.</p>}
+        {!isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} a donné {results.length} résultats.</p>}
       </div>
       <div className="results__all">
         { buildMap && (
@@ -78,19 +100,21 @@ const Results = ({
                   {result.adresse_code_postal}
                   {result.adresse_libelle_commune}
                 </p>
-                <p className="results__all__list__single__rating">
-                  ⭐⭐⭐⭐⭐
-                </p>
+                <div className="results__all__list__single__rating">
+                  <StarRatingStatic
+                    rating={1}
+                  />
+                </div>
               </div>
             ))}
           </div>
         )}
         { !buildMap && (<Loading />)}
-        { buildMap && (
+        { buildMap && !isNoResult && (
           <MapContainer
             id="mapid"
             center={position}
-            zoom={10}
+            zoom={8}
             scrollWheelZoom
             maxZoom={20}
           >
@@ -125,10 +149,12 @@ Results.propTypes = {
   markers: PropTypes.arrayOf(
     PropTypes.shape,
   ).isRequired,
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
   getAllReviews: PropTypes.func.isRequired,
+  sport: PropTypes.string.isRequired,
+  city: PropTypes.number.isRequired,
+  onClickNewSearch: PropTypes.func.isRequired,
+  isNoResult: PropTypes.bool.isRequired,
+  onBuildMap: PropTypes.func.isRequired,
 };
 
 export default Results;

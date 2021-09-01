@@ -97,6 +97,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: !state.openUpdateReview,
+        newReviewContent: action.value,
       };
     case CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW:
       return {

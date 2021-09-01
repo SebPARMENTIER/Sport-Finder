@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ModalSignIn from 'src/components/ModalSignIn';
 
-import { 
+import {
   createSetInputValueAction,
   createSubmitAction,
   clickOnButtonLogUp,

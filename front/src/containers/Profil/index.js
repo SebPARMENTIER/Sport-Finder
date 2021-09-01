@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickModalPrivacyData: () => {
     dispatch(clickOnButtonPrivacyData());
-  }
+  },
 });
   // ajouter la fonction utilisé dans le composant
 

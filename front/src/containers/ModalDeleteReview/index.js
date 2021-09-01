@@ -16,6 +16,6 @@ const mapDispatchToProps = (dispatch) => ({
   onClickCloseDeleteReview: () => {
     dispatch(clickOnButtonCloseDeleteReview());
   },
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalDeleteReview);

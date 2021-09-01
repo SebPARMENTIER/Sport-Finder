@@ -4,8 +4,12 @@ import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 import './modalDeleteReview.scss';
 
+<<<<<<< HEAD
 export default function
 ModalDeleteReview({
+=======
+export default function ModalDeleteReview({
+>>>>>>> giovanni
   onClickCloseDeleteReview,
   onClickValidDeleteReview,
   isDeleteReviewError,

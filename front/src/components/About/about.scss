@@ -14,17 +14,19 @@
     font-weight: bold;
     padding: 2rem;
     height: auto;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }
 
   &__role {
-    color: v.$secondary-color;
     padding: 1.5rem;
     height: 20%;
 
     &__name {
+      color: v.$text-color;
       font-size: 1.5rem;
       font-weight: bold;
       padding-bottom: 0.8rem;
+      text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
     }
     &__desc{
       font-size: 1.2em;
