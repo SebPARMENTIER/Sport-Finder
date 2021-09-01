@@ -78,6 +78,11 @@ const ModalSignUp = ({
               />
             </div>
           )}
+          { !isCreateUserSuccess && (
+            <p className="modalSignUp__container__form__third">
+              Votre mot de passe doit contenir au minimum 8 caractères.
+            </p>
+          )}
           {isCreateUserSuccess && <p className="modalSignUp__container__form__success">Compte crée avec succès, veuillez vous connecter</p>}
           {passwordError && <p className="modalSignUp__container__form__error">Mot de passe non identique.</p>}
           {isCreateUserError && <p className="modalSignUp__container__form__error">Email ou pseudo déjà existant.</p>}
