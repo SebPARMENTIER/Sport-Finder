@@ -7,8 +7,14 @@ import {
   IdReviewValue,
 } from 'src/actions/review';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   userId: state.user.userId,
+  id: ownProps.id,
+  createdAt: ownProps.createdAt,
+  author: ownProps.author,
+  content: ownProps.content,
+  star: ownProps.star,
+  idUser: ownProps.user_id,
 });
 
 const mapDispatchToProps = (dispatch) => ({

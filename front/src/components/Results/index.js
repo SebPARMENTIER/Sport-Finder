@@ -158,7 +158,7 @@ Results.propTypes = {
   ).isRequired,
   getAllReviews: PropTypes.func.isRequired,
   sport: PropTypes.string.isRequired,
-  city: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
   onBuildMap: PropTypes.func.isRequired,

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -39,7 +40,27 @@ const Single = ({
   const reviewFilter = allReviews.filter(
     (review) => review.association.key_association.includes(result.id),
   );
-  // console.log('reviewFilter:', reviewFilter);
+  // const tabStar = [];
+
+  // const pushStar = () => {
+  //   for (let index = 0; index < reviewFilter.length; index++) {
+  //     tabStar.push(reviewFilter[index].star);
+  //   }
+  // };
+  // pushStar();
+
+  // let sum = 0;
+  // for (let index = 0; index < tabStar.length; index++) {
+  //   sum += tabStar[index];
+  // }
+  // console.log('sum', sum);
+  // const avg = sum / tabStar.length;
+  // console.log(Math.round(avg));
+  // const roundAvg = Math.round(avg);
+  // console.log('tabStar', tabStar);
+
+  // console.log('result', result);
+  console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">
@@ -104,25 +125,14 @@ const Single = ({
 };
 
 Single.propTypes = {
-  result: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    titre: PropTypes.string.isRequired,
-    adresse_numero_voie: PropTypes.string,
-    adresse_repetition: PropTypes.string,
-    adresse_type_voie: PropTypes.string,
-    adresse_libelle_voie: PropTypes.string,
-    adresse_code_postal: PropTypes.string,
-    adresse_libelle_commune: PropTypes.string,
-    site_web: PropTypes.string,
-    objet: PropTypes.string,
-  }).isRequired,
+  result: PropTypes.object.isRequired,
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
   openAddReview: PropTypes.bool.isRequired,
   allReviews: PropTypes.array.isRequired,
   openUpdateReview: PropTypes.bool.isRequired,
   openDeleteReview: PropTypes.bool.isRequired,
-  history: PropTypes.string.isRequired,
+  history: PropTypes.object.isRequired,
   getSingleAssociationName: PropTypes.func.isRequired,
   getSingleAssociationKey: PropTypes.func.isRequired,
   logged: PropTypes.bool.isRequired,
