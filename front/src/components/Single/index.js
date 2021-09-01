@@ -1,6 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // == Import : local
 import './single.scss';
@@ -86,6 +87,9 @@ const Single = ({
           </button>
         )}
       </div>
+      <p className="single__declare">
+        Pour signaler un avis, merci de cliquer <Link className="click" to="/contact">ici</Link>.
+      </p>
       <div className="single__reviews">
         {reviewFilter.map((reviewResult) => (
           <Review
