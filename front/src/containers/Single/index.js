@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Single from 'src/components/Single';
 
-
 import { findSingle } from 'src/selectors/single';
 import {
   clickOnButtonAddReview,

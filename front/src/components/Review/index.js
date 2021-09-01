@@ -14,7 +14,7 @@ Moment.globalLocale = 'fr';
 
 const Review = ({
   id,
-  createdAt,
+  updatedAt,
   author,
   content,
   star,
@@ -43,7 +43,7 @@ const Review = ({
         <div className="review__block1__header">
           <div className="review__block1__header__from">Avis de <span>{author.pseudo}</span></div>
           <div className="review__block1__header__date">
-            <Moment fromNow>{createdAt}</Moment>
+            <Moment fromNow>{updatedAt}</Moment>
           </div>
         </div>
         <div className="review__block1__rating">
@@ -72,7 +72,7 @@ const Review = ({
 Review.propTypes = {
   id: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  createdAt: PropTypes.string.isRequired,
+  updatedAt: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   star: PropTypes.number.isRequired,
   onClickModalUpdateReview: PropTypes.func.isRequired,
