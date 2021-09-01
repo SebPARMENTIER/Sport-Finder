@@ -47,7 +47,8 @@ const Contact = ({
     <div className="contact">
       <Banner />
       <h1 className="contact__title">Nous contacter</h1>
-      <p className="contact__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum tenetur totam repellendus. Aliquid numquam a eum accusamus iure, culpa incidunt!</p>
+      <p className="contact__text">Pour toute demande d'information (signaler un avis, mot de passe oublié, etc...), veuillez remplir le formulaire ci-dessous.</p>
+      <p className="contact__text">Nous vous répondrons dans les meilleurs délais.</p>
       <form
         className="contact__form"
         onSubmit={handleSubmit}

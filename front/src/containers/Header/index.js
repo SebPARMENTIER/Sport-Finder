@@ -7,6 +7,8 @@ import {
   clickOnButtonCloseSettings,
 } from 'src/actions/user';
 
+import { clickOnNewSearch } from 'src/actions/search';
+
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   pseudo: state.user.pseudo,
@@ -33,6 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('container');
     const action = clickOnButtonCloseSettings();
     dispatch(action);
+  },
+  onClickNewSearch: () => {
+    dispatch(clickOnNewSearch());
   },
 });
 // ajouter la fonction utilisé dans le composant

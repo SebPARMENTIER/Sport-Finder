@@ -7,12 +7,13 @@ import { IoIosArrowDown } from 'react-icons/io';
 import './header.scss';
 
 const Header = ({
+  pseudo,
   isLogged,
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
   onClickCloseSettings,
-  pseudo,
+  onClickNewSearch,
 }) => {
   const handleOnClickArrow = () => {
     // console.log("click");
@@ -29,6 +30,7 @@ const Header = ({
   const handleCloseSettings = () => {
     // console.log('close setting');
     onClickCloseSettings();
+    onClickNewSearch();
   };
   return (
     <div className="header">
@@ -96,12 +98,13 @@ const Header = ({
 };
 
 Header.propTypes = {
+  pseudo: PropTypes.string.isRequired,
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
-  pseudo: PropTypes.string.isRequired,
   onClickLogIn: PropTypes.func.isRequired,
   onClickLogUp: PropTypes.func.isRequired,
+  onClickNewSearch: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -8,6 +8,8 @@ import Review from 'src/containers/Review'
 import ModalAddReview from 'src/containers/ModalAddReview';
 import ModalUpdateReview from 'src/containers/ModalUpdateReview';
 import ModalDeleteReview from 'src/containers/ModalDeleteReview';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
@@ -21,6 +23,9 @@ const Single = ({
   getSingleAssociationName,
   getSingleAssociationKey,
   history,
+  logged,
+  openLogIn,
+  openLogUp,
 }) => {
   const image = sportsData.find((sportData) => (
     sportData.name.toLowerCase() === sport.toLowerCase()
@@ -65,18 +70,20 @@ const Single = ({
       </div>
       <div className="single__buttons">
         <button
-          type="submit"
+          type="button"
           className="single__buttons__back"
           onClick={() => history.push('/results')}
         >Retour aux résultats
         </button>
-        <button
-          type="submit"
-          className="single__buttons__addReview"
-          onClick={handleModalAddReview}
-        >
-          Ajouter un avis
-        </button>
+        {logged && (
+          <button
+            type="button"
+            className="single__buttons__addReview"
+            onClick={handleModalAddReview}
+          >
+            Ajouter un avis
+          </button>
+        )}
       </div>
       <div className="single__reviews">
         {reviewFilter.map((reviewResult) => (
@@ -89,6 +96,8 @@ const Single = ({
       { openAddReview && <ModalAddReview /> }
       { openUpdateReview && <ModalUpdateReview /> }
       { openDeleteReview && <ModalDeleteReview /> }
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -115,6 +124,9 @@ Single.propTypes = {
   history: PropTypes.string.isRequired,
   getSingleAssociationName: PropTypes.func.isRequired,
   getSingleAssociationKey: PropTypes.func.isRequired,
+  logged: PropTypes.bool.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default Single;

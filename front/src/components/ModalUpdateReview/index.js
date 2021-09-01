@@ -7,8 +7,7 @@ import FieldTextarea from 'src/components/FieldTextarea';
 
 import './modalUpdateReview.scss';
 
-export default function 
-ModalUpdateReview({
+export default function ModalUpdateReview({
   newReviewContent,
   changeField,
   handleUpdateReview,
@@ -67,9 +66,13 @@ ModalUpdateReview({
 }
 
 ModalUpdateReview.propTypes = {
-  reviewContent: PropTypes.string,
+  newReviewContent: PropTypes.string,
   changeField: PropTypes.func.isRequired,
   handleUpdateReview: PropTypes.func.isRequired,
-  onClickCloseAddReview: PropTypes.func.isRequired,
+  onClickCloseUpdateReview: PropTypes.func.isRequired,
   isUpdateReviewError: PropTypes.bool.isRequired,
+};
+
+ModalUpdateReview.defaultProps = {
+  newReviewContent: '',
 };
