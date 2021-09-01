@@ -2,8 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//import './field.scss';
-
 // == Composant
 const FieldTextarea = ({
   value,
@@ -27,7 +25,7 @@ const FieldTextarea = ({
         onChange={handleChange}
         // infos de base
         id={inputId}
-        type={type}        
+        type={type}
         placeholder={placeholder}
         name={name}
         cols="30"
@@ -45,6 +43,11 @@ FieldTextarea.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+};
+
+FieldTextarea.defaultProps = {
+  value: '',
+  type: '',
 };
 
 // == Export

@@ -1,7 +1,6 @@
-import axios from 'axios'
-import { IoMdPulse } from 'react-icons/io';
+import axios from 'axios';
 
-import { 
+import {
   CREATE_USER,
   SUBMIT_LOGIN,
   DELETE_PROFIL,
@@ -24,10 +23,10 @@ import {
 } from 'src/actions/user';
 
 const authMiddleware = (store) => (next) => (action) => {
-  const state = store.getState();  
+  const state = store.getState();
   switch (action.type) {
-    case CREATE_USER:{
-      if ( state.user.password.length < 8 ){
+    case CREATE_USER: {
+      if (state.user.password.length < 8) {
         store.dispatch(createPasswordLengthError());
       }
       else if (state.user.password !== state.user.passwordConfirm) {
@@ -50,16 +49,16 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(createUserSuccessAction(response.data));
-            console.log(response.data.isCreateUserSuccess);
+            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
-            store.dispatch(createUserErrorAction());
-            console.log(error);
+            store.dispatch(createUserErrorAction(error));
+            // console.log(error);
           });
       }
       break;
-    } 
-    case SUBMIT_LOGIN:{
+    }
+    case SUBMIT_LOGIN: {
       const config = {
         method: 'post',
         url: 'https://sportfinder.herokuapp.com/api/v1/login',
@@ -72,10 +71,9 @@ const authMiddleware = (store) => (next) => (action) => {
           password: state.user.password,
         },
       };
-  
       axios(config)
         .then((response) => {
-          const data = {...response.data};
+          const data = { ...response.data };
           store.dispatch(createLoginSuccessAction(data));
         })
         .catch(() => {
@@ -83,7 +81,7 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
-    case DELETE_PROFIL:{
+    case DELETE_PROFIL: {
       const config = {
         method: 'delete',
         url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,
@@ -96,7 +94,6 @@ const authMiddleware = (store) => (next) => (action) => {
           password: state.user.password,
         },
       };
-  
       axios(config)
         .then((response) => {
           store.dispatch(deleteProfileSuccessAction(response.data));
@@ -154,10 +151,11 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(updatePasswordSuccessAction(response.data));
+            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
-            store.dispatch(updatePasswordErrorAction());
-            console.log(error);
+            store.dispatch(updatePasswordErrorAction(error));
+            // console.log(error);
           });
       }
       break;

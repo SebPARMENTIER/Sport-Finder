@@ -11,7 +11,7 @@ const Error = () => (
     <p className="error__text">Page non trouvée</p>
     <div className="error__picture">
       <img src={Picture} alt="Arbitre tenant un carton rouge" className="error__picture__img" />
-    </div>    
+    </div>
     <a href="#" className="error__home">Retour à l'accueil</a>
   </div>
 );

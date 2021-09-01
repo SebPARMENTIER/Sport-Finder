@@ -12,8 +12,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onClickModalUpdateReview: () => {
-    dispatch(clickOnButtonUpdateReview());
+  onClickModalUpdateReview: (value) => {
+    dispatch(clickOnButtonUpdateReview(value));
   },
   onClickModalDeleteReview: () => {
     dispatch(clickOnButtonDeleteReview());

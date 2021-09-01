@@ -1,7 +1,9 @@
 @use 'src/styles/vars' as v;
 
 .results {
-  padding: v.$gutter*5 0 v.$gutter*2 0;
+  padding: v.$gutter*5 0 v.$gutter 0;
+  display: flex;
+  flex-direction: column;
   &__slogan{
     width: 100vw;
     font-size: 2em;
@@ -12,6 +14,18 @@
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }
 
+  &__newSearch{
+    width: auto;
+    margin: 0 auto;
+    margin-bottom: v.$gutter*0.5;
+    text-align: center;
+    padding: v.$gutter*0.7 v.$gutter;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+  }
   &__count {
     text-align: center;
 
@@ -22,16 +36,12 @@
       text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
     }
   }
-    
-  &__searchform {
-    padding-top: v.$gutter;
-  }
 
   &__all {
     padding: v.$gutter v.$gutter*3 v.$gutter*3 v.$gutter*2;
     display: flex;
     justify-content: center;
-    height: v.$gutter*20;
+    height: 60vh;
 
     &__list {
       margin-right: v.$gutter;
@@ -74,16 +84,14 @@
           font-size: v.$gutter*2;
           color: v.$star-color;
         }
-        
-         
       }
     }
   }
 }
 
-#mapId {
-  width: 100%;
+#mapid { 
   height: 100%;
+  width: 100%; 
   border-radius: 10px;
   z-index: 0;
 }

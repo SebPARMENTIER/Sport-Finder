@@ -2,8 +2,13 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Single from 'src/components/Single';
 
+
 import { findSingle } from 'src/selectors/single';
-import { clickOnButtonAddReview, singleAssociationNameValue, singleAssociationKey } from 'src/actions/review';
+import {
+  clickOnButtonAddReview,
+  singleAssociationNameValue,
+  singleAssociationKey,
+} from 'src/actions/review';
 
 const mapStateToProps = (state, { match, history }) => {
   // console.log('match', match);
@@ -18,6 +23,8 @@ const mapStateToProps = (state, { match, history }) => {
     openUpdateReview: state.review.openUpdateReview,
     openDeleteReview: state.review.openDeleteReview,
     logged: state.user.logged,
+    openLogIn: state.user.openLogIn,
+    openLogUp: state.user.openLogUp,
     history: history,
   });
 };

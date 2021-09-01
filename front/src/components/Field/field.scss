@@ -8,21 +8,33 @@
     width: auto;
     height: 20px;
     padding: v.$gutter*1.5;
-    margin: 0 v.$gutter ;
     font-size: 1.5em;
     border-radius: 5px;
     border: none;
     margin-bottom: v.$gutter;
+    margin-left: 1rem;
   }
-  @media (max-width: 768px) {
+  
+}
+@media (max-width: 1025px) {
     .inputs{
       &__field{
         font-size: 1em;
-        margin: 0 v.$gutter*0.5 ;
-        width: 100%;
-        padding: v.$gutter*1.2;
+        width: 32vw;
+        padding: v.$gutter*1.5;
         margin-bottom: v.$gutter;
       }
     }
   }
-}
+  @media (max-width: 430px) {
+    
+    .inputs{
+      &__field{
+        width: 80vw;
+        padding: v.$gutter*1.5;
+        margin-bottom: v.$gutter;
+        margin-left: 0;
+        font-size: 1.5em;
+      }
+    }
+  }

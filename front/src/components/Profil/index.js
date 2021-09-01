@@ -20,61 +20,61 @@ const Profil = ({
   pseudo,
 }) => {
   const handleModalEditProfil = () => {
-    console.log("click");
+    // console.log("click");
     onClickModalEditProfil();
-  }
+  };
   const handleModalDeleteProfile = () => {
     onClickModalDeleteProfile();
-  }
+  };
   const handleModalEditPassword = () => {
-    console.log('click');
+    // console.log('click');
     onClickModalEditPassword();
-  }
+  };
   const handleModalPrivacyData = () => {
     onClickModalPrivacyData();
-  }
+  };
   return (
-    <main className='profil'>
-      <h1 className='profil__title'>Information profil</h1>
-      <h2 className='profil__name'>{pseudo}</h2>
-      <div className='profil__button'> 
-        <button 
-          className='profil__button__edit'
+    <main className="profil">
+      <h1 className="profil__title">Information profil</h1>
+      <h2 className="profil__name">{pseudo}</h2>
+      <div className="profil__button">
+        <button
+          className="profil__button__edit"
           type="button"
           onClick={handleModalEditProfil}
         >
           Modifier votre profil
         </button>
         <button
-          className='profil__button__edit'
+          className="profil__button__edit"
           type="button"
           onClick={handleModalEditPassword}
         >
           Modifier mot de passe
         </button>
         <button
-          className='profil__button__edit'
+          className="profil__button__edit"
           type="button"
           onClick={handleModalDeleteProfile}
         >
           Supprimer votre compte
         </button>
         <button
-          className='profil__button__edit'
+          className="profil__button__edit"
           type="button"
           onClick={handleModalPrivacyData}
         >
           Vie privée et données
         </button>
       </div>
-      <input className='profil__logOut' type="button" value="Déconnexion" />
-      { openEditProfil && <ModalEditProfil />}
-      { openEditPassword && <ModalEditPassword />}
-      { openDeleteProfile && <ModalDeleteProfile />}
-      { openPrivacyData && <ModalPrivacyData />}
+      <input className="profil__logOut" type="button" value="Déconnexion" />
+      {openEditProfil && <ModalEditProfil />}
+      {openEditPassword && <ModalEditPassword />}
+      {openDeleteProfile && <ModalDeleteProfile />}
+      {openPrivacyData && <ModalPrivacyData />}
     </main>
   );
-}
+};
 
 Profil.propTypes = {
   onClickModalEditProfil: PropTypes.func.isRequired,

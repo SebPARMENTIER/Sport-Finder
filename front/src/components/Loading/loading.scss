@@ -1,9 +1,9 @@
 @use 'src/styles/vars';
 
 .sk-circle {
-  margin: 30vh auto;
-  width: 80px;
-  height: 80px;
+  margin: 10vh auto;
+  width: 100px;
+  height: 100px;
   position: relative;
 }
 .sk-circle .sk-child {
@@ -22,7 +22,7 @@
   background-color: vars.$text-color;
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
-          animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
+  animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
 }
 .sk-circle .sk-circle2 {
   -webkit-transform: rotate(30deg);

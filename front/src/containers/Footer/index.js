@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
-import Footer from "src/components/Footer";
+import { connect } from 'react-redux';
+import Footer from 'src/components/Footer';
 import { clickOnButtonCloseSettings } from 'src/actions/user';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = () => ({});
 // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({

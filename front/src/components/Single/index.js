@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/containers/Review'
+import Review from 'src/containers/Review';
 import ModalAddReview from 'src/containers/ModalAddReview';
 import ModalUpdateReview from 'src/containers/ModalUpdateReview';
 import ModalDeleteReview from 'src/containers/ModalDeleteReview';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 import sportsData from 'src/assets/sportsData';
 
 const Single = ({
@@ -22,28 +24,29 @@ const Single = ({
   getSingleAssociationKey,
   history,
   logged,
+  openLogIn,
+  openLogUp,
 }) => {
-  const image = sportsData.find((sportData) => {
-    return sportData.name.toLowerCase() === sport.toLowerCase();
-  });
+  const image = sportsData.find((sportData) => (
+    sportData.name.toLowerCase() === sport.toLowerCase()
+  ));
   const handleModalAddReview = () => {
     onClickModalAddReview();
     getSingleAssociationName(result.titre);
     getSingleAssociationKey(result.id);
-    console.log('id:', result.id, 'titre:', result.titre);
+    // console.log('id:', result.id, 'titre:', result.titre);
   };
-  const allReviewsForAnAssociation = [];
-  const reviewFilter = allReviews.filter(review => review.association.key_association.includes(result.id));
-  console.log('reviewFilter:', reviewFilter);
-  
+  const reviewFilter = allReviews.filter(
+    (review) => review.association.key_association.includes(result.id),
+  );
+  // console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">
         <div className="single__infos__header">
           <div
             className="single__infos__header__picture"
-            style={{
-              backgroundImage: `url(${image.image})`}}
+            style={{ backgroundImage: `url(${image.image})` }}
           >
             <h1 className="single__infos__header__picture__title">{sport.toUpperCase()}</h1>
           </div>
@@ -94,6 +97,8 @@ const Single = ({
       { openAddReview && <ModalAddReview /> }
       { openUpdateReview && <ModalUpdateReview /> }
       { openDeleteReview && <ModalDeleteReview /> }
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -109,18 +114,20 @@ Single.propTypes = {
     adresse_code_postal: PropTypes.string,
     adresse_libelle_commune: PropTypes.string,
     site_web: PropTypes.string,
-    object: PropTypes.string,
-  }),
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }),
+    objet: PropTypes.string,
+  }).isRequired,
   sport: PropTypes.string.isRequired,
   onClickModalAddReview: PropTypes.func.isRequired,
   openAddReview: PropTypes.bool.isRequired,
   allReviews: PropTypes.array.isRequired,
   openUpdateReview: PropTypes.bool.isRequired,
   openDeleteReview: PropTypes.bool.isRequired,
+  history: PropTypes.string.isRequired,
+  getSingleAssociationName: PropTypes.func.isRequired,
+  getSingleAssociationKey: PropTypes.func.isRequired,
   logged: PropTypes.bool.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
 };
 
 export default Single;

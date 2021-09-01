@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { Link } from 'react-router-dom';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
@@ -19,31 +19,29 @@ const ModalDeleteProfile = ({
     handleDeleteProfile();
   };
   const handleOnClickCloseDeleteProfile = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseDeleteProfile();
-  }
+  };
   return (
-    <div className='modalDeleteProfile'>
-      <div className='modalDeleteProfile__container'>
+    <div className="modalDeleteProfile">
+      <div className="modalDeleteProfile__container">
         {!isDeleteProfileSuccess && (
           <button
             type="submit"
             className="modalDeleteProfile__container__close"
             onClick={handleOnClickCloseDeleteProfile}
           >
-            <IoIosCloseCircleOutline className="modalDeleteProfile__container__close__circle"/>
+            <IoIosCloseCircleOutline className="modalDeleteProfile__container__close__circle" />
           </button>
         )}
-        
-        <h1 className='modalDeleteProfile__container__title'>Suppression du compte</h1>
+        <h1 className="modalDeleteProfile__container__title">Suppression du compte</h1>
         {!isDeleteProfileSuccess && (
-          <p className='modalDeleteProfile__container__text'>
+          <p className="modalDeleteProfile__container__text">
             Veuillez saisir votre mot de passe pour supprimer votre compte.
           </p>
         )}
-        
-        <form 
-          className='modalDeleteProfile__container__form'
+        <form
+          className="modalDeleteProfile__container__form"
           onSubmit={handleSubmit}
         >
           {!isDeleteProfileSuccess && (
@@ -66,12 +64,11 @@ const ModalDeleteProfile = ({
               Valider
             </button>
           )}
-          
         </form>
         {!isDeleteProfileSuccess && (
           <button
             type="submit"
-            className='modalDeleteProfile__container__button'
+            className="modalDeleteProfile__container__button"
             onClick={handleOnClickCloseDeleteProfile}
           >
             Annuler
@@ -80,7 +77,7 @@ const ModalDeleteProfile = ({
         {isDeleteProfileSuccess && (
           <button
             type="submit"
-            className='modalDeleteProfile__container__button'
+            className="modalDeleteProfile__container__button"
             onClick={handleOnClickCloseDeleteProfile}
           >
             <Link
@@ -90,11 +87,10 @@ const ModalDeleteProfile = ({
             </Link>
           </button>
         )}
-        
       </div>
     </div>
   );
-}
+};
 
 ModalDeleteProfile.propTypes = {
   password: PropTypes.string.isRequired,
@@ -105,4 +101,4 @@ ModalDeleteProfile.propTypes = {
   isDeleteProfileError: PropTypes.bool.isRequired,
 };
 
-export default ModalDeleteProfile
+export default ModalDeleteProfile;

@@ -13,11 +13,10 @@ const Settings = ({
   const handleCloseSettings = () => {
     // console.log('close setting');
     onClickCloseSettings();
-  }
+  };
   const handleLogOut = () => {
-    console.log('click');
     onClickLogOut();
-  }
+  };
   return (
     <div className={classnameSetting}>
       <div
@@ -27,7 +26,7 @@ const Settings = ({
           to="/profil"
           onClick={handleCloseSettings}
         >Profil
-        </Link> 
+        </Link>
       </div>
       <div className="settings__logOut hover-underline-animation">
         <Link
@@ -37,10 +36,9 @@ const Settings = ({
           Déconnexion
         </Link>
       </div>
-      
     </div>
   );
-}
+};
 
 Settings.propTypes = {
   open: PropTypes.bool.isRequired,

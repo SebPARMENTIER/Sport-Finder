@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import logo from "src/assets/logo.png";
-import Settings from "src/containers/Settings";
-import { IoIosArrowDown } from "react-icons/io";
-import "./header.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import logo from 'src/assets/logo.png';
+import Settings from 'src/containers/Settings';
+import { IoIosArrowDown } from 'react-icons/io';
+import './header.scss';
 
 const Header = ({
   pseudo,
@@ -12,23 +12,25 @@ const Header = ({
   onClickArrow,
   onClickLogIn,
   onClickLogUp,
-  onClickCloseSettings,  
+  onClickCloseSettings,
+  onClickNewSearch,
 }) => {
   const handleOnClickArrow = () => {
-    console.log("click");
+    // console.log("click");
     onClickArrow();
   };
   const handleOnClickLogIn = () => {
-    console.log("click");
+    // console.log("click");
     onClickLogIn();
   };
   const handleOnClickLogUp = () => {
-    console.log("click");
+    // console.log("click");
     onClickLogUp();
   };
   const handleCloseSettings = () => {
     // console.log('close setting');
     onClickCloseSettings();
+    onClickNewSearch();
   };
   return (
     <div className="header">
@@ -45,7 +47,7 @@ const Header = ({
             </div>
           </div>
           <div className="header-logo">
-            <Link 
+            <Link
               to="/"
               onClick={handleCloseSettings}
             >
@@ -100,6 +102,9 @@ Header.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   onClickArrow: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
+  onClickLogIn: PropTypes.func.isRequired,
+  onClickLogUp: PropTypes.func.isRequired,
+  onClickNewSearch: PropTypes.func.isRequired,
 };
 
 export default Header;

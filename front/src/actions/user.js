@@ -103,7 +103,7 @@ export const clickOnButtonCloseDeleteProfile = () => ({
 
 export const clickOnButtonClosePrivacyData = () => ({
   type: CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
-})
+});
 
 export const createUserAction = () => ({ type: CREATE_USER });
 
@@ -113,7 +113,7 @@ export const createUserErrorAction = () => ({ type: CREATE_USER_ERROR });
 
 export const createPasswordErrorAction = () => ({ type: CREATE_PASSWORD_ERROR });
 
-export const createPasswordLengthError = () => ({ type: CREATE_PASSWORD_LENGTH_ERROR })
+export const createPasswordLengthError = () => ({ type: CREATE_PASSWORD_LENGTH_ERROR });
 
 export const createSetInputValueAction = (newValue, name) => ({
   type: SET_INPUT_VALUE,
@@ -161,7 +161,7 @@ export const updatePasswordAction = () => ({ type: UPDATE_PASSWORD });
 
 export const updatePasswordConfirmErrorAction = () => ({ type: UPDATE_PASSWORD_CONFIRM_ERROR });
 
-export const updatePasswordSuccessAction = (data) => ({ type: UPDATE_PASSWORD_SUCCESS, data });
+export const updatePasswordSuccessAction = () => ({ type: UPDATE_PASSWORD_SUCCESS });
 
 export const updatePasswordErrorAction = () => ({ type: UPDATE_PASSWORD_ERROR });
 

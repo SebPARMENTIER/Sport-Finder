@@ -1,11 +1,13 @@
-import { connect } from "react-redux";
-import Header from "src/components/Header";
+import { connect } from 'react-redux';
+import Header from 'src/components/Header';
 import {
   clickOnButtonSettings,
   clickOnButtonLogIn,
   clickOnButtonLogUp,
   clickOnButtonCloseSettings,
-} from "src/actions/user";
+} from 'src/actions/user';
+
+import { clickOnNewSearch } from 'src/actions/search';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
@@ -33,6 +35,9 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('container');
     const action = clickOnButtonCloseSettings();
     dispatch(action);
+  },
+  onClickNewSearch: () => {
+    dispatch(clickOnNewSearch());
   },
 });
 // ajouter la fonction utilisé dans le composant

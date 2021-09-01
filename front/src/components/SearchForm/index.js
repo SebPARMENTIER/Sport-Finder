@@ -14,18 +14,16 @@ const SearchForm = ({
   handleSearch,
   changeFielCity,
   history,
-  getAllReviews,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
-    getAllReviews();
-    history.push('/results')
+    history.push('/results');
   };
   return (
     <form className="searchForm" onSubmit={handleSubmit}>
       <div className="searchForm__inputs">
-        <div className='searchForm__inputs__sport'>
+        <div className="searchForm__inputs__sport">
           <ReactSearchAutocomplete
             items={sportsData}
             onSearch={changeField}
@@ -37,10 +35,11 @@ const SearchForm = ({
             value={sport}
             styling={
               {
-                borderRadius: "5px",
-                with:"90%",
-                fontSize: "23px",
-                height:"46px",
+                borderRadius: '5px',
+                with: '90%',
+                fontSize: '23px',
+                height: '46px',
+                marginRight: '16px',
               }
             }
           />
@@ -54,7 +53,6 @@ const SearchForm = ({
           onChange={changeFielCity}
         />
       </div>
-      
       <button
         type="submit"
         className="searchForm__button"
@@ -63,7 +61,7 @@ const SearchForm = ({
       </button>
     </form>
   );
-}
+};
 
 SearchForm.propTypes = {
   city: PropTypes.string.isRequired,
@@ -72,10 +70,9 @@ SearchForm.propTypes = {
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
   changeFielCity: PropTypes.func.isRequired,
-  history:  PropTypes.shape({
+  history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
-  getAllReviews: PropTypes.func.isRequired,
 };
 
 export default SearchForm;

@@ -35,7 +35,7 @@ const About = ({
     { openLogIn && <ModalSignIn />}
     { openLogUp && <ModalSignUp />}
   </div>
-)
+);
 
 About.propTypes = {
   openLogIn: PropTypes.bool.isRequired,

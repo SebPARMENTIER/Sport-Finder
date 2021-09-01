@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
@@ -23,23 +23,21 @@ const ModalSignUp = ({
     handleCreateUser();
   };
   const handleOnClickCloseSignUp = () => {
-    console.log('click');
+    // console.log('click');
     onClickCloseSignUp();
-  }
+  };
   return (
-    <div className='modalSignUp'>
-      <div className='modalSignUp__container'>
+    <div className="modalSignUp">
+      <div className="modalSignUp__container">
         <button
           type="submit"
           className="modalSignUp__container__close"
           onClick={handleOnClickCloseSignUp}
         >
-          <IoIosCloseCircleOutline className="modalSignUp__container__close__circle"/>
+          <IoIosCloseCircleOutline className="modalSignUp__container__close__circle" />
         </button>
-        
-        <h1 className='modalSignUp__container__title'>Inscription</h1>
-        
-        <form className='modalSignUp__container__form' onSubmit={handleSubmit}>
+        <h1 className="modalSignUp__container__title">Inscription</h1>
+        <form className="modalSignUp__container__form" onSubmit={handleSubmit}>
           { !isCreateUserSuccess && (
             <div className="modalSignUp__container__form__first">
               <Field
@@ -101,18 +99,16 @@ const ModalSignUp = ({
               Valider
             </button>
           )}
-          
         </form>
-        
       </div>
     </div>
   );
-}
+};
 
 ModalSignUp.propTypes = {
   pseudo: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,  
+  password: PropTypes.string.isRequired,
   passwordConfirm: PropTypes.string.isRequired,
   passwordError: PropTypes.bool.isRequired,
   changeField: PropTypes.func.isRequired,

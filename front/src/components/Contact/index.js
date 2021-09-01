@@ -1,7 +1,7 @@
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
@@ -36,12 +36,12 @@ const Contact = ({
     handleSelectCivility(event.target.value);
   };
   const handleOnClick = () => {
-    console.log('click');
+    // console.log('click');
     onClickSubmit();
-  }
+  };
   const handleOnClickMessageSuccess = () => {
     onClickMessageSuccess();
-  }
+  };
   return (
     <div className="contact">
       <Banner />
@@ -65,7 +65,7 @@ const Contact = ({
               <option value="mister">M.</option>
               <option value="miss">Mme</option>
             </select>
-            <Field              
+            <Field
               name="lastname"
               type="text"
               className="contact__form__block__first__lastname"
@@ -84,7 +84,7 @@ const Contact = ({
           </div>
         )}
         { !submitMessage && (
-          <div className="contact__form__block__second">          
+          <div className="contact__form__block__second">
             <Field
               name="email"
               type="text"
@@ -117,7 +117,7 @@ const Contact = ({
             />
           )}
           { submitMessage && (
-            <p className="contact__form__success">Méssage bien envoyé !!! </p>
+            <p className="contact__form__success">Message bien envoyé</p>
           )}
           { !submitMessage && (
             <button
@@ -125,11 +125,11 @@ const Contact = ({
               type="submit"
               onClick={handleOnClick}
             >
-              Envoyer  
+              Envoyer
             </button>
           )}
           { submitMessage && (
-            <Link 
+            <Link
               to="/"
               className="contact__form__block__third__button"
               onClick={handleOnClickMessageSuccess}
@@ -137,20 +137,22 @@ const Contact = ({
               Ok
             </Link>
           )}
-        </div>        
+        </div>
       </form>
       { openLogIn && <ModalSignIn />}
       { openLogUp && <ModalSignUp />}
 
     </div>
-  )
-}
+  );
+};
 
 Contact.propTypes = {
   lastname: PropTypes.string.isRequired,
   firstname: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
+  civility: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,
   openLogIn: PropTypes.bool.isRequired,
@@ -159,6 +161,6 @@ Contact.propTypes = {
   onClickSubmit: PropTypes.func.isRequired,
   submitMessage: PropTypes.bool.isRequired,
   onClickMessageSuccess: PropTypes.func.isRequired,
-}
+};
 
 export default Contact;

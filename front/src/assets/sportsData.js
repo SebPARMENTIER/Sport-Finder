@@ -111,7 +111,7 @@ export default [
   },
   {
     id: 23,
-    name: 'Basketball',
+    name: 'Basket',
     image: 'https://media.istockphoto.com/photos/basketball-game-picture-id468525030?k=6&m=468525030&s=612x612&w=0&h=LxR9NeDcvIEVVilP6EnvId6-Xbvq1hE609GkBd1xqTM=',
   },
   {

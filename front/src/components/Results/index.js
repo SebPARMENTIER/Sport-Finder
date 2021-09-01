@@ -1,11 +1,18 @@
 // == Import : npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import StarRatingStatic from 'src/containers/StarRatingStatic';
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+} from 'react-leaflet';
+// import Marker from 'react-leaflet-animated-marker';
 // == Import : local
-import SearchForm from 'src/containers/SearchForm';
 import Banner from 'src/components/Banner';
+import Loading from 'src/components/Loading';
 import './results.scss';
 
 // == Component
@@ -14,41 +21,46 @@ const Results = ({
   sport,
   city,
   onClickNewSearch,
-  history,
+  cityCenterLat,
+  cityCenterLng,
+  buildMap,
+  markers,
+  getAllReviews,
   isNoResult,
-  allReviews,
+  onBuildMap,
 }) => {
+  // console.log('cityCenterLat', cityCenterLat);
+  const position = [cityCenterLat, cityCenterLng];
+  // console.log('position',position);
+  const icons = markers.map((marker) => (
+    <Marker
+      key={marker[2]}
+      position={[marker[1][1], marker[1][0]]}
+    >
+      <Popup>
+        {marker[0]}
+      </Popup>
+    </Marker>
+  ));
+
+  const handleGetAllReviews = () => {
+    getAllReviews();
+  };
   const handleNewSearch = () => {
     onClickNewSearch();
   };
-  // console.log('results', results);
-  const position = [45.825008, 1.230507];
-  // let containsReview = '';
-  // for (let i = 0; i < allReviews.length; i++) {
-  //   const existReviewId = allReviews[i].association.key_association;
-  //   // const containsReview = results.filter((result) => result.id === existReviewId);
-  //   // console.log('containsReview:', result.id);
-  // }
-  allReviews.map((reviewId) => {
-    const existReviewId = results.filter((result) => result.id === reviewId);
-    console.log('containsReview:', existReviewId);
-    return existReviewId;
-  });
-  // console.log('containsReview:', existReviewId);
-  // const containsReview = results.filter(result => result.id === 36847686);
-  // console.log('containsReview:', containsReview);
-  // let ratingAverage = '';
-  // if (results.map((result) => (
-  //   result.id === allReviews.map((review) => (
-  //     review.association.key_association
-  //   ))
-  // ))) {
-  //   containsReview = true;
-  // }
+  // console.log('result.length', results.length);
+  // const time = results.length * 150;
+  // console.log('time', time);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      onBuildMap();
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [markers]);
   return (
     <div className="results">
       <Banner />
-      <p className='results__slogan'>Recherchez un sport à pratiquer près de chez vous ou partout en France</p>
       {/* <div className="results__searchform">
         <SearchForm />
       </div> */}
@@ -64,60 +76,62 @@ const Results = ({
         {!isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} a donné {results.length} résultats.</p>}
       </div>
       <div className="results__all">
-        <div className="results__all__list">
-          {results.map((result) => (
-            <div
-              key={result.id}
-              className="results__all__list__single"
-            >
-              <p className="results__all__list__single__name">
-                <Link
-                  to={`/single/${result.id}`}
-                  {...result}
-                >
-                  {result.titre}
-                </Link>
-                
-              </p>
-              <p className="results__all__list__single__adress">
-              {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
-              </p>
-              <p className="results__all__list__single__rating">
-              ⭐⭐⭐⭐⭐
-              </p>
-            </div>
-          ))}
-        </div>
-        {!isNoResult && (
-        <MapContainer
-          id="mapId"
-          center={position}
-          zoom={13}
-          scrollWheelZoom={true}
-        >
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[46.227638, 2.213749]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-          <Marker position={[48.8534, 2.3488]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
+        { buildMap && (
+          <div className="results__all__list">
+            {results.map((result) => (
+              <div
+                key={result.id}
+                className="results__all__list__single"
+              >
+                <p className="results__all__list__single__name">
+                  <Link
+                    to={`/single/${result.id}`}
+                    onClick={handleGetAllReviews}
+                    {...result}
+                  >
+                    {result.titre}
+                  </Link>
+                </p>
+                <p className="results__all__list__single__adress">
+                  {result.adresse_numero_voie}
+                  {result.adresse_repetition}
+                  {result.adresse_type_voie}
+                  {result.adresse_libelle_voie}
+                  {result.adresse_code_postal}
+                  {result.adresse_libelle_commune}
+                </p>
+                <div className="results__all__list__single__rating">
+                  <StarRatingStatic
+                    rating={1}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        { !buildMap && (<Loading />)}
+        { buildMap && !isNoResult && (
+          <MapContainer
+            id="mapid"
+            center={position}
+            zoom={8}
+            scrollWheelZoom
+            maxZoom={20}
+          >
+            <TileLayer
+              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {icons}
+          </MapContainer>
         )}
       </div>
     </div>
-  )
+  );
 };
 
 Results.propTypes = {
-  resluts: PropTypes.arrayOf(
+  results: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       titre: PropTypes.string.isRequired,
@@ -128,15 +142,19 @@ Results.propTypes = {
       adresse_code_postal: PropTypes.string,
       adresse_libelle_commune: PropTypes.string,
     }),
-  ),
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
+  ).isRequired,
+  cityCenterLat: PropTypes.number.isRequired,
+  cityCenterLng: PropTypes.number.isRequired,
+  buildMap: PropTypes.bool.isRequired,
+  markers: PropTypes.arrayOf(
+    PropTypes.shape,
+  ).isRequired,
+  getAllReviews: PropTypes.func.isRequired,
   sport: PropTypes.string.isRequired,
   city: PropTypes.number.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
-  allReviews: PropTypes.array,
+  onBuildMap: PropTypes.func.isRequired,
 };
 
 export default Results;

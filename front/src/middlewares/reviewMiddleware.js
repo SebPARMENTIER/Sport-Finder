@@ -1,4 +1,3 @@
-/* eslint-disable no-lone-blocks */
 import axios from 'axios';
 
 import {
@@ -36,7 +35,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
           const associationFiltered = associationExists.filter(
             (elem) => elem.key_association.includes(state.review.associationKey),
           );
-          console.log(associationFiltered);
+          // console.log(associationFiltered);
           if (associationFiltered.length > 0) {
             axios({
               method: 'post',
@@ -52,8 +51,8 @@ const reviewMiddleware = (store) => (next) => (action) => {
                 user_id: state.user.userId,
               },
             })
-              .then((response) => {
-                store.dispatch(createReviewSuccessAction(response.data));
+              .then((response2) => {
+                store.dispatch(createReviewSuccessAction(response2.data));
                 store.dispatch(getAllReviewsAction());
               })
               .catch((error) => {
@@ -72,8 +71,8 @@ const reviewMiddleware = (store) => (next) => (action) => {
                 name: state.review.singleAssociationName,
               },
             })
-              .then((response) => {
-                store.dispatch(createAssociationSuccessAction(response.data));
+              .then((response2) => {
+                store.dispatch(createAssociationSuccessAction(response2.data));
                 store.dispatch(createReviewAfterCreateAssociation());
               })
               .catch((error) => {
@@ -121,7 +120,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(getAllReviewsSuccessAction(response.data));
-          console.log('middleware review get all:', response.data);
+          // console.log('middleware review get all:', response.data);
         })
         .catch((error) => {
           store.dispatch(getAllReviewsErrorAction());

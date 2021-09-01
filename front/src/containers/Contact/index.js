@@ -29,11 +29,11 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(changeSelectAction(newValue));
   },
   onClickSubmit: () => {
-    dispatch(submitContactForm())
+    dispatch(submitContactForm());
   },
   onClickMessageSuccess: () => {
-    dispatch(closeMessageSuccess())
-  }
-})
+    dispatch(closeMessageSuccess());
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

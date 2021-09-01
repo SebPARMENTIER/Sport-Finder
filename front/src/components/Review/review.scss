@@ -51,8 +51,6 @@
     flex-direction: row;
     justify-content: space-between;
 
-    
-
     &__change {
       display: flex;
       flex-direction: row;
@@ -60,7 +58,6 @@
       font-size: v.$gutter*1.5;
 
       &__update {
-        
       }
 
       &__delete {

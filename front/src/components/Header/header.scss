@@ -25,9 +25,6 @@
     }
   }
 
-  &-nav{
-
-  }
   &-ol{
     display: flex;
     justify-content: space-between;
@@ -46,8 +43,7 @@
     right: 0px;
     margin: 0 v.$gutter;
   }
-  &-accueil{
-  }
+
   &-logo{
     position: absolute;
     right: 40%;

@@ -5,7 +5,6 @@ import {
   CLICK_ON_BUTTON_ADD_REVIEW,
   CLICK_ON_BUTTON_CLOSE_ADD_REVIEW,
   GET_ALL_REVIEWS_SUCCESS,
-  GET_ALL_REVIEWS_ERROR,
   UPDATE_REVIEW_VALUE,
   UPDATE_REVIEW_SUCCESS,
   UPDATE_REVIEW_ERROR,
@@ -60,13 +59,13 @@ const reducer = (state = initialState, action = {}) => {
     case CLICK_ON_BUTTON_ADD_REVIEW:
       return {
         ...state,
-        openAddReview: !state.openAddReview,
+        openAddReview: true,
+        isCreateReviewError: false,
       };
     case CLICK_ON_BUTTON_CLOSE_ADD_REVIEW:
       return {
         ...state,
         openAddReview: false,
-        isCreateReviewError: false,
       };
     case GET_ALL_REVIEWS_SUCCESS:
       return {
@@ -98,6 +97,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: !state.openUpdateReview,
+        newReviewContent: action.value,
       };
     case CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW:
       return {

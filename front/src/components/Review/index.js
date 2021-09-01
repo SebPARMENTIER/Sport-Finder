@@ -1,16 +1,16 @@
+/* eslint-disable camelcase */
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ImPencil2, ImBin } from 'react-icons/im';
-import { FaStar } from 'react-icons/fa';
+import StarRatingStatic from 'src/containers/StarRatingStatic';
 import Moment from 'react-moment';
 import 'moment-timezone';
+// == Import : local
+import './review.scss';
 
 // Set the locale for every react-moment instance to French.
 Moment.globalLocale = 'fr';
-
-// == Import : local
-import './review.scss';
 
 const Review = ({
   id,
@@ -26,17 +26,16 @@ const Review = ({
 }) => {
   const handleModalUpdateReview = () => {
     getIdValue(id);
-    onClickModalUpdateReview();
+    onClickModalUpdateReview(content);
   };
   const handleModalDeleteReview = () => {
-    getIdValue(id);
     onClickModalDeleteReview();
   };
   let reviewOwner = false;
   if (user_id === userId) {
     reviewOwner = true;
   }
-  console.log('reviewOwner:', reviewOwner);
+  // console.log('reviewOwner:', reviewOwner);
   return (
     <div className="review">
       <div className="review__block1">
@@ -47,12 +46,9 @@ const Review = ({
           </div>
         </div>
         <div className="review__block1__rating">
-          {/* {getStarsForOneReview()} */}
-          <div className="review__block1__rating__star__full">★</div>
-          <div className="review__block1__rating__star__full">★</div>
-          <div className="review__block1__rating__star__full">★</div>
-          <div className="review__block1__rating__star__full">★</div>
-          <div className="review__block1__rating__star__empty">★</div>
+          <StarRatingStatic
+            rating={star}
+          />
         </div>
       </div>
       <div className="review__block2">
@@ -78,12 +74,15 @@ const Review = ({
 };
 
 Review.propTypes = {
-  reviewResult: PropTypes.shape({
-    createdAt: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  }),
+  id: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  star: PropTypes.number.isRequired,
   onClickModalUpdateReview: PropTypes.func.isRequired,
   onClickModalDeleteReview: PropTypes.func.isRequired,
+  getIdValue: PropTypes.number.isRequired,
+  user_id: PropTypes.number.isRequired,
   userId: PropTypes.number.isRequired,
 };
 
