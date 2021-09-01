@@ -4,8 +4,7 @@ import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 import './modalDeleteReview.scss';
 
-export default function 
-ModalDeleteReview({
+export default function ModalDeleteReview({
   onClickCloseDeleteReview,
   onClickValidDeleteReview,
   isDeleteReviewError,
@@ -28,7 +27,7 @@ ModalDeleteReview({
         </button>
         <h1 className="modalDeleteReview__container__title">Supprimer votre avis</h1>
         <div className="modalDeleteReview__container__edit">
-          <p className="modalDeleteReview__container__edit__text">Voulez-vous supprimer votre avis ?</p>            
+          <p className="modalDeleteReview__container__edit__text">Voulez-vous supprimer votre avis ?</p>
         </div>
         {isDeleteReviewError && (
           <p className="modalDeleteReview__container__error">Une erreur s'est produite, veuillez réessayer.</p>

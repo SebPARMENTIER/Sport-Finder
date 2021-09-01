@@ -22,13 +22,13 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updatePasswordSetInputValueAction(newValue, name));
   },
   onClickCloseEditPassword: () => {
-    //console.log('in the container ');
+    // console.log('in the container ');
     const action = clickOnButtonCloseEditPassword();
     dispatch(action);
   },
   handleUpdatePassword: () => {
-    dispatch(updatePasswordAction())
-  }
+    dispatch(updatePasswordAction());
+  },
 });
   // ajouter la fonction utilisé dans le composant
 

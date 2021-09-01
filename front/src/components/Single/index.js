@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // == Import : local
 import './single.scss';
-import Review from 'src/containers/Review'
+import Review from 'src/containers/Review';
 import ModalAddReview from 'src/containers/ModalAddReview';
 import ModalUpdateReview from 'src/containers/ModalUpdateReview';
 import ModalDeleteReview from 'src/containers/ModalDeleteReview';
@@ -34,12 +34,12 @@ const Single = ({
     onClickModalAddReview();
     getSingleAssociationName(result.titre);
     getSingleAssociationKey(result.id);
-    console.log('id:', result.id, 'titre:', result.titre);
+    // console.log('id:', result.id, 'titre:', result.titre);
   };
   const reviewFilter = allReviews.filter(
     (review) => review.association.key_association.includes(result.id),
   );
-  console.log('reviewFilter:', reviewFilter);
+  // console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">

@@ -11,7 +11,7 @@ const mapMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_GPS_COORDINATES:
       // console.log('dans mapMiddleware');
-      console.log(state.search.results);
+      // console.log(state.search.results);
       // console.log(state.search.city);
       // console.log(state.search.results[0].adresse_numero_voie);
       // console.log(adresse);

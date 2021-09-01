@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickBuildMap: () => {
     dispatch(buildMapAction());
-  }
+  },
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm)) ;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm));

@@ -3,7 +3,7 @@ import Settings from 'src/components/Settings';
 import { clickOnButtonCloseSettings, clickOnButtonLogOut } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
-  open: state.user.openSettings
+  open: state.user.openSettings,
 });
   // ajouter le state a utilisé pour le composant '
 
@@ -14,9 +14,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(action);
   },
   onClickLogOut: () => {
-    //console.log('container');
+    // console.log('container');
     const action = clickOnButtonLogOut();
-    dispatch(action)
+    dispatch(action);
   }
 });
   // ajouter la fonction utilisé dans le composant

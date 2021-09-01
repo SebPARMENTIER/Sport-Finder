@@ -18,7 +18,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   onClickModalEditProfil: () => {
-    //console.log('container');
+    // console.log('container');
     const action = clickOnButtonEditProfil();
     dispatch(action);
   },
@@ -31,7 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickModalPrivacyData: () => {
     dispatch(clickOnButtonPrivacyData());
-  }
+  },
 });
   // ajouter la fonction utilisé dans le composant
 
