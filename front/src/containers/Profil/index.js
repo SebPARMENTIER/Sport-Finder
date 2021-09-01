@@ -5,6 +5,7 @@ import {
   clickOnButtonEditPassword,
   clickOnButtonDeleteProfile,
   clickOnButtonPrivacyData,
+  clickOnButtonLogOut,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -31,6 +32,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickModalPrivacyData: () => {
     dispatch(clickOnButtonPrivacyData());
+  },
+  onClickLogOut: () => {
+    // console.log('container');
+    const action = clickOnButtonLogOut();
+    dispatch(action);
   },
 });
   // ajouter la fonction utilisé dans le composant

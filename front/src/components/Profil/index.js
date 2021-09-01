@@ -3,6 +3,7 @@ import ModalEditProfil from 'src/containers/ModalEditProfil';
 import ModalEditPassword from 'src/containers/ModalEditPassword';
 import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
 import ModalPrivacyData from 'src/containers/ModalPrivacyData';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -18,6 +19,7 @@ const Profil = ({
   openDeleteProfile,
   openPrivacyData,
   pseudo,
+  onClickLogOut,
 }) => {
   const handleModalEditProfil = () => {
     // console.log("click");
@@ -32,6 +34,9 @@ const Profil = ({
   };
   const handleModalPrivacyData = () => {
     onClickModalPrivacyData();
+  };
+  const handleLogOut = () => {
+    onClickLogOut();
   };
   return (
     <main className="profil">
@@ -67,7 +72,14 @@ const Profil = ({
           Vie privée et données
         </button>
       </div>
-      <input className="profil__logOut" type="button" value="Déconnexion" />
+      <div className="profil__logOut">
+        <Link
+          to="/"
+          onClick={handleLogOut}
+        >
+          Déconnexion
+        </Link>
+      </div>
       {openEditProfil && <ModalEditProfil />}
       {openEditPassword && <ModalEditPassword />}
       {openDeleteProfile && <ModalDeleteProfile />}
@@ -86,6 +98,7 @@ Profil.propTypes = {
   openDeleteProfile: PropTypes.bool.isRequired,
   openPrivacyData: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
+  onClickLogOut: PropTypes.func.isRequired,
 };
 
 export default Profil;
