@@ -83,6 +83,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: false,
+        rating: 1,
       };
     case UPDATE_REVIEW_ERROR:
       return {
