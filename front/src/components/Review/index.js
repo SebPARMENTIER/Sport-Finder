@@ -29,6 +29,7 @@ const Review = ({
     onClickModalUpdateReview(content);
   };
   const handleModalDeleteReview = () => {
+    getIdValue(id);
     onClickModalDeleteReview();
   };
   let reviewOwner = false;
