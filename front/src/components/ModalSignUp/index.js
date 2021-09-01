@@ -42,7 +42,7 @@ const ModalSignUp = ({
             <div className="modalSignUp__container__form__first">
               <Field
                 name="email"
-                type="text"
+                type="email"
                 className=""
                 placeholder="Email..."
                 onChange={changeField}
