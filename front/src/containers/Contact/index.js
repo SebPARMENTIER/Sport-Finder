@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   firstname: state.contact.firstname,
   email: state.contact.email,
   subject: state.contact.subject,
+  content: state.contact.content,
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
   submitMessage: state.contact.submitMessage,
