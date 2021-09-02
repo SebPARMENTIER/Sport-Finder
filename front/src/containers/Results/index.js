@@ -15,6 +15,7 @@ const mapStateToProps = (state, { history }) => ({
   sport: state.search.sport,
   city: state.search.city,
   isNoResult: state.search.isNoResult,
+  reviewsForAvg: state.review.reviewsForAvg,
 });
 
 const mapDispatchToProps = (dispatch) => ({

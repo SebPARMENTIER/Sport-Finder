@@ -8,7 +8,7 @@ import {
   createSearchCityAction,
   buildMapAction,
 } from 'src/actions/search';
-import { getAllReviewsAction } from 'src/actions/review';
+import { getAllReviewsForAnAssociationAction } from 'src/actions/review';
 
 const mapStateToProps = (state, { history }) => ({
   city: state.search.city,
@@ -32,6 +32,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickBuildMap: () => {
     dispatch(buildMapAction());
+  },
+  handleAverage: () => {
+    dispatch(getAllReviewsForAnAssociationAction());
   },
 });
 

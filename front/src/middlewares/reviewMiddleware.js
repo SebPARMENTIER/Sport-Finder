@@ -6,6 +6,7 @@ import {
   UPDATE_REVIEW,
   DELETE_REVIEW,
   CREATE_REVIEW_AFTER_CREATE_ASSOCIATION,
+  GET_ALL_REVIEWS_FOR_AN_ASSOCIATION,
   createReviewSuccessAction,
   createReviewErrorAction,
   getAllReviewsSuccessAction,
@@ -17,6 +18,7 @@ import {
   createAssociationSuccessAction,
   createReviewAfterCreateAssociation,
   getAllReviewsAction,
+  getAllReviewsForAnAssociationSuccessAction,
 } from 'src/actions/review';
 
 const reviewMiddleware = (store) => (next) => (action) => {
@@ -172,6 +174,24 @@ const reviewMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           store.dispatch(deleteReviewErrorAction());
+        });
+      break;
+    }
+    case GET_ALL_REVIEWS_FOR_AN_ASSOCIATION: {
+      const config = {
+        method: 'get',
+        url: 'https://sportfinder.herokuapp.com/api/v1/association',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      axios(config)
+        .then((response) => {
+          store.dispatch(getAllReviewsForAnAssociationSuccessAction(response.data));
+          console.log('responseDataAllReviewStar', response.data);
+        })
+        .catch((error) => {
+          console.log(error);
         });
       break;
     }

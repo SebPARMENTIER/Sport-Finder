@@ -24,6 +24,8 @@ export const GET_SINGLE_ASSOCIATION_KEY_VALUE = 'GET_SINGLE_ASSOCIATION_KEY_VALU
 export const CREATE_ASSOCIATION_SUCCESS = 'CREATE_ASSOCIATION_SUCCESS';
 export const CREATE_REVIEW_AFTER_CREATE_ASSOCIATION = 'CREATE_REVIEW_AFTER_CREATE_ASSOCIATION';
 export const CLICK_STAR_VALUE = 'CLICK_STAR_VALUE';
+export const GET_ALL_REVIEWS_FOR_AN_ASSOCIATION = 'GET_ALL_REVIEWS_FOR_AN_ASSOCIATION';
+export const GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS = 'GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS';
 
 export const createReviewSetInputValueAction = (newValue, name) => ({
   type: SET_REVIEW_INPUT_VALUE,
@@ -102,5 +104,14 @@ export const createReviewAfterCreateAssociation = () => ({
 
 export const setStarValue = (data) => ({
   type: CLICK_STAR_VALUE,
+  data,
+});
+
+export const getAllReviewsForAnAssociationAction = () => ({
+  type: GET_ALL_REVIEWS_FOR_AN_ASSOCIATION,
+});
+
+export const getAllReviewsForAnAssociationSuccessAction = (data) => ({
+  type: GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS,
   data,
 });

@@ -12,12 +12,14 @@ const SearchForm = ({
   changeField,
   changeSelect,
   handleSearch,
+  handleAverage,
   changeFielCity,
   history,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
+    handleAverage();
     history.push('/results');
   };
   return (
@@ -69,6 +71,7 @@ SearchForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  handleAverage: PropTypes.func.isRequired,
   changeFielCity: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
