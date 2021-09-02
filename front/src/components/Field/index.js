@@ -22,6 +22,7 @@ const Field = ({
   return (
     <div>
       <input
+        required
         className={style}
         // React - state
         value={value}

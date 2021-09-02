@@ -77,6 +77,7 @@ const Results = ({
       // const newResult = newArray.filter((notation) => notation.association_id === newArray.id);
       console.log('sum', sum);
       starArray.push(sum);
+      // console.log('newResult', newResult);
     });
   }
   // tabAssociation.forEach((item) => newArray.push(item.name));
