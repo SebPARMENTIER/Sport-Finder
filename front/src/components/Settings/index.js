@@ -20,10 +20,10 @@ const Settings = ({
   return (
     <div className={classnameSetting}>
       <div
-        className="settings__profil hover-underline-animation"
+        className="settings__profile hover-underline-animation"
       >
         <Link
-          to="/profil"
+          to="/profile"
           onClick={handleCloseSettings}
         >Profil
         </Link>

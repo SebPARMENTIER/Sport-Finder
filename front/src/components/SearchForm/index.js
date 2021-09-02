@@ -73,6 +73,7 @@ SearchForm.propTypes = {
   handleSearch: PropTypes.func.isRequired,
   handleAverage: PropTypes.func.isRequired,
   changeFielCity: PropTypes.func.isRequired,
+  handleAverage: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,

@@ -63,9 +63,10 @@ export const updateReviewErrorAction = () => ({ type: UPDATE_REVIEW_ERROR });
 
 export const clickOnButtonCloseUpdateReview = () => ({ type: CLICK_ON_BUTTON_CLOSE_UPDATE_REVIEW });
 
-export const clickOnButtonUpdateReview = (value) => ({
+export const clickOnButtonUpdateReview = (value1, value2) => ({
   type: CLICK_ON_BUTTON_UPDATE_REVIEW,
-  value,
+  value1,
+  value2,
 });
 
 export const clickOnButtonCloseDeleteReview = () => ({ type: CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW });

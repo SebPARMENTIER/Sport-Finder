@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-case-declarations */
 import axios from 'axios';
 
 import {

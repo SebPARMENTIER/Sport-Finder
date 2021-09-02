@@ -1,8 +1,12 @@
+/* eslint-disable max-len */
 // == Import : npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import StarRatingStatic from 'src/containers/StarRatingStatic';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
+
 import {
   MapContainer,
   TileLayer,
@@ -28,6 +32,8 @@ const Results = ({
   getAllReviews,
   isNoResult,
   onBuildMap,
+  openLogIn,
+  openLogUp,
   reviewsForAvg,
 }) => {
   // console.log('cityCenterLat', cityCenterLat);
@@ -139,23 +145,20 @@ const Results = ({
                 key={result.id}
                 className="results__all__list__single"
               >
-                <p className="results__all__list__single__name">
-                  <Link
-                    to={`/single/${result.id}`}
-                    onClick={handleGetAllReviews}
-                    {...result}
-                  >
-                    {result.titre}
-                  </Link>
-                </p>
-                <p className="results__all__list__single__adress">
-                  {result.adresse_numero_voie}
-                  {result.adresse_repetition}
-                  {result.adresse_type_voie}
-                  {result.adresse_libelle_voie}
-                  {result.adresse_code_postal}
-                  {result.adresse_libelle_commune}
-                </p>
+                <div className="results__all__list__single__text">
+                  <p className="results__all__list__single__text__name">
+                    <Link
+                      to={`/single/${result.id}`}
+                      onClick={handleGetAllReviews}
+                      {...result}
+                    >
+                      {result.titre}
+                    </Link>
+                  </p>
+                  <p className="results__all__list__single__text__adress">
+                    {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
+                  </p>
+                </div>
                 <div className="results__all__list__single__rating">
                   <StarRatingStatic
                     rating={1}
@@ -182,6 +185,8 @@ const Results = ({
           </MapContainer>
         )}
       </div>
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -207,11 +212,13 @@ Results.propTypes = {
   ).isRequired,
   getAllReviews: PropTypes.func.isRequired,
   sport: PropTypes.string.isRequired,
-  city: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
   onBuildMap: PropTypes.func.isRequired,
-  reviewsForAvg: PropTypes.array,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
+  reviewsForAvg: PropTypes.array.isRequired,
 };
 
 export default Results;

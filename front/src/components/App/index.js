@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Header from 'src/containers/Header';
 import Footer from 'src/containers/Footer';
 import Home from 'src/containers/Home';
-import Profil from 'src/containers/Profil';
+import Profile from 'src/containers/Profile';
 import Contact from 'src/containers/Contact';
 import About from 'src/containers/About';
 import Single from 'src/containers/Single';
@@ -15,7 +15,7 @@ import Error from 'src/components/Error';
 import './app.scss';
 
 const App = ({
-  logged,
+  accountExists,
 }) => (
   <div className="app">
     <Header />
@@ -23,8 +23,8 @@ const App = ({
       <Route exact path="/" component={Home} />
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/about" component={About} />
-      {logged && (
-        <Route exact path="/profil" component={Profil} />
+      {accountExists && (
+        <Route exact path="/profile" component={Profile} />
       )}
       <Route exact path="/single/:id" component={Single} />
       <Route exact path="/results" component={Results} />
@@ -35,7 +35,7 @@ const App = ({
 );
 
 App.propTypes = {
-  logged: PropTypes.bool.isRequired,
+  accountExists: PropTypes.bool.isRequired,
 };
 
 // == Export

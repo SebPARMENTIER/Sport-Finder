@@ -7,7 +7,7 @@
   display: flex;  
   flex-direction: column;
   justify-content: center;
-  padding: 4em;
+  padding: 4em; 
 
   &__text,  &__home {
     font-size: v.$gutter*2;

@@ -3,7 +3,7 @@ import axios from 'axios';
 import {
   CREATE_USER,
   SUBMIT_LOGIN,
-  DELETE_PROFIL,
+  DELETE_PROFILE,
   UPDATE_PSEUDO,
   UPDATE_PASSWORD,
   createUserSuccessAction,
@@ -81,7 +81,7 @@ const authMiddleware = (store) => (next) => (action) => {
         });
       break;
     }
-    case DELETE_PROFIL: {
+    case DELETE_PROFILE: {
       const config = {
         method: 'delete',
         url: `https://sportfinder.herokuapp.com/api/v1/user/${state.user.userId}`,

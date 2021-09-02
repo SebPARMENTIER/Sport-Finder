@@ -21,19 +21,19 @@ const Review = ({
   onClickModalUpdateReview,
   onClickModalDeleteReview,
   getIdValue,
-  user_id,
+  idUser,
   userId,
 }) => {
   const handleModalUpdateReview = () => {
     getIdValue(id);
-    onClickModalUpdateReview(content);
+    onClickModalUpdateReview(content, star);
   };
   const handleModalDeleteReview = () => {
     getIdValue(id);
     onClickModalDeleteReview();
   };
   let reviewOwner = false;
-  if (user_id === userId) {
+  if (idUser === userId) {
     reviewOwner = true;
   }
   // console.log('reviewOwner:', reviewOwner);
@@ -70,16 +70,16 @@ const Review = ({
 };
 
 Review.propTypes = {
-  id: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  author: PropTypes.object.isRequired,
   updatedAt: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   star: PropTypes.number.isRequired,
   onClickModalUpdateReview: PropTypes.func.isRequired,
   onClickModalDeleteReview: PropTypes.func.isRequired,
-  getIdValue: PropTypes.number.isRequired,
-  user_id: PropTypes.number.isRequired,
-  userId: PropTypes.number.isRequired,
+  getIdValue: PropTypes.func.isRequired,
+  idUser: PropTypes.number.isRequired,
+  userId: PropTypes.string.isRequired,
 };
 
 export default Review;

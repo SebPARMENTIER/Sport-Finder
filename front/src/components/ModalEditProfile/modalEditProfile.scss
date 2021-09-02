@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.modalEditProfil{
+.modalEditProfile{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +87,7 @@
       }
     }
     @media (min-width: 770px){
-      .modalEditProfil{
+      .modalEditProfile{
         &__container__title{
           font-size: 4em;
         }
