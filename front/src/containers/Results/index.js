@@ -17,6 +17,7 @@ const mapStateToProps = (state, { history }) => ({
   isNoResult: state.search.isNoResult,
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
+  reviewsForAvg: state.review.reviewsForAvg,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -9,6 +9,8 @@ import {
   buildMapAction,
 } from 'src/actions/search';
 
+import { getAllReviewsForAnAssociationAction } from 'src/actions/review';
+
 const mapStateToProps = (state, { history }) => ({
   city: state.search.city,
   sport: state.search.sport,
@@ -31,6 +33,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickBuildMap: () => {
     dispatch(buildMapAction());
+  },
+  handleAverage: () => {
+    dispatch(getAllReviewsForAnAssociationAction());
   },
 });
 

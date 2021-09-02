@@ -19,6 +19,7 @@ import {
   GET_SINGLE_ASSOCIATION_KEY_VALUE,
   CREATE_ASSOCIATION_SUCCESS,
   CLICK_STAR_VALUE,
+  GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS,
 } from 'src/actions/review';
 
 export const initialState = {
@@ -36,6 +37,7 @@ export const initialState = {
   singleAssociationName: '',
   associationId: '',
   rating: 1,
+  reviewsForAvg: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -148,6 +150,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         rating: action.data,
+      };
+    case GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS:
+      return {
+        ...state,
+        reviewsForAvg: action.data,
       };
     default:
       return state;

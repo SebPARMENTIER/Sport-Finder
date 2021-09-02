@@ -101,7 +101,7 @@ const Single = ({
             </div> 
             <div className="single__infos__content__association__properties">
               <div className="single__infos__content__association__properties__Name"><p>Site web:</p></div>
-              <div className="single__infos__content__association__properties__value"><p>{result.site_web ? result.site_web : '-'}</p></div>
+              <div className="single__infos__content__association__properties__value"><a href={result.site_web} target="_blank" rel="noreferrer">{result.site_web ? result.site_web : '-'}</a></div>
             </div> 
             <div className="single__infos__content__association__properties">
               <div className="single__infos__content__association__properties__Name"><p>Description:</p></div>
