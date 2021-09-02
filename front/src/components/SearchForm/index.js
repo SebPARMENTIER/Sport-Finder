@@ -70,6 +70,7 @@ SearchForm.propTypes = {
   changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
   changeFielCity: PropTypes.func.isRequired,
+  searchError: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,

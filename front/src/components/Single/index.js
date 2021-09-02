@@ -92,18 +92,20 @@ const Single = ({
           </div>
         </div>
         <div className="single__infos__content">
-          <p className="single__infos__content__name">{result.titre}</p>
-          <p className="single__infos__content__desc">Pour toute demande de renseignements complémentaires, n'hésitez pas à visiter le site web de l'association sportive ou rapprochez vous de la maire de <span className="single__infos__content__desc__city">{result.adresse_libelle_commune}</span>.</p>
+          <div className="single__infos__content__name">{result.titre}</div>
+          <div className="single__infos__content__desc">Pour toute demande de renseignements complémentaires, n'hésitez pas à visiter le site web de l'association sportive ou rapprochez vous de la maire de <span className="single__infos__content__desc__city">{result.adresse_libelle_commune}</span>.</div>
           <div className="single__infos__content__association">
             <div className="single__infos__content__association__properties">
-              <p className="single__infos__content__association__properties__adress">Adresse postale:</p>
-              <p className="single__infos__content__association__properties__web">Site web:</p>
-              <p className="single__infos__content__association__properties__object">Description:</p>
-            </div>
-            <div className="single__infos__content__association__values">
-              <p className="single__infos__content__association__values__adress">{result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}</p>
-              <p className="single__infos__content__association__values__web"> {result.site_web ? result.site_web : '-'}</p>
-              <p className="single__infos__content__association__values__object">{result.objet}</p>
+              <div className="single__infos__content__association__properties__Name"><p>Adresse postale:</p></div>
+              <div className="single__infos__content__association__properties__value"><p>{result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}</p></div>
+            </div> 
+            <div className="single__infos__content__association__properties">
+              <div className="single__infos__content__association__properties__Name"><p>Site web:</p></div>
+              <div className="single__infos__content__association__properties__value"><p>{result.site_web ? result.site_web : '-'}</p></div>
+            </div> 
+            <div className="single__infos__content__association__properties">
+              <div className="single__infos__content__association__properties__Name"><p>Description:</p></div>
+              <div className="single__infos__content__association__properties__value"><p>{result.objet}</p></div>
             </div>
           </div>
         </div>

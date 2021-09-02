@@ -26,12 +26,25 @@
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
     } 
   }
-  @media (max-width: 760px){
-    .banner__picture{
-      height: v.$gutter*5;
-    }
-    .banner__picture__title{
-      font-size: 3em;
+  @media (max-width: 770px){
+    .banner{
+      visibility: hidden;
+      height: 0px;
+      &__picture{
+        height: 0px;
+        visibility: hidden;
+      }
     }
   }
+  @media (max-width: 426px){
+    .banner{
+      visibility: hidden;
+      height: 0px;
+      &__picture{
+        height: 0px;
+        visibility: hidden;
+      }
+    }
+  }
+
 }

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // == Import : npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -88,23 +89,20 @@ const Results = ({
                 key={result.id}
                 className="results__all__list__single"
               >
-                <p className="results__all__list__single__name">
-                  <Link
-                    to={`/single/${result.id}`}
-                    onClick={handleGetAllReviews}
-                    {...result}
-                  >
-                    {result.titre}
-                  </Link>
-                </p>
-                <p className="results__all__list__single__adress">
-                  {result.adresse_numero_voie}
-                  {result.adresse_repetition}
-                  {result.adresse_type_voie}
-                  {result.adresse_libelle_voie}
-                  {result.adresse_code_postal}
-                  {result.adresse_libelle_commune}
-                </p>
+                <div className="results__all__list__single__text">
+                  <p className="results__all__list__single__text__name">
+                    <Link
+                      to={`/single/${result.id}`}
+                      onClick={handleGetAllReviews}
+                      {...result}
+                    >
+                      {result.titre}
+                    </Link>
+                  </p>
+                  <p className="results__all__list__single__text__adress">
+                    {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
+                  </p>
+                </div>
                 <div className="results__all__list__single__rating">
                   <StarRatingStatic
                     rating={1}

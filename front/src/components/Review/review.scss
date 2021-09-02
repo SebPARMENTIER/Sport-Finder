@@ -63,3 +63,74 @@
 span {
   font-weight: bold;
 }
+
+@media (max-width: 770px){
+  .review {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: v.$gutter;
+    margin-bottom: v.$gutter;
+    display: flex;
+    flex-direction: column;
+  
+    &__block1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  
+      &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+  
+        &__from {
+          font-size: 1em;
+          margin-bottom: 1em;
+        }
+  
+        &__date {
+          font-style: italic;
+          font-size: v.$gutter*0.8;
+          color: grey;
+          text-align: left;
+        }
+      }
+
+      &__rating{
+        width: 50%;
+      }
+    }
+  
+    &__block2 {
+      display: flex;
+      justify-content: space-between;
+      padding: v.$gutter 0;
+  
+      &__content {
+        width: 70%;
+        padding-top: v.$gutter;
+        text-align: justify;
+      }
+  
+      &__change {
+        display: flex;
+        flex-direction: row;
+        font-size: v.$gutter*1.5;
+  
+        &__update {
+          padding: v.$gutter v.$gutter*1.5 v.$gutter 0;
+        }
+  
+        &__delete {
+          padding: v.$gutter v.$gutter*0.5 v.$gutter 0;
+        }
+      }
+    }
+  }
+  
+  span {
+    font-weight: bold;
+  }
+}
