@@ -77,9 +77,12 @@ const Results = ({
       // const newResult = newArray.filter((notation) => notation.association_id === newArray.id);
       console.log('sum', sum);
       starArray.push(sum);
+      // starArray.filter((notation) => notation == starArray.indexOf(Math.max(...starArray)));
       // console.log('newResult', newResult);
     });
   }
+  const newStarArray = (Math.max(...starArray));
+  // const newStarArray = starArray.indexOf(Math.max(...starArray));
   // tabAssociation.forEach((item) => newArray.push(item.name));
   // tabAssociation.map((tab) => tab.map((elem) => {
   //   newArray.push(elem.reviews);
@@ -95,6 +98,7 @@ const Results = ({
   
    console.log('newArray', newArray);
   console.log('starArray', starArray);
+  console.log('newStarArray', newStarArray);
   const handleGetAllReviews = () => {
     getAllReviews();
   };
