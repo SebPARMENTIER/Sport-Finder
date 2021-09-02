@@ -188,7 +188,6 @@ const reviewMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(getAllReviewsForAnAssociationSuccessAction(response.data));
-          console.log('responseDataAllReviewStar', response.data);
         })
         .catch((error) => {
           console.log(error);

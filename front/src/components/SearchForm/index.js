@@ -50,7 +50,7 @@ const SearchForm = ({
           name="city"
           type="text"
           className=""
-          placeholder="Votre ville..."
+          placeholder="Numéro de département..."
           value={city}
           onChange={changeFielCity}
         />

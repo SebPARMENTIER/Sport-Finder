@@ -63,7 +63,7 @@ const Single = ({
             </div>
             <div className="single__infos__content__association__values">
               <p className="single__infos__content__association__values__adress">{result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}</p>
-              <p className="single__infos__content__association__values__web"> {result.site_web ? result.site_web : '-'}</p>
+              <a href={result.site_web} target="_blank" className="single__infos__content__association__values__web"> {result.site_web ? result.site_web : '-'}</a>
               <p className="single__infos__content__association__values__object">{result.objet}</p>
             </div>
           </div>
