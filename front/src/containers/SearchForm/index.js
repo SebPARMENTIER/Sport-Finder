@@ -9,17 +9,14 @@ import {
   buildMapAction,
 } from 'src/actions/search';
 
+import { getAllReviewsForAnAssociationAction } from 'src/actions/review';
+
 const mapStateToProps = (state, { history }) => ({
   city: state.search.city,
   sport: state.search.sport,
   results: state.search.results,
   history: history,
-<<<<<<< HEAD
-})
-;
-=======
 });
->>>>>>> giovanni
 
 const mapDispatchToProps = (dispatch) => ({
   changeSelect: (newValue) => {
@@ -36,6 +33,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickBuildMap: () => {
     dispatch(buildMapAction());
+  },
+  handleAverage: () => {
+    dispatch(getAllReviewsForAnAssociationAction());
   },
 });
 

@@ -1,8 +1,12 @@
+/* eslint-disable max-len */
 // == Import : npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import StarRatingStatic from 'src/containers/StarRatingStatic';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
+
 import {
   MapContainer,
   TileLayer,
@@ -28,6 +32,9 @@ const Results = ({
   getAllReviews,
   isNoResult,
   onBuildMap,
+  openLogIn,
+  openLogUp,
+  reviewsForAvg,
 }) => {
   // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
@@ -42,6 +49,58 @@ const Results = ({
       </Popup>
     </Marker>
   ));
+
+  // const associationsFiltered = reviewsForAvg.filter(reviewForAvg => reviewForAvg.includes(results.id));
+  // console.log('associationsFiltered', associationsFiltered);
+  let tabAssociation = [];
+  // let sum = 0;
+  // reviewsForAvg.map((reviewForAvg) => {
+  //   reviewForAvg.reviews.map((forAvg) => {
+  //     tabAssociation.push(forAvg.star);
+  //   });
+  // });
+  for (let i = 0; i < results.length; i++) {
+    const result = reviewsForAvg.filter((reviewForAvg) => reviewForAvg.key_association == results[i].id);
+    // tabAssociation[i] = reviewsForAvg[i].reviews;
+    if (result.length > 0) {
+      tabAssociation.push(result);
+    }
+  }
+  console.log('tabAssociation', tabAssociation);
+  let newArray = [];
+
+  // let sum = 0;
+  tabAssociation.map((tab) => {
+    tab.forEach((item) => {
+      newArray.push({ id: item.id, name: item.name, reviews: item.reviews });
+    });
+  });
+  const starArray = [];
+  for (let index = 0; index < newArray.length; index++) {
+    let sum = 0;
+    newArray[index].reviews.map((starElem) => {
+      // let sum = 0;
+      sum += starElem.star;
+      // const newResult = newArray.filter((notation) => notation.association_id === newArray.id);
+      console.log('sum', sum);
+      starArray.push(sum);
+    });
+  }
+  // tabAssociation.forEach((item) => newArray.push(item.name));
+  // tabAssociation.map((tab) => tab.map((elem) => {
+  //   newArray.push(elem.reviews);
+  //   newArray.map((newStar) => newStar.map((item) => {
+  //     sum += item.star;
+  //     starArray.push(sum);
+  //   }));
+  // }));
+  /* for (let index =0; index < tabAssociation.length; index++) {
+    newArray[index] = tabAssociation[index];
+    console.log('tab', newArray);
+  } */
+
+  console.log('newArray', newArray);
+  console.log('starArray', starArray);
 
   const handleGetAllReviews = () => {
     getAllReviews();
@@ -83,23 +142,20 @@ const Results = ({
                 key={result.id}
                 className="results__all__list__single"
               >
-                <p className="results__all__list__single__name">
-                  <Link
-                    to={`/single/${result.id}`}
-                    onClick={handleGetAllReviews}
-                    {...result}
-                  >
-                    {result.titre}
-                  </Link>
-                </p>
-                <p className="results__all__list__single__adress">
-                  {result.adresse_numero_voie}
-                  {result.adresse_repetition}
-                  {result.adresse_type_voie}
-                  {result.adresse_libelle_voie}
-                  {result.adresse_code_postal}
-                  {result.adresse_libelle_commune}
-                </p>
+                <div className="results__all__list__single__text">
+                  <p className="results__all__list__single__text__name">
+                    <Link
+                      to={`/single/${result.id}`}
+                      onClick={handleGetAllReviews}
+                      {...result}
+                    >
+                      {result.titre}
+                    </Link>
+                  </p>
+                  <p className="results__all__list__single__text__adress">
+                    {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
+                  </p>
+                </div>
                 <div className="results__all__list__single__rating">
                   <StarRatingStatic
                     rating={1}
@@ -126,6 +182,8 @@ const Results = ({
           </MapContainer>
         )}
       </div>
+      { openLogIn && <ModalSignIn />}
+      { openLogUp && <ModalSignUp />}
     </div>
   );
 };
@@ -151,10 +209,13 @@ Results.propTypes = {
   ).isRequired,
   getAllReviews: PropTypes.func.isRequired,
   sport: PropTypes.string.isRequired,
-  city: PropTypes.number.isRequired,
+  city: PropTypes.string.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
   isNoResult: PropTypes.bool.isRequired,
   onBuildMap: PropTypes.func.isRequired,
+  openLogIn: PropTypes.bool.isRequired,
+  openLogUp: PropTypes.bool.isRequired,
+  reviewsForAvg: PropTypes.array.isRequired,
 };
 
 export default Results;

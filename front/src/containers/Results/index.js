@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 import Results from 'src/components/Results';
 
 import { getAllReviewsAction } from 'src/actions/review';
-import { clickOnNewSearch, buildMapAction} from 'src/actions/search';
+import { clickOnNewSearch, buildMapAction } from 'src/actions/search';
 
 const mapStateToProps = (state, { history }) => ({
   results: state.search.results,
@@ -12,12 +12,13 @@ const mapStateToProps = (state, { history }) => ({
   cityCenterLng: state.search.cityCenterLng,
   buildMap: state.search.buildMap,
   markers: state.search.markers,
-<<<<<<< HEAD
-=======
   sport: state.search.sport,
   city: state.search.city,
   isNoResult: state.search.isNoResult,
->>>>>>> giovanni
+  openLogIn: state.user.openLogIn,
+  openLogUp: state.user.openLogUp,
+  reviewsForAvg: state.review.reviewsForAvg,
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -24,10 +24,6 @@ export default function ModalPrivacyData({ onClickClosePrivacyData }) {
           <h2 className="modalPrivacyData__modal__container__h2">
             Privacy Policy
           </h2>
-<<<<<<< HEAD
-
-=======
->>>>>>> giovanni
           <p className="modalPrivacyData__modal__container__text">
             Your privacy is important to us. It is Sport Finder's policy to
             respect your privacy and comply with any applicable law and

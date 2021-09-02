@@ -19,6 +19,7 @@ import {
   GET_SINGLE_ASSOCIATION_KEY_VALUE,
   CREATE_ASSOCIATION_SUCCESS,
   CLICK_STAR_VALUE,
+  GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS,
 } from 'src/actions/review';
 
 export const initialState = {
@@ -35,7 +36,8 @@ export const initialState = {
   isDeleteReviewError: false,
   singleAssociationName: '',
   associationId: '',
-  rating: 0,
+  rating: 1,
+  reviewsForAvg: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -50,6 +52,8 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         reviewId: action.data.id,
         openAddReview: false,
+        rating: 1,
+        reviewContent: '',
       };
     case CREATE_REVIEW_ERROR:
       return {
@@ -81,6 +85,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: false,
+        rating: 1,
       };
     case UPDATE_REVIEW_ERROR:
       return {
@@ -97,7 +102,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openUpdateReview: !state.openUpdateReview,
-        newReviewContent: action.value,
+        newReviewContent: action.value1,
+        rating: action.value2,
       };
     case CLICK_ON_BUTTON_CLOSE_DELETE_REVIEW:
       return {
@@ -144,6 +150,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         rating: action.data,
+      };
+    case GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS:
+      return {
+        ...state,
+        reviewsForAvg: action.data,
       };
     default:
       return state;

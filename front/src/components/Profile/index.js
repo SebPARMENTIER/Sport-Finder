@@ -1,74 +1,91 @@
 import React from 'react';
-import ModalEditProfil from 'src/containers/ModalEditProfil';
+import ModalEditProfile from 'src/containers/ModalEditProfile';
 import ModalEditPassword from 'src/containers/ModalEditPassword';
 import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
 import ModalPrivacyData from 'src/containers/ModalPrivacyData';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
-import './profil.scss';
+import './profile.scss';
 
-const Profil = ({
-  onClickModalEditProfil,
+const Profile = ({
+  onClickModalEditProfile,
   onClickModalEditPassword,
   onClickModalDeleteProfile,
   onClickModalPrivacyData,
-  openEditProfil,
+  openEditProfile,
   openEditPassword,
   openDeleteProfile,
   openPrivacyData,
   pseudo,
+  onClickLogOut,
+  onClickCloseSettings,
 }) => {
-  const handleModalEditProfil = () => {
+  const handleModalEditProfile = () => {
     // console.log("click");
-    onClickModalEditProfil();
+    onClickModalEditProfile();
+    onClickCloseSettings();
   };
   const handleModalDeleteProfile = () => {
     onClickModalDeleteProfile();
+    onClickCloseSettings();
   };
   const handleModalEditPassword = () => {
     // console.log('click');
     onClickModalEditPassword();
+    onClickCloseSettings();
   };
   const handleModalPrivacyData = () => {
     onClickModalPrivacyData();
+    onClickCloseSettings();
+  };
+  const handleLogOut = () => {
+    onClickLogOut();
   };
   return (
-    <main className="profil">
-      <h1 className="profil__title">Information profil</h1>
-      <h2 className="profil__name">{pseudo}</h2>
-      <div className="profil__button">
+    <main className="profile">
+      <h1 className="profile__title">Information profil</h1>
+      <h2 className="profile__name">{pseudo}</h2>
+      <div className="profile__button">
         <button
-          className="profil__button__edit"
+          className="profile__button__edit"
           type="button"
-          onClick={handleModalEditProfil}
+          onClick={handleModalEditProfile}
         >
           Modifier votre profil
         </button>
         <button
-          className="profil__button__edit"
+          className="profile__button__edit"
           type="button"
           onClick={handleModalEditPassword}
         >
           Modifier mot de passe
         </button>
         <button
-          className="profil__button__edit"
+          className="profile__button__edit"
           type="button"
           onClick={handleModalDeleteProfile}
         >
           Supprimer votre compte
         </button>
         <button
-          className="profil__button__edit"
+          className="profile__button__edit"
           type="button"
           onClick={handleModalPrivacyData}
         >
           Vie privée et données
         </button>
       </div>
-      <input className="profil__logOut" type="button" value="Déconnexion" />
-      {openEditProfil && <ModalEditProfil />}
+      <div className="profile__logOut">
+        <Link
+          to="/"
+          onClick={handleLogOut}
+        >
+          Déconnexion
+        </Link>
+      </div>
+      {openEditProfile && <ModalEditProfile />}
       {openEditPassword && <ModalEditPassword />}
       {openDeleteProfile && <ModalDeleteProfile />}
       {openPrivacyData && <ModalPrivacyData />}
@@ -76,16 +93,18 @@ const Profil = ({
   );
 };
 
-Profil.propTypes = {
-  onClickModalEditProfil: PropTypes.func.isRequired,
+Profile.propTypes = {
+  onClickModalEditProfile: PropTypes.func.isRequired,
   onClickModalEditPassword: PropTypes.func.isRequired,
   onClickModalDeleteProfile: PropTypes.func.isRequired,
   onClickModalPrivacyData: PropTypes.func.isRequired,
-  openEditProfil: PropTypes.bool.isRequired,
+  openEditProfile: PropTypes.bool.isRequired,
   openEditPassword: PropTypes.bool.isRequired,
   openDeleteProfile: PropTypes.bool.isRequired,
   openPrivacyData: PropTypes.bool.isRequired,
   pseudo: PropTypes.string.isRequired,
+  onClickLogOut: PropTypes.func.isRequired,
+  onClickCloseSettings: PropTypes.func.isRequired,
 };
 
-export default Profil;
+export default Profile;

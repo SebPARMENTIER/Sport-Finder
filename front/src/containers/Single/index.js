@@ -2,13 +2,16 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Single from 'src/components/Single';
 
-
 import { findSingle } from 'src/selectors/single';
 import {
   clickOnButtonAddReview,
   singleAssociationNameValue,
   singleAssociationKey,
 } from 'src/actions/review';
+
+import {
+  clickOnButtonCloseSettings,
+} from 'src/actions/user';
 
 const mapStateToProps = (state, { match, history }) => {
   // console.log('match', match);
@@ -38,6 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getSingleAssociationKey: (value) => {
     dispatch(singleAssociationKey(value));
+  },
+  onClickCloseSettings: () => {
+    // console.log('container');
+    const action = clickOnButtonCloseSettings();
+    dispatch(action);
   },
 });
 

@@ -58,11 +58,16 @@
       margin: v.$gutter;
     }
   }
-  @media (max-width: 400px) {
+  @media (max-width: 426px) {
     
-    .home__picture__title{
-      font-size: 3em;
+    .home__picture{
+      height: 350px;
+      &__title{
+        font-size: 3em;
+      }
     }
+
+    
     .home__slogan{
       font-size: 1em;
       margin: v.$gutter*2;

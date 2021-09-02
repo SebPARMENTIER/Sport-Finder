@@ -17,13 +17,10 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('container');
     const action = clickOnButtonLogOut();
     dispatch(action);
-<<<<<<< HEAD
   },
-=======
-  }
->>>>>>> giovanni
 });
-  // ajouter la fonction utilisé dans le composant
+
+// ajouter la fonction utilisé dans le composant
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Settings);
 

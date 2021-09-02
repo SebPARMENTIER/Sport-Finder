@@ -55,38 +55,22 @@
 
       &__association {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
 
         &__properties {
-          padding-right: v.$gutter;
+          display: flex;
+            flex-direction: row;
+            font-size: 1em;
+            width: 100%;
 
-          &__adress {
+
+          &__Name {
             padding-bottom: v.$gutter;
-            width: 8em;
+            width: 20%;
           }
 
-          &__web {
+          &__value {
             padding-bottom: v.$gutter;
-          }
-
-          &__object {
-            padding-bottom: v.$gutter 
-          }
-        }
-
-        &__values {
-          
-          &__adress {
-            padding-bottom: v.$gutter;
-          }
-
-          &__web {
-            padding-bottom: v.$gutter;
-          }
-
-          &__object {
-            padding-bottom: v.$gutter;
-            text-align: justify;
           }
         }
       }
@@ -123,7 +107,7 @@
   &__reviews {
     display: flex;
     flex-direction: column;
-    height: v.$gutter*12;
+    height: v.$gutter*18;
     overflow-y: auto;
     padding-right: v.$gutter*0.5;
 
@@ -139,7 +123,125 @@
     &::-webkit-scrollbar-thumb {
       background-color: v.$text-color;
       border-radius: 5px;
+    } 
+  }
+  
+  &__declare {
+      color: v.$text-color;
+      text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+      text-align: center;
+      padding-bottom: v.$gutter;
     }
+  .click {
+    font-style: italic;
+    color: blue;
+  }
+  
+}
+@media (max-width: 770px){
+  .single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+    padding: v.$gutter*5 0 v.$gutter*2 0;
+    margin: 0 auto;
+  
+    &__infos {
+  
+      &__header {
+  
+        &__picture {
+          width: 100%;
+          height: v.$gutter*5;
+          display: flex;
+          background-size: cover;
+          background-position: center;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      
+          &__title {
+            font-family: 'Anton';
+            font-size: 3em;
+            color: v.$text-color;
+            text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+          }
+        }
+      }
+  
+      &__content {
+        background-color: white;
+        padding: v.$gutter;
+        font-size: v.$gutter;
+  
+        &__name{
+          text-align: center;
+          font-weight: bold;
+          font-size: 1em;
+          padding-bottom: v.$gutter;
+        }
+  
+        &__desc {
+          text-align: center;
+          padding-bottom: v.$gutter;
+          font-size: 0.9em;
+          &__city {
+            font-weight: bold;
+          }
+        }
+  
+        &__association {
+          display: flex;
+            flex-direction: column;
+  
+          &__properties {
+            display: flex;
+            flex-direction: row;
+            font-size: 0.9em;
+            width: 100%;
+            padding-right: 0;
+  
+            &__Name {
+              padding-bottom: v.$gutter;
+              width: 25%;
+            }
+  
+            &__value {
+              padding-bottom: v.$gutter;
+              margin-left: 0.5em;
+            }
+          }
+        }
+      }
+    }
+    &__buttons {
+      display: flex;
+      justify-content: center;
+
+      &__addReview {
+        width: 50%;
+        padding: v.$gutter*0.5 v.$gutter*0.5;      
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: v.$gutter;
+      }
+
+      &__back {
+        width: 50%;
+        padding: v.$gutter*0.5 v.$gutter*0.5;
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: v.$gutter;
+      }
+    } 
   }
   
 }

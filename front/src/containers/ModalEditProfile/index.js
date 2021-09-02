@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import ModalEditProfil from 'src/components/ModalEditProfil';
+import ModalEditProfile from 'src/components/ModalEditProfile';
 import {
   updatePseudoSetInputValueAction,
-  clickOnButtonCloseEditProfil,
+  clickOnButtonCloseEditProfile,
   updatePseudoAction,
 } from 'src/actions/user';
 
@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => ({
   changeField: (newValue, name) => {
     dispatch(updatePseudoSetInputValueAction(newValue, name));
   },
-  onClickCloseEditProfil: () => {
+  onClickCloseEditProfile: () => {
     // console.log('in the container Header');
-    const action = clickOnButtonCloseEditProfil();
+    const action = clickOnButtonCloseEditProfile();
     dispatch(action);
   },
   handleUpdatePseudo: () => {
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
   // ajouter la fonction utilisé dans le composant
 
-const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(ModalEditProfil);
+const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(ModalEditProfile);
 
 // on exporte le composant connecté
 // => ne pas oublier de l'utiliser à la place du stateless component

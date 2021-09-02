@@ -12,6 +12,7 @@ import { clickOnNewSearch } from 'src/actions/search';
 const mapStateToProps = (state) => ({
   isLogged: state.user.logged,
   pseudo: state.user.pseudo,
+  openSettings: state.user.openSettings,
 });
 // ajouter le state a utilisé pour le composant '
 

@@ -8,11 +8,16 @@ import {
   closeMessageSuccess,
 } from 'src/actions/contact';
 
+import {
+  clickOnButtonCloseSettings,
+} from 'src/actions/user';
+
 const mapStateToProps = (state) => ({
   lastname: state.contact.lastname,
   firstname: state.contact.firstname,
   email: state.contact.email,
   subject: state.contact.subject,
+  content: state.contact.content,
   openLogIn: state.user.openLogIn,
   openLogUp: state.user.openLogUp,
   submitMessage: state.contact.submitMessage,
@@ -33,6 +38,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickMessageSuccess: () => {
     dispatch(closeMessageSuccess());
+  },
+  onClickCloseSettings: () => {
+    // console.log('container');
+    const action = clickOnButtonCloseSettings();
+    dispatch(action);
   },
 });
 

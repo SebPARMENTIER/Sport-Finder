@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import Profil from 'src/components/Profil';
+import Profile from 'src/components/Profile';
 import {
-  clickOnButtonEditProfil,
+  clickOnButtonEditProfile,
   clickOnButtonEditPassword,
   clickOnButtonDeleteProfile,
   clickOnButtonPrivacyData,
+  clickOnButtonLogOut,
+  clickOnButtonCloseSettings,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
-  openEditProfil: state.user.openEditProfil,
+  openEditProfile: state.user.openEditProfile,
   openEditPassword: state.user.openEditPassword,
   openDeleteProfile: state.user.openDeleteProfile,
   openPrivacyData: state.user.openPrivacyData,
@@ -17,9 +19,9 @@ const mapStateToProps = (state) => ({
   // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({
-  onClickModalEditProfil: () => {
+  onClickModalEditProfile: () => {
     // console.log('container');
-    const action = clickOnButtonEditProfil();
+    const action = clickOnButtonEditProfile();
     dispatch(action);
   },
   onClickModalEditPassword: () => {
@@ -32,10 +34,20 @@ const mapDispatchToProps = (dispatch) => ({
   onClickModalPrivacyData: () => {
     dispatch(clickOnButtonPrivacyData());
   },
+  onClickLogOut: () => {
+    // console.log('container');
+    const action = clickOnButtonLogOut();
+    dispatch(action);
+  },
+  onClickCloseSettings: () => {
+    // console.log('container');
+    const action = clickOnButtonCloseSettings();
+    dispatch(action);
+  },
 });
   // ajouter la fonction utilisé dans le composant
 
-const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Profil);
+const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Profile);
 
 // on exporte le composant connecté
 // => ne pas oublier de l'utiliser à la place du stateless component

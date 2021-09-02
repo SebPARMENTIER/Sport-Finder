@@ -10,6 +10,8 @@ import {
   CLICK_ON_NEW_SEARCH,
 } from 'src/actions/search';
 
+import { CLICK_ON_BUTTON_LOG_OUT } from 'src/actions/user';
+
 export const initialState = {
   city: '',
   sport: '',
@@ -74,6 +76,12 @@ const reducer = (state = initialState, action = {}) => {
         cityCenterLng: '',
         isNoResult: false,
         buildMap: false,
+      };
+    case CLICK_ON_BUTTON_LOG_OUT:
+      return {
+        ...state,
+        sport: '',
+        city: '',
       };
     default:
       return state;
