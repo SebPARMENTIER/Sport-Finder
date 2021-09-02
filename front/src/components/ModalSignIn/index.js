@@ -42,7 +42,7 @@ const ModalSignin = ({
             <Field
               name="email"
               className="modalSignIn__container__form__input__field"
-              type="text"
+              type="email"
               placeholder="Email..."
               onChange={changeField}
               value={email}

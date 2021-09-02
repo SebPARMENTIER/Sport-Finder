@@ -4,10 +4,10 @@ import Field from 'src/components/Field';
 
 import PropTypes from 'prop-types';
 
-import './modalEditProfil.scss';
+import './modalEditProfile.scss';
 
-const ModalEditProfil = ({
-  onClickCloseEditProfil,
+const ModalEditProfile = ({
+  onClickCloseEditProfile,
   password,
   newPseudo,
   changeField,
@@ -15,39 +15,39 @@ const ModalEditProfil = ({
   isUpdatePseudoSuccess,
   isUpdatePseudoError,
 }) => {
-  const handleOnClickCloseEditProfil = () => {
+  const handleOnClickCloseEditProfile = () => {
     // console.log('click');
-    onClickCloseEditProfil();
+    onClickCloseEditProfile();
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     handleUpdatePseudo();
   };
   return (
-    <div className="modalEditProfil">
-      <div className="modalEditProfil__container">
+    <div className="modalEditProfile">
+      <div className="modalEditProfile__container">
         <button
           type="submit"
           className="modalSignIn__container__close"
-          onClick={handleOnClickCloseEditProfil}
+          onClick={handleOnClickCloseEditProfile}
         >
           <IoIosCloseCircleOutline className="modalSignIn__container__close__circle" />
         </button>
-        <h1 className="modalEditProfil__container__title">
-          Modifier votre profil
+        <h1 className="modalEditProfile__container__title">
+          Modifier votre profile
         </h1>
         <form
-          className="modalEditProfil__container__form"
+          className="modalEditProfile__container__form"
           onSubmit={handleSubmit}
         >
           {!isUpdatePseudoSuccess && (
-            <div className="modalEditProfil__container__form__edit">
-              <p className="modalEditProfil__container__form__edit__text">
+            <div className="modalEditProfile__container__form__edit">
+              <p className="modalEditProfile__container__form__edit__text">
                 Modifier votre pseudo
               </p>
               <Field
                 name="newPseudo"
-                className="modalEditProfil__container__form__edit__input"
+                className="modalEditProfile__container__form__edit__input"
                 type="text"
                 placeholder="Nouveau pseudo..."
                 onChange={changeField}
@@ -56,13 +56,13 @@ const ModalEditProfil = ({
             </div>
           )}
           {!isUpdatePseudoSuccess && (
-            <div className="modalEditProfil__container__form__edit">
-              <p className="modalEditProfil__container__form__edit__text">
+            <div className="modalEditProfile__container__form__edit">
+              <p className="modalEditProfile__container__form__edit__text">
                 Validation avec mot de passe
               </p>
               <Field
                 name="password"
-                className="modalEditProfil__container__form__edit__input"
+                className="modalEditProfile__container__form__edit__input"
                 type="password"
                 placeholder="Mot de passe..."
                 onChange={changeField}
@@ -71,20 +71,20 @@ const ModalEditProfil = ({
             </div>
           )}
           {isUpdatePseudoSuccess && (
-            <p className="modalEditProfil__container__form__success">
+            <p className="modalEditProfile__container__form__success">
               Pseudo modifié avec succès.
             </p>
           )}
           {isUpdatePseudoError && (
-            <p className="modalEditProfil__container__form__error">
+            <p className="modalEditProfile__container__form__error">
               Pseudo déjà existant ou mot de passe erroné.
             </p>
           )}
           {isUpdatePseudoSuccess && (
             <button
               type="submit"
-              className="modalEditProfil__container__form__button"
-              onClick={handleOnClickCloseEditProfil}
+              className="modalEditProfile__container__form__button"
+              onClick={handleOnClickCloseEditProfile}
             >
               Ok
             </button>
@@ -92,7 +92,7 @@ const ModalEditProfil = ({
           {!isUpdatePseudoSuccess && (
             <button
               type="submit"
-              className="modalEditProfil__container__form__button"
+              className="modalEditProfile__container__form__button"
             >
               Valider
             </button>
@@ -103,8 +103,8 @@ const ModalEditProfil = ({
   );
 };
 
-ModalEditProfil.propTypes = {
-  onClickCloseEditProfil: PropTypes.func.isRequired,
+ModalEditProfile.propTypes = {
+  onClickCloseEditProfile: PropTypes.func.isRequired,
   password: PropTypes.string.isRequired,
   newPseudo: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
@@ -113,4 +113,4 @@ ModalEditProfil.propTypes = {
   isUpdatePseudoError: PropTypes.bool.isRequired,
 };
 
-export default ModalEditProfil;
+export default ModalEditProfile;

@@ -42,7 +42,7 @@ const ModalSignUp = ({
             <div className="modalSignUp__container__form__first">
               <Field
                 name="email"
-                type="text"
+                type="email"
                 className=""
                 placeholder="Email..."
                 onChange={changeField}
@@ -77,6 +77,11 @@ const ModalSignUp = ({
                 value={passwordConfirm}
               />
             </div>
+          )}
+          { !isCreateUserSuccess && (
+            <p className="modalSignUp__container__form__third">
+              Votre mot de passe doit contenir au minimum 8 caractères.
+            </p>
           )}
           {isCreateUserSuccess && <p className="modalSignUp__container__form__success">Compte crée avec succès, veuillez vous connecter</p>}
           {passwordError && <p className="modalSignUp__container__form__error">Mot de passe non identique.</p>}

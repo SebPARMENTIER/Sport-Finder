@@ -9,6 +9,10 @@ import {
   singleAssociationKey,
 } from 'src/actions/review';
 
+import {
+  clickOnButtonCloseSettings,
+} from 'src/actions/user';
+
 const mapStateToProps = (state, { match, history }) => {
   // console.log('match', match);
   // console.log('state', state.search.results);
@@ -37,6 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getSingleAssociationKey: (value) => {
     dispatch(singleAssociationKey(value));
+  },
+  onClickCloseSettings: () => {
+    // console.log('container');
+    const action = clickOnButtonCloseSettings();
+    dispatch(action);
   },
 });
 

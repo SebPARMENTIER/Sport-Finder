@@ -103,6 +103,12 @@
           margin-bottom: v.$gutter;
         }  
       }
+
+      &__third {
+        font-style: italic;
+        color: v.$text-color;
+        margin-bottom: v.$gutter*2;
+      }
       
       &__button{
         font-size: 1.5em;

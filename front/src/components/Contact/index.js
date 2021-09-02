@@ -28,6 +28,7 @@ const Contact = ({
   onClickSubmit,
   submitMessage,
   onClickMessageSuccess,
+  onClickCloseSettings,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -42,6 +43,7 @@ const Contact = ({
   };
   const handleOnClickMessageSuccess = () => {
     onClickMessageSuccess();
+    onClickCloseSettings();
   };
   return (
     <div className="contact">
@@ -162,6 +164,7 @@ Contact.propTypes = {
   onClickSubmit: PropTypes.func.isRequired,
   submitMessage: PropTypes.bool.isRequired,
   onClickMessageSuccess: PropTypes.func.isRequired,
+  onClickCloseSettings: PropTypes.func.isRequired,
 };
 
 export default Contact;

@@ -27,7 +27,7 @@ const Footer = ({
           to="/about"
           onClick={handleCloseSettings}
         >
-          About us
+          A propos
         </Link>
       </p>
       <p className="footer__copyright">Sport Finder - {year} ©</p>

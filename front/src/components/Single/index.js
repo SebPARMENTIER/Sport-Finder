@@ -1,7 +1,9 @@
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable no-plusplus */
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // == Import : local
 import './single.scss';
@@ -27,6 +29,7 @@ const Single = ({
   logged,
   openLogIn,
   openLogUp,
+  onClickCloseSettings,
 }) => {
   const image = sportsData.find((sportData) => (
     sportData.name.toLowerCase() === sport.toLowerCase()
@@ -39,6 +42,22 @@ const Single = ({
   };
   const reviewFilter = allReviews.filter(
     (review) => review.association.key_association.includes(result.id),
+  );
+  const handleOnClickReturnResults = () => {
+    onClickCloseSettings();
+    history.push('/results');
+  };
+  const handleRedirectToContact = () => {
+    onClickCloseSettings();
+  };
+  const linkToContact = (
+    <Link 
+      className="click"
+      to="/contact"
+      onClick={handleRedirectToContact}
+    >
+      ici
+    </Link>
   );
   // const tabStar = [];
 
@@ -93,7 +112,7 @@ const Single = ({
         <button
           type="button"
           className="single__buttons__back"
-          onClick={() => history.push('/results')}
+          onClick={handleOnClickReturnResults}
         >
           Retour aux résultats
         </button>
@@ -107,6 +126,9 @@ const Single = ({
           </button>
         )}
       </div>
+      <p className="single__declare">
+        Pour signaler un avis, merci de cliquer {linkToContact}.
+      </p>
       <div className="single__reviews">
         {reviewFilter.map((reviewResult) => (
           <Review
@@ -138,6 +160,7 @@ Single.propTypes = {
   logged: PropTypes.bool.isRequired,
   openLogIn: PropTypes.bool.isRequired,
   openLogUp: PropTypes.bool.isRequired,
+  onClickCloseSettings: PropTypes.func.isRequired,
 };
 
 export default Single;

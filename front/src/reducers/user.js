@@ -11,13 +11,13 @@ import {
   CLICK_ON_BUTTON_LOG_UP,
   CLICK_ON_BUTTON_LOG_OUT,
   CLICK_ON_BUTTON_DELETE_PROFILE,
-  CLICK_ON_BUTTON_EDIT_PROFIL,
+  CLICK_ON_BUTTON_EDIT_PROFILE,
   CLICK_ON_BUTTON_EDIT_PASSWORD,
   CLICK_ON_BUTTON_PRIVACY_DATA,
   CLICK_ON_BUTTON_CLOSE_SIGN_IN,
   CLICK_ON_BUTTON_CLOSE_SIGN_UP,
   CLICK_ON_BUTTON_CLOSE_SETTINGS,
-  CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL,
+  CLICK_ON_BUTTON_CLOSE_EDIT_PROFILE,
   CLICK_ON_BUTTON_CLOSE_EDIT_PASSWORD,
   CLICK_ON_BUTTON_CLOSE_DELETE_PROFILE,
   CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA,
@@ -35,6 +35,18 @@ import {
   CREATE_PASSWORD_LENGTH_ERROR,
 } from 'src/actions/user';
 
+import {
+  CLICK_ON_NEW_SEARCH,
+  RESULT_API_RNA_SUCCESS,
+} from 'src/actions/search';
+
+import {
+  GET_ALL_REVIEWS_SUCCESS,
+  CLICK_ON_BUTTON_ADD_REVIEW,
+  CLICK_ON_BUTTON_UPDATE_REVIEW,
+  CLICK_ON_BUTTON_DELETE_REVIEW,
+} from 'src/actions/review';
+
 export const initialState = {
   userId: '',
   pseudo: '',
@@ -43,10 +55,11 @@ export const initialState = {
   passwordConfirm: '',
   passwordError: false,
   logged: false,
+  accountExists: false,
   openSettings: false,
   openLogIn: false,
   openLogUp: false,
-  openEditProfil: false,
+  openEditProfile: false,
   openEditPassword: false,
   openDeleteProfile: false,
   openPrivacyData: false,
@@ -119,6 +132,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         logged: false,
+        accountExists: false,
         openSettings: false,
         pseudo: '',
         userId: '',
@@ -155,10 +169,10 @@ const reducer = (state = initialState, action = {}) => {
         isCreatePasswordLengthError: false,
         passwordError: false,
       };
-    case CLICK_ON_BUTTON_CLOSE_EDIT_PROFIL:
+    case CLICK_ON_BUTTON_CLOSE_EDIT_PROFILE:
       return {
         ...state,
-        openEditProfil: false,
+        openEditProfile: false,
         isUpdatePseudoSuccess: false,
         isUpdatePseudoError: false,
         password: '',
@@ -179,6 +193,7 @@ const reducer = (state = initialState, action = {}) => {
         openDeleteProfile: false,
         isDeleteProfileError: false,
         isDeleteProfileSuccess: false,
+        accountExists: false,
         password: '',
       };
     case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
@@ -186,10 +201,10 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openPrivacyData: false,
       };
-    case CLICK_ON_BUTTON_EDIT_PROFIL:
+    case CLICK_ON_BUTTON_EDIT_PROFILE:
       return {
         ...state,
-        openEditProfil: !state.openEditProfil,
+        openEditProfile: !state.openEditProfile,
       };
     case CLICK_ON_BUTTON_EDIT_PASSWORD:
       return {
@@ -239,6 +254,7 @@ const reducer = (state = initialState, action = {}) => {
         token: accessToken,
         isError: false,
         logged: true,
+        accountExists: true,
         openLogIn: false,
         email: '',
         password: '',
@@ -318,6 +334,36 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordLengthError: true,
         isUpdatePasswordError: false,
         updatePasswordError: false,
+      };
+    case CLICK_ON_NEW_SEARCH:
+      return {
+        ...state,
+        openSettings: false,
+      };
+    case RESULT_API_RNA_SUCCESS:
+      return {
+        ...state,
+        openSettings: false,
+      };
+    case GET_ALL_REVIEWS_SUCCESS:
+      return {
+        ...state,
+        openSettings: false,
+      };
+    case CLICK_ON_BUTTON_ADD_REVIEW:
+      return {
+        ...state,
+        openSettings: false,
+      };
+    case CLICK_ON_BUTTON_UPDATE_REVIEW:
+      return {
+        ...state,
+        openSettings: false,
+      };
+    case CLICK_ON_BUTTON_DELETE_REVIEW:
+      return {
+        ...state,
+        openSettings: false,
       };
     default:
       return state;

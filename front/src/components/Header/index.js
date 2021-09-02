@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import logo from 'src/assets/logo.png';
 import Settings from 'src/containers/Settings';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowBack } from 'react-icons/io';
 import './header.scss';
 
 const Header = ({
@@ -14,6 +14,7 @@ const Header = ({
   onClickLogUp,
   onClickCloseSettings,
   onClickNewSearch,
+  openSettings,
 }) => {
   const handleOnClickArrow = () => {
     // console.log("click");
@@ -32,6 +33,7 @@ const Header = ({
     onClickCloseSettings();
     onClickNewSearch();
   };
+  const classnameSetting = openSettings ? 'header__open__arrow header__open__arrow--open' : 'header__open__arrow';
   return (
     <div className="header">
       <nav className="header-nav">
@@ -86,7 +88,7 @@ const Header = ({
                 className="header__open"
                 onClick={handleOnClickArrow}
               >
-                <IoIosArrowDown className="header__open__arrow" />
+                <IoIosArrowBack className={classnameSetting} />
               </button>
             </div>
           )}
@@ -105,6 +107,7 @@ Header.propTypes = {
   onClickLogIn: PropTypes.func.isRequired,
   onClickLogUp: PropTypes.func.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
+  openSettings: PropTypes.bool.isRequired,
 };
 
 export default Header;

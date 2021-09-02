@@ -22,6 +22,10 @@
     &__arrow{
       color: v.$text-color;
       font-size: 1.5em;
+      transition: transform 1s;
+      &--open{
+        transform: rotate(180deg);
+      }
     }
   }
 

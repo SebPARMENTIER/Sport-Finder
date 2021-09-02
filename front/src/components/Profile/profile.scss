@@ -1,6 +1,6 @@
 @use 'src/styles/vars' as v;
 
-.profil{
+.profile{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,20 +52,20 @@
     text-align: center;
   }
   @media (max-width: 321px){
-    .profil__title{
+    .profile__title{
       font-size: 2em;
       margin: v.$gutter*5 0;
     }
   }
   @media (min-width: 430px){
-    .profil__title{
+    .profile__title{
       font-size: 5em;
       margin: v.$gutter*3 0;
     }
-    .profil__name{
+    .profile__name{
       font-size: 2.5em;
     }
-    .profil__button{
+    .profile__button{
       width: 50%;
       height: 40%;
       &__edit{
@@ -73,21 +73,21 @@
       }
     }
 
-    .profil__logOut{
+    .profile__logOut{
       font-size: 2.5em;
       width: 30%;
     }
     
   }
   @media (min-width: 760px){
-    .profil__title{
+    .profile__title{
       font-size: 4em;
       margin: v.$gutter*3 0;
     }
-    .profil__name{
+    .profile__name{
       font-size: 2em;
     }
-    .profil__button{
+    .profile__button{
       width: 60%;
       height: 30%;
       &__edit{
@@ -95,7 +95,7 @@
       }
     }
 
-    .profil__logOut{
+    .profile__logOut{
       font-size: 2em;
       width: 30%;
     }
