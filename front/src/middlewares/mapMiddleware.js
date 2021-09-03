@@ -34,6 +34,7 @@ const mapMiddleware = (store) => (next) => (action) => {
         .then((response) => {
         // console.log(response.data.features[0].geometry.coordinates[1]);
           store.dispatch(getCityCenterCoordinates(response.data.features[0].geometry.coordinates));
+          // console.log(cityCenterPositionPostalCode());
         }).catch((error) => {
           console.error(error);
         });
@@ -58,7 +59,7 @@ const mapMiddleware = (store) => (next) => (action) => {
             });
         }, 100 * index);
       }
-      console.log('markerArray', markerArray);
+      // console.log('markerArray', markerArray);
       // const markerArray = [];
       // const results = state.search.results;
       // for (let index = 0; index < results.length; index++) {

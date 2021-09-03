@@ -8,6 +8,8 @@ import {
   BUILD_MAP,
   GET_DATA_FOR_MARKERS,
   CLICK_ON_NEW_SEARCH,
+  SET_SEARCH_CITY,
+  CLICK_ERROR_FIELD_NOT_FULL,
 } from 'src/actions/search';
 
 import { CLICK_ON_BUTTON_LOG_OUT } from 'src/actions/user';
@@ -21,6 +23,9 @@ export const initialState = {
   buildMap: false,
   markers: [],
   isNoResult: false,
+  fullFieldSport: false,
+  fullFieldCity: false,
+  errorField: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,21 +39,34 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         results: action.data,
+        fullFieldSport: false,
+        fullFieldCity: false,
       };
     case RESULT_API_RNA_ERROR:
       return {
         ...state,
         isNoResult: true,
+        fullFieldSport: false,
+        fullFieldCity: false,
       };
     case SET_SEARCH_SPORT:
       return {
         ...state,
-        sport: action.value,
+        sport: action.value.label,
+        fullFieldSport: true,
+        errorField: false,
       };
     case SET_SEARCH_SELECT_SPORT:
       return {
         ...state,
         sport: action.value.name,
+      };
+    case SET_SEARCH_CITY:
+      return {
+        ...state,
+        city: action.value.value,
+        fullFieldCity: true,
+        errorField: false,
       };
     case GET_CITY_CENTER_COORDINATES:
       return {
@@ -82,6 +100,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         sport: '',
         city: '',
+      };
+    case CLICK_ERROR_FIELD_NOT_FULL:
+      return {
+        ...state,
+        errorField: true,
       };
     default:
       return state;

@@ -91,7 +91,7 @@ const searchMiddleware = (store) => (next) => (action) => {
                   }
                   if (isNaN(state.search.city) == false) {
                     // eslint-disable-next-line max-len
-                    const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.toLowerCase().startsWith(state.search.city.toLowerCase()));
+                    const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.startsWith(state.search.city));
                     // console.log(" code postal result > 7",cityFilter);
                     tableauFilter.push(cityFilter);
                     // console.log("tableauFilter", tableauFilter);

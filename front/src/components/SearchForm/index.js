@@ -1,60 +1,100 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import Select from 'react-select';
 
 import sportsData from 'src/assets/sportsData';
-import Field from 'src/components/Field';
+import departementsData from 'src/assets/departements-region';
+
 import './searchForm.scss';
 
 const SearchForm = ({
-  city,
-  sport,
   changeField,
-  changeSelect,
   handleSearch,
-  handleAverage,
-  changeFielCity,
+  changeFieldCity,
   history,
+  fullFieldSport,
+  fullFieldCity,
+  errorField,
+  onClickError,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
-    handleAverage();
     history.push('/results');
   };
+  const error = (event) => {
+    event.preventDefault();
+    onClickError();
+  };
+  const submit = fullFieldSport && fullFieldCity ? handleSubmit : error;
+  const customStyle = {
+    option: (provided) => ({
+      ...provided,
+      borderBottom: '1px dotted pink',
+      padding: 20,
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+      return { ...provided, opacity, transition };
+    },
+  };
   return (
-    <form className="searchForm" onSubmit={handleSubmit}>
+    <form className="searchForm" onSubmit={submit}>
       <div className="searchForm__inputs">
         <div className="searchForm__inputs__sport">
-          <ReactSearchAutocomplete
-            items={sportsData}
-            onSearch={changeField}
-            onSelect={changeSelect}
+          <Select
+            classNamePrefix="mySelectSport"
+            styles={customStyle}
             autoFocus
+            options={sportsData}
             name="sport"
             type="text"
-            placeholder="Chercher un sport..."
-            value={sport}
-            styling={
-              {
-                borderRadius: '5px',
-                with: '90%',
-                fontSize: '23px',
-                height: '46px',
-                marginRight: '16px',
-              }
-            }
+            onSearch={changeField}
+            placeholder="Sport..."
+            onChange={changeField}
+            isSearchable
+            required
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: '10px',
+              paddingleft: '10px',
+              colors: {
+                ...theme.colors,
+                primary25: 'rgba(71, 151, 161, 0.9)',
+                primary: '#263548',
+              },
+            })}
           />
         </div>
-        <Field
-          name="city"
-          type="text"
-          className=""
-          placeholder="Numéro de département..."
-          value={city}
-          onChange={changeFielCity}
-        />
+        <div className="searchForm__inputs__city">
+          <Select
+            classNamePrefix="mySelectCity"
+            styles={customStyle}
+            options={departementsData}
+            name="city"
+            type="text"
+            onSearch={changeFieldCity}
+            placeholder="Département..."
+            onChange={changeFieldCity}
+            isSearchable
+            required
+            theme={(theme) => ({
+              ...theme,
+              borderRadius: '10px',
+              paddingleft: '10px',
+              colors: {
+                ...theme.colors,
+                primary25: 'rgba(71, 151, 161, 0.9)',
+                primary: '#263548',
+              },
+            })}
+          />
+        </div>
       </div>
+      {errorField && (
+        <p className="searchForm__error">Veuillez bien selectionner un sport et un département.</p>
+      )}
       <button
         type="submit"
         className="searchForm__button"
@@ -66,16 +106,16 @@ const SearchForm = ({
 };
 
 SearchForm.propTypes = {
-  city: PropTypes.string.isRequired,
-  sport: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
-  changeSelect: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
-  changeFielCity: PropTypes.func.isRequired,
-  handleAverage: PropTypes.func.isRequired,
+  changeFieldCity: PropTypes.func.isRequired,
+  fullFieldSport: PropTypes.bool.isRequired,
+  fullFieldCity: PropTypes.bool.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  onClickError: PropTypes.func.isRequired,
+  errorField: PropTypes.bool.isRequired,
 };
 
 export default SearchForm;
