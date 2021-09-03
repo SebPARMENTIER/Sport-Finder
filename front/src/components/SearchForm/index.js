@@ -10,6 +10,7 @@ import './searchForm.scss';
 const SearchForm = ({
   changeField,
   handleSearch,
+  handleAverage,
   changeFieldCity,
   history,
   fullFieldSport,
@@ -20,6 +21,7 @@ const SearchForm = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
+    handleAverage();
     history.push('/results');
   };
   const error = (event) => {
@@ -108,6 +110,7 @@ const SearchForm = ({
 SearchForm.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  handleAverage: PropTypes.func.isRequired,
   changeFieldCity: PropTypes.func.isRequired,
   fullFieldSport: PropTypes.bool.isRequired,
   fullFieldCity: PropTypes.bool.isRequired,

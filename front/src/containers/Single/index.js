@@ -7,6 +7,7 @@ import {
   clickOnButtonAddReview,
   singleAssociationNameValue,
   singleAssociationKey,
+  getAllReviewsForAnAssociationAction,
 } from 'src/actions/review';
 
 import {
@@ -46,6 +47,9 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('container');
     const action = clickOnButtonCloseSettings();
     dispatch(action);
+  },
+  handleAverage: () => {
+    dispatch(getAllReviewsForAnAssociationAction());
   },
 });
 
