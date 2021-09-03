@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   &__field{
-    width: auto;
+    width: 32vw;
     height: 20px;
     padding: v.$gutter*1.5;
     font-size: 1.5em;
@@ -17,24 +17,36 @@
   
 }
 @media (max-width: 1025px) {
-    .inputs{
-      &__field{
-        font-size: 1em;
-        width: 32vw;
-        padding: v.$gutter*1.5;
-        margin-bottom: v.$gutter;
-      }
+  .inputs{
+    &__field{
+      font-size: 1em;
+      width: 32vw;
+      padding: v.$gutter*1.5;
+      margin-bottom: v.$gutter;
     }
   }
-  @media (max-width: 430px) {
-    
-    .inputs{
-      &__field{
-        width: 80vw;
-        padding: v.$gutter*1.5;
-        margin-bottom: v.$gutter;
-        margin-left: 0;
-        font-size: 1.5em;
-      }
+}
+// @media (max-width: 770px) {
+  
+//   .inputs{
+//     &__field{
+//       width: 80vw;
+//       padding: v.$gutter*1.5;
+//       margin-bottom: v.$gutter;
+//       margin-left: 0;
+//       font-size: 1.5em;
+//     }
+//   }
+// }
+@media (max-width: 430px) {
+  
+  .inputs{
+    &__field{
+      width: 80vw;
+      padding: v.$gutter*1.5;
+      margin-bottom: v.$gutter;
+      margin-left: 0;
+      font-size: 1.5em;
     }
   }
+}

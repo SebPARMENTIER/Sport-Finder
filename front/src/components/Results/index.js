@@ -68,7 +68,6 @@ const Results = ({
       });
     });
   });
-  // console.log('newArray', newArray);
   const handleGetAllReviews = () => {
     getAllReviews();
   };

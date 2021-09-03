@@ -33,7 +33,7 @@ const Single = ({
   handleAverage,
 }) => {
   const image = sportsData.find((sportData) => (
-    sportData.name.toLowerCase() === sport.toLowerCase()
+    sportData.label.toLowerCase() === sport.toLowerCase()
   ));
   const handleModalAddReview = () => {
     onClickModalAddReview();

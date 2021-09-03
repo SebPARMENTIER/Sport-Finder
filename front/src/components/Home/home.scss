@@ -6,14 +6,15 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  justify-content: space-around;
   padding: v.$gutter*6 0 v.$gutter*5 0; 
   
   
   &__picture{
     background-image: v.$picture;
     width: 90%;
-    height: 400px;
+    height: 50%;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -22,21 +23,25 @@
     align-items: center;
 
     &__title{
-      font-family: 'SF Sports Night', sans-serif;
-      font-size: 10em;
+      font-family: 'SF Sports Night';
+      font-size: 9em;
       color: v.$text-color;
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
     } 
   }
 
   &__slogan{
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
     margin: v.$gutter*2 0;
     width: 90%;
     text-align: center;
     color: v.$text-color;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+  }
+
+  &__search{
+    margin-bottom: v.$gutter*3;
   }
   @media (max-width: 1024px) {
     
@@ -60,17 +65,25 @@
   }
   @media (max-width: 426px) {
     
-    .home__picture{
-      height: 350px;
-      &__title{
-        font-size: 3em;
+    .home{
+      justify-content: space-around;
+      &__picture{
+        height: 350px;
+        &__title{
+          font-size: 2.5em;
+        }
       }
-    }
-
-    
-    .home__slogan{
-      font-size: 1em;
-      margin: v.$gutter*2;
-    }
+      &__slogan{
+        font-size: 1.2em;
+        margin: v.$gutter*2;
+      }
+      &__search{
+        margin-bottom: 0;
+      }
+    } 
   }
 }
+    
+    
+
+    

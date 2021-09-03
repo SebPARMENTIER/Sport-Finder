@@ -24,7 +24,7 @@
         align-items: center;
     
         &__title {
-          font-family: 'Anton';
+          font-family: 'SF Sports Night';
           font-size: 5em;
           color: v.$text-color;
           text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
@@ -107,7 +107,7 @@
   &__reviews {
     display: flex;
     flex-direction: column;
-    height: v.$gutter*18;
+    height: 25vh;
     overflow-y: auto;
     padding-right: v.$gutter*0.5;
 
@@ -241,6 +241,38 @@
         font-size: 1em;
         margin: v.$gutter;
       }
+    }
+    &__reviews {
+      display: flex;
+      flex-direction: column;
+      height: 25vh;
+      overflow-y: auto;
+      padding-right: v.$gutter*0.5;
+  
+      &::-webkit-scrollbar {
+        width: 0.8em;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: v.$secondary-color;
+        border-radius: 5px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: v.$text-color;
+        border-radius: 5px;
+      } 
+    }
+    
+    &__declare {
+        color: v.$text-color;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+        text-align: center;
+        padding-bottom: v.$gutter;
+      }
+    .click {
+      font-style: italic;
+      color: blue;
     } 
   }  
 }
