@@ -14,46 +14,96 @@
     align-items: center;
     width: 100%;
     height: auto;
-    margin: 0 v.$gutter;
+    margin-bottom: v.$gutter;
     &__sport{
       margin-bottom: v.$gutter;
-      width: 340px;
+      width: 25vw;
+      margin-right: 2rem;
+      font-size: 2em;
     }
+    &__city{
+      margin-bottom: v.$gutter;
+      width: 25vw;
+      margin-left: 2rem;
+      font-size: 2em;
+    }
+  }
+  &__error{
+    width: 90%;
+    text-align: center;
+    color: v.$text-color;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+    margin-bottom: v.$gutter;
   }
 
   &__button{
     width: auto;
-    padding: v.$gutter*0.7 v.$gutter;
+    padding: v.$gutter*0.7 v.$gutter*1.5;
     color: v.$text-color;
     background-color: v.$secondary-color;
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
   }
-  @media (max-width: 1024px) {
-    .searchForm{
+}
+
+.mySelectSport__menu-list {
+  height: 15vh;
+}
+.mySelectCity__menu-list {
+  height: 15vh;
+}
+@media (max-width: 1024px) {
+  
+  .searchForm__div{
+    flex-direction: column;
+  }
+  .searchForm__button{
+    font-size: 1em;
+    width: 40%;
+  }
+}
+
+
+
+// @media (max-width: 770px) {
+  
+//   .searchForm__inputs{
+//     flex-direction: column;
+//     &__sport{
+//       width: 90%;
+//       margin-left: 0;
+//     }
+//   }
+//   .searchForm__button{
+//     font-size: 1em;
+//     width: 50%;
+//   }
+// }
+
+@media (max-width: 430px) {
+  
+  .searchForm__inputs{
+    flex-direction: column;
+    &__sport{
+      margin-bottom: v.$gutter*2;
+      width: 80vw;
+      margin-right: 0;
     }
-    .searchForm__div{
-      flex-direction: column;
-    }
-    .searchForm__button{
-      font-size: 1em;
-      width: 40%;
+    &__city{
+      margin-bottom: v.$gutter*2;
+      width: 80vw;
+      margin-left: 0;
     }
   }
-
-  @media (max-width: 768px) {
-    
-    .searchForm__inputs{
-      flex-direction: column;
-      &__sport{
-        width: 80%;
-        margin-left: 0;
-      }
-    }
-    .searchForm__button{
-      font-size: 1em;
-      width: 50%;
-    }
+  .searchForm__button{
+    font-size: 1em;
+    width: 50%;
+  }
+  .mySelectSport__menu-list {
+    height: 29vh;
+  }
+  .mySelectCity__menu-list {
+    height: 22vh;
   }
 }

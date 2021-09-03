@@ -30,9 +30,10 @@ const Single = ({
   openLogIn,
   openLogUp,
   onClickCloseSettings,
+  handleAverage,
 }) => {
   const image = sportsData.find((sportData) => (
-    sportData.name.toLowerCase() === sport.toLowerCase()
+    sportData.label.toLowerCase() === sport.toLowerCase()
   ));
   const handleModalAddReview = () => {
     onClickModalAddReview();
@@ -45,6 +46,7 @@ const Single = ({
   );
   const handleOnClickReturnResults = () => {
     onClickCloseSettings();
+    handleAverage();
     history.push('/results');
   };
   const handleRedirectToContact = () => {
@@ -163,6 +165,7 @@ Single.propTypes = {
   openLogIn: PropTypes.bool.isRequired,
   openLogUp: PropTypes.bool.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
+  handleAverage: PropTypes.func.isRequired,
 };
 
 export default Single;
