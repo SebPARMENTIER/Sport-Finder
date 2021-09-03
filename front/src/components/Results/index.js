@@ -36,6 +36,7 @@ const Results = ({
   openLogUp,
   reviewsForAvg,
 }) => {
+  // console.log('results', results);
   // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
   // console.log('position',position);
@@ -49,69 +50,31 @@ const Results = ({
       </Popup>
     </Marker>
   ));
-  // const associationsFiltered = reviewsForAvg.filter(reviewForAvg => reviewForAvg.includes(results.id));
-  // console.log('associationsFiltered', associationsFiltered);
-  let tabAssociation = [];
-  // let sum = 0;
-  // reviewsForAvg.map((reviewForAvg) => {
-  //   reviewForAvg.reviews.map((forAvg) => {
-  //     tabAssociation.push(forAvg.star);
-  //   });
-  // });
+  const tabAssociation = [];
+  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < results.length; i++) {
-    const result = reviewsForAvg.filter((reviewForAvg) => reviewForAvg.key_association == results[i].id);
-    // tabAssociation[i] = reviewsForAvg[i].reviews;
+    const result = reviewsForAvg.filter((reviewForAvg) => Number(reviewForAvg.key_association) === results[i].id);
     if (result.length > 0) {
       tabAssociation.push(result);
     }
   }
-  console.log('tabAssociation', tabAssociation);
-  let newArray = [];
-  
-  // let sum = 0;
+  // console.log('tabAssociation', tabAssociation);
+  const newArray = [];
+  // eslint-disable-next-line array-callback-return
   tabAssociation.map((tab) => {
     tab.forEach((item) => {
-      newArray.push({ id: item.id, name: item.name, reviews: item.reviews });
+      newArray.push({
+        avg: item.avg, id: item.id, name: item.name, key_association: Number(item.key_association),
+      });
     });
   });
-  const starArray = [];
-  for (let index = 0; index < newArray.length; index++) {
-    let sum = 0;
-    newArray[index].reviews.map((starElem) => {
-      // let sum = 0;
-      sum += starElem.star;
-      // const newResult = newArray.filter((notation) => notation.association_id === newArray.id);
-      console.log('sum', sum);
-      starArray.push(sum);
-      // starArray.filter((notation) => notation == starArray.indexOf(Math.max(...starArray)));
-      // console.log('newResult', newResult);
-    });
-  }
-  const newStarArray = (Math.max(...starArray));
-  // const newStarArray = starArray.indexOf(Math.max(...starArray));
-  // tabAssociation.forEach((item) => newArray.push(item.name));
-  // tabAssociation.map((tab) => tab.map((elem) => {
-  //   newArray.push(elem.reviews);
-  //   newArray.map((newStar) => newStar.map((item) => {
-  //     sum += item.star;
-  //     starArray.push(sum);
-  //   }));
-  // }));
-  /* for (let index =0; index < tabAssociation.length; index++) {
-    newArray[index] = tabAssociation[index];
-    console.log('tab', newArray);
-  } */
-  
-   console.log('newArray', newArray);
-  console.log('starArray', starArray);
-  console.log('newStarArray', newStarArray);
+  // console.log('newArray', newArray);
   const handleGetAllReviews = () => {
     getAllReviews();
   };
   const handleNewSearch = () => {
     onClickNewSearch();
   };
-  // console.log('result', results);
   // const time = results.length * 150;
   // console.log('time', time);
   useEffect(() => {
@@ -123,9 +86,6 @@ const Results = ({
   return (
     <div className="results">
       <Banner />
-      {/* <div className="results__searchform">
-        <SearchForm />
-      </div> */}
       <Link
         className="results__newSearch"
         onClick={handleNewSearch}
@@ -159,11 +119,14 @@ const Results = ({
                     {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
                   </p>
                 </div>
-                <div className="results__all__list__single__rating">
-                  <StarRatingStatic
-                    rating={1}
-                  />
-                </div>
+                {newArray.map((avgResult) => (avgResult.key_association === result.id ? (
+                  <div className="results__all__list__single__rating">
+                    <StarRatingStatic
+                      rating={avgResult.avg}
+                    />
+                  </div>
+                ) : ''
+                ))}
               </div>
             ))}
           </div>
