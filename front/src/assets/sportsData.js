@@ -16,12 +16,12 @@ export default [
   },
   {
     value: 4,
-    label: 'Aéromodélisme',
+    label: 'Aeromodelisme',
     image: 'https://media.istockphoto.com/photos/aeromodelling-cup-picture-id817351122?k=6&m=817351122&s=612x612&w=0&h=d2rlDScHqbt1kDumqMGv3NXfOzPgIovKmZIaTnra4pc=',
   },
   {
     value: 5,
-    label: 'Aérostation',
+    label: 'Aerostation',
     image: 'https://media.istockphoto.com/photos/hot-air-balloon-above-high-mountain-at-sunset-picture-id1001927840?k=6&m=1001927840&s=612x612&w=0&h=w_lvcuYOrpaBcf2zIA6odnRLZXKDxf3aLqjWmU3l4R0=',
   },
   {
@@ -46,7 +46,7 @@ export default [
   },
   {
     value: 10,
-    label: 'Apnée',
+    label: 'Apnee',
     image: 'https://media.istockphoto.com/photos/asian-chinese-coach-guiding-his-student-underwater-breathing-exercise-picture-id1285602377?k=6&m=1285602377&s=612x612&w=0&h=llC0fHYY0WFnKpR9DfNWOQ8egDOTyfco__iC4t8HGew=',
   },
   {
@@ -66,7 +66,7 @@ export default [
   },
   {
     value: 14,
-    label: 'Athlétisme',
+    label: 'Athletisme',
     image: 'https://media.istockphoto.com/photos/sprint-start-in-track-and-field-picture-id964948398?k=6&m=964948398&s=612x612&w=0&h=rf4f2nHgQIN8Yf9DXuKTsnEKCbzkZygkRJPZcVcmsPs=',
   },
   {
@@ -131,7 +131,7 @@ export default [
   },
   {
     value: 27,
-    label: 'Béhourd',
+    label: 'Behourd',
     image: 'https://media.istockphoto.com/photos/medieval-knights-ready-for-battle-picture-id1191224778?k=6&m=1191224778&s=612x612&w=0&h=Kui8DXcQv3-Qd7VICj9l5HQZkmjyqw0iZDkqmlHhwws=',
   },
   {
@@ -206,7 +206,7 @@ export default [
   },
   {
     value: 42,
-    label: 'Boxe thaïlandaise',
+    label: 'Boxe thailandaise',
     image: 'https://media.istockphoto.com/photos/red-boxing-glove-picture-id1006291908?k=6&m=1006291908&s=612x612&w=0&h=Yin0d6ACZOqbgiNJ4DUYorU6OwBju_vOjlcs8TuJjPo=',
   },
   {
@@ -241,12 +241,12 @@ export default [
   },
   {
     value: 49,
-    label: 'Canoë',
+    label: 'Canoe',
     image: 'https://media.istockphoto.com/photos/silhouette-of-a-canoeist-picture-id623929892?k=6&m=623929892&s=612x612&w=0&h=q9RAXxnF0_FExuypi9wUrzeg8EGWIOEqBfHNX83WSp8=',
   },
   {
     value: 50,
-    label: 'Canoë-kayak',
+    label: 'Canoe-kayak',
     image: 'https://media.istockphoto.com/photos/kayakers-rowing-together-on-still-lake-picture-id150639741?k=6&m=150639741&s=612x612&w=0&h=WeM_x1N25QTBixGoUmM7akYYGaZywhPSsQF8XuvZvsE=',
   },
   {
@@ -281,7 +281,7 @@ export default [
   },
   {
     value: 57,
-    label: 'Char à voile',
+    label: 'Char a voile',
     image: 'https://media.istockphoto.com/photos/land-sailing-on-the-beach-picture-id179020697?k=6&m=179020697&s=612x612&w=0&h=VrsfvJ653boKdENJzfYEQ5wyis_A0BETsNfrg6Jvb3s=',
   },
   {
@@ -311,7 +311,7 @@ export default [
   },
   {
     value: 63,
-    label: 'Corde à sauter',
+    label: 'Corde a sauter',
     image: 'https://media.istockphoto.com/photos/group-fitness-sessions-will-make-you-feel-energized-and-refreshed-picture-id621570860?k=6&m=621570860&s=612x612&w=0&h=GOABAKD2xBLTscQkQH1p383oQP33Du8euZgXYUsPoOs=',
   },
   {
@@ -321,12 +321,12 @@ export default [
   },
   {
     value: 65,
-    label: 'Course à pied',
+    label: 'Course a pied',
     image: 'https://media.istockphoto.com/photos/theres-no-better-date-than-the-kind-that-gets-you-sweating-picture-id1162769903?k=6&m=1162769903&s=612x612&w=0&h=SPoSDtcC0kflPwBF68E9_Ygx-JeVrDx9EzM31zdDC8Y=',
   },
   {
     value: 66,
-    label: 'Course aérienne',
+    label: 'Course aerienne',
     image: 'https://media.istockphoto.com/photos/ben-murphy-with-n540bm-zivko-edge-540-and-flying-over-lake-balaton-in-picture-id1175997917?k=6&m=1175997917&s=612x612&w=0&h=MMVh3fhulrt4_Pqyb3vnVJmBlF9c81RKfMXsFHL68xs=',
   },
   {
@@ -476,7 +476,7 @@ export default [
   },
   {
     value: 96,
-    label: 'Décathlon',
+    label: 'Decathlon',
     image: 'https://media.istockphoto.com/photos/male-athlete-hurdling-on-sports-race-picture-id516000348?k=6&m=516000348&s=612x612&w=0&h=WyuoxZYzHsoYBr45oh8SAxxTP7WUDV5fUn2NzU8HJHY=',
   },
   {
@@ -561,7 +561,7 @@ export default [
   },
   {
     value: 113,
-    label: 'Fléchettes',
+    label: 'Flechettes',
     image: 'https://media.istockphoto.com/photos/darts-flies-towards-the-dart-board-picture-id1127043467?k=6&m=1127043467&s=612x612&w=0&h=WDJJvxLNkeyVJ9QgJPldLhmLmGEpGkI1YgolCh76coI=',
   },
   {
@@ -576,7 +576,7 @@ export default [
   },
   {
     value: 116,
-    label: 'Football américain',
+    label: 'Football americain',
     image: 'https://media.istockphoto.com/photos/below-view-of-american-football-players-on-a-beginning-of-the-match-picture-id1154759414?k=6&m=1154759414&s=612x612&w=0&h=GQuBYTuLIGUB4rnCTAg1JWsDR7YU3b9WFW6f-l7yzOc=',
   },
   {
@@ -601,7 +601,7 @@ export default [
   },
   {
     value: 121,
-    label: 'Force athlétique',
+    label: 'Force athletique',
     image: 'https://media.istockphoto.com/photos/man-preparing-for-a-lift-picture-id848260466?k=6&m=848260466&s=612x612&w=0&h=ZvvGr-vyxrCDP-_n3DUJcRoVeoreOIQDG3fFSTEyPZo=',
   },
   {
@@ -661,7 +661,7 @@ export default [
   },
   {
     value: 133,
-    label: 'Haltérophilie',
+    label: 'Halterophilie',
     image: 'https://media.istockphoto.com/photos/sporty-people-bend-their-knees-before-exercise-picture-id688005548?k=6&m=688005548&s=612x612&w=0&h=kCoWr7Aq0jcnTYIDdPVqY3vwHTxTilO3tPPTOiIUQTk=',
   },
   {
@@ -721,7 +721,7 @@ export default [
   },
   {
     value: 145,
-    label: 'Iaïdo',
+    label: 'Iaido',
     image: 'https://media.istockphoto.com/photos/woman-with-katana-black-background-picture-id184944510?k=6&m=184944510&s=612x612&w=0&h=gICNKD1W6Hf7NJM_u7iK5PbDonach7oPSVEWXjxJL5w=',
   },
   {
@@ -796,7 +796,7 @@ export default [
   },
   {
     value: 160,
-    label: 'Karaté',
+    label: 'Karate',
     image: 'https://media.istockphoto.com/photos/martial-arts-sport-training-in-gym-picture-id110875977?k=6&m=110875977&s=612x612&w=0&h=mjQaknCm6FpHVTAjJ9zuA1sObo4vBOz9t2kPobz2G6g=',
   },
   {
@@ -916,7 +916,7 @@ export default [
   },
   {
     value: 184,
-    label: 'Marche athlétique',
+    label: 'Marche athletique',
     image: 'https://media.istockphoto.com/photos/workout-with-a-purpose-picture-id1209896559?k=6&m=1209896559&s=612x612&w=0&h=nBxXUXvljA0AxA3gZdqzxDbGzIsbHrDE5pmxaImSF1Q=',
   },
   {
@@ -981,7 +981,7 @@ export default [
   },
   {
     value: 197,
-    label: 'Natation synchronisée',
+    label: 'Natation synchronisee',
     image: 'https://media.istockphoto.com/photos/art-in-water-picture-id1195398925?k=6&m=1195398925&s=612x612&w=0&h=h_1R_woRK6iCJ_48BSIA6FEmCjUPWiveHzY0ilCR3zA=',
   },
   {
@@ -1066,7 +1066,7 @@ export default [
   },
   {
     value: 214,
-    label: 'Pêche',
+    label: 'Peche',
     image: 'https://media.istockphoto.com/photos/rear-view-of-a-father-and-son-freshwater-fishing-picture-id489663526?k=6&m=489663526&s=612x612&w=0&h=tMA1RdAaZCNzy0rf-2rdRIpcR8Vs3qQS-w4f-b_rSts=',
   },
   {
@@ -1096,7 +1096,7 @@ export default [
   },
   {
     value: 220,
-    label: 'Pétanque',
+    label: 'Petanque',
     image: 'https://media.istockphoto.com/photos/leisure-petanque-balls-close-to-the-goal-picture-id101577036?k=6&m=101577036&s=612x612&w=0&h=0wN8Eg-CwfTysbu1T3vlD9YpDYgAY5sUovvyEtuFkuk=',
   },
   {
@@ -1116,12 +1116,12 @@ export default [
   },
   {
     value: 224,
-    label: 'Planche à voile',
+    label: 'Planche a voile',
     image: 'https://media.istockphoto.com/photos/windsurfing-picture-id471935162?k=6&m=471935162&s=612x612&w=0&h=jIWDejd306G7BMzS9GIgE6Z2pxchsnHh0ipSb2_kMwo=',
   },
   {
     value: 225,
-    label: 'Plongée',
+    label: 'Plongee',
     image: 'https://media.istockphoto.com/photos/scuba-diver-is-exploring-and-enjoying-coral-reef-sea-life-couple-two-picture-id854304532?k=6&m=854304532&s=612x612&w=0&h=wRh97xjVjgPJ9fISc4xm59JN9GfAVEZ_EEC6eAWvvio=',
   },
   {
@@ -1191,7 +1191,7 @@ export default [
   },
   {
     value: 239,
-    label: 'Randonnée',
+    label: 'Randonnee',
     image: 'https://media.istockphoto.com/photos/walking-in-line-in-the-mountain-picture-id594449188?k=6&m=594449188&s=612x612&w=0&h=GeDxjcwpWbzeZeW4zUi8fJmtSpjSphC0aIFtWK9NudY=',
   },
   {
@@ -1206,7 +1206,7 @@ export default [
   },
   {
     value: 242,
-    label: 'Rodéo',
+    label: 'Rodeo',
     image: 'https://media.istockphoto.com/photos/rodeo-competition-picture-id956210960?k=6&m=956210960&s=612x612&w=0&h=s0xg74Mm3POPU0rdJmUqN2tE_dQ4Jg1oJjTZBhiRIJA=',
   },
   {
@@ -1255,7 +1255,7 @@ export default [
   },
   {
     value: 254,
-    label: 'Self défense',
+    label: 'Self defense',
     image: 'https://media.istockphoto.com/photos/positive-woman-is-fighting-with-trainer-picture-id947956690?k=6&m=947956690&s=612x612&w=0&h=wPO0ZLG7EaSBoOAV4jw-7SUChA2d0X_GuiBhxWYZw3g=',
   },
   {
@@ -1340,7 +1340,7 @@ export default [
   },
   {
     value: 271,
-    label: 'Spéléologie',
+    label: 'Speleologie',
     image: 'https://media.istockphoto.com/photos/spelunking-picture-id1091700748?k=6&m=1091700748&s=612x612&w=0&h=Z4mpgvlQ_iErazpXjlrTAeFUwYYp14apLmNzalcc6X0=',
   },
   {
@@ -1380,7 +1380,7 @@ export default [
   },
   {
     value: 279,
-    label: 'Taï chi',
+    label: 'Tai chi',
     image: 'https://media.istockphoto.com/photos/fitness-group-doing-tai-chi-in-park-picture-id472869642?k=6&m=472869642&s=612x612&w=0&h=Nc2dEa0doIJS3Yewu8KIxmbK3bYFsDLa-Ts7hHEBTcc=',
   },
   {
@@ -1420,7 +1420,7 @@ export default [
   },
   {
     value: 287,
-    label: 'Tir à l\'arc',
+    label: 'Tir a l\'arc',
     image: 'https://media.istockphoto.com/photos/archery-picture-id147015721?k=6&m=147015721&s=612x612&w=0&h=6TuGFXilfT5ENpQW5bp1jICxdPC0A1_kXUzb-qk6pwo=',
   },
   {
@@ -1445,7 +1445,7 @@ export default [
   },
   {
     value: 292,
-    label: 'Trapèze',
+    label: 'Trapeze',
     image: 'https://media.istockphoto.com/photos/two-trapeze-artists-flying-together-in-the-sky-picture-id1179462103?k=6&m=1179462103&s=612x612&w=0&h=0IH9u-j4ySFXOMTT1sF0v5vlbTtNA-5Iwtv1f_o9czs=',
   },
   {
@@ -1495,7 +1495,7 @@ export default [
   },
   {
     value: 302,
-    label: 'Vélo',
+    label: 'Velo',
     image: 'https://media.istockphoto.com/photos/family-of-four-riding-bikes-on-gravel-road-picture-id462382789?k=6&m=462382789&s=612x612&w=0&h=30eqVvgXUcyqyFpwf_1MaZV57h9A9xB0mYbLWHJ6F6o=',
   },
   {

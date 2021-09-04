@@ -97,6 +97,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         openUpdateReview: false,
         isUpdateReviewError: false,
+        rating: 1,
       };
     case CLICK_ON_BUTTON_UPDATE_REVIEW:
       return {

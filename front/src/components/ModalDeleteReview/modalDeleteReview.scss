@@ -19,6 +19,8 @@
     top: 20%;
     border-radius: 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     box-shadow: 0px 7px 21px 15px rgba(0,0,0,0.3);
     &__close{
@@ -26,17 +28,19 @@
       position: absolute;
       right: 0;
       top: 0;
+      border-radius: 10px;
       background-color: v.$secondary-color;
       &__circle{
         color: v.$text-color;
         font-size: 2em;
         margin: 15px 15px 0 0;
+        border-radius: 10px;
       }
     }
     &__title{
       text-align: center;
-      font-family: 'Anton';
-      font-size: 1.5em;
+      font-family: 'SF Sports Night';
+      font-size: 4.5em;
       color: v.$text-color;
       text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
       margin: v.$gutter*3 0;
@@ -74,8 +78,7 @@
       border-radius: 5px;
       width: auto;
       margin: 0 auto;
-      margin-bottom: v.$gutter*3;
-      margin-top: v.$gutter;
+      margin: v.$gutter v.$gutter*0.5 v.$gutter*3 v.$gutter*0.5;
     }
 
     @media (min-width: 770px){

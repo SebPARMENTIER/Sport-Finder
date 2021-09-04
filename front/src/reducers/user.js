@@ -33,6 +33,7 @@ import {
   UPDATE_PASSWORD_ERROR,
   UPDATE_PASSWORD_LENGTH_ERROR,
   CREATE_PASSWORD_LENGTH_ERROR,
+  CLOSE_MODAL_DELETE,
 } from 'src/actions/user';
 
 import {
@@ -194,6 +195,14 @@ const reducer = (state = initialState, action = {}) => {
         isDeleteProfileError: false,
         isDeleteProfileSuccess: false,
         accountExists: false,
+        password: '',
+      };
+    case CLOSE_MODAL_DELETE:
+      return {
+        ...state,
+        openDeleteProfile: false,
+        isDeleteProfileError: false,
+        isDeleteProfileSuccess: false,
         password: '',
       };
     case CLICK_ON_BUTTON_CLOSE_PRIVACY_DATA:
