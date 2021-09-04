@@ -64,10 +64,44 @@ const Results = ({
   tabAssociation.map((tab) => {
     tab.forEach((item) => {
       newArray.push({
-        avg: item.avg, id: item.id, name: item.name, key_association: Number(item.key_association),
+        id: item.id, name: item.name, key_association: Number(item.key_association), avg: item.avg,
       });
     });
   });
+
+  // filtre la liste de l'API par rapport à la BDD pour récupéré de l'API tout ceux qui sont noté (étoiles)
+  // ajout de l'avg de la bdd avec les résultats de l'api
+  const withStars = results.filter((a) => {
+    let rep;
+    for (const b of newArray) {
+      rep = b.key_association === a.id;
+      if (rep) {
+        a.avg = b.avg;
+        break;
+      }
+    }
+    return rep;
+  });
+
+  // ordonner la liste des notés du plus grand au plus petit
+  const sortedNewArray = withStars.sort((a, b) => (+b.avg - +a.avg));
+
+  // filtre la liste de l'API par rapport à la BDD pour récupéré de l'API tout ceux qui ne sont pas noté (sans étoiles)
+  const noStars = results.filter((a) => {
+    let rep;
+
+    for (const b of newArray) {
+      rep = b.key_association === a.id;
+      if (rep) {
+        break;
+      }
+    }
+
+    return !rep;
+  });
+
+  console.log('withStars: ', withStars);
+
   const handleGetAllReviews = () => {
     getAllReviews();
   };
@@ -98,8 +132,12 @@ const Results = ({
       </div>
       <div className="results__all">
         { buildMap && (
+
+        <>
           <div className="results__all__list">
-            {results.map((result) => (
+
+            {/* affichage de la liste avec étoile (en premier) */}
+            {sortedNewArray.map((result) => (
               <div
                 key={result.id}
                 className="results__all__list__single"
@@ -118,17 +156,42 @@ const Results = ({
                     {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
                   </p>
                 </div>
-                {newArray.map((avgResult) => (avgResult.key_association === result.id ? (
-                  <div className="results__all__list__single__rating">
+                <div className="results__all__list__single__rating">
+                  {result.avg !== null ? (
                     <StarRatingStatic
-                      rating={avgResult.avg}
+                      rating={result.avg}
                     />
-                  </div>
-                ) : ''
-                ))}
+                  ) : <p>Aucun avis déposé (BDD)</p>}
+                </div>
+              </div>
+            ))}
+            
+            {/* affichage de la liste sans étoiles (en second) */}
+            {noStars.map((result) => (
+              <div
+                key={result.id}
+                className="results__all__list__single"
+              >
+                <div className="results__all__list__single__text">
+                  <p className="results__all__list__single__text__name">
+                    <Link
+                      to={`/single/${result.id}`}
+                      onClick={handleGetAllReviews}
+                      {...result}
+                    >
+                      {result.titre}
+                    </Link>
+                  </p>
+                  <p className="results__all__list__single__text__adress">
+                    {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
+                  </p>
+                </div>
+                <p>Aucun avis (API)</p>
               </div>
             ))}
           </div>
+        </>
+
         )}
         { !buildMap && (<Loading />)}
         { buildMap && !isNoResult && (
@@ -184,3 +247,13 @@ Results.propTypes = {
 };
 
 export default Results;
+
+{ /* <div className="results__all__list__single__rating">
+
+                    {avgResult.avg !== null ? (
+                      <StarRatingStatic
+                        rating={avgResult.avg}
+                      />
+                    ) : <p>Aucun avis déposé (BDD)</p>}
+
+                  </div> */ }
