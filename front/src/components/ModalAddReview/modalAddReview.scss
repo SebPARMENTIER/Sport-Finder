@@ -27,10 +27,12 @@
       right: 0;
       top: 0;
       background-color: v.$secondary-color;
+      border-radius: 10px;
       &__circle{
         color: v.$text-color;
         font-size: 2em;
         margin: 15px 15px 0 0;
+        border-radius: 10px;
       }
     }
     &__title{

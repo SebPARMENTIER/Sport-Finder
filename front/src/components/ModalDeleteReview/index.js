@@ -32,20 +32,22 @@ export default function ModalDeleteReview({
         {isDeleteReviewError && (
           <p className="modalDeleteReview__container__error">Une erreur s'est produite, veuillez réessayer.</p>
         )}
-        <button
-          type="submit"
-          onClick={handleValidDeleteReview}
-          className="modalDeleteReview__container__button"
-        >
-          Oui
-        </button>
-        <button
-          type="submit"
-          onClick={handleOnClickCloseDeleteReview}
-          className="modalDeleteReview__container__button"
-        >
-          Non
-        </button>
+        <div>
+          <button
+            type="submit"
+            onClick={handleValidDeleteReview}
+            className="modalDeleteReview__container__button"
+          >
+            Oui
+          </button>
+          <button
+            type="submit"
+            onClick={handleOnClickCloseDeleteReview}
+            className="modalDeleteReview__container__button"
+          >
+            Non
+          </button>
+        </div>
       </div>
     </div>
   );
