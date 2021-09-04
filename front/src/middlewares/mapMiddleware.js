@@ -6,6 +6,7 @@ import {
   GET_GPS_COORDINATES,
   getCityCenterCoordinates,
   getDataForMarkers,
+  getResultsFromApiError,
 } from 'src/actions/search';
 
 const mapMiddleware = (store) => (next) => (action) => {
@@ -19,11 +20,15 @@ const mapMiddleware = (store) => (next) => (action) => {
       // console.log(adresse);
       // eslint-disable-next-line no-case-declarations
       const cityCenterPositionPostalCode = () => {
+        if ((state.search.city.length === 2 && state.search.city === '13') || (state.search.city.length === 2 && state.search.city === '69') || (state.search.city.length === 2 && state.search.city === '75')) {
+          return (`${state.search.city}001`);
+        }
         if (state.search.city.length === 2) {
           return (`${state.search.city}000`);
         }
         return state.search.city;
       };
+      console.log(cityCenterPositionPostalCode());
       // eslint-disable-next-line no-case-declarations
       const config = {
         method: 'GET',
@@ -41,25 +46,30 @@ const mapMiddleware = (store) => (next) => (action) => {
 
       const markerArray = [];
       const { results } = state.search;
-      for (let index = 0; index < results.length; index++) {
-        // markerArray = {
-        //   popup: `${results[index].titre}`,
-        // };
-        setTimeout(() => {
-          const adress = `${results[index].adresse_numero_voie} ${results[index].adresse_repetition} ${results[index].adresse_type_voie} ${results[index].adresse_libelle_voie} ${results[index].adresse_code_postal} ${results[index].adresse_libelle_commune}`;
-          axios({
-            method: 'GET',
-            url: 'https://api-adresse.data.gouv.fr/search/',
-            params: { q: adress },
-          })
-            .then((response) => {
-              // eslint-disable-next-line max-len
-              markerArray.push([results[index].titre, response.data.features[0].geometry.coordinates, index]);
-              store.dispatch(getDataForMarkers(markerArray));
-            });
-        }, 100 * index);
+      if (results.length === 0) {
+        store.dispatch(getResultsFromApiError());
       }
-      // console.log('markerArray', markerArray);
+      else {
+        for (let index = 0; index < results.length; index++) {
+          // markerArray = {
+          //   popup: `${results[index].titre}`,
+          // };
+          setTimeout(() => {
+            const adress = `${results[index].adresse_numero_voie} ${results[index].adresse_repetition} ${results[index].adresse_type_voie} ${results[index].adresse_libelle_voie} ${results[index].adresse_code_postal} ${results[index].adresse_libelle_commune}`;
+            axios({
+              method: 'GET',
+              url: 'https://api-adresse.data.gouv.fr/search/',
+              params: { q: adress },
+            })
+              .then((response) => {
+                // eslint-disable-next-line max-len
+                markerArray.push([results[index].titre, response.data.features[0].geometry.coordinates, index]);
+                store.dispatch(getDataForMarkers(markerArray));
+              });
+          }, 120 * index);
+        }
+      }
+      console.log('markerArray', markerArray);
       // const markerArray = [];
       // const results = state.search.results;
       // for (let index = 0; index < results.length; index++) {

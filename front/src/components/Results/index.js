@@ -36,9 +36,9 @@ const Results = ({
   openLogUp,
   reviewsForAvg,
 }) => {
-  // console.log('cityCenterLat', cityCenterLat);
+  console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
-  // console.log('position',position);
+  console.log('position', position);
   const icons = markers.map((marker) => (
     <Marker
       key={marker[2]}
@@ -124,6 +124,7 @@ const Results = ({
                 {newArray.map((avgResult) => (avgResult.key_association === result.id ? (
                   <div className="results__all__list__single__rating">
                     <StarRatingStatic
+                      key={avgResult.key_association}
                       rating={avgResult.avg}
                     />
                   </div>
@@ -169,8 +170,8 @@ Results.propTypes = {
       adresse_libelle_commune: PropTypes.string,
     }),
   ).isRequired,
-  cityCenterLat: PropTypes.number.isRequired,
-  cityCenterLng: PropTypes.number.isRequired,
+  cityCenterLat: PropTypes.number,
+  cityCenterLng: PropTypes.number,
   buildMap: PropTypes.bool.isRequired,
   markers: PropTypes.arrayOf(
     PropTypes.shape,
@@ -184,6 +185,11 @@ Results.propTypes = {
   openLogIn: PropTypes.bool.isRequired,
   openLogUp: PropTypes.bool.isRequired,
   reviewsForAvg: PropTypes.array.isRequired,
+};
+
+Results.defaultProps = {
+  cityCenterLat: 0,
+  cityCenterLng: 0,
 };
 
 export default Results;

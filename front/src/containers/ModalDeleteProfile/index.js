@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 import ModalDeleteProfile from 'src/components/ModalDeleteProfile';
-import { deleteConfirmSetInputValueAction, deleteProfileAction, clickOnButtonCloseDeleteProfile } from 'src/actions/user';
+import {
+  deleteConfirmSetInputValueAction,
+  deleteProfileAction,
+  clickOnButtonCloseDeleteProfile,
+  closeModalDelete,
+} from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
   password: state.user.password,
@@ -17,6 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onClickCloseDeleteProfile: () => {
     dispatch(clickOnButtonCloseDeleteProfile());
+  },
+  onClickCloseDeleteProfileSimple: () => {
+    dispatch(closeModalDelete());
   },
 });
 
