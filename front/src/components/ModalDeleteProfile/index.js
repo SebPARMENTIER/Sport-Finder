@@ -11,6 +11,7 @@ const ModalDeleteProfile = ({
   changeField,
   handleDeleteProfile,
   onClickCloseDeleteProfile,
+  onClickCloseDeleteProfileSimple,
   isDeleteProfileSuccess,
   isDeleteProfileError,
 }) => {
@@ -22,6 +23,9 @@ const ModalDeleteProfile = ({
     // console.log('click');
     onClickCloseDeleteProfile();
   };
+  const handleOnClickCloseDeleteProfileSimple = () => {
+    onClickCloseDeleteProfileSimple();
+  };
   return (
     <div className="modalDeleteProfile">
       <div className="modalDeleteProfile__container">
@@ -29,7 +33,7 @@ const ModalDeleteProfile = ({
           <button
             type="submit"
             className="modalDeleteProfile__container__close"
-            onClick={handleOnClickCloseDeleteProfile}
+            onClick={handleOnClickCloseDeleteProfileSimple}
           >
             <IoIosCloseCircleOutline className="modalDeleteProfile__container__close__circle" />
           </button>
@@ -69,7 +73,7 @@ const ModalDeleteProfile = ({
           <button
             type="submit"
             className="modalDeleteProfile__container__button"
-            onClick={handleOnClickCloseDeleteProfile}
+            onClick={handleOnClickCloseDeleteProfileSimple}
           >
             Annuler
           </button>
@@ -97,6 +101,7 @@ ModalDeleteProfile.propTypes = {
   changeField: PropTypes.func.isRequired,
   handleDeleteProfile: PropTypes.func.isRequired,
   onClickCloseDeleteProfile: PropTypes.func.isRequired,
+  onClickCloseDeleteProfileSimple: PropTypes.func.isRequired,
   isDeleteProfileSuccess: PropTypes.bool.isRequired,
   isDeleteProfileError: PropTypes.bool.isRequired,
 };

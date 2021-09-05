@@ -27,8 +27,10 @@
       right: 0;
       top: 0;
       background-color: v.$secondary-color;
+      border-radius: 10px;
       &__circle{
         color: v.$text-color;
+        border-radius: 10px;
         font-size: 2em;
         margin: 15px 15px 0 0;
       }
@@ -36,7 +38,7 @@
     
     &__title{
       text-align: center;
-      font-family: 'Anton';
+      font-family: 'SF Sports Night';
         font-size: 3em;
         color: v.$text-color;
         text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);

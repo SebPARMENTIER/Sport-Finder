@@ -46,6 +46,7 @@ const SearchForm = ({
       <div className="searchForm__inputs">
         <div className="searchForm__inputs__sport">
           <Select
+            closeMenuOnSelect
             classNamePrefix="mySelectSport"
             styles={customStyle}
             autoFocus
@@ -56,6 +57,8 @@ const SearchForm = ({
             placeholder="Sport..."
             onChange={changeField}
             isSearchable
+            isClearable
+            backspaceRemovesValue
             required
             theme={(theme) => ({
               ...theme,

@@ -31,13 +31,13 @@ export const UPDATE_PSEUDO_VALUE = 'UPDATE_PSEUDO_VALUE';
 export const UPDATE_PSEUDO = 'UPDATE_PSEUDO';
 export const UPDATE_PSEUDO_SUCCESS = 'UPDATE_PSEUDO_SUCCESS';
 export const UPDATE_ERROR = 'UPDATE_ERROR';
-export const UPDATE_PASSWORD_VALUE = "UPDATE_PASSWORD_VALUE";
+export const UPDATE_PASSWORD_VALUE = 'UPDATE_PASSWORD_VALUE';
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
 export const UPDATE_PASSWORD_CONFIRM_ERROR = 'UPDATE_PASSWORD_CONFIRM_ERROR';
 export const UPDATE_PASSWORD_SUCCESS = 'UPDATE_PASSWORD_SUCCESS';
 export const UPDATE_PASSWORD_ERROR = 'UPDATE_PASSWORD_ERROR';
 export const UPDATE_PASSWORD_LENGTH_ERROR = 'UPDATE_PASSWORD_LENGTH_ERROR';
-
+export const CLOSE_MODAL_DELETE = 'CLOSE_MODAL_DELETE';
 
 export const createUserSetInputValueAction = (newValue, name) => ({
   type: SET_USER_INPUT_VALUE,
@@ -166,3 +166,5 @@ export const updatePasswordSuccessAction = () => ({ type: UPDATE_PASSWORD_SUCCES
 export const updatePasswordErrorAction = () => ({ type: UPDATE_PASSWORD_ERROR });
 
 export const updatePasswordLengthError = () => ({ type: UPDATE_PASSWORD_LENGTH_ERROR });
+
+export const closeModalDelete = () => ({ type: CLOSE_MODAL_DELETE });

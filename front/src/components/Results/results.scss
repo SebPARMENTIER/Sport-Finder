@@ -4,6 +4,8 @@
   padding: v.$gutter*5 0 v.$gutter 0;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100vw;
   
   &__slogan{
     width: 100vw;
@@ -17,8 +19,7 @@
 
   &__newSearch{
     width: auto;
-    margin: 0 auto;
-    margin-bottom: v.$gutter*0.5;
+    margin: v.$gutter*0.5 auto;
     text-align: center;
     padding: v.$gutter*0.7 v.$gutter;
     color: v.$text-color;
@@ -26,11 +27,9 @@
     border: none;
     border-radius: 5px;
     font-size: 1.5em;
-    margin-bottom: v.$gutter;
   }
   &__count {
     text-align: center;
-    margin-bottom: v.$gutter;
 
     &__desc {
       font-size: 1.5em;
@@ -92,6 +91,13 @@
           margin-right: auto;
           font-size: v.$gutter*2;
           color: v.$star-color;
+
+          &__noReview {
+            font-style: italic;
+            color: grey;
+            font-size: v.$gutter*0.8;
+            padding-top: v.$gutter*0.5;
+          }
         }
       }
     }
@@ -105,10 +111,11 @@
 }
 @media (max-width: 770px){
   .results{
-    padding: v.$gutter*4 0;
+    padding: v.$gutter*4 0 0 0;
+    height: 100%;
   }
   .results__newSearch{
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
   .results__count{
     margin-bottom: 0;
@@ -122,23 +129,19 @@
     }
   }
   .results__all {
-    padding: v.$gutter v.$gutter v.$gutter*3 v.$gutter;
+    padding: v.$gutter 0 0 0;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    height: 50vh;
+    flex-direction: column-reverse;
+    height: 70vh;
 
     &__list {
       display: flex;
-      flex-direction: row;
-      margin-right: v.$gutter;
+      justify-content: space-between;
+      align-items: center;
       width: 100vw;
+      height: 35vh;
       overflow-x: scroll;
-      padding-right: v.$gutter*0.5;
-      position: absolute;
-      bottom: 55px;
-      left:-0;
-      z-index: 1;
 
       &::-webkit-scrollbar {
         height: 0.5em;
@@ -159,16 +162,16 @@
         width: 100%;
         border-radius: 5px;
         padding: v.$gutter auto;
-        margin-bottom: v.$gutter*1.2;
-        margin-right: v.$gutter;
+        margin: 0 v.$gutter*0.5 ;
         display: flex;
-        height: 20vh;
+        height: 17vh;
         flex-direction: column;
         justify-content: space-between;
 
           
         &__text{
           margin-bottom: auto;
+          width: 60vw;
           &__name {
             font-size: v.$gutter;
             padding-bottom: v.$gutter*0.2;
@@ -192,8 +195,10 @@
 
   #mapid { 
     height: 100%;
-    width: 100%; 
+    width: 90vw; 
     border-radius: 10px;
-    z-index: 0;
+    margin: 0 auto;
+    margin-bottom: v.$gutter;
+
   }
 }

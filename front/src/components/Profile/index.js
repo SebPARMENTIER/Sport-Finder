@@ -45,7 +45,7 @@ const Profile = ({
   };
   return (
     <main className="profile">
-      <h1 className="profile__title">Information profil</h1>
+      <h1 className="profile__title">Informations profil</h1>
       <h2 className="profile__name">{pseudo}</h2>
       <div className="profile__button">
         <button

@@ -35,10 +35,10 @@ ModalAddReview({
         </button>
         <h1 className="modalAddReview__container__title">Ajouter un avis</h1>
         <form className="modalAddReview__container__form" onSubmit={handleSubmit}>
-          <div className="modalAddReview__container__form__edit">
+          <div className="modalAddReview__container__form__edit__input">
             <FieldTextarea
               name="reviewContent"
-              className="modalAddReview__container__form__edit__input"
+              className="modalAddReview__container__form__edit__input__text"
               placeholder="Veuillez saisir votre message"
               value={reviewContent}
               onChange={changeField}

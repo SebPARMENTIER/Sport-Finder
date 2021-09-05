@@ -39,10 +39,10 @@ export default function ModalUpdateReview({
           className="modalUpdateReview__container__form"
           onSubmit={handleSubmit}
         >
-          <div className="modalUpdateReview__container__form__edit">
+          <div className="modalUpdateReview__container__form__edit__input">
             <FieldTextarea
               name="newReviewContent"
-              className="modalUpdateReview__container__form__edit__input"
+              className="modalUpdateReview__container__form__edit__input__text"
               placeholder="Veuillez saisir votre message"
               value={newReviewContent}
               onChange={changeField}

@@ -36,10 +36,9 @@ const Results = ({
   openLogUp,
   reviewsForAvg,
 }) => {
-  // console.log('results', results);
-  // console.log('cityCenterLat', cityCenterLat);
+  console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
-  // console.log('position',position);
+  console.log('position', position);
   const icons = markers.map((marker) => (
     <Marker
       key={marker[2]}
@@ -73,6 +72,7 @@ const Results = ({
   // ajout de l'avg de la bdd avec les résultats de l'api
   const withStars = results.filter((a) => {
     let rep;
+    // eslint-disable-next-line no-restricted-syntax
     for (const b of newArray) {
       rep = b.key_association === a.id;
       if (rep) {
@@ -90,6 +90,7 @@ const Results = ({
   const noStars = results.filter((a) => {
     let rep;
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const b of newArray) {
       rep = b.key_association === a.id;
       if (rep) {
@@ -159,13 +160,13 @@ const Results = ({
                 <div className="results__all__list__single__rating">
                   {result.avg !== null ? (
                     <StarRatingStatic
+                      key={result.key_association}
                       rating={result.avg}
                     />
-                  ) : <p>Aucun avis déposé (BDD)</p>}
+                  ) : <p className="results__all__list__single__rating__noReview">Aucun avis déposé</p>}
                 </div>
               </div>
             ))}
-            
             {/* affichage de la liste sans étoiles (en second) */}
             {noStars.map((result) => (
               <div
@@ -186,7 +187,7 @@ const Results = ({
                     {result.adresse_numero_voie} {result.adresse_repetition} {result.adresse_type_voie} {result.adresse_libelle_voie} {result.adresse_code_postal} {result.adresse_libelle_commune}
                   </p>
                 </div>
-                <p>Aucun avis (API)</p>
+                <p className="results__all__list__single__rating__noReview">Aucun avis déposé</p>
               </div>
             ))}
           </div>
@@ -229,8 +230,8 @@ Results.propTypes = {
       adresse_libelle_commune: PropTypes.string,
     }),
   ).isRequired,
-  cityCenterLat: PropTypes.number.isRequired,
-  cityCenterLng: PropTypes.number.isRequired,
+  cityCenterLat: PropTypes.number,
+  cityCenterLng: PropTypes.number,
   buildMap: PropTypes.bool.isRequired,
   markers: PropTypes.arrayOf(
     PropTypes.shape,
@@ -246,14 +247,9 @@ Results.propTypes = {
   reviewsForAvg: PropTypes.array.isRequired,
 };
 
+Results.defaultProps = {
+  cityCenterLat: 0,
+  cityCenterLng: 0,
+};
+
 export default Results;
-
-{ /* <div className="results__all__list__single__rating">
-
-                    {avgResult.avg !== null ? (
-                      <StarRatingStatic
-                        rating={avgResult.avg}
-                      />
-                    ) : <p>Aucun avis déposé (BDD)</p>}
-
-                  </div> */ }
