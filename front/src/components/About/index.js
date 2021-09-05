@@ -18,15 +18,15 @@ const About = ({
     <h1 className="about__title">Présentation de l'équipe</h1>
     <div className="about__role">
       <div className="about__role__name">Anthony</div>
-      <div className="about__role__desc">Lead dev Front - Référent technique API Opencagedata</div>
+      <div className="about__role__desc">Git Master - Référent technique React-Select</div>
     </div>
     <div className="about__role">
       <div className="about__role__name">Christopher</div>
-      <div className="about__role__desc">Lead dev Back - Référent technique API Opencagedata</div>
+      <div className="about__role__desc">Lead dev Back - Référent technique Heroku</div>
     </div>
     <div className="about__role">
       <div className="about__role__name">Giovanni</div>
-      <div className="about__role__desc">Git Master - Référent technique API RNA</div>
+      <div className="about__role__desc">Lead dev Front - Référent technique API RNA - API Leaflet</div>
     </div>
     <div className="about__role last">
       <div className="about__role__name">Sébastien</div>
