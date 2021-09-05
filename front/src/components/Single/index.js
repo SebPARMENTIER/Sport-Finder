@@ -130,9 +130,11 @@ const Single = ({
           </button>
         )}
       </div>
-      <p className="single__declare">
-        Pour signaler un avis, merci de cliquer {linkToContact}.
-      </p>
+      {reviewFilter.length > 0 && (
+        <p className="single__declare">
+          Pour signaler un avis, merci de cliquer {linkToContact}.
+        </p>
+      )}
       <div className="single__reviews">
         {reviewFilter.map((reviewResult) => (
           <Review
