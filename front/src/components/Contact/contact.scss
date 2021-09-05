@@ -17,7 +17,7 @@
     color: v.$text-color;
     font-size: 1rem;
     font-weight: bold;
-    padding: 0 v.$gutter;
+    padding: v.$gutter;
     margin-bottom: v.$gutter;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }
@@ -47,6 +47,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding-bottom:v.$gutter*2;
 
       &__civility {        
         width: 100%;
@@ -89,6 +90,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      padding-bottom: v.$gutter*2;
 
       &__email {
         width: 100%;

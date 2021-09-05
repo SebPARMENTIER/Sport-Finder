@@ -12,7 +12,7 @@
     font-size: 3em;
     color: v.$text-color;
     font-weight: bold;
-    padding: 2rem;
+    padding: v.$gutter*2 v.$gutter*2 v.$gutter*4 v.$gutter*2;
     height: auto;
     text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
   }

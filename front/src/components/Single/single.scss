@@ -71,6 +71,11 @@
 
           &__value {
             padding-bottom: v.$gutter;
+
+            &__web {
+              color: blue;
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -107,7 +112,7 @@
   &__reviews {
     display: flex;
     flex-direction: column;
-    height: 25vh;
+    height: 35vh;
     overflow-y: auto;
     padding-right: v.$gutter*0.5;
 
@@ -135,7 +140,7 @@
   .click {
     font-style: italic;
     color: blue;
-  }
+  } 
   
 }
 @media (max-width: 770px){

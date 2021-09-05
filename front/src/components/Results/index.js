@@ -128,7 +128,7 @@ const Results = ({
         Nouvelle recherche
       </Link>
       <div className="results__count">
-        {isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} n'a donné aucun résultat.</p>}
+        {isNoResult && <p className="results__count__desc__noResult">La recherche pour {sport} dans le département {city} n'a donné aucun résultat.</p>}
         {!isNoResult && <p className="results__count__desc">La recherche pour {sport} dans le département {city} a donné {results.length} résultats.</p>}
       </div>
       <div className="results__all">
