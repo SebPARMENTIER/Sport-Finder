@@ -23,7 +23,7 @@ const Settings = ({
         className="settings__profile hover-underline-animation"
       >
         <Link
-          to="/profile"
+          to="/profil"
           onClick={handleCloseSettings}
         >Profil
         </Link>

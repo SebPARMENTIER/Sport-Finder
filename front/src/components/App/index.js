@@ -24,7 +24,7 @@ const App = ({
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/about" component={About} />
       {accountExists && (
-        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/profil" component={Profile} />
       )}
       <Route exact path="/single/:id" component={Single} />
       <Route exact path="/results" component={Results} />
