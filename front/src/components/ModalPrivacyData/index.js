@@ -22,235 +22,236 @@ export default function ModalPrivacyData({ onClickClosePrivacyData }) {
         <h1 className="modalPrivacyData__modal__title">Privacy and Data</h1>
         <div className="modalPrivacyData__modal__container">
           <h2 className="modalPrivacyData__modal__container__h2">
-            Privacy Policy
+            Politique de confidentialité
           </h2>
           <p className="modalPrivacyData__modal__container__text">
-            Your privacy is important to us. It is Sport Finder's policy to
-            respect your privacy and comply with any applicable law and
-            regulation regarding any personal information we may collect about
-            you, including across our website,{' '}
+            Votre vie privée est importante pour nous. C'est la politique de SportFinder de
+            respecter votre vie privée et vous conformer à toute loi et réglementation
+            applicable concernant les informations personnelles que nous pouvons collecter sur
+            vous, y compris sur notre site Web,{' '}
             <a className="modalPrivacyData__container__text__a" href="">
               https://sportfinder.fr
             </a>{' '}
-            , and other sites we own and operate.
+            , et d'autres sites que nous possédons et exploitons.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            This policy is effective as of 18 August 2021 and was last updated
-            on 18 August 2021.
+            Cette politique entre en vigueur le 18 août 2021 et a été mise à jour pour la dernière
+            fois le 18 août 2021.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Informations que nous collectons
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Information We Collect
+            Les informations que nous collectons incluent à la fois des informations que vous avez
+            sciemment et activement fournies lors de l'utilisation ou de la participation à l'un
+            de nos services et promotions, et toute information envoyée automatiquement par
+            vos appareils lors de l'accès à nos produits et services.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Données d'enregistrement
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Information we collect includes both information you knowingly and
-            actively provide us when using or participating in any of our
-            services and promotions, and any information automatically sent by
-            your devices in the course of accessing our products and services.
-          </p>
-          <strong className="modalPrivacyData__modal__container__strong">
-            Log Data
-          </strong>
-          <p className="modalPrivacyData__modal__container__text">
-            When you visit our website, our servers may automatically log the
-            standard data provided by your web browser. It may include your
-            device’s Internet Protocol (IP) address, your browser type and
-            version, the pages you visit, the time and date of your visit, the
-            time spent on each page, other details about your visit, and
-            technical details that occur in conjunction with any errors you may
-            encounter.
+            Lorsque vous visitez notre site web, nos serveurs peuvent enregistrer automatiquement
+            les données standard fournies par votre navigateur web. Il peut s'agir de votre
+            protocole Internet (IP) de votre appareil, le type et la version de votre navigateur,
+            les pages que vous visitez, l'heure et la date de votre visite, le temps passé sur
+            chaque page, d'autres détails sur votre visite, et les détails techniques qui se
+            produisent en conjonction avec les erreurs que vous pouvez rencontrer.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Please be aware that while this information may not be personally
-            identifying by itself, it may be possible to combine it with other
-            data to personally identify individual persons.
+            Veuillez noter que, même si ces informations ne permettent pas d'identifier une
+            personne en soi, il peut être possible de les combiner avec d'autres données pour
+            identifier des personnes individuelles.
           </p>
-          <strong className="modalPrivacyData__modal__container__strong">
-            Personal Information
-          </strong>
+          <p className="modalPrivacyData__modal__container__strong">
+            Informations personnelles
+          </p>
           <p className="modalPrivacyData__modal__container__text">
-            We may ask for personal information which may include one or more of
-            the following:
+            Nous pouvons vous demander des informations personnelles qui peuvent inclure un
+            ou plusieurs des éléments suivants:
           </p>
           <ul className="modalPrivacyData__modal__container__list">
-            <li>Name</li>
+            <li>Nom</li>
+            <li>Prénom</li>
+            <li>Pseudonyme</li>
             <li>Email</li>
           </ul>
-          <strong className="modalPrivacyData__modal__container__strong">
-            Legitimate Reasons for Processing Your Personal Information
-          </strong>
-          <p className="modalPrivacyData__modal__container__text">
-            We only collect and use your personal information when we have a
-            legitimate reason for doing so. In which instance, we only collect
-            personal information that is reasonably necessary to provide our
-            services to you.
+          <p className="modalPrivacyData__modal__container__strong">
+            Raisons légitimes du traitement de vos informations personnelles
           </p>
-          <strong className="modalPrivacyData__modal__container__strong">
-            Collection and Use of Information
-          </strong>
           <p className="modalPrivacyData__modal__container__text">
-            We may collect personal information from you when you do any of the
-            following on our website:
+            Nous ne collectons et n'utilisons vos informations personnelles que lorsque nous avons
+            une raison légitime de le faire. Dans ce cas, nous ne recueillons que les informations
+            personnelles qui sont raisonnablement nécessaires pour vous fournir nos services.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Collecte et utilisation des informations
+          </p>
+          <p className="modalPrivacyData__modal__container__text">
+            Nous pouvons recueillir des informations personnelles lorsque vous effectuez l'une des
+            actions suivantes suivantes sur notre site web :
           </p>
           <ul className="modalPrivacyData__modal__container__list">
-            <li>Use a mobile device or web browser to access our content</li>
+            <li>Utiliser un appareil mobile ou un navigateur web pour accéder à notre contenu</li>
             <li>
-              Contact us via email, social media, or on any similar technologies
+              Nous contacter par courriel, sur les réseaux sociaux ou sur toute autre technologie
+              similaire
             </li>
-            <li>When you mention us on social media</li>
+            <li>Lorsque vous nous mentionnez sur les réseaux sociaux</li>
           </ul>
           <p className="modalPrivacyData__modal__container__text">
-            We may collect, hold, use, and disclose information for the
-            following purposes, and personal information will not be further
-            processed in a manner that is incompatible with these purposes:
+            Nous pouvons recueillir, conserver, utiliser et divulguer des informations aux fins
+            suivantes, et les informations personnelles ne seront pas traitées ultérieurement d'une
+            manière incompatible avec ces objectifs.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Please be aware that we may combine information we collect about you
-            with general information or research data we receive from other
-            trusted sources.
+            Sachez que nous pouvons combiner les informations que nous recueillons à votre sujet
+            avec des informations générales ou des données de recherche que nous recevons d'autres
+            sources fiables.
           </p>
-          <strong className="modalPrivacyData__modal__container__strong">
-            Security of Your Personal Information
-          </strong>
-          <p className="modalPrivacyData__modal__container__text">
-            When we collect and process personal information, and while we
-            retain this information, we will protect it within commercially
-            acceptable means to prevent loss and theft, as well as unauthorized
-            access, disclosure, copying, use, or modification.
+          <p className="modalPrivacyData__modal__container__strong">
+            Sécurité de vos informations personnelles
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Although we will do our best to protect the personal information you
-            provide to us, we advise that no method of electronic transmission
-            or storage is 100% secure, and no one can guarantee absolute data
-            security. We will comply with laws applicable to us in respect of
-            any data breach.
+            Lorsque nous recueillons et traitons des informations personnelles,
+            et pendant que nous conservons ces informations, nous les protégeons
+            par des moyens commercialement acceptables afin d'éviter la perte et
+            le vol, ainsi que les accès non autorisés, la copie, l'utilisation ou
+            la modification non autorisés.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            You are responsible for selecting any password and its overall
-            security strength, ensuring the security of your own information
-            within the bounds of our services.
-          </p>
-          <strong className="modalPrivacyData__modal__container__strong">
-            How Long We Keep Your Personal Information
-          </strong>
-          <p className="modalPrivacyData__modal__container__text">
-            We keep your personal information only for as long as we need to.
-            This time period may depend on what we are using your information
-            for, in accordance with this privacy policy. If your personal
-            information is no longer required, we will delete it or make it
-            anonymous by removing all details that identify you.
+            Bien que nous fassions de notre mieux pour protéger les informations
+            personnelles que vous nous fournissez, nous vous informons qu'aucune
+            méthode de transmission ou de stockage électronique n'est sûre à 100 %
+            et que personne ne peut garantir une sécurité absolue des données. Nous
+            nous conformerons aux lois qui nous sont applicables en ce qui concerne
+            toute violation de données.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            However, if necessary, we may retain your personal information for
-            our compliance with a legal, accounting, or reporting obligation or
-            for archiving purposes in the public interest, scientific, or
-            historical research purposes or statistical purposes.
+            Vous êtes responsable du choix de tout mot de passe et de son niveau de
+            sécurité global et de la sécurité de vos propres informations dans les limites
+            de nos services.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Combien de temps nous conservons vos informations personnelles
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Children’s Privacy
+            Nous conservons vos informations personnelles aussi longtemps que nous en
+            avons besoin. Cette période peut dépendre de la manière dont nous utilisons
+            vos informations conformément à la présente politique de confidentialité. Si
+            vos informations personnelles ne sont plus nécessaires, nous les supprimerons
+            ou les rendrons anonymes en enlevant tous les détails d'identification.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            We do not aim any of our products or services directly at children
-            under the age of 13, and we do not knowingly collect personal
-            information about children under 13.
+            Toutefois, si nécessaire, nous pouvons conserver vos informations personnelles
+            pour nous conformer à une exigence légale, comptable ou de rapport, ou à des fins
+            d'archivage dans l'intérêt public, à des fins scientifiques ou historiques ou à des
+            fins statistiques.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            La vie privée des enfants
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            International Transfers of Personal Information
+            Nos produits et services ne sont pas directement destinés aux enfants de moins
+            de 13 ans, et nous ne recueillons pas sciemment d'informations personnelles auprès
+            d'enfants de moins de 13 ans.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Transferts internationaux d'informations personnelles
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            The personal information we collect is stored and/or processed where
-            we or our partners, affiliates, and third-party providers maintain
-            facilities. Please be aware that the locations to which we store,
-            process, or transfer your personal information may not have the same
-            data protection laws as the country in which you initially provided
-            the information. If we transfer your personal information to third
-            parties in other countries: (i) we will perform those transfers in
-            accordance with the requirements of applicable law; and (ii) we will
-            protect the transferred personal information in accordance with this
-            privacy policy.
+            Les informations personnelles que nous recueillons sont stockées et/ou traitées dans
+            les endroits suivants nous ou nos partenaires, sociétés affiliées et fournisseurs tiers
+            maintenons des installations. Veuillez noter que les endroits où nous stockons, traiter
+            ou transférer vos informations personnelles peuvent ne pas avoir les mêmes protections
+            des données que le pays dans lequel vous avez initialement fourni les informations. Si
+            nous transférons vos informations personnelles à des tiers tiers dans d'autres
+            pays : (i) nous effectuerons ces transferts conformément aux conformément aux exigences
+            de la législation en vigueur ; et (ii) nous protéger les informations personnelles
+            transférées conformément à la présente politique de confidentialité.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Vos droits et le contrôle de vos informations personnelles
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Your Rights and Controlling Your Personal Information
+            Vous conservez toujours le droit de refuser de nous communiquer des informations
+            personnelles, étant entendu que votre expérience de notre site web peut en être
+            affectée. Nous ne ferons aucune discrimination à votre encontre pour avoir exercé
+            l'un de vos droits sur vos informations personnelles. Si vous nous fournissez des
+            informations personnelles, vous comprenez que nous les collecterons, les conserverons,
+            les utiliserons et les divulguerons conformément à la présente politique de
+            confidentialité. Vous conservez le droit de demander des détails sur les informations
+            personnelles que nous détenons à votre sujet.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            You always retain the right to withhold personal information from
-            us, with the understanding that your experience of our website may
-            be affected. We will not discriminate against you for exercising any
-            of your rights over your personal information. If you do provide us
-            with personal information you understand that we will collect, hold,
-            use and disclose it in accordance with this privacy policy. You
-            retain the right to request details of any personal information we
-            hold about you.
+            Si nous recevons des informations personnelles vous concernant de la part d'un tiers,
+            nous les protégerons comme indiqué dans la présente politique de confidentialité. Si
+            vous êtes un tiers fournissant des informations personnelles sur une autre personne,
+            vous déclarez et garantissez que vous avez le consentement de cette personne pour nous
+            fournir ces informations personnelles.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            If we receive personal information about you from a third party, we
-            will protect it as set out in this privacy policy. If you are a
-            third party providing personal information about somebody else, you
-            represent and warrant that you have such person’s consent to provide
-            the personal information to us.
+            Si vous avez précédemment accepté que nous utilisions vos informations personnelles
+            à des fins de marketing direct, vous pouvez changer d'avis à tout moment. Nous vous
+            donnerons la possibilité de vous désinscrire de notre base de données de courriers
+            électroniques ou de ne plus recevoir de communications. Sachez que nous pouvons être
+            amenés à vous demander des informations spécifiques pour nous aider à confirmer votre
+            identité.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            If you have previously agreed to us using your personal information
-            for direct marketing purposes, you may change your mind at any time.
-            We will provide you with the ability to unsubscribe from our
-            email-database or opt out of communications. Please be aware we may
-            need to request specific information from you to help us confirm
-            your identity.
+            Si vous pensez que les informations que nous détenons à votre sujet sont inexactes,
+            périmées, incomplètes, non pertinentes ou trompeuses, veuillez nous contacter en
+            utilisant les coordonnées fournies dans cette politique de confidentialité. Nous
+            prendrons des mesures raisonnables pour corriger toute information jugée inexacte,
+            incomplète, trompeuse ou obsolète.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            If you believe that any information we hold about you is inaccurate,
-            out of date, incomplete, irrelevant, or misleading, please contact
-            us using the details provided in this privacy policy. We will take
-            reasonable steps to correct any information found to be inaccurate,
-            incomplete, misleading, or out of date.
+            Si vous pensez que nous avons enfreint une loi sur la protection des données et
+            que vous souhaitez déposer une plainte, veuillez nous contacter en utilisant les
+            coordonnées ci-dessous et nous fournir tous les détails de l'infraction présumée.
+            Nous examinerons rapidement votre plainte et vous répondrons, par écrit, en exposant
+            le résultat de notre enquête et les mesures que nous prendrons pour traiter votre
+            plainte. Vous avez également le droit de contacter un organisme de réglementation
+            ou une autorité chargée de la protection des données au sujet de votre plainte.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Utilisation des cookies
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            If you believe that we have breached a relevant data protection law
-            and wish to make a complaint, please contact us using the details
-            below and provide us with full details of the alleged breach. We
-            will promptly investigate your complaint and respond to you, in
-            writing, setting out the outcome of our investigation and the steps
-            we will take to deal with your complaint. You also have the right to
-            contact a regulatory body or data protection authority in relation
-            to your complaint.
+            Nous utilisons des "cookies" pour recueillir des informations sur vous et votre
+            activité sur notre site. Un cookie est un petit élément de données que notre
+            site Web stocke sur votre ordinateur et auquel il accède à chaque visite, afin
+            que nous puissions comprendre comment vous utilisez notre site. Cela nous aide
+            à vous proposer un contenu basé sur les préférences que vous avez spécifiées.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Limites de notre politique
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Use of Cookies
+            Notre site web peut contenir des liens vers des sites externes qui ne sont pas
+            exploités par nous. Sachez que nous n'avons aucun contrôle sur le contenu et les
+            politiques de ces sites, et que nous ne pouvons accepter la responsabilité de leurs
+            pratiques respectives en matière de confidentialité.
+          </p>
+          <p className="modalPrivacyData__modal__container__strong">
+            Modifications de la présente politique
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            We use “cookies” to collect information about you and your activity
-            across our site. A cookie is a small piece of data that our website
-            stores on your computer, and accesses each time you visit, so we can
-            understand how you use our site. This helps us serve you content
-            based on preferences you have specified.
+            À notre discrétion, nous pouvons modifier notre politique de confidentialité pour
+            refléter les mises à jour de nos processus commerciaux, les pratiques acceptables
+            actuelles ou les modifications législatives ou réglementaires. Si nous décidons de
+            modifier cette politique de confidentialité, nous publierons les modifications sur
+            le même lien que celui par lequel vous accédez à cette politique de confidentialité.
           </p>
           <p className="modalPrivacyData__modal__container__text">
-            Limits of Our Policy
+            Si la loi l'exige, nous obtiendrons votre autorisation ou vous donnerons la
+            possibilité d'accepter ou de refuser, selon le cas, toute nouvelle utilisation
+            de vos informations personnelles.
           </p>
+          <p className="modalPrivacyData__modal__container__strong">Nous contacter</p>
           <p className="modalPrivacyData__modal__container__text">
-            Our website may link to external sites that are not operated by us.
-            Please be aware that we have no control over the content and
-            policies of those sites, and cannot accept responsibility or
-            liability for their respective privacy practices.
-          </p>
-          <p className="modalPrivacyData__modal__container__text">
-            Changes to This Policy
-          </p>
-          <p className="modalPrivacyData__modal__container__text">
-            At our discretion, we may change our privacy policy to reflect
-            updates to our business processes, current acceptable practices, or
-            legislative or regulatory changes. If we decide to change this
-            privacy policy, we will post the changes here at the same link by
-            which you are accessing this privacy policy.
-          </p>
-          <p className="modalPrivacyData__modal__container__text">
-            If required by law, we will get your permission or give you the
-            opportunity to opt in to or opt out of, as applicable, any new uses
-            of your personal information.
-          </p>
-          <p className="modalPrivacyData__modal__container__text">Contact Us</p>
-          <p className="modalPrivacyData__modal__container__text">
-            For any questions or concerns regarding your privacy, you may
-            contact us using the following details:
+            Pour toute question ou préoccupation concernant votre vie privée, vous pouvez nous
+            contacter en utilisant les coordonnées suivantes :
           </p>
           <p className="modalPrivacyData__modal__container__text">
             Sport finder

@@ -65,12 +65,15 @@
         text-align: center;
         font-size: 1.5em;
         margin-bottom: v.$gutter;
+        font-weight: bold;
+        color: v.$text-color;
       }
 
       &__text{
         margin-bottom: v.$gutter*0.5;
         line-height: 1.5;
         margin-right: v.$gutter;
+        text-align: justify;
         &__a{
           text-decoration: underline;
           color: v.$text-color;
@@ -85,6 +88,7 @@
         font-weight: bold;
         color: v.$text-color;
         line-height: 2;
+        text-align: center;
       }
       &__a{
         text-decoration: underline;
