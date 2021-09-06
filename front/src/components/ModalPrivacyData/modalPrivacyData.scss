@@ -92,15 +92,24 @@
       }
     }
   }
-  @media (max-width: 321px){
-    
-    .modalPrivacyData{
-      
+}
+@media (max-width: 321px){
+  
+  .modalPrivacyData{
+    &__modal {
       &__title{
-        font-size: 2em;
-      }
-      
+      font-size: 1.5em;
+      }    
     }
+  }  
+}
+@media (max-width: 375px){
     
+  .modalPrivacyData{
+    &__modal {
+      &__title{
+      font-size:1.5em;
+      }    
+    }
   }
 }

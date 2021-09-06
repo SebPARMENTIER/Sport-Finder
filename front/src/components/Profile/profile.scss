@@ -9,6 +9,7 @@
   padding: v.$gutter*4 0 v.$gutter*4 0; 
   &__title{
     font-family: 'SF Sports Night';
+    text-align: center;
     font-size: 2.5em;
     color: v.$text-color;
     text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
@@ -55,6 +56,12 @@
     .profile__title{
       font-size: 2em;
       margin: v.$gutter*5 0;
+    }
+  }
+  @media (max-width: 375px){
+    .profile__title{
+      font-size: 2em;
+      margin: v.$gutter*3 0;
     }
   }
   @media (min-width: 430px){

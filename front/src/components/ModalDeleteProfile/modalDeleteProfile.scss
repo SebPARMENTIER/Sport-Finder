@@ -122,6 +122,25 @@
         font-size: 1em;
       }
     }
+  }
+
+  @media (max-width: 375px){
+    
+    .modalDeleteProfile{
+      
+      &__container__title{
+        font-size: 1.5em;
+      }
+      &__container__form{
+        
+        &__button{
+          font-size: 1em;
+        }
+      }
+      &__container__button{
+        font-size: 1em;
+      }
+    }
     
   }
 
