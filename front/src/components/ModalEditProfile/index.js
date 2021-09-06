@@ -35,7 +35,7 @@ const ModalEditProfile = ({
           <IoIosCloseCircleOutline className="modalSignIn__container__close__circle" />
         </button>
         <h1 className="modalEditProfile__container__title">
-          Modifier votre profile
+          Modifier votre profil
         </h1>
         <form
           className="modalEditProfile__container__form"

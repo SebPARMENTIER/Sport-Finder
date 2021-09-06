@@ -26,7 +26,7 @@ const About = ({
     </div>
     <div className="about__role">
       <div className="about__role__name">Giovanni</div>
-      <div className="about__role__desc">Lead dev Front - Référent technique API RNA - API Leaflet</div>
+      <div className="about__role__desc">Lead dev Front - Référent technique API RNA - Geo API Gouv - API Leaflet</div>
     </div>
     <div className="about__role last">
       <div className="about__role__name">Sébastien</div>
