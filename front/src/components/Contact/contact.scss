@@ -138,6 +138,11 @@
         border: none;
         border-radius: 5px;
         font-size: 1.2em;
+        transition-duration: 0.4s;
+      }
+      &__button:hover {
+        background-color: v.$text-color;
+        color: v.$secondary-color;
       }
     }    
   }

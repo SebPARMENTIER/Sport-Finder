@@ -95,6 +95,11 @@
       border-radius: 5px;
       font-size: 1.5em;
       margin: v.$gutter;
+      transition-duration: 0.4s;
+    }
+    &__addReview:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
     }
 
     &__back {
@@ -106,7 +111,13 @@
       border-radius: 5px;
       font-size: 1.5em;
       margin: v.$gutter;
+      transition-duration: 0.4s;
     }
+    &__back:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
+    }
+
   }  
 
   &__reviews {

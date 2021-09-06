@@ -144,7 +144,7 @@ const Results = ({
                 className="results__all__list__single"
               >
                 <div className="results__all__list__single__text">
-                  <p className="results__all__list__single__text__name">
+                  <p className="results__all__list__single__text__name__hover-underline-animation">
                     <Link
                       to={`/single/${result.id}`}
                       onClick={handleGetAllReviews}
@@ -174,7 +174,7 @@ const Results = ({
                 className="results__all__list__single"
               >
                 <div className="results__all__list__single__text">
-                  <p className="results__all__list__single__text__name">
+                  <p className="results__all__list__single__text__name__hover-underline-animation">
                     <Link
                       to={`/single/${result.id}`}
                       onClick={handleGetAllReviews}

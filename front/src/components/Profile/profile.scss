@@ -37,6 +37,11 @@
       background-color: v.$secondary-color;
       color: v.$text-color;
       margin-bottom: v.$gutter*2;
+      transition-duration: 0.4s;
+    }
+    &__edit:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
     }
   }
 
@@ -51,6 +56,11 @@
     margin-top: v.$gutter*3;
     margin-bottom: v.$gutter*2;
     text-align: center;
+    transition-duration: 0.4s;
+  }
+  &__logOut:hover {
+    background-color: v.$text-color;
+    color: v.$secondary-color;
   }
   @media (max-width: 321px){
     .profile__title{
