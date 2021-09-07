@@ -12,6 +12,10 @@ import {
   clickOnButtonCloseSettings,
 } from 'src/actions/user';
 
+import {
+  clickOnNewSearch,
+} from 'src/actions/search';
+
 const mapStateToProps = (state) => ({
   lastname: state.contact.lastname,
   firstname: state.contact.firstname,
@@ -43,6 +47,9 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('container');
     const action = clickOnButtonCloseSettings();
     dispatch(action);
+  },
+  onClickNewSearch: () => {
+    dispatch(clickOnNewSearch());
   },
 });
 

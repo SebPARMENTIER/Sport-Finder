@@ -63,7 +63,6 @@ export const initialState = {
   openEditProfile: false,
   openEditPassword: false,
   openDeleteProfile: false,
-  openEditPassword: false,
   openPrivacyData: false,
   isCreateUserSuccess: false,
   isCreateUserError: false,
