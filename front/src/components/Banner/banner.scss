@@ -1,0 +1,53 @@
+@use 'src/styles/vars' as v;
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  &__picture {
+    background-image: v.$picture;
+    width: 90%;
+    height: v.$gutter*10;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title{
+      font-family: 'SF Sports Night';
+      font-size: 7rem;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+    } 
+  }
+}
+@media (max-width: 770px){
+    .banner{
+      visibility: hidden;
+      height: 0px;
+      &__picture{
+        height: 0px;
+        visibility: hidden;
+      }
+    }
+  }
+  @media (max-width: 426px){
+    .banner{
+      visibility: hidden;
+      height: 0%;
+      width: 0%;
+      &__picture{
+        height: 0px;
+        visibility: hidden;
+        &__title{
+          height: 0px;
+          visibility: hidden;
+        }
+      }
+    }
+  }

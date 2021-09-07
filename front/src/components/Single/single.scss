@@ -1,0 +1,294 @@
+@use 'src/styles/vars' as v;
+
+.single {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: auto;
+  padding: v.$gutter*5 0 v.$gutter*2 0;
+  margin: 0 auto;
+
+  &__infos {
+
+    &__header {
+
+      &__picture {
+        width: 100%;
+        height: v.$gutter*10;
+        display: flex;
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        &__title {
+          font-family: 'SF Sports Night';
+          font-size: 5em;
+          color: v.$text-color;
+          text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+        }
+      }
+    }
+
+    &__content {
+      background-color: white;
+      padding: v.$gutter;
+      font-size: v.$gutter*1.2;
+
+      &__name{
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+        padding-bottom: v.$gutter;
+      }
+
+      &__desc {
+        text-align: center;
+        padding-bottom: v.$gutter*2;
+
+        &__city {
+          font-weight: bold;
+        }
+      }
+
+      &__association {
+        display: flex;
+        flex-direction: column;
+
+        &__properties {
+          display: flex;
+            flex-direction: row;
+            font-size: 1em;
+            width: 100%;
+
+
+          &__Name {
+            padding-bottom: v.$gutter;
+            width: 20%;
+          }
+
+          &__value {
+            padding-bottom: v.$gutter;
+
+            &__web {
+              color: blue;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+
+    &__addReview {
+      width: 20%;
+      padding: v.$gutter*0.7 v.$gutter;      
+      color: v.$text-color;
+      background-color: v.$secondary-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5em;
+      margin: v.$gutter;
+      transition-duration: 0.4s;
+    }
+    &__addReview:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
+    }
+
+    &__back {
+      width: 20%;
+      padding: v.$gutter*0.7 v.$gutter;
+      color: v.$text-color;
+      background-color: v.$secondary-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.5em;
+      margin: v.$gutter;
+      transition-duration: 0.4s;
+    }
+    &__back:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
+    }
+
+  }  
+
+  &__reviews {
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    overflow-y: auto;
+    padding-right: v.$gutter*0.5;
+
+    &::-webkit-scrollbar {
+      width: 0.8em;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: v.$secondary-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: v.$text-color;
+      border-radius: 5px;
+    } 
+  }
+  
+  &__declare {
+      color: v.$text-color;
+      text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+      text-align: center;
+      padding-bottom: v.$gutter;
+    }
+  .click {
+    font-style: italic;
+    color: blue;
+  } 
+  
+}
+@media (max-width: 770px){
+  .single {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: auto;
+    padding: v.$gutter*5 0 v.$gutter*2 0;
+    margin: 0 auto;
+  
+    &__infos {
+  
+      &__header {
+  
+        &__picture {
+          width: 100%;
+          height: v.$gutter*5;
+          display: flex;
+          background-size: cover;
+          background-position: center;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      
+          &__title {
+            font-family: 'SF Sports Night';
+            font-size: 3em;
+            color: v.$text-color;
+            text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+          }
+        }
+      }
+  
+      &__content {
+        background-color: white;
+        padding: v.$gutter;
+        font-size: v.$gutter;
+  
+        &__name{
+          text-align: center;
+          font-weight: bold;
+          font-size: 1em;
+          padding-bottom: v.$gutter;
+        }
+  
+        &__desc {
+          text-align: center;
+          padding-bottom: v.$gutter;
+          font-size: 0.9em;
+          &__city {
+            font-weight: bold;
+          }
+        }
+  
+        &__association {
+          display: flex;
+            flex-direction: column;
+  
+          &__properties {
+            display: flex;
+            flex-direction: row;
+            font-size: 0.9em;
+            width: 100%;
+            padding-right: 0;
+  
+            &__Name {
+              padding-bottom: v.$gutter;
+              width: 25%;
+            }
+  
+            &__value {
+              padding-bottom: v.$gutter;
+              margin-left: 0.5em;
+            }
+          }
+        }
+      }
+    }
+    &__buttons {
+      display: flex;
+      justify-content: center;
+
+      &__addReview {
+        width: 50%;
+        padding: v.$gutter*0.5 v.$gutter*0.5;      
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: v.$gutter;
+      }
+
+      &__back {
+        width: 50%;
+        padding: v.$gutter*0.5 v.$gutter*0.5;
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        margin: v.$gutter;
+      }
+    }
+    &__reviews {
+      display: flex;
+      flex-direction: column;
+      height: 25vh;
+      overflow-y: auto;
+      padding-right: v.$gutter*0.5;
+  
+      &::-webkit-scrollbar {
+        width: 0.8em;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: v.$secondary-color;
+        border-radius: 5px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: v.$text-color;
+        border-radius: 5px;
+      } 
+    }
+    
+    &__declare {
+        color: v.$text-color;
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+        text-align: center;
+        padding-bottom: v.$gutter;
+      }
+    .click {
+      font-style: italic;
+      color: blue;
+    } 
+  }  
+}

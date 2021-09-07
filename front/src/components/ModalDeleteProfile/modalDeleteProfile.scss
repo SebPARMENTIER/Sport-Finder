@@ -1,0 +1,171 @@
+@use 'src/styles/vars' as v;
+
+.modalDeleteProfile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+  &__container{
+    background-color: v.$secondary-color;
+    width: 90%;
+    height: auto;
+    position: absolute;
+    top: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 7px 21px 15px rgba(0,0,0,0.3);
+    &__close{
+      border: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 10px;
+      background-color: v.$secondary-color;
+      &__circle{
+        color: v.$text-color;
+        font-size: 2em;
+        margin: 15px 15px 0 0;
+        border-radius: 10px;
+      }
+    }
+    
+    &__title{
+      text-align: center;
+      font-family: 'SF Sports Night';
+      font-size: 4em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0;
+    }
+    &__text{
+      color: v.$text-color;
+      text-align: center;
+      font-size: 1.2em;
+      margin-bottom: v.$gutter*2;
+    }
+    &__form{
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 90%;
+      padding-bottom: v.$gutter*2;
+      border-bottom: 2px solid v.$text-color;
+      margin-bottom: v.$gutter*2;
+
+      &__success{
+        background-color: rgb(115, 185, 109);
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        border-radius: 10px;
+        margin-bottom: v.$gutter*3;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      &__error{
+        background-color: rgb(185, 109, 109);
+        border-radius: 10px;
+        padding: v.$gutter v.$gutter*2;
+        color: white;
+        margin-bottom: v.$gutter;
+        font-size: 2em;
+        text-align: center;
+      }
+
+      &__button{
+        font-size: 1.5em;
+        padding: v.$gutter*0.3 v.$gutter;
+        color: v.$secondary-color;
+        background-color: v.$text-color;
+        border: none;
+        border-radius: 5px;
+        width: auto;
+      }
+    }
+    &__button{
+      font-size: 1.5em;
+      padding: v.$gutter*0.5 v.$gutter;
+      color: v.$secondary-color;
+      background-color: v.$text-color;
+      border: none;
+      border-radius: 5px;
+      width: auto;
+      margin: 0 auto;
+      margin-bottom: v.$gutter*2;
+    }
+  }
+  
+  
+  @media (max-width: 321px){
+    
+    .modalDeleteProfile{
+      
+      &__container__title{
+        font-size: 3em;
+      }
+      &__container__form{
+        
+        &__button{
+          font-size: 1em;
+        }
+      }
+      &__container__button{
+        font-size: 1em;
+      }
+    }
+  }
+
+  @media (max-width: 375px){
+    
+    .modalDeleteProfile{
+      
+      &__container__title{
+        font-size: 1.5em;
+      }
+      &__container__form{
+        
+        &__button{
+          font-size: 1em;
+        }
+      }
+      &__container__button{
+        font-size: 1em;
+      }
+    }
+    
+  }
+
+  @media (min-width: 770px){
+    .modalSignIn{
+      &__container__title{
+        font-size: 4em;
+      }
+      &__container__form{
+        flex-direction: column;
+        align-items: center;
+        &__text{
+          font-size: 1.8em;
+        }
+        &__field{
+          font-size: 1.8em;
+          margin-bottom: v.$gutter;
+        }
+        &__button{
+          font-size: 2em;
+        }
+      }
+      &__container__button{
+        font-size: 2em;
+      }
+    }
+  }
+}

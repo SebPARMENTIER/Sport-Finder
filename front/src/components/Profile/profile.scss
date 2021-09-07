@@ -1,0 +1,122 @@
+@use 'src/styles/vars' as v;
+
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: v.$gutter*4 0 v.$gutter*4 0; 
+  &__title{
+    font-family: 'SF Sports Night';
+    text-align: center;
+    font-size: 2.5em;
+    color: v.$text-color;
+    text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+    margin: v.$gutter*3 0 v.$gutter*5 0;
+  }
+  &__name{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: v.$gutter*2;
+  }
+  &__button{
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: v.$gutter 0;
+    
+
+    &__edit{
+      font-size: 1em;
+      padding: v.$gutter;
+      border: none;
+      border-radius: 5px;
+      background-color: v.$secondary-color;
+      color: v.$text-color;
+      margin-bottom: v.$gutter*2;
+      transition-duration: 0.4s;
+    }
+    &__edit:hover {
+      background-color: v.$text-color;
+      color: v.$secondary-color;
+    }
+  }
+
+  &__logOut{
+    width: 50%;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    padding: v.$gutter;
+    background-color: v.$secondary-color;
+    color: v.$text-color;
+    margin-top: v.$gutter*3;
+    margin-bottom: v.$gutter*2;
+    text-align: center;
+    transition-duration: 0.4s;
+  }
+  &__logOut:hover {
+    background-color: v.$text-color;
+    color: v.$secondary-color;
+  }
+  @media (max-width: 321px){
+    .profile__title{
+      font-size: 2em;
+      margin: v.$gutter*5 0;
+    }
+  }
+  @media (max-width: 375px){
+    .profile__title{
+      font-size: 2em;
+      margin: v.$gutter*3 0;
+    }
+  }
+  @media (min-width: 430px){
+    .profile__title{
+      font-size: 5em;
+      margin: v.$gutter*3 0;
+    }
+    .profile__name{
+      font-size: 2.5em;
+    }
+    .profile__button{
+      width: 50%;
+      height: 40%;
+      &__edit{
+        font-size: 2.5em;
+      }
+    }
+
+    .profile__logOut{
+      font-size: 2.5em;
+      width: 30%;
+    }
+    
+  }
+  @media (min-width: 760px){
+    .profile__title{
+      font-size: 4em;
+      margin: v.$gutter*3 0;
+    }
+    .profile__name{
+      font-size: 2em;
+    }
+    .profile__button{
+      width: 60%;
+      height: 30%;
+      &__edit{
+        font-size: 2em;
+      }
+    }
+
+    .profile__logOut{
+      font-size: 2em;
+      width: 30%;
+    }
+    
+  }
+
+}

@@ -3,6 +3,13 @@
 
 body {
   font-family: sans-serif;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+html{
+  width: 100%;
+  background-image: vars.$pictureGreen
 }
 
 /* 

@@ -1,0 +1,68 @@
+@use 'src/styles/vars' as v;
+
+.settings{
+  background-color: v.$secondary-color;
+  width: 230px;
+  height: 120px;
+  position: fixed;
+  right: -30px;
+  top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 0 15px;
+  padding-right: 30px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.3);
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.56,-0.69, 0.42, 1.73);
+  &--open{
+    transform: translateX(0);
+    transition: transform 1s cubic-bezier(0.56,-0.69, 0.42, 1.73);
+  }
+
+  &__profile{
+    font-size: 1em;
+    border: none;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    width: auto;
+    margin-right: auto;
+    margin-left: 15%;
+    margin-top: v.$gutter;
+    
+  }
+  &__logOut{
+    font-size: 1em;
+    border: none;
+    color: v.$text-color;
+    background-color: v.$secondary-color;
+    margin-top: v.$gutter;
+    padding-top: v.$gutter;
+    width: auto;
+    border-top: 3px solid v.$text-color;
+    
+  }
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: v.$text-color;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: v.$text-color;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

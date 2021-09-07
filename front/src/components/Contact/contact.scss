@@ -1,0 +1,213 @@
+@use 'src/styles/vars' as v;
+
+.contact {
+  text-align: center;  
+  height: auto;
+  padding: v.$gutter*6 0 v.$gutter*5 0;
+
+  &__title {
+    font-size: v.$gutter*2;
+    color: v.$text-color;
+    font-weight: bold;
+    padding: v.$gutter;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+  }
+
+  &__text {
+    color: v.$text-color;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: v.$gutter;
+    margin-bottom: v.$gutter;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+  }
+
+  &__form {
+    color: v.$secondary-color;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+
+    &__success{
+      background-color: rgb(115, 185, 109);
+      padding: v.$gutter v.$gutter*2;
+      color: white;
+      border-radius: 10px;
+      margin-bottom: v.$gutter*3;
+      font-size: 2em;
+      text-align: center;
+    }
+    
+    &__block__first {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom:v.$gutter*2;
+
+      &__civility {        
+        width: 100%;
+        height: 30px;
+        padding-left: v.$gutter;
+        margin-bottom: v.$gutter*1.2 ;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        background-color: white;
+        color: gray;
+      }
+
+      &__lastname {
+        width: 100%;
+        height: 20px;
+        padding: v.$gutter;
+        margin: 0;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        
+      }
+
+      &__firstname {
+        width: 100%;
+        height: 20px;
+        padding: v.$gutter;
+        margin: 0;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+
+    &__block__second {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: v.$gutter*2;
+
+      &__email {
+        width: 100%;
+        height: 20px;
+        padding: v.$gutter;
+        margin: 0;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__subject {
+        width: 100%;
+        height: 20px;
+        padding: v.$gutter;
+        margin: 0;
+        margin-bottom: v.$gutter;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+
+    &__block__third {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      &__content {
+        width: 90%;
+        height: 10%;
+        padding: v.$gutter*1.5;
+        font-size: 1.2em;
+        border-radius: 5px;
+        border: none;
+      }
+
+      &__button {
+        min-width: 20%;
+        padding: v.$gutter*0.7;
+        margin: v.$gutter*2 auto 0 auto;
+        color: v.$text-color;
+        background-color: v.$secondary-color;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        transition-duration: 0.4s;
+      }
+      &__button:hover {
+        background-color: v.$text-color;
+        color: v.$secondary-color;
+      }
+    }    
+  }
+  @media (min-width: 760px){
+    .contact{
+      height: auto;
+      &__title{
+        font-size: 3em;
+        margin: 0 0;
+      }
+      &__text{
+        font-size: 1.5em;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: v.$gutter;
+      }
+      &__form{
+        margin-top: v.$gutter*2;
+        &__block__first{
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          &__civility{
+            width: 10vw;
+            font-size: 1em;
+            height: 35px;
+            margin-bottom: v.$gutter;
+            margin-right: v.$gutter*2;
+          }
+          &__lastname {
+            width: 37vw;
+            padding: v.$gutter*1.1 ;
+            margin-right: v.$gutter*2;
+          }
+          &__firstname{
+            width: 37vw;
+            padding: v.$gutter*1.1 ;
+          }
+        }
+        &__block__second{
+          flex-direction: row;
+          width: 100%;
+
+          &__email{
+            width: 35vw;
+            padding: v.$gutter*1.1 ;
+            margin-right: v.$gutter;
+          }
+          &__subject{
+            width: 52vw;
+            padding: v.$gutter*1.1 ;
+            margin-left: v.$gutter;
+          }
+        }
+        &__block__third{
+          margin-bottom: v.$gutter;
+          &__content{
+            width: 90vw;
+            height: 180px;
+          }
+          
+        }
+      }
+    }
+    
+  }
+}

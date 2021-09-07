@@ -1,0 +1,89 @@
+@use 'src/styles/vars' as v;
+
+
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-around;
+  padding: v.$gutter*6 0 v.$gutter*5 0; 
+  
+  
+  &__picture{
+    background-image: v.$picture;
+    width: 90%;
+    height: 50%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title{
+      font-family: 'SF Sports Night';
+      font-size: 9em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+    } 
+  }
+
+  &__slogan{
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: v.$gutter*2 0;
+    width: 90%;
+    text-align: center;
+    color: v.$text-color;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 1);
+  }
+
+  &__search{
+    margin-bottom: v.$gutter*3;
+  }
+  @media (max-width: 1024px) {
+    
+    .home__picture__title{
+      font-size: 5em;
+    }
+    .home__slogan{
+      font-size: 1.5em;
+      margin: v.$gutter;
+    }
+  }
+  @media (max-width: 768px) {
+    
+    .home__picture__title{
+      font-size: 4em;
+    }
+    .home__slogan{
+      font-size: 1.5em;
+      margin: v.$gutter;
+    }
+  }
+  @media (max-width: 426px) {
+    
+    .home{
+      justify-content: space-around;
+      &__picture{
+        height: 350px;
+        &__title{
+          font-size: 2.5em;
+        }
+      }
+      &__slogan{
+        font-size: 1.2em;
+        margin: v.$gutter*2;
+      }
+      &__search{
+        margin-bottom: 0;
+      }
+    } 
+  }
+}
+    
+    
+
+    

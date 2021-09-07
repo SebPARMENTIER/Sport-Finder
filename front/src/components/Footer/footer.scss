@@ -1,0 +1,70 @@
+@use 'src/styles/vars';
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  padding: vars.$gutter*1.5;
+  background: vars.$secondary-color;
+  color: vars.$text-color;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  font-size: 1.2rem;
+  box-shadow: 0px -10px 15px -3px rgba(0,0,0,0.3);
+
+  &__contact {
+    left: 0;
+    margin-left: vars.$gutter*0.5;
+    margin-right: vars.$gutter*3;
+  }
+  &__aboutus {
+    left: 0;
+    margin-right: vars.$gutter*2;
+  }
+  &__copyright {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 0;
+    margin-right: 15px;
+    text-align: right;
+  }
+}
+@media (max-width: 430px){
+  .footer{
+    font-size: 1rem;
+    padding: vars.$gutter 5px;
+  }
+  .footer__copyright{
+    position: absolute;
+    width: 50%;
+    right: 0;
+    font-size: 1rem;
+  }
+  .footer__contact{
+    margin-right: 10px;
+  }
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: vars.$text-color;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: vars.$text-color;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

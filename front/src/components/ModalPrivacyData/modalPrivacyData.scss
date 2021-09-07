@@ -1,0 +1,119 @@
+@use 'src/styles/vars' as v;
+
+.modalPrivacyData{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(129, 125, 125, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &__modal{
+    background-color: v.$secondary-color;
+    width: 90%;
+    height: 60%;
+    position: absolute;
+    top: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 7px 21px 15px rgba(0,0,0,0.3);
+    &__close{
+      border: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 10px;
+      background-color: v.$secondary-color;
+      &__circle{
+        color: v.$text-color;
+        font-size: 2em;
+        margin: 15px 15px 0 0;
+        border-radius: 10px;
+      }
+    }
+    &__title{
+      text-align: center;
+      font-family: 'SF Sports Night';
+      font-size: 4em;
+      color: v.$text-color;
+      text-shadow: -8px 0px 6px rgba(0, 0, 0, 1),8px 0px 6px rgba(0, 0, 0, 1),0px 8px 6px rgba(0, 0, 0, 1),0px -8px 6px rgba(0, 0, 0, 1);
+      margin: v.$gutter*3 0 ;
+    }
+    &__container{
+      width: 90%;
+      height: 50%;
+      margin: 0 auto;
+      overflow-y: auto;
+      color: white;
+      text-align: left;
+      &::-webkit-scrollbar {
+        width: 1em;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: v.$scrollbar-color;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: v.$text-color;
+        border-radius: 5px;
+      }
+      &__h2{
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: v.$gutter;
+        font-weight: bold;
+        color: v.$text-color;
+      }
+
+      &__text{
+        margin-bottom: v.$gutter*0.5;
+        line-height: 1.5;
+        margin-right: v.$gutter;
+        text-align: justify;
+        &__a{
+          text-decoration: underline;
+          color: v.$text-color;
+        }
+      }
+      &__list{
+        list-style: inside;
+        line-height: 1.2;
+        margin-bottom: v.$gutter*0.5;
+      }
+      &__strong{
+        font-weight: bold;
+        color: v.$text-color;
+        line-height: 2;
+        text-align: center;
+      }
+      &__a{
+        text-decoration: underline;
+        color: v.$text-color;
+      }
+    }
+  }
+}
+@media (max-width: 321px){
+  
+  .modalPrivacyData{
+    &__modal {
+      &__title{
+      font-size: 1.5em;
+      }    
+    }
+  }  
+}
+@media (max-width: 375px){
+    
+  .modalPrivacyData{
+    &__modal {
+      &__title{
+      font-size:1.5em;
+      }    
+    }
+  }
+}
