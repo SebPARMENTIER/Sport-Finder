@@ -79,7 +79,7 @@ Review.propTypes = {
   onClickModalDeleteReview: PropTypes.func.isRequired,
   getIdValue: PropTypes.func.isRequired,
   idUser: PropTypes.number.isRequired,
-  userId: PropTypes.string.isRequired,
+  userId: PropTypes.number.isRequired,
 };
 
 export default Review;

@@ -33,8 +33,8 @@ const searchMiddleware = (store) => (next) => (action) => {
           // on stocke le nb de page
           const nbPage = Number(response.data.total_pages);
           let nbResult = Number(response.data.total_results);
-          console.log('nbpage', nbPage);
-          console.log('nbresult', nbResult);
+          // console.log('nbpage', nbPage);
+          // console.log('nbresult', nbResult);
           //  en réponse on boucle chaque association pour la push dans le tableau la 1er foix
           // si le nb de page est égale a 1
           if (nbPage === 1) {
@@ -44,7 +44,7 @@ const searchMiddleware = (store) => (next) => (action) => {
             // console.log('tableau pour une page', tableau);
             // eslint-disable-next-line max-len
             const cityFilter = tableau.filter(({ adresse_code_postal }) => adresse_code_postal.startsWith(state.search.city));
-            console.log('code postal result for 1', cityFilter);
+            // console.log('code postal result for 1', cityFilter);
             if (cityFilter.length === 0) {
               store.dispatch(getResultsFromApiError(error));
             }

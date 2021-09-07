@@ -74,7 +74,7 @@ const Profile = ({
           type="button"
           onClick={handleModalPrivacyData}
         >
-          Vie privée et données
+          Confidentialité et données
         </button>
       </div>
       <div className="profile__logOut">

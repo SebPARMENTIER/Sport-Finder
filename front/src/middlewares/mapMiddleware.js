@@ -28,7 +28,7 @@ const mapMiddleware = (store) => (next) => (action) => {
         }
         return state.search.city;
       };
-      console.log(cityCenterPositionPostalCode());
+      // console.log(cityCenterPositionPostalCode());
       // eslint-disable-next-line no-case-declarations
       const config = {
         method: 'GET',
@@ -69,7 +69,7 @@ const mapMiddleware = (store) => (next) => (action) => {
           }, 120 * index);
         }
       }
-      console.log('markerArray', markerArray);
+      // console.log('markerArray', markerArray);
       // const markerArray = [];
       // const results = state.search.results;
       // for (let index = 0; index < results.length; index++) {

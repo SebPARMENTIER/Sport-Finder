@@ -81,7 +81,7 @@ const Single = ({
   // console.log('tabStar', tabStar);
 
   // console.log('result', result);
-  console.log('reviewFilter:', reviewFilter);
+  // console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">

@@ -153,7 +153,7 @@ Contact.propTypes = {
   firstname: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
-  civility: PropTypes.string.isRequired,
+  civility: PropTypes.string,
   content: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,

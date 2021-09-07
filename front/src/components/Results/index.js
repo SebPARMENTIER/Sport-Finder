@@ -36,9 +36,9 @@ const Results = ({
   openLogUp,
   reviewsForAvg,
 }) => {
-  console.log('cityCenterLat', cityCenterLat);
+  // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
-  console.log('position', position);
+  // console.log('position', position);
   const icons = markers.map((marker) => (
     <Marker
       key={marker[2]}
@@ -101,7 +101,7 @@ const Results = ({
     return !rep;
   });
 
-  console.log('withStars: ', withStars);
+  // console.log('withStars: ', withStars);
 
   const handleGetAllReviews = () => {
     getAllReviews();
@@ -161,7 +161,7 @@ const Results = ({
                   {result.avg !== null ? (
                     <StarRatingStatic
                       key={result.key_association}
-                      rating={result.avg}
+                      rating={Number(result.avg)}
                     />
                   ) : <p className="results__all__list__single__rating__noReview">Aucun avis déposé</p>}
                 </div>

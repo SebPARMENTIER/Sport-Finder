@@ -19,7 +19,7 @@ export default function ModalPrivacyData({ onClickClosePrivacyData }) {
         >
           <IoIosCloseCircleOutline className="modalPrivacyData__modal__close__circle" />
         </button>
-        <h1 className="modalPrivacyData__modal__title">Privacy and Data</h1>
+        <h1 className="modalPrivacyData__modal__title">Confidentialité et données</h1>
         <div className="modalPrivacyData__modal__container">
           <h2 className="modalPrivacyData__modal__container__h2">
             Politique de confidentialité

@@ -112,7 +112,6 @@ ModalEditProfile.propTypes = {
   newPseudo: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
-  onClickCloseEditProfil: PropTypes.func.isRequired,
   handleUpdatePseudo: PropTypes.func.isRequired,
   isUpdatePseudoSuccess: PropTypes.bool.isRequired,
   isUpdatePseudoError: PropTypes.bool.isRequired,
