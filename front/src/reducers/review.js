@@ -70,6 +70,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openAddReview: false,
+        reviewContent: '',
+        rating: 1,
       };
     case GET_ALL_REVIEWS_SUCCESS:
       return {
