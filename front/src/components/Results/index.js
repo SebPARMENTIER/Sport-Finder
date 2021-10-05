@@ -52,7 +52,7 @@ const Results = ({
   const tabAssociation = [];
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < results.length; i++) {
-    const result = reviewsForAvg.filter((reviewForAvg) => Number(reviewForAvg.key_association) === results[i].id);
+    const result = reviewsForAvg.filter((reviewForAvg) => reviewForAvg.key_association === results[i].id_association);
     if (result.length > 0) {
       tabAssociation.push(result);
     }
@@ -63,7 +63,7 @@ const Results = ({
   tabAssociation.map((tab) => {
     tab.forEach((item) => {
       newArray.push({
-        id: item.id, name: item.name, key_association: Number(item.key_association), avg: item.avg,
+        id: item.id, name: item.name, key_association: item.key_association, avg: item.avg,
       });
     });
   });
@@ -74,7 +74,7 @@ const Results = ({
     let rep;
     // eslint-disable-next-line no-restricted-syntax
     for (const b of newArray) {
-      rep = b.key_association === a.id;
+      rep = b.key_association === a.id_association;
       if (rep) {
         a.avg = b.avg;
         break;
@@ -92,7 +92,7 @@ const Results = ({
 
     // eslint-disable-next-line no-restricted-syntax
     for (const b of newArray) {
-      rep = b.key_association === a.id;
+      rep = b.key_association === a.id_association;
       if (rep) {
         break;
       }
@@ -140,13 +140,13 @@ const Results = ({
             {/* affichage de la liste avec étoile (en premier) */}
             {sortedNewArray.map((result) => (
               <div
-                key={result.id}
+                key={result.id_association}
                 className="results__all__list__single"
               >
                 <div className="results__all__list__single__text">
                   <p className="results__all__list__single__text__name__hover-underline-animation">
                     <Link
-                      to={`/single/${result.id}`}
+                      to={`/single/${result.id_association}`}
                       onClick={handleGetAllReviews}
                       {...result}
                     >
@@ -170,13 +170,13 @@ const Results = ({
             {/* affichage de la liste sans étoiles (en second) */}
             {noStars.map((result) => (
               <div
-                key={result.id}
+                key={result.id_association}
                 className="results__all__list__single"
               >
                 <div className="results__all__list__single__text">
                   <p className="results__all__list__single__text__name__hover-underline-animation">
                     <Link
-                      to={`/single/${result.id}`}
+                      to={`/single/${result.id_association}`}
                       onClick={handleGetAllReviews}
                       {...result}
                     >

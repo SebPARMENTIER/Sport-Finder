@@ -38,11 +38,11 @@ const Single = ({
   const handleModalAddReview = () => {
     onClickModalAddReview();
     getSingleAssociationName(result.titre);
-    getSingleAssociationKey(result.id);
+    getSingleAssociationKey(result.id_association);
     // console.log('id:', result.id, 'titre:', result.titre);
   };
   const reviewFilter = allReviews.filter(
-    (review) => review.association.key_association.includes(result.id),
+    (review) => review.association.key_association.includes(result.id_association),
   );
   const handleOnClickReturnResults = () => {
     onClickCloseSettings();
