@@ -220,7 +220,7 @@ const Results = ({
 Results.propTypes = {
   results: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id_association: PropTypes.string.isRequired,
       titre: PropTypes.string.isRequired,
       adresse_numero_voie: PropTypes.string,
       adresse_repetition: PropTypes.string,

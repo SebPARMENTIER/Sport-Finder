@@ -8,7 +8,7 @@ import {
 } from 'src/actions/review';
 
 const mapStateToProps = (state, ownProps) => ({
-  userId: state.user.userId,
+  userId: Number(state.user.userId),
   id: ownProps.id,
   createdAt: ownProps.createdAt,
   author: ownProps.author,

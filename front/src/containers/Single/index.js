@@ -15,7 +15,7 @@ import {
 } from 'src/actions/user';
 
 const mapStateToProps = (state, { match, history }) => {
-  console.log('match', match);
+  // console.log('match', match);
   // console.log('state', state.search.results);
   const { id } = match.params;
   return ({

@@ -12,15 +12,16 @@ const StarRating = ({
     // console.log('click')
     onClickStar(event.target.value);
   };
-
+  
   return (
     <div className="rating">
       {[...Array(5)].map((_star, i) => {
         const ratingValue = i + 1;
-
         return (
           // eslint-disable-next-line jsx-a11y/label-has-associated-control
-          <label>
+          <label
+            key={ratingValue}
+          >
             <input
               type="radio"
               name="rating"
@@ -29,9 +30,8 @@ const StarRating = ({
 
             />
             <FaStar
-              key={ratingValue}
               className="star"
-              color={ratingValue <= Number(rating) ? '#ffc107' : '#e4e5e9'}
+              color={ratingValue <= rating ? '#ffc107' : '#e4e5e9'}
               size={40}
             />
           </label>
