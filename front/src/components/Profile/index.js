@@ -1,14 +1,17 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+// == Import : local
 import ModalEditProfile from 'src/containers/ModalEditProfile';
 import ModalEditPassword from 'src/containers/ModalEditPassword';
 import ModalDeleteProfile from 'src/containers/ModalDeleteProfile';
 import ModalPrivacyData from 'src/containers/ModalPrivacyData';
-import { Link } from 'react-router-dom';
-
-import PropTypes from 'prop-types';
-
 import './profile.scss';
 
+// == Component
 const Profile = ({
   onClickModalEditProfile,
   onClickModalEditPassword,
@@ -23,7 +26,6 @@ const Profile = ({
   onClickCloseSettings,
 }) => {
   const handleModalEditProfile = () => {
-    // console.log("click");
     onClickModalEditProfile();
     onClickCloseSettings();
   };
@@ -32,7 +34,6 @@ const Profile = ({
     onClickCloseSettings();
   };
   const handleModalEditPassword = () => {
-    // console.log('click');
     onClickModalEditPassword();
     onClickCloseSettings();
   };
@@ -107,4 +108,5 @@ Profile.propTypes = {
   onClickCloseSettings: PropTypes.func.isRequired,
 };
 
+// == Export
 export default Profile;

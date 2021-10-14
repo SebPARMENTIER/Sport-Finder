@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-plusplus */
 // == Import : npm
@@ -15,6 +16,7 @@ import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
 import sportsData from 'src/assets/sportsData';
 
+// == Component
 const Single = ({
   result,
   sport,
@@ -32,6 +34,7 @@ const Single = ({
   onClickCloseSettings,
   handleAverage,
 }) => {
+  // Display image corresponding to the searched sport
   const image = sportsData.find((sportData) => (
     sportData.label.toLowerCase() === sport.toLowerCase()
   ));
@@ -39,11 +42,12 @@ const Single = ({
     onClickModalAddReview();
     getSingleAssociationName(result.titre);
     getSingleAssociationKey(result.id_association);
-    // console.log('id:', result.id, 'titre:', result.titre);
   };
+  // Display reviews for the selected association
   const reviewFilter = allReviews.filter(
     (review) => review.association.key_association.includes(result.id_association),
   );
+  // Back to results
   const handleOnClickReturnResults = () => {
     onClickCloseSettings();
     handleAverage();
@@ -61,27 +65,6 @@ const Single = ({
       ici
     </Link>
   );
-  // const tabStar = [];
-
-  // const pushStar = () => {
-  //   for (let index = 0; index < reviewFilter.length; index++) {
-  //     tabStar.push(reviewFilter[index].star);
-  //   }
-  // };
-  // pushStar();
-
-  // let sum = 0;
-  // for (let index = 0; index < tabStar.length; index++) {
-  //   sum += tabStar[index];
-  // }
-  // console.log('sum', sum);
-  // const avg = sum / tabStar.length;
-  // console.log(Math.round(avg));
-  // const roundAvg = Math.round(avg);
-  // console.log('tabStar', tabStar);
-
-  // console.log('result', result);
-  // console.log('reviewFilter:', reviewFilter);
   return (
     <div className="single">
       <div className="single__infos">
@@ -179,4 +162,5 @@ Single.propTypes = {
   handleAverage: PropTypes.func.isRequired,
 };
 
+// == Export
 export default Single;

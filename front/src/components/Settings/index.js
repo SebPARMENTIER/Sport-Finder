@@ -1,9 +1,12 @@
+// == Import : npm
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import './settings.scss';
 
+// == Component
 const Settings = ({
   open,
   onClickCloseSettings,
@@ -11,7 +14,6 @@ const Settings = ({
 }) => {
   const classnameSetting = open ? 'settings settings--open' : 'settings';
   const handleCloseSettings = () => {
-    // console.log('close setting');
     onClickCloseSettings();
   };
   const handleLogOut = () => {
@@ -46,4 +48,5 @@ Settings.propTypes = {
   onClickLogOut: PropTypes.func.isRequired,
 };
 
+// == Export
 export default Settings;

@@ -1,12 +1,15 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
+// == Import : local
 import sportsData from 'src/assets/sportsData';
 import departementsData from 'src/assets/departements-region';
-
 import './searchForm.scss';
 
+// == Component
 const SearchForm = ({
   changeField,
   handleSearch,
@@ -21,6 +24,7 @@ const SearchForm = ({
   const handleSubmit = (event) => {
     event.preventDefault();
     handleSearch();
+    // Download average from DB to display it on result page
     handleAverage();
     history.push('/results');
   };
@@ -28,7 +32,9 @@ const SearchForm = ({
     event.preventDefault();
     onClickError();
   };
+  // Check if both fields are not emply
   const submit = fullFieldSport && fullFieldCity ? handleSubmit : error;
+  // Styles for react-select field
   const customStyle = {
     option: (provided) => ({
       ...provided,
@@ -124,4 +130,5 @@ SearchForm.propTypes = {
   errorField: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default SearchForm;

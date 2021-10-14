@@ -1,17 +1,20 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable camelcase */
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ImPencil2, ImBin } from 'react-icons/im';
-import StarRatingStatic from 'src/containers/StarRatingStatic';
 import Moment from 'react-moment';
 import 'moment-timezone';
+
 // == Import : local
+import StarRatingStatic from 'src/containers/StarRatingStatic';
 import './review.scss';
 
 // Set the locale for every react-moment instance to French.
 Moment.globalLocale = 'fr';
 
+// == Component
 const Review = ({
   id,
   updatedAt,
@@ -33,10 +36,10 @@ const Review = ({
     onClickModalDeleteReview();
   };
   let reviewOwner = false;
+  // Check if connected user is the owner of reviews to make appear icon pencil and bin
   if (idUser === userId) {
     reviewOwner = true;
   }
-  // console.log('reviewOwner:', reviewOwner);
   return (
     <div className="review">
       <div className="review__block1">
@@ -82,4 +85,5 @@ Review.propTypes = {
   userId: PropTypes.number.isRequired,
 };
 
+// == Export
 export default Review;

@@ -1,20 +1,22 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 // == Import : npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import StarRatingStatic from 'src/containers/StarRatingStatic';
-import ModalSignIn from 'src/containers/ModalSignIn';
-import ModalSignUp from 'src/containers/ModalSignUp';
 
+// == Import Marker from 'react-leaflet-animated-marker'
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
 } from 'react-leaflet';
-// import Marker from 'react-leaflet-animated-marker';
+
 // == Import : local
+import StarRatingStatic from 'src/containers/StarRatingStatic';
+import ModalSignIn from 'src/containers/ModalSignIn';
+import ModalSignUp from 'src/containers/ModalSignUp';
 import Banner from 'src/components/Banner';
 import Loading from 'src/components/Loading';
 import './results.scss';
@@ -36,9 +38,7 @@ const Results = ({
   openLogUp,
   reviewsForAvg,
 }) => {
-  // console.log('cityCenterLat', cityCenterLat);
   const position = [cityCenterLat, cityCenterLng];
-  // console.log('position', position);
   const icons = markers.map((marker) => (
     <Marker
       key={marker[2]}
@@ -49,6 +49,7 @@ const Results = ({
       </Popup>
     </Marker>
   ));
+  // Array for association with average
   const tabAssociation = [];
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < results.length; i++) {
@@ -57,7 +58,7 @@ const Results = ({
       tabAssociation.push(result);
     }
   }
-  // console.log('tabAssociation', tabAssociation);
+  // Array with specific properties
   const newArray = [];
   // eslint-disable-next-line array-callback-return
   tabAssociation.map((tab) => {
@@ -67,9 +68,8 @@ const Results = ({
       });
     });
   });
-
-  // filtre la liste de l'API par rapport à la BDD pour récupéré de l'API tout ceux qui sont noté (étoiles)
-  // ajout de l'avg de la bdd avec les résultats de l'api
+  // Filter the API list against the DB to retrieve from the API all those that are rated (stars)
+  // Add db avg with api results
   const withStars = results.filter((a) => {
     let rep;
     // eslint-disable-next-line no-restricted-syntax
@@ -83,10 +83,9 @@ const Results = ({
     return rep;
   });
 
-  // ordonner la liste des notés du plus grand au plus petit
+  // Order the list of rated from largest to smallest
   const sortedNewArray = withStars.sort((a, b) => (+b.avg - +a.avg));
-
-  // filtre la liste de l'API par rapport à la BDD pour récupéré de l'API tout ceux qui ne sont pas noté (sans étoiles)
+  // Filter the API list against the DB to retrieve from the API all those that are not rated (without stars)
   const noStars = results.filter((a) => {
     let rep;
 
@@ -101,16 +100,13 @@ const Results = ({
     return !rep;
   });
 
-  // console.log('withStars: ', withStars);
-
   const handleGetAllReviews = () => {
     getAllReviews();
   };
   const handleNewSearch = () => {
     onClickNewSearch();
   };
-  // const time = results.length * 150;
-  // console.log('time', time);
+  // Use setTimeout to wait all results from API to build map
   useEffect(() => {
     const timer = setTimeout(() => {
       onBuildMap();
@@ -137,7 +133,7 @@ const Results = ({
         <>
           <div className="results__all__list">
 
-            {/* affichage de la liste avec étoile (en premier) */}
+            {/* Display of the list with star (first) */}
             {sortedNewArray.map((result) => (
               <div
                 key={result.id_association}
@@ -167,7 +163,7 @@ const Results = ({
                 </div>
               </div>
             ))}
-            {/* affichage de la liste sans étoiles (en second) */}
+            {/* Display of the list with star (second) */}
             {noStars.map((result) => (
               <div
                 key={result.id_association}
@@ -252,4 +248,5 @@ Results.defaultProps = {
   cityCenterLng: 0,
 };
 
+// == Export
 export default Results;

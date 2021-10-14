@@ -1,9 +1,12 @@
+// == Import : npm
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import './startRatingStatic.scss';
 
+// == Component
 const StarRatingStatic = ({
   rating,
 }) => (
@@ -26,4 +29,5 @@ StarRatingStatic.propTypes = {
   rating: PropTypes.number.isRequired,
 };
 
+// == Export
 export default StarRatingStatic;

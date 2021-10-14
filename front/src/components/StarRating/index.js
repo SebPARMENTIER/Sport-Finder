@@ -1,18 +1,19 @@
+// == Import : npm
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import './starRating.scss';
 
+// == Component
 const StarRating = ({
   onClickStar,
   rating,
 }) => {
   const handleOnClick = (event) => {
-    // console.log('click')
     onClickStar(event.target.value);
   };
-  
   return (
     <div className="rating">
       {[...Array(5)].map((_star, i) => {
@@ -46,4 +47,5 @@ StarRating.propTypes = {
   rating: PropTypes.number.isRequired,
 };
 
+// == Export
 export default StarRating;
