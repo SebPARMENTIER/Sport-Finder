@@ -1,5 +1,10 @@
+/* eslint-disable max-len */
+/* eslint-disable no-console */
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import axios from 'axios';
 
+// == Import : local
 import {
   CREATE_REVIEW,
   GET_ALL_REVIEWS,
@@ -25,6 +30,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
   const state = store.getState();
   switch (action.type) {
     case CREATE_REVIEW: {
+      // Request to check if association exists
       axios({
         method: 'get',
         url: 'https://sportfinder.herokuapp.com/api/v1/association',
@@ -37,7 +43,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
           const associationFiltered = associationExists.filter(
             (elem) => elem.key_association.includes(state.review.associationKey),
           );
-          // console.log(associationFiltered);
+          // If association exists, add review on DB
           if (associationFiltered.length > 0) {
             axios({
               method: 'post',
@@ -58,9 +64,11 @@ const reviewMiddleware = (store) => (next) => (action) => {
                 store.dispatch(getAllReviewsAction());
               })
               .catch((error) => {
+                console.error(error);
                 store.dispatch(createReviewErrorAction());
               });
           }
+          // If association doesn't exist, create association on DB and add action to add review on DB
           else if (associationFiltered.length === 0) {
             axios({
               method: 'post',
@@ -78,12 +86,12 @@ const reviewMiddleware = (store) => (next) => (action) => {
                 store.dispatch(createReviewAfterCreateAssociation());
               })
               .catch((error) => {
-                console.log(error);
+                console.error(error);
               });
           }
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
       break;
     }
@@ -108,6 +116,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           store.dispatch(createReviewErrorAction());
+          console.error(error);
         });
       break;
     }
@@ -122,10 +131,10 @@ const reviewMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(getAllReviewsSuccessAction(response.data));
-          // console.log('middleware review get all:', response.data);
         })
         .catch((error) => {
           store.dispatch(getAllReviewsErrorAction());
+          console.error(error);
         });
       break;
     }
@@ -152,6 +161,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           store.dispatch(updateReviewErrorAction());
+          console.error(error);
         });
       break;
     }
@@ -174,6 +184,7 @@ const reviewMiddleware = (store) => (next) => (action) => {
         })
         .catch((error) => {
           store.dispatch(deleteReviewErrorAction());
+          console.error(error);
         });
       break;
     }
@@ -188,10 +199,9 @@ const reviewMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((response) => {
           store.dispatch(getAllReviewsForAnAssociationSuccessAction(response.data));
-          // console.log('responseDataAllReviewStar', response.data);
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
       break;
     }
@@ -200,4 +210,5 @@ const reviewMiddleware = (store) => (next) => (action) => {
   }
 };
 
+// == Export
 export default reviewMiddleware;

@@ -1,5 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import axios from 'axios';
 
+// == Import : local
 import {
   CREATE_USER,
   SUBMIT_LOGIN,
@@ -49,11 +52,9 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(createUserSuccessAction(response.data));
-            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
             store.dispatch(createUserErrorAction(error));
-            // console.log(error);
           });
       }
       break;
@@ -117,7 +118,6 @@ const authMiddleware = (store) => (next) => (action) => {
           pseudo: state.user.newPseudo,
         },
       };
-  
       axios(config)
         .then((response) => {
           store.dispatch(updatePseudoSuccessAction(response.data));
@@ -151,11 +151,9 @@ const authMiddleware = (store) => (next) => (action) => {
         axios(config)
           .then((response) => {
             store.dispatch(updatePasswordSuccessAction(response.data));
-            // console.log(response.data.isCreateUserSuccess);
           })
           .catch((error) => {
             store.dispatch(updatePasswordErrorAction(error));
-            // console.log(error);
           });
       }
       break;
@@ -165,4 +163,5 @@ const authMiddleware = (store) => (next) => (action) => {
   }
 };
 
+// == Export
 export default authMiddleware;
