@@ -2,11 +2,10 @@
 // == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import Field from 'src/components/Field';
-
 import PropTypes from 'prop-types';
 
 // == Import : local
+import Field from 'src/components/Field';
 import './modalEditPassword.scss';
 
 // == Component

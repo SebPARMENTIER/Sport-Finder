@@ -1,10 +1,14 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import Field from 'src/components/Field';
 import './modalSignUp.scss';
 
+// == Component
 const ModalSignUp = ({
   pseudo,
   email,
@@ -23,7 +27,6 @@ const ModalSignUp = ({
     handleCreateUser();
   };
   const handleOnClickCloseSignUp = () => {
-    // console.log('click');
     onClickCloseSignUp();
   };
   return (
@@ -124,4 +127,5 @@ ModalSignUp.propTypes = {
   isCreatePasswordLengthError: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default ModalSignUp;

@@ -1,10 +1,14 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import Field from 'src/components/Field';
 import './modalSignIn.scss';
 
+// == Component
 const ModalSignin = ({
   email,
   password,
@@ -19,11 +23,9 @@ const ModalSignin = ({
     handleLogin();
   };
   const handleOnClickLogUp = () => {
-    // console.log('click');
     onClickLogUp();
   };
   const handleOnClickCloseSignIn = () => {
-    // console.log('click');
     onClickCloseSignIn();
   };
   return (
@@ -91,4 +93,5 @@ ModalSignin.propTypes = {
   onClickCloseSignIn: PropTypes.func.isRequired,
 };
 
+// == Export
 export default ModalSignin;

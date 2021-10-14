@@ -328,6 +328,7 @@ const reducer = (state = initialState, action = {}) => {
         isUpdatePasswordSuccess: true,
         isUpdatePasswordError: false,
         isUpdatePasswordLengthError: false,
+        updatePasswordError: false,
       };
     case UPDATE_PASSWORD_ERROR:
       return {

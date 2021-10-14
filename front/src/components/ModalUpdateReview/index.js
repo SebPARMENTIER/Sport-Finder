@@ -1,12 +1,15 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import StarRating from 'src/containers/StarRating';
-
 import PropTypes from 'prop-types';
+
+// == Import : local
 import FieldTextarea from 'src/components/FieldTextarea';
+import StarRating from 'src/containers/StarRating';
+import './modalUpdateReview.scss';
 
-import "./modalUpdateReview.scss";
-
+// == Component and Export
 export default function ModalUpdateReview({
   newReviewContent,
   changeField,
@@ -19,7 +22,6 @@ export default function ModalUpdateReview({
     handleUpdateReview();
   };
   const handleOnClickCloseAddReview = () => {
-    // console.log('click');
     onClickCloseUpdateReview();
   };
   return (

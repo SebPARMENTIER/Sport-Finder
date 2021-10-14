@@ -1,12 +1,14 @@
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import './modalPrivacyData.scss';
 
+// == Component and Export
 export default function ModalPrivacyData({ onClickClosePrivacyData }) {
   const handleOnClickClosePrivacyData = () => {
-    // console.log('click');
     onClickClosePrivacyData();
   };
   return (
