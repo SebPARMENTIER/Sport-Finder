@@ -23,7 +23,7 @@ const FieldTextarea = ({
         // React - state
         value={value}
         onChange={handleChange}
-        // infos de base
+        // Basic information
         id={inputId}
         type={type}
         placeholder={placeholder}

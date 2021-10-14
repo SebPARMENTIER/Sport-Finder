@@ -13,4 +13,5 @@ const Banner = () => (
   </div>
 );
 
+// == Export
 export default Banner;

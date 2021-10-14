@@ -1,11 +1,16 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { IoIosArrowBack } from 'react-icons/io';
+
+// == Import : local
 import logo from 'src/assets/logo.png';
 import Settings from 'src/containers/Settings';
-import { IoIosArrowBack } from 'react-icons/io';
 import './header.scss';
 
+// == Component
 const Header = ({
   pseudo,
   isLogged,
@@ -17,19 +22,15 @@ const Header = ({
   openSettings,
 }) => {
   const handleOnClickArrow = () => {
-    // console.log("click");
     onClickArrow();
   };
   const handleOnClickLogIn = () => {
-    // console.log("click");
     onClickLogIn();
   };
   const handleOnClickLogUp = () => {
-    // console.log("click");
     onClickLogUp();
   };
   const handleCloseSettings = () => {
-    // console.log('close setting');
     onClickCloseSettings();
     onClickNewSearch();
   };
@@ -110,4 +111,5 @@ Header.propTypes = {
   openSettings: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default Header;

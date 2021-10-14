@@ -1,10 +1,11 @@
+/* eslint-disable import/no-unresolved */
 // == Import : npm
 import React from 'react';
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
-
 import PropTypes from 'prop-types';
+
 // == Import : local
 import './about.scss';
 
@@ -42,4 +43,5 @@ About.propTypes = {
   openLogUp: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default About;

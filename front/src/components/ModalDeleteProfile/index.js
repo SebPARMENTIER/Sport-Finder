@@ -1,11 +1,15 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import PropTypes from 'prop-types';
 
+// == Import : local
 import Field from 'src/components/Field';
 import './modalDeleteProfile.scss';
 
+// == Component
 const ModalDeleteProfile = ({
   password,
   changeField,
@@ -19,10 +23,11 @@ const ModalDeleteProfile = ({
     event.preventDefault();
     handleDeleteProfile();
   };
+  // Close modal and redirect to home
   const handleOnClickCloseDeleteProfile = () => {
-    // console.log('click');
     onClickCloseDeleteProfile();
   };
+  // Close modal only
   const handleOnClickCloseDeleteProfileSimple = () => {
     onClickCloseDeleteProfileSimple();
   };
@@ -106,4 +111,5 @@ ModalDeleteProfile.propTypes = {
   isDeleteProfileError: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default ModalDeleteProfile;

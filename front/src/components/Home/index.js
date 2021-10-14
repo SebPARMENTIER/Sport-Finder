@@ -1,12 +1,15 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// == Import : local
 import SearchForm from 'src/containers/SearchForm';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
-
-import PropTypes from 'prop-types';
-
 import './home.scss';
 
+// == Component
 const Home = ({
   openLogIn,
   openLogUp,
@@ -29,4 +32,5 @@ Home.propTypes = {
   openLogUp: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default Home;

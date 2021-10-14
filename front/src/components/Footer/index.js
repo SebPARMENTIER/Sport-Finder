@@ -1,15 +1,18 @@
+// == Import : npm
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+// == Import : local
 import './footer.scss';
 
+// == Component
 const Footer = ({
   onClickCloseSettings,
 }) => {
   const now = new Date();
   const year = now.getFullYear();
   const handleCloseSettings = () => {
-    // console.log('close setting');
     onClickCloseSettings();
   };
   return (
@@ -39,4 +42,5 @@ Footer.propTypes = {
   onClickCloseSettings: PropTypes.func.isRequired,
 };
 
+// == Export
 export default Footer;

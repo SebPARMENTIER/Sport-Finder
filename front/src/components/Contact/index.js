@@ -1,12 +1,13 @@
+/* eslint-disable import/no-unresolved */
 // == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
+// == Import : local
 import Banner from 'src/components/Banner';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
-
-// == Import : local
 import Field from 'src/components/Field';
 import FieldTextarea from 'src/components/FieldTextarea';
 import './contact.scss';
@@ -38,7 +39,6 @@ const Contact = ({
     handleSelectCivility(event.target.value);
   };
   const handleOnClick = () => {
-    // console.log('click');
     onClickSubmit();
   };
   const handleOnClickMessageSuccess = () => {
@@ -50,7 +50,7 @@ const Contact = ({
     <div className="contact">
       <Banner />
       <h1 className="contact__title">Nous contacter</h1>
-      <p className="contact__text">Pour toute demande d'information (signaler un avis, mot de passe oublié, etc...), veuillez remplir le formulaire ci-dessous.</p>
+      <p className="contact__text">Pour toute demande d'informations (signaler un avis, mot de passe oublié, etc...), veuillez remplir le formulaire ci-dessous.</p>
       <p className="contact__text">Nous vous répondrons dans les meilleurs délais.</p>
       <form
         className="contact__form"
@@ -169,4 +169,9 @@ Contact.propTypes = {
   onClickNewSearch: PropTypes.func.isRequired,
 };
 
+Contact.defaultProps = {
+  civility: '',
+};
+
+// == Export
 export default Contact;

@@ -1,7 +1,10 @@
+/* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
+// == Import : local
 import Header from 'src/containers/Header';
 import Footer from 'src/containers/Footer';
 import Home from 'src/containers/Home';
@@ -11,9 +14,9 @@ import About from 'src/containers/About';
 import Single from 'src/containers/Single';
 import Results from 'src/containers/Results';
 import Error from 'src/components/Error';
-
 import './app.scss';
 
+// == Component
 const App = ({
   accountExists,
 }) => (

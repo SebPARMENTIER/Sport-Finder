@@ -1,9 +1,12 @@
+// == Import : npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
+// == Import : local
 import './modalDeleteReview.scss';
 
+// == Component and Export
 export default function ModalDeleteReview({
   onClickCloseDeleteReview,
   onClickValidDeleteReview,

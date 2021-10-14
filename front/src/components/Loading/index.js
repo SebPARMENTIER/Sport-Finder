@@ -1,9 +1,11 @@
+// == Import : npm
 import React from 'react';
 
+// == Import : local
 import './loading.scss';
 
+// == Component
 const Loading = () => (
-
   <div className="sk-circle">
     <div className="sk-circle1 sk-child" />
     <div className="sk-circle2 sk-child" />
@@ -20,4 +22,5 @@ const Loading = () => (
   </div>
 );
 
+// == Export
 export default Loading;

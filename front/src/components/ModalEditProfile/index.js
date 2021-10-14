@@ -1,23 +1,24 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
-import Field from 'src/components/Field';
-
 import PropTypes from 'prop-types';
 
+// == Import : local
+import Field from 'src/components/Field';
 import './modalEditProfile.scss';
 
+// == Component
 const ModalEditProfile = ({
   onClickCloseEditProfile,
   password,
   newPseudo,
   changeField,
-  onClickCloseEditProfil,
   handleUpdatePseudo,
   isUpdatePseudoSuccess,
   isUpdatePseudoError,
 }) => {
   const handleOnClickCloseEditProfile = () => {
-    // console.log('click');
     onClickCloseEditProfile();
   };
   const handleSubmit = (event) => {
@@ -98,8 +99,6 @@ const ModalEditProfile = ({
               Valider
             </button>
           )}
-          
-          
         </form>
       </div>
     </div>
@@ -110,11 +109,11 @@ ModalEditProfile.propTypes = {
   onClickCloseEditProfile: PropTypes.func.isRequired,
   password: PropTypes.string.isRequired,
   newPseudo: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleUpdatePseudo: PropTypes.func.isRequired,
   isUpdatePseudoSuccess: PropTypes.bool.isRequired,
   isUpdatePseudoError: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default ModalEditProfile;

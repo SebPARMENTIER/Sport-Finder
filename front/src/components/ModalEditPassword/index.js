@@ -1,11 +1,15 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import React from 'react';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import Field from 'src/components/Field';
 
 import PropTypes from 'prop-types';
 
+// == Import : local
 import './modalEditPassword.scss';
 
+// == Component
 const ModalEditPassword = ({
   password,
   newPassword,
@@ -19,7 +23,6 @@ const ModalEditPassword = ({
   isUpdatePasswordLengthError,
 }) => {
   const handleOnClickCloseEditPassword = () => {
-    // console.log('click');
     onClickCloseEditPassword();
   };
   const handleSubmit = (event) => {
@@ -144,4 +147,5 @@ ModalEditPassword.propTypes = {
   isUpdatePasswordLengthError: PropTypes.bool.isRequired,
 };
 
+// == Export
 export default ModalEditPassword;

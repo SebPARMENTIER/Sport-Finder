@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // == Import : npm
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -25,5 +26,5 @@ const Error = () => (
     </Link>
   </div>
 );
-
+// == Export
 export default Error;
