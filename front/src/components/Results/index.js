@@ -14,7 +14,7 @@ import {
 } from 'react-leaflet';
 
 // == Import : local
-import StarRatingStatic from 'src/containers/StarRatingStatic';
+import StarRatingStatic from 'src/components/StarRatingStatic';
 import ModalSignIn from 'src/containers/ModalSignIn';
 import ModalSignUp from 'src/containers/ModalSignUp';
 import Banner from 'src/components/Banner';

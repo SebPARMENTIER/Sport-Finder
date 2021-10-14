@@ -1,7 +1,10 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Results from 'src/components/Results';
 
+// == Import : local
+import Results from 'src/components/Results';
 import { getAllReviewsAction } from 'src/actions/review';
 import { clickOnNewSearch, buildMapAction } from 'src/actions/search';
 
@@ -33,4 +36,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+// == Export
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Results));

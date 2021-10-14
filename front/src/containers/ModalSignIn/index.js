@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
-import ModalSignIn from 'src/components/ModalSignIn';
 
+// == Import : local
+import ModalSignIn from 'src/components/ModalSignIn';
 import {
   createSetInputValueAction,
   createSubmitAction,
@@ -22,15 +25,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createSubmitAction());
   },
   onClickLogUp: () => {
-    // console.log('in the container Header');
-    const action = clickOnButtonLogUp();
-    dispatch(action);
+    dispatch(clickOnButtonLogUp());
   },
   onClickCloseSignIn: () => {
-    // console.log('in the container Header');
-    const action = clickOnButtonCloseSignIn();
-    dispatch(action);
+    dispatch(clickOnButtonCloseSignIn());
   },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(ModalSignIn);

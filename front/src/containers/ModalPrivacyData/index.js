@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import ModalPrivacyData from 'src/components/ModalPrivacyData';
 import { clickOnButtonClosePrivacyData } from 'src/actions/user';
 
@@ -7,10 +11,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(clickOnButtonClosePrivacyData());
   },
 });
-  // ajouter la fonction utilisé dans le composant
 
 const connectedComponent = connect(null, mapDispatchToProps)(ModalPrivacyData);
 
-// on exporte le composant connecté
-// => ne pas oublier de l'utiliser à la place du stateless component
+// == Export
 export default connectedComponent;

@@ -1,7 +1,10 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Single from 'src/components/Single';
 
+// == Import : local
+import Single from 'src/components/Single';
 import { findSingle } from 'src/selectors/single';
 import {
   clickOnButtonAddReview,
@@ -9,14 +12,11 @@ import {
   singleAssociationKey,
   getAllReviewsForAnAssociationAction,
 } from 'src/actions/review';
-
 import {
   clickOnButtonCloseSettings,
 } from 'src/actions/user';
 
 const mapStateToProps = (state, { match, history }) => {
-  // console.log('match', match);
-  // console.log('state', state.search.results);
   const { id } = match.params;
   return ({
     result: findSingle(state.search.results, id),
@@ -44,13 +44,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(singleAssociationKey(value));
   },
   onClickCloseSettings: () => {
-    // console.log('container');
-    const action = clickOnButtonCloseSettings();
-    dispatch(action);
+    dispatch(clickOnButtonCloseSettings());
   },
   handleAverage: () => {
     dispatch(getAllReviewsForAnAssociationAction());
   },
 });
 
+// == Export and use withRouter to recover Url's params Id
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Single));

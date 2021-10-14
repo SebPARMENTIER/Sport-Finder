@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import Contact from 'src/components/Contact';
 import {
   createContactSetInputValueAction,
@@ -7,16 +11,15 @@ import {
   submitContactForm,
   closeMessageSuccess,
 } from 'src/actions/contact';
-
 import {
   clickOnButtonCloseSettings,
 } from 'src/actions/user';
-
 import {
   clickOnNewSearch,
 } from 'src/actions/search';
 
 const mapStateToProps = (state) => ({
+  civility: state.contact.civility,
   lastname: state.contact.lastname,
   firstname: state.contact.firstname,
   email: state.contact.email,
@@ -44,13 +47,12 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(closeMessageSuccess());
   },
   onClickCloseSettings: () => {
-    // console.log('container');
-    const action = clickOnButtonCloseSettings();
-    dispatch(action);
+    dispatch(clickOnButtonCloseSettings());
   },
   onClickNewSearch: () => {
     dispatch(clickOnNewSearch());
   },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

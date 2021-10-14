@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import ModalEditPassword from 'src/components/ModalEditPassword';
 import {
   updatePasswordSetInputValueAction,
@@ -15,25 +19,20 @@ const mapStateToProps = (state) => ({
   isUpdatePasswordError: state.user.isUpdatePasswordError,
   isUpdatePasswordLengthError: state.user.isUpdatePasswordLengthError,
 });
-  // ajouter le state a utilisé pour le composant '
 
 const mapDispatchToProps = (dispatch) => ({
   changeField: (newValue, name) => {
     dispatch(updatePasswordSetInputValueAction(newValue, name));
   },
   onClickCloseEditPassword: () => {
-    // console.log('in the container ');
-    const action = clickOnButtonCloseEditPassword();
-    dispatch(action);
+    dispatch(clickOnButtonCloseEditPassword());
   },
   handleUpdatePassword: () => {
     dispatch(updatePasswordAction());
   },
 });
-  // ajouter la fonction utilisé dans le composant
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(ModalEditPassword);
 
-// on exporte le composant connecté
-// => ne pas oublier de l'utiliser à la place du stateless component
+// == Export
 export default connectedComponent;

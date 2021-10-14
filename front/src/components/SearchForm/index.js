@@ -55,7 +55,6 @@ const SearchForm = ({
             closeMenuOnSelect
             classNamePrefix="mySelectSport"
             styles={customStyle}
-            autoFocus
             options={sportsData}
             name="sport"
             type="text"

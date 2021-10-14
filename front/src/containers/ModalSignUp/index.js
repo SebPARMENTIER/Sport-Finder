@@ -1,11 +1,13 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
-import ModalSignUp from 'src/components/ModalSignUp';
 
+// == Import : local
+import ModalSignUp from 'src/components/ModalSignUp';
 import {
   createUserSetInputValueAction,
   createUserAction,
   clickOnButtonCloseSignUp,
-  isCreatePasswordLengthError,
 } from 'src/actions/user';
 
 const mapStateToProps = (state) => ({
@@ -27,10 +29,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(createUserAction());
   },
   onClickCloseSignUp: () => {
-    // console.log('in the container Header');
-    const action = clickOnButtonCloseSignUp();
-    dispatch(action);
+    dispatch(clickOnButtonCloseSignUp());
   },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(ModalSignUp);

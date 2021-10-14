@@ -1,5 +1,9 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+
+// == Import : local
 import SearchForm from 'src/components/SearchForm';
 import {
   createSetSearchSportAction,
@@ -39,7 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
   onClickError: () => {
     dispatch(getErrorFieldNotFull());
   },
-
 });
 
+// == Export
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SearchForm));

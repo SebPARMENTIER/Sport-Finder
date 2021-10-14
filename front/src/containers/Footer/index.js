@@ -1,21 +1,18 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import Footer from 'src/components/Footer';
 import { clickOnButtonCloseSettings } from 'src/actions/user';
 
-const mapStateToProps = () => ({});
-// ajouter le state a utilisé pour le composant '
-
 const mapDispatchToProps = (dispatch) => ({
   onClickCloseSettings: () => {
-    // console.log('container');
-    const action = clickOnButtonCloseSettings();
-    dispatch(action);
+    dispatch(clickOnButtonCloseSettings());
   },
 });
-// ajouter la fonction utilisé dans le composant
 
-const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(Footer);
+const connectedComponent = connect(null, mapDispatchToProps)(Footer);
 
-// on exporte le composant connecté
-// => ne pas oublier de l'utiliser à la place du stateless component
+// == Export
 export default connectedComponent;

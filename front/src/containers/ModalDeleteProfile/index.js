@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import ModalDeleteProfile from 'src/components/ModalDeleteProfile';
 import {
   deleteConfirmSetInputValueAction,
@@ -30,4 +34,5 @@ const mapDispatchToProps = (dispatch) => ({
 
 const connectedComponent = connect(mapStateToProps, mapDispatchToProps)(ModalDeleteProfile);
 
+// == Export
 export default connectedComponent;

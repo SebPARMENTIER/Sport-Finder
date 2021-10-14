@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import ModalAddReview from 'src/components/ModalAddReview';
 import {
   createReviewSetInputValueAction,
@@ -23,4 +27,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(ModalAddReview);

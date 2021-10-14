@@ -8,7 +8,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 
 // == Import : local
-import StarRatingStatic from 'src/containers/StarRatingStatic';
+import StarRatingStatic from 'src/components/StarRatingStatic';
 import './review.scss';
 
 // Set the locale for every react-moment instance to French.

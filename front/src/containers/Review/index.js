@@ -1,6 +1,9 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
-import Review from 'src/components/Review';
 
+// == Import : local
+import Review from 'src/components/Review';
 import {
   clickOnButtonUpdateReview,
   clickOnButtonDeleteReview,
@@ -26,7 +29,8 @@ const mapDispatchToProps = (dispatch) => ({
   },
   getIdValue: (value) => {
     dispatch(IdReviewValue(value));
-  }
+  },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(Review);

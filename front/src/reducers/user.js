@@ -236,17 +236,22 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isCreateUserError: true,
+        isCreatePasswordLengthError: false,
+        passwordError: false,
       };
     case CREATE_PASSWORD_ERROR:
       return {
         ...state,
         passwordError: true,
         isCreatePasswordLengthError: false,
+        isCreateUserError: false,
       };
     case CREATE_PASSWORD_LENGTH_ERROR:
       return {
         ...state,
         isCreatePasswordLengthError: true,
+        isCreateUserError: false,
+        passwordError: false,
       };
     case SET_INPUT_VALUE:
       return {

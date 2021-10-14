@@ -1,4 +1,8 @@
+/* eslint-disable import/no-unresolved */
+// == Import : npm
 import { connect } from 'react-redux';
+
+// == Import : local
 import ModalDeleteReview from 'src/components/ModalDeleteReview';
 import {
   deleteReviewAction,
@@ -18,4 +22,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
+// == Export
 export default connect(mapStateToProps, mapDispatchToProps)(ModalDeleteReview);

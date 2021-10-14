@@ -155,7 +155,7 @@ Contact.propTypes = {
   firstname: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
-  civility: PropTypes.string,
+  civility: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   changeField: PropTypes.func.isRequired,
   handleContact: PropTypes.func.isRequired,
@@ -167,10 +167,6 @@ Contact.propTypes = {
   onClickMessageSuccess: PropTypes.func.isRequired,
   onClickCloseSettings: PropTypes.func.isRequired,
   onClickNewSearch: PropTypes.func.isRequired,
-};
-
-Contact.defaultProps = {
-  civility: '',
 };
 
 // == Export
