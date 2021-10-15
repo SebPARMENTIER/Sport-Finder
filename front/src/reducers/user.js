@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+// == Import : local
 import {
   SET_USER_INPUT_VALUE,
   CLICK_ON_BUTTON_SETTINGS,
@@ -35,12 +37,10 @@ import {
   CREATE_PASSWORD_LENGTH_ERROR,
   CLOSE_MODAL_DELETE,
 } from 'src/actions/user';
-
 import {
   CLICK_ON_NEW_SEARCH,
   RESULT_API_RNA_SUCCESS,
 } from 'src/actions/search';
-
 import {
   GET_ALL_REVIEWS_SUCCESS,
   CLICK_ON_BUTTON_ADD_REVIEW,
@@ -48,6 +48,7 @@ import {
   CLICK_ON_BUTTON_DELETE_REVIEW,
 } from 'src/actions/review';
 
+// == Initial State
 export const initialState = {
   userId: '',
   pseudo: '',
@@ -384,4 +385,5 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
+// == Export
 export default reducer;

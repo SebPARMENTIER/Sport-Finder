@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+// == Import : local
 import {
   SET_INPUT_VALUE,
   RESULT_API_RNA_SUCCESS,
@@ -11,9 +13,9 @@ import {
   SET_SEARCH_CITY,
   CLICK_ERROR_FIELD_NOT_FULL,
 } from 'src/actions/search';
-
 import { CLICK_ON_BUTTON_LOG_OUT } from 'src/actions/user';
 
+// == Initial State
 export const initialState = {
   city: '',
   sport: '',
@@ -111,4 +113,5 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
+// == Export
 export default reducer;

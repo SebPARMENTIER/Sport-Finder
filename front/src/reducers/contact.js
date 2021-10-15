@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+// == Import : local
 import {
   SET_CONTACT_INPUT_VALUE,
   CHANGE_SELECT,
@@ -5,6 +7,7 @@ import {
   CLOSE_MESSAGE_SUCCESS,
 } from 'src/actions/contact';
 
+// == Initial State
 export const initialState = {
   civility: '',
   lastname: '',
@@ -48,4 +51,5 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
+// == Export
 export default reducer;

@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+// == Import : local
 import {
   SET_REVIEW_INPUT_VALUE,
   CREATE_REVIEW_SUCCESS,
@@ -22,6 +24,7 @@ import {
   GET_ALL_REVIEWS_FOR_AN_ASSOCIATION_SUCCESS,
 } from 'src/actions/review';
 
+// == Initial State
 export const initialState = {
   reviewContent: '',
   isCreateReviewError: false,
@@ -164,4 +167,5 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 
+// == Export
 export default reducer;

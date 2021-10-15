@@ -1,6 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
+// == Import : npm
 import { combineReducers } from 'redux';
 
+// == Import : local
 import searchReducer from './search';
 import userReducer from './user';
 import contactReducer from './contact';
@@ -13,4 +15,5 @@ const rootReducer = combineReducers({
   review: reviewReducer,
 });
 
+// == Export
 export default rootReducer;
