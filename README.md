@@ -26,7 +26,7 @@ You can contact us on contact page and if you want to know who we are, visit abo
 
 Enjoy your search
 
-[https://sport-finder.netlify.app](https://sport-finder.netlify.app){:target="_blank" rel="noopener"}
+[https://sport-finder.netlify.app](https://sport-finder.netlify.app)
 
 ### Stack
 
